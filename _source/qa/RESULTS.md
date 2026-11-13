@@ -1,5 +1,8 @@
-# QA – Herramientas Verifactu, 2026-11-13
+# QA – Herramientas Verifactu, 2026-11-13 (v2: sección factura electrónica B2B y morosidad)
 
+Resumen: unitarias Verifactu 42/42 · unitarias B2B 29/29 · XSD + QR 13/13 · estáticas 166/166 · Chromium con CSP (escritorio, móvil 375 px, modo oscuro) 131/131 = 381/381.
+
+## t-core
 ```
 Huella – ejemplos oficiales AEAT (doc. huella v0.1.2, apdo. 6)
   ✓ Caso 1 (alta, primer registro) = 3C464DAF…8F12F60
@@ -45,12 +48,58 @@ XML de alta, comprobación estructural y cadena
   ✓ Caracteres especiales escapados en el XML
   ✓ checkAltaXml: XML generado sin errores (F1, F1 encadenada, F2)
   ✓ checkAltaXml: detecta huella alterada, orden y obligatorios
+[xmldom fatalError]	Opening and ending tag mismatch: "b" != "a" 
+@#[line:1,col:4]
   ✓ checkAltaXml: XML mal formado
   ✓ checkChain: ejemplos AEAT en XML → cadena correcta
   ✓ checkChain: registros generados encadenados (b1 → b2) correctos
   ✓ checkChain: importe 123.4 vs 123.40 → aviso de decimales, no error
 
 Resultado: 42 correctas, 0 fallidas
+```
+
+## t-b2b
+```
+Fechas, importes y CSV
+  ✓ parseDate: AAAA-MM-DD, DD/MM/AAAA, DD-MM-AA; rechaza 31/02
+  ✓ parseAmount: 1.234,56 · 1234,56 · 1,234.56 · 1 234,56 € · 1.234 · 12.5 · -50
+  ✓ fmt: formato español con miles y coma decimal
+  ✓ parseCsv: separador ; , y tabulador, comillas
+PMP – método ICAC (BOE-A-2016-1112, art. 5)
+  ✓ Ejemplo 1: ratio pagadas 56,67 · pendientes 34,00 · PMP 47,60
+  ✓ Ejemplo 1: días por operación (30, 70, 46, 30) y la pagada tras el cierre cuenta como pendiente
+  ✓ Ejemplo 1: DA 3.ª Ley 15/2010 – pagadas dentro de 60 días: 1 de 2 facturas (50 %) y 1.000 de 3.000 € (33,33 %)
+  ✓ Ejemplo 2 (supera 60 días): 10.000 € pagados a 90 días + 10.000 € pendientes 40 días → PMP 65
+  ✓ Fórmula: PMP = media ponderada por importe de todos los días (identidad algebraica, 500 casos aleatorios)
+  ✓ Filtros: operación posterior al cierre, pago anterior al ejercicio, fechas e importes no válidos → omitidos con aviso
+  ✓ Sin cierre o sin filas válidas → error
+  ✓ Modelo abreviado (art. 5.5): 50.000 / 400.000 × 365 = 45,625 días; saldo medio (40.000 + 60.000) / 2
+  ✓ CSV con cabecera de la plantilla, en otro orden, sin cabecera y fila pegada de Excel con texto
+Intereses de demora – Ley 3/2004, art. 7 (tipos del BOE)
+  ✓ La tabla de tipos coincide con las 27 resoluciones del BOE descargadas (2.º sem. 2013 – 2.º sem. 2026)
+  ✓ Tipos clave: 2.º sem. 2026 = 10,40 % (BOE-A-2026-14327); 1.º sem. 2026 = 10,15 %; 1.º sem. 2024 = 12,50 %
+  ✓ Ejemplo: 10.000 € vencidos 15/06/2025 y pagados 14/08/2025 → 60 días, 2 tramos, 170,96 €
+  ✓ Ejemplo: 2.420 € (IVA incluido) vencidos 31/12/2025 y pagados 31/01/2026 → 31 días al 10,15 % = 20,86 €
+  ✓ Pago en plazo → 0; tipo pactado sustituye al legal (art. 7.1)
+  ✓ Fuera de la tabla: antes del 1/7/2013 error; 2027 sin publicar → error salvo «estimar»
+  ✓ Vencimiento (art. 4): 30 días por defecto; pactos > 60 días se limitan a 60
+Plazo de 4 días (RD 238/2026, arts. 10.3 y 12.3)
+  ✓ Pascua: 2026-04-05, 2027-03-28, 2028-04-16
+  ✓ Viernes Santo calculado = el de la lista del BOE (2026: 3 abr; 2027: 26 mar)
+  ✓ Pago el viernes 08/10/2027 → límite viernes 15/10/2027 (salta sábado, domingo y el 12 de octubre)
+  ✓ Pago el miércoles 22/12/2027 → límite martes 28/12/2027 (salta sábado 25, Navidad, y domingo 26)
+  ✓ Pago el jueves 30/12/2027 → límite miércoles 05/01/2028 (provisional: 2028 aún sin lista oficial)
+  ✓ Pago el lunes 06/11/2028 → viernes 10/11/2028 (año sin lista oficial: marcado provisional)
+  ✓ Festivo adicional del usuario (p. ej. autonómico) también se salta
+Factura electrónica B2B – RD 238/2026 DF 4.ª, DT 2.ª y 3.ª; Orden HAC/1028/2026 en vigor el 06/10/2026
+  ✓ Fechas: 06/10/2027 (> 8 M€), 06/10/2028 (resto), 06/10/2029 (estados, personas físicas ≤ 8 M€)
+  ✓ Checker: grande → 2027 + PDF; sociedad pequeña → 2028; autónomo pequeño → emitir 2028, estados 2029; solo tiques → no emite
+
+Resultado: 29 correctas, 0 fallidas
+```
+
+## t-xsd
+```
 XSD oficial AEAT (SuministroLR.xsd + SuministroInformacion.xsd)
   ✓ alta-1.xml válido contra el XSD
   ✓ alta-2.xml válido contra el XSD
@@ -69,25 +118,205 @@ Archivos producidos en el navegador (test-browser-csp.js), si existen
   ✓ SVG descargado en mm: bloque 43 × 52.94 mm, QR de 45 módulos × 0.778 mm = 35.00 mm (35 mm pedidos)
 
 Resultado: 13 correctas, 0 fallidas
-Sitio: https://mydevspace2.github.io/herramientas-verifactu (BASE «/herramientas-verifactu») – 14 páginas HTML
+```
+
+## t-site
+```
+Sitio: https://mydevspace2.github.io/herramientas-verifactu (BASE «/herramientas-verifactu») – 20 páginas HTML
+  ✓ robots.txt bloquea /_source/ y enlaza el sitemap
+  ✓ sitemap.xml bien formado con 19 URL
+  ✓ /404.html – enlaces internos existen (con BASE)
+  ✓ /404.html – anclas #id existen y no hay id duplicados
+  ✓ /404.html – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /404.html – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /404.html – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /404.html – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /404.html – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /aviso-legal/ – enlaces internos existen (con BASE)
+  ✓ /aviso-legal/ – anclas #id existen y no hay id duplicados
+  ✓ /aviso-legal/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /aviso-legal/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /aviso-legal/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /aviso-legal/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /aviso-legal/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – enlaces internos existen (con BASE)
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – anclas #id existen y no hay id duplicados
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – guía ≥ 700 palabras (1343)
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – enlaces internos existen (con BASE)
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – anclas #id existen y no hay id duplicados
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – guía ≥ 700 palabras (1478)
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ – enlaces internos existen (con BASE)
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ – anclas #id existen y no hay id duplicados
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ – guía ≥ 700 palabras (1328)
+  ✓ /blog/fechas-verifactu-2027-2028/ – enlaces internos existen (con BASE)
+  ✓ /blog/fechas-verifactu-2027-2028/ – anclas #id existen y no hay id duplicados
+  ✓ /blog/fechas-verifactu-2027-2028/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/fechas-verifactu-2027-2028/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /blog/fechas-verifactu-2027-2028/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /blog/fechas-verifactu-2027-2028/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /blog/fechas-verifactu-2027-2028/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /blog/fechas-verifactu-2027-2028/ – guía ≥ 700 palabras (1244)
+  ✓ /blog/ – enlaces internos existen (con BASE)
+  ✓ /blog/ – anclas #id existen y no hay id duplicados
+  ✓ /blog/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /blog/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /blog/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /blog/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /blog/tamano-posicion-qr-verifactu/ – enlaces internos existen (con BASE)
+  ✓ /blog/tamano-posicion-qr-verifactu/ – anclas #id existen y no hay id duplicados
+  ✓ /blog/tamano-posicion-qr-verifactu/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/tamano-posicion-qr-verifactu/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /blog/tamano-posicion-qr-verifactu/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /blog/tamano-posicion-qr-verifactu/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /blog/tamano-posicion-qr-verifactu/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /blog/tamano-posicion-qr-verifactu/ – guía ≥ 700 palabras (1165)
+  ✓ /blog/verifactu-gratis-aplicacion-aeat/ – enlaces internos existen (con BASE)
+  ✓ /blog/verifactu-gratis-aplicacion-aeat/ – anclas #id existen y no hay id duplicados
+  ✓ /blog/verifactu-gratis-aplicacion-aeat/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/verifactu-gratis-aplicacion-aeat/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /blog/verifactu-gratis-aplicacion-aeat/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /blog/verifactu-gratis-aplicacion-aeat/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /blog/verifactu-gratis-aplicacion-aeat/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /blog/verifactu-gratis-aplicacion-aeat/ – guía ≥ 700 palabras (1118)
+  ✓ /calcular-huella-verifactu/ – enlaces internos existen (con BASE)
+  ✓ /calcular-huella-verifactu/ – anclas #id existen y no hay id duplicados
+  ✓ /calcular-huella-verifactu/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /calcular-huella-verifactu/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /calcular-huella-verifactu/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /calcular-huella-verifactu/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /calcular-huella-verifactu/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /calcular-huella-verifactu/ – contenido útil bajo la herramienta ≥ 800 palabras (1318)
+  ✓ /contacto/ – enlaces internos existen (con BASE)
+  ✓ /contacto/ – anclas #id existen y no hay id duplicados
+  ✓ /contacto/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /contacto/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /contacto/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /contacto/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /contacto/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /ejemplo-xml-verifactu/ – enlaces internos existen (con BASE)
+  ✓ /ejemplo-xml-verifactu/ – anclas #id existen y no hay id duplicados
+  ✓ /ejemplo-xml-verifactu/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /ejemplo-xml-verifactu/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /ejemplo-xml-verifactu/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /ejemplo-xml-verifactu/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /ejemplo-xml-verifactu/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /ejemplo-xml-verifactu/ – contenido útil bajo la herramienta ≥ 800 palabras (1297)
+  ✓ /factura-electronica-obligatoria/ – enlaces internos existen (con BASE)
+  ✓ /factura-electronica-obligatoria/ – anclas #id existen y no hay id duplicados
+  ✓ /factura-electronica-obligatoria/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /factura-electronica-obligatoria/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /factura-electronica-obligatoria/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /factura-electronica-obligatoria/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /factura-electronica-obligatoria/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /factura-electronica-obligatoria/ – contenido útil bajo la herramienta ≥ 800 palabras (1780)
+  ✓ /generador-qr-verifactu/ – enlaces internos existen (con BASE)
+  ✓ /generador-qr-verifactu/ – anclas #id existen y no hay id duplicados
+  ✓ /generador-qr-verifactu/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /generador-qr-verifactu/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /generador-qr-verifactu/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /generador-qr-verifactu/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /generador-qr-verifactu/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /generador-qr-verifactu/ – contenido útil bajo la herramienta ≥ 800 palabras (1410)
+  ✓ / – enlaces internos existen (con BASE)
+  ✓ / – anclas #id existen y no hay id duplicados
+  ✓ / – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ / – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ / – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ / – accesibilidad: campos con etiqueta, botones con texto
+  ✓ / – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ / – contenido útil bajo la herramienta ≥ 800 palabras (1741)
+  ✓ /intereses-demora-comerciales/ – enlaces internos existen (con BASE)
+  ✓ /intereses-demora-comerciales/ – anclas #id existen y no hay id duplicados
+  ✓ /intereses-demora-comerciales/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /intereses-demora-comerciales/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /intereses-demora-comerciales/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /intereses-demora-comerciales/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /intereses-demora-comerciales/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /intereses-demora-comerciales/ – contenido útil bajo la herramienta ≥ 800 palabras (1664)
+  ✓ /periodo-medio-pago-proveedores/ – enlaces internos existen (con BASE)
+  ✓ /periodo-medio-pago-proveedores/ – anclas #id existen y no hay id duplicados
+  ✓ /periodo-medio-pago-proveedores/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /periodo-medio-pago-proveedores/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /periodo-medio-pago-proveedores/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /periodo-medio-pago-proveedores/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /periodo-medio-pago-proveedores/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /periodo-medio-pago-proveedores/ – contenido útil bajo la herramienta ≥ 800 palabras (1926)
+  ✓ /privacidad/ – enlaces internos existen (con BASE)
+  ✓ /privacidad/ – anclas #id existen y no hay id duplicados
+  ✓ /privacidad/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /privacidad/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /privacidad/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /privacidad/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /privacidad/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /sobre-nosotros/ – enlaces internos existen (con BASE)
+  ✓ /sobre-nosotros/ – anclas #id existen y no hay id duplicados
+  ✓ /sobre-nosotros/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /sobre-nosotros/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /sobre-nosotros/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /sobre-nosotros/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /sobre-nosotros/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /validar-qr-verifactu/ – enlaces internos existen (con BASE)
+  ✓ /validar-qr-verifactu/ – anclas #id existen y no hay id duplicados
+  ✓ /validar-qr-verifactu/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /validar-qr-verifactu/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /validar-qr-verifactu/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /validar-qr-verifactu/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /validar-qr-verifactu/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /validar-qr-verifactu/ – contenido útil bajo la herramienta ≥ 800 palabras (1327)
+  ✓ Ninguna página afirma importes de sanciones
+  ✓ Portada: muestra 1/1/2027, 1/7/2027, octubre 2028, «Última comprobación: 13 de noviembre de 2026» y enlaza BOE + nota de Hacienda
+  ✓ Huella: los tres resultados oficiales aparecen en la página
+  ✓ Navegación: las 8 herramientas y Guías en la cabecera de cada página
+  ✓ Factura B2B: 6/10/2027, 6/10/2028, 6/10/2029, «Última comprobación: 13 de noviembre de 2026», enlaces BOE RD 238/2026 y Orden HAC/1028/2026, art. 12 de 4 días
+  ✓ PMP: cita BOE-A-2016-1112, las tres fórmulas del art. 5, el ejemplo (47,60) y el límite de 60 días
+  ✓ Intereses de demora: tabla con las 27 resoluciones del BOE (2013-2 a 2026-2), 10,40 %, art. 8.1 citado literalmente y TJUE C-585/20
+  ✓ Las tres herramientas B2B cargan b2b.js y su script propio
+  ✓ Ningún importe de sanción en la sección B2B (solo se citarían literalmente del BOE)
+  ✓ JS de producción minificado y sin eval
 
 Palabras en el cuerpo de cada página:
-     205  /404.html
+     268  /404.html
      309  /aviso-legal/
-    1149  /blog/fechas-verifactu-2027-2028/
-     312  /blog/
-    1070  /blog/tamano-posicion-qr-verifactu/
-    1023  /blog/verifactu-gratis-aplicacion-aeat/
-    1255  /calcular-huella-verifactu/
+    1343  /blog/calcular-periodo-medio-pago-proveedores-ejemplo/
+    1478  /blog/diferencias-verifactu-factura-electronica-b2b/
+    1328  /blog/factura-electronica-obligatoria-autonomos/
+    1244  /blog/fechas-verifactu-2027-2028/
+     468  /blog/
+    1165  /blog/tamano-posicion-qr-verifactu/
+    1118  /blog/verifactu-gratis-aplicacion-aeat/
+    1318  /calcular-huella-verifactu/
      139  /contacto/
-    1234  /ejemplo-xml-verifactu/
-    1347  /generador-qr-verifactu/
-    1516  /
+    1297  /ejemplo-xml-verifactu/
+    1780  /factura-electronica-obligatoria/
+    1410  /generador-qr-verifactu/
+    1741  /
+    1664  /intereses-demora-comerciales/
+    1926  /periodo-medio-pago-proveedores/
      329  /privacidad/
-     431  /sobre-nosotros/
-    1264  /validar-qr-verifactu/
+     494  /sobre-nosotros/
+    1327  /validar-qr-verifactu/
 
-Resultado: 112 correctas, 0 fallidas
+Resultado: 166 correctas, 0 fallidas
+```
+
+## t-br
+```
   ✓ / – CSS inline aplicado (light)
   ✓ / – la herramienta funciona en Chromium
   ✓ / – conmutador de tema (light → dark, fondo rgb(11, 18, 32))
@@ -124,6 +353,27 @@ Resultado: 112 correctas, 0 fallidas
   ✓ /ejemplo-xml-verifactu/ [móvil 375px] – sin desbordamiento horizontal (scrollWidth 375)
   ✓ /ejemplo-xml-verifactu/ [móvil 375px] – menú móvil se abre
   ✓ /ejemplo-xml-verifactu/ [móvil 375px] – sin errores JS ni violaciones CSP
+  ✓ /factura-electronica-obligatoria/ – CSS inline aplicado (light)
+  ✓ /factura-electronica-obligatoria/ – la herramienta funciona en Chromium
+  ✓ /factura-electronica-obligatoria/ – conmutador de tema (light → dark, fondo rgb(11, 18, 32))
+  ✓ /factura-electronica-obligatoria/ – sin errores JS ni violaciones CSP
+  ✓ /factura-electronica-obligatoria/ [móvil 375px] – sin desbordamiento horizontal (scrollWidth 375)
+  ✓ /factura-electronica-obligatoria/ [móvil 375px] – menú móvil se abre
+  ✓ /factura-electronica-obligatoria/ [móvil 375px] – sin errores JS ni violaciones CSP
+  ✓ /periodo-medio-pago-proveedores/ – CSS inline aplicado (light)
+  ✓ /periodo-medio-pago-proveedores/ – la herramienta funciona en Chromium
+  ✓ /periodo-medio-pago-proveedores/ – conmutador de tema (light → dark, fondo rgb(11, 18, 32))
+  ✓ /periodo-medio-pago-proveedores/ – sin errores JS ni violaciones CSP
+  ✓ /periodo-medio-pago-proveedores/ [móvil 375px] – sin desbordamiento horizontal (scrollWidth 375)
+  ✓ /periodo-medio-pago-proveedores/ [móvil 375px] – menú móvil se abre
+  ✓ /periodo-medio-pago-proveedores/ [móvil 375px] – sin errores JS ni violaciones CSP
+  ✓ /intereses-demora-comerciales/ – CSS inline aplicado (light)
+  ✓ /intereses-demora-comerciales/ – la herramienta funciona en Chromium
+  ✓ /intereses-demora-comerciales/ – conmutador de tema (light → dark, fondo rgb(11, 18, 32))
+  ✓ /intereses-demora-comerciales/ – sin errores JS ni violaciones CSP
+  ✓ /intereses-demora-comerciales/ [móvil 375px] – sin desbordamiento horizontal (scrollWidth 375)
+  ✓ /intereses-demora-comerciales/ [móvil 375px] – menú móvil se abre
+  ✓ /intereses-demora-comerciales/ [móvil 375px] – sin errores JS ni violaciones CSP
   ✓ /blog/ – CSS inline aplicado (light)
   ✓ /blog/ – conmutador de tema (light → dark, fondo rgb(11, 18, 32))
   ✓ /blog/ – sin errores JS ni violaciones CSP
@@ -148,6 +398,24 @@ Resultado: 112 correctas, 0 fallidas
   ✓ /blog/tamano-posicion-qr-verifactu/ [móvil 375px] – sin desbordamiento horizontal (scrollWidth 375)
   ✓ /blog/tamano-posicion-qr-verifactu/ [móvil 375px] – menú móvil se abre
   ✓ /blog/tamano-posicion-qr-verifactu/ [móvil 375px] – sin errores JS ni violaciones CSP
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – CSS inline aplicado (light)
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – conmutador de tema (light → dark, fondo rgb(11, 18, 32))
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – sin errores JS ni violaciones CSP
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ [móvil 375px] – sin desbordamiento horizontal (scrollWidth 375)
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ [móvil 375px] – menú móvil se abre
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ [móvil 375px] – sin errores JS ni violaciones CSP
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ – CSS inline aplicado (light)
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ – conmutador de tema (light → dark, fondo rgb(11, 18, 32))
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ – sin errores JS ni violaciones CSP
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ [móvil 375px] – sin desbordamiento horizontal (scrollWidth 375)
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ [móvil 375px] – menú móvil se abre
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ [móvil 375px] – sin errores JS ni violaciones CSP
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – CSS inline aplicado (light)
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – conmutador de tema (light → dark, fondo rgb(11, 18, 32))
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – sin errores JS ni violaciones CSP
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ [móvil 375px] – sin desbordamiento horizontal (scrollWidth 375)
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ [móvil 375px] – menú móvil se abre
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ [móvil 375px] – sin errores JS ni violaciones CSP
   ✓ /sobre-nosotros/ – CSS inline aplicado (light)
   ✓ /sobre-nosotros/ – conmutador de tema (light → dark, fondo rgb(11, 18, 32))
   ✓ /sobre-nosotros/ – sin errores JS ni violaciones CSP
@@ -181,5 +449,6 @@ Resultado: 112 correctas, 0 fallidas
   ✓ /no-existe/ [móvil 375px] – menú móvil se abre
   ✓ /no-existe/ [móvil 375px] – sin errores JS ni violaciones CSP
 
-Resultado: 92 correctas, 0 fallidas
+Resultado: 131 correctas, 0 fallidas
 ```
+

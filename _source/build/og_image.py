@@ -25,17 +25,17 @@ def draw_logo(d, x, y, s, bg=BRAND, fg=WHITE):
     d.line([(x + 20 * k, y + 22.6 * k), (x + 21.7 * k, y + 24.3 * k), (x + 24.8 * k, y + 21 * k)], fill=WHITE, width=max(2, int(1.7 * k)), joint="curve")
 
 
-def og(path):
+def og(path, brand="Herramientas Verifactu"):
     W, H = 1200, 630
     im = Image.new("RGB", (W, H), BRAND)
     d = ImageDraw.Draw(im)
     d.ellipse([830, -260, 1470, 380], fill=(13, 122, 110))
     d.ellipse([940, 360, 1340, 760], fill=(12, 116, 104))
     draw_logo(d, 80, 70, 96, bg=WHITE, fg=BRAND)
-    d.text((196, 84), "Herramientas Verifactu", font=font("DejaVuSans-Bold.ttf", 44), fill=WHITE)
+    d.text((196, 84), brand, font=font("DejaVuSans-Bold.ttf", 44), fill=WHITE)
     d.text((198, 140), "gratis · sin registro · en tu navegador", font=font("DejaVuSans.ttf", 26), fill=(206, 238, 233))
     d.text((80, 225), "¿Verifactu es obligatorio?", font=font("DejaVuSans-Bold.ttf", 70), fill=WHITE)
-    d.text((80, 315), "QR tributario · huella SHA-256 · XML de ejemplo", font=font("DejaVuSans.ttf", 36), fill=(225, 245, 241))
+    d.text((80, 315), "QR · huella · XML · factura B2B · morosidad", font=font("DejaVuSans.ttf", 36), fill=(225, 245, 241))
     d.rounded_rectangle([80, 398, 1060, 480], radius=16, fill=WHITE)
     d.text((108, 418), "BOE: 1/1/2027 y 1/7/2027  ·  anunciado: oct. 2028", font=font("DejaVuSans-Bold.ttf", 32), fill=(15, 23, 42))
     d.text((80, 540), "Fuentes oficiales: BOE y AEAT  ·  sin relación con la Agencia Tributaria", font=font("DejaVuSans.ttf", 25), fill=(206, 238, 233))

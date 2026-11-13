@@ -1,7 +1,7 @@
 {
   "name": "Herramientas Verifactu",
   "short_name": "Verifactu",
-  "description": "¿Verifactu es obligatorio? Test, QR tributario, huella SHA-256 y XML. Gratis y en tu navegador.",
+  "description": "Verifactu, factura electrónica B2B y morosidad: test, QR tributario, huella, XML, periodo medio de pago e intereses de demora. Gratis y en tu navegador.",
   "lang": "es-ES",
   "start_url": "/herramientas-verifactu/",
   "scope": "/herramientas-verifactu/",

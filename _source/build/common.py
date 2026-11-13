@@ -6,8 +6,10 @@ import json, html, hashlib, base64, os, re
 # En GitHub Pages sin dominio: SITE_URL="https://mydevspace2.github.io/herramientas-verifactu", BASE="/herramientas-verifactu".
 SITE_URL = os.environ.get("VF_SITE_URL", "https://mydevspace2.github.io/herramientas-verifactu").rstrip("/")
 BASE = os.environ.get("VF_BASE", "/herramientas-verifactu").rstrip("/")
-SITE = "Herramientas Verifactu"
-BRAND = "Herramientas Verifactu"
+DEFAULT_BRAND = "Herramientas Verifactu"
+# Nombre de marca: con dominio propio se puede cambiar con VF_BRAND (p. ej. "VerifactuYa").
+BRAND = os.environ.get("VF_BRAND", DEFAULT_BRAND).strip() or DEFAULT_BRAND
+SITE = BRAND
 UPDATED_ISO = "2026-11-13"
 UPDATED_ES = "13 de noviembre de 2026"
 ASSET_V = "1"
@@ -26,6 +28,9 @@ TOOLS = [
     ("/validar-qr-verifactu/", "Validar y leer QR Verifactu", "Validar QR", "Pega la URL, sube una foto o usa la cámara: comprueba dominio, parámetros y formato."),
     ("/calcular-huella-verifactu/", "Calcular huella (hash)", "Huella", "SHA-256 de registros de alta, anulación y evento y comprobación de la cadena."),
     ("/ejemplo-xml-verifactu/", "Ejemplo XML de registro de alta", "XML", "Genera un RegistroAlta de ejemplo con su huella y revisa su estructura."),
+    ("/factura-electronica-obligatoria/", "Factura electrónica B2B: ¿cuándo me obliga?", "Factura B2B", "Fechas del BOE (6/10/2027 y 6/10/2028), test y plazo de 4 días para informar pagos."),
+    ("/periodo-medio-pago-proveedores/", "Calculadora del periodo medio de pago", "PMP", "Método ICAC: ratios de pagadas y pendientes, límite de 60 días, CSV y cuadro de la memoria."),
+    ("/intereses-demora-comerciales/", "Intereses de demora (Ley 3/2004)", "Demora", "Tipos del BOE por semestre (BCE + 8) y 40 € por factura, para varias facturas."),
 ]
 OTHER = [
     ("/blog/", "Guías Verifactu"),
@@ -88,13 +93,14 @@ def footer():
     tools = "".join('<li><a href="%s">%s</a></li>' % (u, e(l)) for (u, l, _s, _d) in TOOLS)
     other = "".join('<li><a href="%s">%s</a></li>' % (u, e(l)) for (u, l) in OTHER)
     return ('<footer class="site-foot"><div class="wrap"><div class="foot-grid">'
-            '<div><h2>%s</h2><p>Herramientas gratuitas para entender y cumplir Verifactu: obligación, QR tributario, huella y XML. '
+            '<div><h2>%s</h2><p>Herramientas gratuitas para cumplir Verifactu, la factura electrónica B2B y la Ley de morosidad: obligación, QR tributario, huella, XML, periodo medio de pago e intereses de demora. '
             'Sin registro, sin publicidad, sin cookies. Todo se calcula en tu navegador: %s</p>'
             '<p>Web independiente, sin relación con la Agencia Tributaria (AEAT) ni con el Ministerio de Hacienda. Información orientativa: no es asesoramiento fiscal.</p></div>'
             '<div><h2>Herramientas</h2><ul>%s</ul></div>'
             '<div><h2>Web y fuentes oficiales</h2><ul>%s'
             '<li><a href="https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu.html" rel="noopener" target="_blank">Verifactu en la sede de la AEAT</a></li>'
             '<li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2023-24840" rel="noopener" target="_blank">RD 1007/2023 (texto consolidado, BOE)</a></li>'
+            '<li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2026-7295" rel="noopener" target="_blank">RD 238/2026, factura electrónica B2B (BOE)</a></li>'
             '<li><a href="/sitemap.xml">Mapa del sitio</a></li></ul></div>'
             '</div><p class="foot-note">© 2026 %s · Última revisión: %s · Sin servidor, sin cookies y sin seguimiento.</p></div></footer>'
             '<p id="live" class="sr-only" aria-live="polite"></p><div id="print-sheet" aria-hidden="true"></div>'
@@ -135,7 +141,7 @@ def jsonld(page, path):
     if path == "/":
         graph.append({"@type": "Organization", "@id": SITE_URL + "/#organization", "name": BRAND, "url": SITE_URL + "/",
                       "logo": {"@type": "ImageObject", "url": SITE_URL + LOGO_PNG, "width": 512, "height": 512},
-                      "description": "Web independiente con herramientas gratuitas para Verifactu. Sin relación con la AEAT."})
+                      "description": "Web independiente con herramientas gratuitas para Verifactu, la factura electrónica B2B y la morosidad. Sin relación con la AEAT."})
         graph.append({"@type": "WebSite", "@id": SITE_URL + "/#website", "name": SITE, "url": SITE_URL + "/", "inLanguage": "es-ES",
                       "publisher": {"@id": SITE_URL + "/#organization"}})
     if page.get("article"):
@@ -151,7 +157,7 @@ def jsonld(page, path):
 
 def related(path):
     cards = "".join('<a href="%s"><strong>%s</strong><span>%s</span></a>' % (u, e(l), e(d)) for (u, l, _s, d) in TOOLS if u != path)
-    return '<h2 id="otras-herramientas">Otras herramientas Verifactu gratis</h2><div class="hub">%s</div>' % cards
+    return '<h2 id="otras-herramientas">Otras herramientas gratis: Verifactu, factura electrónica y morosidad</h2><div class="hub">%s</div>' % cards
 
 
 def related_articles(path):
@@ -224,7 +230,7 @@ def render(page, path):
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="{ogw}">
 <meta property="og:image:height" content="{ogh}">
-<meta property="og:image:alt" content="Herramientas Verifactu gratis: obligación, QR tributario, huella y XML">
+<meta property="og:image:alt" content="{site} gratis: Verifactu, factura electrónica B2B, QR tributario, huella y morosidad">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{ogt}">
 <meta name="twitter:description" content="{desc}">
@@ -249,4 +255,6 @@ def render(page, path):
            css=INLINE_CSS, ogimg=SITE_URL + OG_IMAGE, ogw=OG_W, ogh=OG_H, logo=LOGO_PNG, robots=robots, url=url, site=e(SITE),
            ogt=e(page.get("og_title", title)), v=ASSET_V, ld=jsonld(page, path).replace("</", "<\\/"), header=header(path),
            body="\n".join(parts), footer=footer(), scripts=scripts)
+    if BRAND != DEFAULT_BRAND:
+        doc = doc.replace(DEFAULT_BRAND, BRAND)
     return prefix_links(doc)

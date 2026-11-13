@@ -272,3 +272,40 @@ input[type=number],input[type=datetime-local]{width:100%;font:inherit;font-size:
 html[data-theme=dark] input[type=number],html[data-theme=dark] input[type=datetime-local]{background:#0e1628}
 .brand span{line-height:1.2}
 @media (max-width:520px){.brand small{display:none}.brand{font-size:1rem;gap:8px}.site-head .wrap{gap:8px}.nav-toggle{padding:8px 10px}}
+
+/* --- sección factura electrónica B2B y morosidad --- */
+.rows-table input[type=text],.rows-table input[type=date]{min-height:40px;padding:6px 8px;font-size:.95rem;min-width:120px}
+.rows-table input.w-s{min-width:110px}.rows-table input.w-m{min-width:170px}
+.rows-table td{padding:6px 6px;vertical-align:middle}.rows-table td:first-child{color:var(--muted);font-size:.85rem}
+.rows-table .btn.small{min-height:36px;padding:4px 10px}
+.formula{border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:var(--r-s);background:var(--brand-soft);padding:10px 14px;margin:12px 0}
+.formula p{margin:4px 0;max-width:none}
+table caption{caption-side:top;text-align:left;font-weight:700;padding:10px 12px 6px;font-size:.92rem}
+.memoria td:not(:first-child),.memoria th:not(:first-child){text-align:right}
+.memoria th.sub{background:transparent;color:var(--muted);font-size:.82rem;text-transform:uppercase;letter-spacing:.03em}
+.detail td{font-size:.88rem;white-space:nowrap}.detail td.tramos{white-space:normal;min-width:260px;font-size:.82rem}
+.rates-table td{font-size:.9rem}
+.field .btn.small{justify-self:start}
+.print-doc{font-family:Arial,Helvetica,sans-serif;color:#000}
+.print-doc h1{font-size:18pt;margin:0 0 6pt}.print-doc p{font-size:10pt}.print-doc .small{font-size:8pt;color:#444}
+.print-doc table{font-size:9pt;border:1px solid #999}.print-doc th,.print-doc td{border-bottom:1px solid #ccc;padding:4pt 6pt;white-space:normal}
+.print-doc .table-wrap{border:0;overflow:visible;margin:8pt 0}
+.print-doc .badge{border:0;padding:0;background:none;color:#000}
+@media (min-width:1000px) and (max-width:1199px){.site-nav a{padding:8px 6px;font-size:.84rem}.brand small{display:none}}
+.table-wrap{position:relative}
+.site-nav a{white-space:nowrap}
+@media (min-width:1000px){.brand span{white-space:nowrap}}
+@media (min-width:1000px) and (max-width:1279px){.brand small{display:none}}
+.grid3>.field,.grid2>.field{align-content:start}
+textarea.paste{min-height:64px}
+@media (max-width:640px){
+  .rows-table thead{display:none}
+  .rows-table,.rows-table tbody,.rows-table tr,.rows-table td{display:block;width:100%}
+  .rows-table tr{border-bottom:1px solid var(--line);padding:8px 4px;position:relative}
+  .rows-table td{border:0;padding:3px 6px}
+  .rows-table td:first-child{font-weight:700;color:var(--ink-2)}
+  .rows-table td:first-child::before{content:"Fila "}
+  .rows-table td[data-h]::before{content:attr(data-h);display:block;font-size:.8rem;color:var(--muted);font-weight:600}
+  .rows-table input[type=text],.rows-table input[type=date],.rows-table input.w-s,.rows-table input.w-m{width:100%;min-width:0}
+  .rows-table td:last-child{position:absolute;top:6px;right:4px;width:auto}
+}

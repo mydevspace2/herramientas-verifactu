@@ -83,6 +83,14 @@ CONTENT = """
 <h2 id="excel">¿Y si facturo con Excel o Word?</h2>
 <p>Según las preguntas frecuentes de la AEAT, el reglamento <strong>no te afecta</strong> si usas la hoja de cálculo o el procesador de textos solo para introducir los datos, expedir e imprimir las facturas y conservarlas. Sí te afecta si, por ejemplo, programas una macro que genera el libro registro de facturas expedidas: en ese caso la hoja de cálculo se considera un sistema informático de facturación y tiene que cumplir los requisitos.</p>
 
+<h2 id="b2b">Además de Verifactu: factura electrónica B2B y morosidad</h2>
+<p>Verifactu no es la única obligación que llega. El <strong>Real Decreto 238/2026</strong> hace obligatoria la factura electrónica entre empresas y profesionales desde el <strong>6 de octubre de 2027</strong> para quien supera 8 millones de euros de volumen de operaciones y desde el <strong>6 de octubre de 2028</strong> para el resto, y obliga a informar de cada pago en un máximo de cuatro días (excluidos sábados, domingos y festivos nacionales). Su objetivo es reducir la morosidad, así que también conviene controlar el periodo medio de pago y los intereses de demora:</p>
+<div class="hub">
+<a href="/factura-electronica-obligatoria/"><strong>Factura electrónica B2B: ¿cuándo me obliga?</strong><span>Test con las fechas del BOE y calculadora del plazo de 4 días para informar pagos y rechazos.</span></a>
+<a href="/periodo-medio-pago-proveedores/"><strong>Periodo medio de pago a proveedores</strong><span>Método ICAC con CSV, ratios de pagadas y pendientes y cuadro listo para la memoria.</span></a>
+<a href="/intereses-demora-comerciales/"><strong>Intereses de demora</strong><span>Tipos del BOE de cada semestre (10,40 % en el 2.º semestre de 2026) y 40 € por factura.</span></a>
+</div>
+
 <h2 id="que-cambia">Qué cambia en tus facturas</h2>
 <ol class="steps">
 <li><strong>Un QR tributario al principio de la factura</strong>, de 30 a 40 mm, con el texto «QR tributario:» encima. Puedes crearlo y ver cómo queda impreso con el <a href="/generador-qr-verifactu/">generador de QR</a>.</li>

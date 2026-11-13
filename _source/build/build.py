@@ -10,6 +10,10 @@ from page_home import HOME
 from page_qr import GEN, VAL
 from page_dev import HUE, XMLP
 import page_blog as B
+import page_b2b as PB
+import page_b2b_blog as PBB
+
+B.POSTS.extend(PBB.POSTS)
 
 OUT = os.path.abspath(os.path.join(HERE, "..", "out"))
 if os.path.isdir(OUT):
@@ -23,12 +27,16 @@ common.INLINE_CSS = open(_cssf, encoding="utf-8").read().replace("</", "<\\/")
 os.remove(_cssf)
 
 common.ARTICLES[:] = [("/blog/%s/" % p["slug"], p["h1"], p["desc"]) for p in B.POSTS]
-F, G, Q = ["/blog/%s/" % p["slug"] for p in B.POSTS]
+F, G, Q, DIF, AUT, PMPG = ["/blog/%s/" % p["slug"] for p in B.POSTS]
 common.ARTICLE_MAP.update({"/": [F, G, Q], "/generador-qr-verifactu/": [Q, F, G], "/validar-qr-verifactu/": [Q, G, F],
-                           "/calcular-huella-verifactu/": [F, Q, G], "/ejemplo-xml-verifactu/": [F, Q, G]})
+                           "/calcular-huella-verifactu/": [F, Q, G], "/ejemplo-xml-verifactu/": [F, Q, G],
+                           "/factura-electronica-obligatoria/": [DIF, AUT, F], "/periodo-medio-pago-proveedores/": [PMPG, DIF, AUT],
+                           "/intereses-demora-comerciales/": [PMPG, AUT, DIF], DIF: [AUT, F, PMPG], AUT: [DIF, F, PMPG], PMPG: [DIF, AUT, F]})
 
 PAGES = [("/", HOME), ("/generador-qr-verifactu/", GEN), ("/validar-qr-verifactu/", VAL), ("/calcular-huella-verifactu/", HUE),
-         ("/ejemplo-xml-verifactu/", XMLP), ("/blog/", B.blog_index())]
+         ("/ejemplo-xml-verifactu/", XMLP),
+         ("/factura-electronica-obligatoria/", PB.B2B), ("/periodo-medio-pago-proveedores/", PB.PMP), ("/intereses-demora-comerciales/", PB.DEM),
+         ("/blog/", B.blog_index())]
 for p in B.POSTS:
     page, url = B.post_page(p)
     PAGES.append((url, page))
@@ -62,9 +70,9 @@ write("/sitemap.xml", "\n".join(sm))
 write("/robots.txt", "User-agent: *\nAllow: /\nDisallow: %s/_source/\n\nSitemap: %s/sitemap.xml\n" % (BASE, SITE_URL))
 write("/favicon.svg", common.FAVICON)
 write("/site.webmanifest", """{
-  "name": "Herramientas Verifactu",
-  "short_name": "Verifactu",
-  "description": "¿Verifactu es obligatorio? Test, QR tributario, huella SHA-256 y XML. Gratis y en tu navegador.",
+  "name": "%s",
+  "short_name": "%s",
+  "description": "Verifactu, factura electrónica B2B y morosidad: test, QR tributario, huella, XML, periodo medio de pago e intereses de demora. Gratis y en tu navegador.",
   "lang": "es-ES",
   "start_url": "%s/",
   "scope": "%s/",
@@ -74,11 +82,11 @@ write("/site.webmanifest", """{
   "icons": [{ "src": "%s/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
             { "src": "%s/assets/logo-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }]
 }
-""" % (BASE, BASE, BASE, BASE))
+""" % (common.BRAND, "Verifactu" if common.BRAND == common.DEFAULT_BRAND else common.BRAND, BASE, BASE, BASE, BASE))
 write("/.nojekyll", "")
 if os.environ.get("VF_CNAME"):
     write("/CNAME", os.environ["VF_CNAME"].strip() + "\n")
 import og_image
-og_image.og(os.path.join(OUT, "assets", "og-verifactu.png"))
+og_image.og(os.path.join(OUT, "assets", "og-verifactu.png"), common.BRAND)
 og_image.logo(os.path.join(OUT, "assets", "logo-512.png"))
-print("built", OUT, "SITE_URL=%s BASE=%s" % (SITE_URL, BASE))
+print("built", OUT, "SITE_URL=%s BASE=%s BRAND=%s" % (SITE_URL, BASE, common.BRAND))

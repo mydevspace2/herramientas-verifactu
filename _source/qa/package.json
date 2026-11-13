@@ -1,2 +1,1 @@
-{ "name": "herramientas-verifactu-qa", "version": "1.0.0", "private": true,
-  "dependencies": { "@xmldom/xmldom": "^0.9.12", "jsdom": "^26.0.0", "playwright": "^1.50.0" } }
+{ "name": "herramientas-verifactu-qa", "version": "1.0.0", "private": true, "dependencies": { "@xmldom/xmldom": "^0.9.12", "jsdom": "^26.0.0", "playwright": "^1.50.0" } }
