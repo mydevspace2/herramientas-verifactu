@@ -95,7 +95,7 @@ def footer():
     other = "".join('<li><a href="%s">%s</a></li>' % (u, e(l)) for (u, l) in OTHER)
     return ('<footer class="site-foot"><div class="wrap"><div class="foot-grid">'
             '<div><h2>%s</h2><p>Herramientas gratuitas para cumplir Verifactu, la factura electrónica B2B y la Ley de morosidad: obligación, QR tributario, huella, XML, periodo medio de pago e intereses de demora. '
-            'Sin registro, sin publicidad, sin cookies. Todo se calcula en tu navegador: %s</p>'
+            'Sin registro y sin cookies. Todo se calcula en tu navegador: %s</p>'
             '<p>Web independiente, sin relación con la Agencia Tributaria (AEAT) ni con el Ministerio de Hacienda. Información orientativa: no es asesoramiento fiscal.</p></div>'
             '<div><h2>Herramientas</h2><ul>%s</ul></div>'
             '<div><h2>Web y fuentes oficiales</h2><ul>%s'
@@ -197,7 +197,7 @@ def render(page, path):
     parts = [crumbs_html(page["trail"]) if len(page["trail"]) > 1 else ""]
     parts.append('<div class="hero"><h1>%s</h1><p class="lead">%s</p>' % (e(page["h1"]), page["intro"]))
     if page.get("trust", True):
-        parts.append('<ul class="trust"><li>Gratis y sin registro</li><li>%s</li><li>Sin publicidad ni seguimiento</li></ul>' % PRIVACY_NOTE)
+        parts.append('<ul class="trust"><li>Gratis, sin registro</li><li>%s</li></ul>' % PRIVACY_NOTE)
     parts.append("</div>")
     parts.append(page.get("tool", ""))
     content = page.get("content", "")

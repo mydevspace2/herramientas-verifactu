@@ -12,11 +12,13 @@
   var form = $("fe-form"), out = $("fe-out");
   if (form) {
     var val = function (n) { var r = form.querySelector('input[name="' + n + '"]:checked'); return r ? r.value : ""; };
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+    var complete = function () { return !!(val("b2b") && val("forma") && val("vol") && val("simp")); };
+    form.addEventListener("submit", function (e) { e.preventDefault(); evaluate(true); });
+    U.autoForm(form, complete, evaluate);
+    function evaluate(fromButton) {
       var a = { b2b: val("b2b"), forma: val("forma"), volumen: val("vol"), simplificadas: val("simp") }, falta = [];
       if (!a.forma) falta.push("qué eres"); if (!a.volumen) falta.push("volumen de operaciones");
-      if (falta.length) { U.statusBox(out, "warn", "Falta responder: " + falta.join(", ") + "."); out.focus(); return; }
+      if (falta.length) { U.statusBox(out, "warn", "Falta responder: " + falta.join(", ") + "."); U.reveal(out, fromButton); return; }
       var r = B.obligacionB2B(a), notes = [], head, lvl = "warn", cards = [];
       function card(tag, t, small) { return '<div class="date-card"><span class="tag">' + tag + '</span><span class="big">' + largo(t) + "</span><small>" + small + " · " + txtDias(t) + "</small></div>"; }
       if (r.emitir) {
@@ -34,9 +36,9 @@
       if (a.volumen === "mas") notes.push("El volumen de operaciones es el del art. 121 de la Ley del IVA en el año natural inmediato anterior: para el 6/10/2027, el de 2026.");
       notes.push("Informar el pago: como destinatario, cada pago completo o rechazo se comunica a la solución pública de la AEAT en un máximo de 4 días naturales, excluidos sábados, domingos y festivos nacionales (art. 12.3). Usa la calculadora de abajo.");
       notes.push("Orientativo. Una orden ministerial puede excluir temporalmente algunos sectores (art. 4.2). Comprobado en el BOE el 13/11/2026.");
-      U.statusBox(out, lvl, head, { notes: notes, html: '<div class="dates">' + cards.join("") + "</div>" });
-      out.focus();
-    });
+      U.statusBox(out, lvl, head, { notes: notes, html: '<div class="dates">' + cards.join("") + "</div>", copy: true });
+      U.reveal(out, fromButton);
+    }
     form.addEventListener("reset", function () { U.statusBox(out, null); });
   }
 
@@ -53,7 +55,7 @@
     var y = new Date(r.fecha).getUTCFullYear(), f = B.festivosAnio(y);
     notes.push(f.oficial ? "Festivos nacionales de " + y + " según " + f.boe + "." : "Provisional: el BOE aún no ha publicado la relación de fiestas de " + y + "; se usan las fiestas nacionales no sustituibles (1/1, Viernes Santo, 1/5, 15/8, 12/10, 1/11, 6/12, 8/12 y 25/12).");
     notes.push("Si te afectan fiestas autonómicas o locales, añádelas arriba para ver una fecha más prudente.");
-    U.statusBox(po, r.provisional ? "warn" : "ok", "Último día para informar " + qu + ": " + B.largo(r.fecha), { notes: notes });
-    po.focus();
+    U.statusBox(po, r.provisional ? "warn" : "ok", "Último día para informar " + qu + ": " + B.largo(r.fecha), { notes: notes, copy: true });
+    U.reveal(po, true);
   });
 })();

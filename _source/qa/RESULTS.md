@@ -1,3 +1,10 @@
+# QA – Herramientas Verifactu, 2026-11-13 (v4: mejoras UX móvil)
+
+Resumen v4: unitarias Verifactu 42/42 · unitarias B2B 29/29 · XSD + QR 13/13 · estáticas 205/205 · Chromium con CSP 143/143 · UX móvil 375×812 34/34 (nuevo `test-ux-mobile.js`) = 466/466. Compilado con VF_GSV. Ejecutar todo: `sh qa/run-all.sh`.
+UX móvil: test de la portada a 337 px (antes ~1.350 px) y test B2B a 403 px (antes ~1.980 px) en 375×812; resultado automático al responder todo + Enter + scroll a la vista + «Copiar resultado»; sin desplazamiento lateral tras los resultados en XML, huella, demora, PMP, QR; campos ≥ 16 px, botones ≥ 44 px, distintivos ≥ 13 px.
+
+---
+
 # QA – Herramientas Verifactu, 2026-11-13 (v3: pase SEO completo + 2 guías nuevas + etiqueta de Search Console)
 
 Resumen: unitarias Verifactu 42/42 · unitarias B2B 29/29 · XSD + QR 13/13 · estáticas 205/205 (incluye Organization/WebSite/Article/FAQPage/BreadcrumbList, lastmod AAAA-MM-DD, description < 160, ≥ 3 guías relacionadas, img con alt, meta google-site-verification solo en portada) · Chromium con CSP (escritorio, móvil 375 px, modo oscuro) 143/143 = 432/432. Compilado con VF_GSV.

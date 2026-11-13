@@ -144,15 +144,6 @@ PMP = dict(
 # 2. Factura electrónica obligatoria B2B
 # ======================================================================================
 B2B_TOOL = """
-<section class="tool" aria-labelledby="fe-estado-h">
-<h2 id="fe-estado-h">Fechas de la factura electrónica obligatoria entre empresas</h2>
-<div class="dates">
- <div class="date-card"><span class="tag">En el BOE · vigente</span><span class="big">6 de octubre de 2027</span><small>Volumen de operaciones de más de 8 millones de euros en el año anterior · <span id="cd-27">fecha vigente</span></small></div>
- <div class="date-card"><span class="tag">En el BOE · vigente</span><span class="big">6 de octubre de 2028</span><small>Resto de empresarios y profesionales · <span id="cd-28">fecha vigente</span></small></div>
- <div class="date-card"><span class="tag">En el BOE · vigente</span><span class="big">6 de octubre de 2029</span><small>Estados y pagos: autónomos y entidades en atribución de rentas de hasta 8 M€ (DT 3.ª)</small></div>
-</div>
-<p class="checked"><strong>Última comprobación: """ + CHECKED_ES + """.</strong> El <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2026-7295" rel="noopener" target="_blank">RD 238/2026 (BOE-A-2026-7295)</a> retrasa su aplicación 12 y 24 meses desde la entrada en vigor de la orden de la solución pública (DF 4.ª). La <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2026-20587" rel="noopener" target="_blank">Orden HAC/1028/2026 (BOE-A-2026-20587)</a> se publicó el 05/10/2026 y entró en vigor el 06/10/2026. Las fechas de día concreto son las que publica la <a href="https://sede.agenciatributaria.gob.es/Sede/iva/factura-electronica/calendario-implantacion.html" rel="noopener" target="_blank">AEAT en su calendario</a>.</p>
-</section>
 <section class="tool" aria-labelledby="fe-h">
 <h2 id="fe-h">Test: ¿cuándo me obliga la factura electrónica B2B?</h2>
 <form id="fe-form" novalidate>
@@ -176,6 +167,15 @@ B2B_TOOL = """
 </form>
 <div id="fe-out" class="status" role="status" aria-live="polite" tabindex="-1"></div>
 <p class="hint">Basado en los arts. 3, 4, 10 y 12, las DT 2.ª y 3.ª y la DF 4.ª del RD 238/2026. Orientativo; las respuestas no salen de tu navegador.</p>
+</section>
+<section class="tool" aria-labelledby="fe-estado-h">
+<h2 id="fe-estado-h">Fechas de la factura electrónica obligatoria entre empresas</h2>
+<div class="dates">
+ <div class="date-card"><span class="tag">En el BOE · vigente</span><span class="big">6 de octubre de 2027</span><small>Volumen de operaciones de más de 8 millones de euros en el año anterior · <span id="cd-27">fecha vigente</span></small></div>
+ <div class="date-card"><span class="tag">En el BOE · vigente</span><span class="big">6 de octubre de 2028</span><small>Resto de empresarios y profesionales · <span id="cd-28">fecha vigente</span></small></div>
+ <div class="date-card"><span class="tag">En el BOE · vigente</span><span class="big">6 de octubre de 2029</span><small>Estados y pagos: autónomos y entidades en atribución de rentas de hasta 8 M€ (DT 3.ª)</small></div>
+</div>
+<p class="checked"><strong>Última comprobación: """ + CHECKED_ES + """.</strong> El <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2026-7295" rel="noopener" target="_blank">RD 238/2026 (BOE-A-2026-7295)</a> retrasa su aplicación 12 y 24 meses desde la entrada en vigor de la orden de la solución pública (DF 4.ª). La <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2026-20587" rel="noopener" target="_blank">Orden HAC/1028/2026 (BOE-A-2026-20587)</a> se publicó el 05/10/2026 y entró en vigor el 06/10/2026. Las fechas de día concreto son las que publica la <a href="https://sede.agenciatributaria.gob.es/Sede/iva/factura-electronica/calendario-implantacion.html" rel="noopener" target="_blank">AEAT en su calendario</a>.</p>
 </section>
 <section class="tool" aria-labelledby="p4-h">
 <h2 id="p4-h">Calculadora del plazo de 4 días para informar pagos y estados</h2>
@@ -246,7 +246,7 @@ B2B = dict(
     desc="Factura electrónica obligatoria entre empresas: 6/10/2027 (más de 8 M€) y 6/10/2028 (resto). Test gratis, fechas del BOE y plazo de 4 días para pagos.",
     app_name="¿Cuándo me obliga la factura electrónica B2B? – test y plazo de 4 días",
     h1="Factura electrónica obligatoria B2B: fechas y quién está obligado",
-    intro="¿Desde cuándo te afecta la factura electrónica obligatoria entre empresas? Comprueba en un minuto cuándo debes emitir y recibir facturas electrónicas e informar de pagos según el RD 238/2026, y calcula el plazo de 4 días para comunicar cada pago o rechazo.",
+    intro="¿Desde cuándo te afecta la factura electrónica obligatoria entre empresas? Haz el test (RD 238/2026) y calcula el plazo de 4 días para informar cada pago.",
     trail=[("Inicio", "/"), ("Factura electrónica B2B", "/factura-electronica-obligatoria/")],
     tool=B2B_TOOL, content=B2B_CONTENT, faq=B2B_FAQ, scripts=["b2b.js", "page-b2b.js"],
     sources=[S.RD238, S.ORDEN1028, S.AEAT_CAL, S.LEY18, S.LEY3, S.FIESTAS27],

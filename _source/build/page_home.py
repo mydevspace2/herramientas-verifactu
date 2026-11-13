@@ -13,7 +13,7 @@ ESTADO = """
 </section>
 """
 
-TOOL = ESTADO + """
+TOOL = """
 <section class="tool" aria-labelledby="ob-h">
 <h2 id="ob-h">Test: ¿estoy obligado a Verifactu?</h2>
 <form id="ob-form" novalidate>
@@ -48,7 +48,7 @@ TOOL = ESTADO + """
 <div id="ob-out" class="status" role="status" aria-live="polite"></div>
 <p class="hint">Basado en los arts. 1.3, 3, 4 y 6 y la disposición final 4.ª del RD 1007/2023. Las respuestas no salen de tu navegador.</p>
 </section>
-"""
+""" + ESTADO
 
 CONTENT = """
 <h2 id="que-es">Qué es Verifactu, en dos minutos</h2>
@@ -116,7 +116,7 @@ HOME = dict(
     desc="Comprueba si Verifactu te obliga y desde cuándo: fechas del BOE (1/1/2027 y 1/7/2027) y aplazamiento a 2028 anunciado pero aún no publicado.",
     app_name="¿Estoy obligado a Verifactu? – test gratuito",
     h1="¿Verifactu es obligatorio para ti? Compruébalo en 1 minuto",
-    intro="¿Verifactu es obligatorio en tu caso? Responde cuatro preguntas y verás si te afecta el reglamento y qué fecha te aplica: la vigente en el BOE (2027) y la anunciada por Hacienda (octubre de 2028).",
+    intro="¿Verifactu es obligatorio en tu caso? Responde 4 preguntas y verás tu fecha: la del BOE (2027) y la anunciada (2028).",
     trail=[("Inicio", "/")],
     tool=TOOL, content=CONTENT, faq=FAQ, scripts=["page-home.js"],
     sources=[S.RD, S.RDL, S.NOTA, S.AEAT, S.FAQ_AMB],
