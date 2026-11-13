@@ -45,3 +45,10 @@
 - JSON-LD: Organization + WebSite on every page; WebApplication (tools), CollectionPage (blog), Article with per-post ISO datePublished (field `published`), FAQPage, BreadcrumbList. Build asserts UPDATED_ISO/lastmod are YYYY-MM-DD.
 - New posts in build/page_blog_2.py: /blog/verifactu-autonomos/ and /blog/plazos-pago-ley-morosidad/; related-guides map in build.py is slug-based (no more fixed 6-tuple unpack).
 - Tests: unit 42 + B2B 29 + XSD/QR 13 + static 205 + Chromium CSP 143 = 432/432 (domain build: static 205 + Chromium 143). Live: 41/41 files byte-identical, 404 for unknown path.
+
+## v4 – UX móvil (2026-11-13, from work/ux-audit/report.md)
+- Home: test «¿estoy obligado?» right under H1 + one-line lead; the date-status card (same dates/sources) now sits BELOW the test. B2B page: test first, then the date card, then the 4-day calculator. On 375×812 the home test card starts at 337 px (was ~1,350), B2B at 403 px (was ~1,980).
+- Question tests (home + B2B): result appears as soon as every question is answered (button kept), Enter on an option submits, result scrolls into view (UI.autoForm / UI.reveal in ui.js); «Copiar resultado» button on obligation, B2B and 4-day results (copies plain text + page URL).
+- CSS: .status text wraps (overflow-wrap:anywhere) so long hashes never widen the page; all text inputs ≥16 px (rows-table inputs were 15.2 px); .btn.small and row ✕ buttons 44 px; .badge/.tag 13 px; grid children min-width:0.
+- Wording: badge «Sin publicidad ni seguimiento» → «Gratis, sin registro» (+ «Los datos no salen de tu navegador.»); removed «sin publicidad» from footer, About and privacy meta description. Privacy body paragraph kept (it already says the policy will be updated before any ads/analytics). Footer «sin cookies y sin seguimiento» kept (true today) – must change if AdSense/analytics are added.
+- No legal data, dates or rates changed (only moved). New test qa/test-ux-mobile.js (34 checks) + qa/run-all.sh. Total 466/466.

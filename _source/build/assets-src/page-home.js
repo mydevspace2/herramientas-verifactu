@@ -21,13 +21,15 @@
     return '<div class="dates"><div class="date-card"><span class="tag">En el BOE (vigente)</span><span class="big">' + f + "</span><small>" + d + " · RD 1007/2023, DF 4.ª (redacción del RDL 15/2025)</small></div>" +
       '<div class="date-card pending"><span class="tag pending">Anunciado, sin BOE</span><span class="big">octubre de 2028</span><small>Nota de Hacienda del 05/10/2026 · sin día concreto</small></div></div>';
   }
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  function complete() { var t = val("tipo"); return !!(val("dom") && t && (t === "productor" || (val("sii") && val("emi")))); }
+  form.addEventListener("submit", function (e) { e.preventDefault(); evaluate(true); });
+  U.autoForm(form, complete, evaluate);
+  function evaluate(fromButton) {
     var dom = val("dom"), tipo = val("tipo"), sii = val("sii"), emi = val("emi");
     var falta = [];
     if (!dom) falta.push("domicilio fiscal"); if (!tipo) falta.push("cómo tributas");
     if (tipo !== "productor") { if (!sii) falta.push("SII"); if (!emi) falta.push("cómo emites las facturas"); }
-    if (falta.length) { U.statusBox(out, "warn", "Falta responder: " + falta.join(", ") + "."); out.focus(); return; }
+    if (falta.length) { U.statusBox(out, "warn", "Falta responder: " + falta.join(", ") + "."); U.reveal(out, fromButton); return; }
     var lvl, head, notes = [], html = "";
     if (tipo === "productor") {
       lvl = "warn"; head = "Como productor o comercializador de software de facturación, tus obligaciones ya están en vigor.";
@@ -72,8 +74,8 @@
       notes.push(NOTA_2028);
     }
     notes.push("Orientativo. No sustituye el asesoramiento profesional ni contempla supuestos especiales (art. 4: operaciones excluidas; art. 5: resolución de no aplicación).");
-    U.statusBox(out, lvl, head, { notes: notes, html: html });
-    out.setAttribute("tabindex", "-1"); out.focus();
-  });
+    U.statusBox(out, lvl, head, { notes: notes, html: html, copy: true });
+    U.reveal(out, fromButton);
+  }
   form.addEventListener("reset", function () { U.statusBox(out, null); });
 })();

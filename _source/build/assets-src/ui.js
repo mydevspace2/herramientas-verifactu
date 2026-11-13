@@ -78,8 +78,42 @@
     if (opts.warnings && opts.warnings.length) h += '<ul class="reasons-warn">' + opts.warnings.map(function (x) { return "<li>" + K.esc(x) + "</li>"; }).join("") + "</ul>";
     if (opts.notes && opts.notes.length) h += "<ul>" + opts.notes.map(function (x) { return "<li>" + K.esc(x) + "</li>"; }).join("") + "</ul>";
     if (opts.html) h += opts.html;
+    if (opts.copy) h += '<div class="btns copy-row"><button class="btn ghost small" type="button" data-copy-text="' + K.esc(resultText(head, opts)) + '">' + K.esc(opts.copy === true ? "Copiar resultado" : opts.copy) + "</button></div>";
     el.className = "status " + level;
     el.innerHTML = h;
+  }
+  // Texto plano del resultado (para pegarlo en un correo a la asesoría)
+  function resultText(head, opts) {
+    var lines = [head];
+    (opts.errors || []).concat(opts.warnings || [], opts.notes || []).forEach(function (x) { lines.push("- " + x); });
+    if (opts.html) {
+      var d = document.createElement("div"); d.innerHTML = opts.html;
+      var cards = d.querySelectorAll(".date-card");
+      if (cards.length) Array.prototype.forEach.call(cards, function (c) {
+        lines.push("- " + Array.prototype.map.call(c.children, function (x) { return x.textContent.trim(); }).filter(Boolean).join(": "));
+      });
+      else if (d.textContent.trim()) lines.push(d.textContent.trim());
+    }
+    lines.push("", "Fuente: " + location.href.split("#")[0]);
+    return lines.join("\n");
+  }
+  // Muestra el resultado sin que lo tape la cabecera fija; con focus=true mueve también el foco (lectores de pantalla)
+  function reveal(el, focus) {
+    if (!el) return;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (focus) { if (!el.hasAttribute("tabindex")) el.setAttribute("tabindex", "-1"); try { el.focus({ preventScroll: true }); } catch (e) { el.focus(); } }
+    if (el.scrollIntoView) el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" });
+  }
+  // Cuestionarios de opciones: resultado en cuanto todo está respondido, Enter envía
+  function autoForm(form, isComplete, run) {
+    form.addEventListener("change", function (e) {
+      if (e.target && e.target.type === "radio" && isComplete()) run(false);
+    });
+    form.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" || !e.target || (e.target.type !== "radio" && e.target.type !== "checkbox")) return;
+      e.preventDefault();
+      if (form.requestSubmit) form.requestSubmit(); else { var b = form.querySelector('[type="submit"]'); if (b) b.click(); }
+    });
   }
   function mark(v) {
     if (v === true) return ' <span class="yes" aria-label="correcto">✓</span>';
@@ -113,6 +147,6 @@
     setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
   }
 
-  window.UI = { $: $, copyText: copyText, statusBox: statusBox, mark: mark, parts: parts,
+  window.UI = { $: $, copyText: copyText, statusBox: statusBox, reveal: reveal, autoForm: autoForm, mark: mark, parts: parts,
     readFile: readFile, dropZone: dropZone, download: download };
 })();

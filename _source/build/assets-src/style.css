@@ -82,14 +82,16 @@ input[aria-invalid=true],textarea[aria-invalid=true]{border-color:var(--bad)}
 .btn:hover{background:var(--brand-dark);border-color:var(--brand-dark);color:#fff}
 .btn.ghost{background:#fff;color:var(--brand)}
 .btn.ghost:hover{background:var(--brand-soft);color:var(--brand-dark)}
-.btn.small{min-height:36px;padding:5px 11px;font-size:.88rem}
+.btn.small{min-height:44px;padding:8px 12px;font-size:.92rem}
 .btn[disabled]{opacity:.5;cursor:not-allowed}
 .file{display:block;border:2px dashed var(--line-2);border-radius:var(--r);padding:18px;text-align:center;background:#fbfcfe;cursor:pointer}
 .file:hover,.file.drag{border-color:var(--brand);background:var(--brand-soft)}
 .file input{display:block;margin:10px auto 0;max-width:100%}
 
 /* status */
-.status{border-radius:var(--r-s);padding:14px 16px;margin:12px 0;border:1.5px solid}
+.status{border-radius:var(--r-s);padding:14px 16px;margin:12px 0;border:1.5px solid;min-width:0;overflow-wrap:anywhere;scroll-margin-top:76px}
+.status p,.status li,.status code,.status dd{overflow-wrap:anywhere;word-break:break-word}
+.status .copy-row{margin:12px 0 0}
 .status:empty{display:none}
 .status.ok{background:var(--ok-bg);border-color:var(--ok-line)}
 .status.bad{background:var(--bad-bg);border-color:var(--bad-line)}
@@ -107,7 +109,7 @@ input[aria-invalid=true],textarea[aria-invalid=true]{border-color:var(--bad)}
 .parts dt{color:var(--ink-2);font-size:.92rem}
 .parts dd{margin:0;font-weight:600;overflow-wrap:anywhere}
 .yes{color:var(--ok);font-weight:750} .no{color:var(--bad);font-weight:750} .maybe{color:var(--warn);font-weight:750}
-.badge{display:inline-block;font-size:.78rem;font-weight:700;border-radius:999px;padding:2px 9px;border:1px solid;white-space:nowrap}
+.badge{display:inline-block;font-size:.8125rem;font-weight:700;border-radius:999px;padding:2px 9px;border:1px solid;white-space:nowrap}
 .badge.ok{color:var(--ok);background:var(--ok-bg);border-color:var(--ok-line)}
 .badge.bad{color:var(--bad);background:var(--bad-bg);border-color:var(--bad-line)}
 .badge.warn{color:var(--warn);background:var(--warn-bg);border-color:var(--warn-line)}
@@ -236,7 +238,7 @@ html[data-theme=dark] input:focus,html[data-theme=dark] textarea:focus,html[data
 .date-card.pending{border-left-color:var(--accent);background:var(--warn-bg)}
 .date-card .big{display:block;font-size:1.35rem;font-weight:800;letter-spacing:-.01em;line-height:1.2;margin:2px 0 4px}
 .date-card small{display:block;color:var(--muted);font-size:.84rem}
-.tag{display:inline-block;font-size:.74rem;font-weight:750;text-transform:uppercase;letter-spacing:.03em;border-radius:999px;padding:2px 8px;background:var(--brand-soft);color:var(--brand-dark)}
+.tag{display:inline-block;font-size:.8125rem;font-weight:750;text-transform:uppercase;letter-spacing:.03em;border-radius:999px;padding:2px 8px;background:var(--brand-soft);color:var(--brand-dark)}
 .tag.pending{background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn-line)}
 .checked{font-size:.86rem;color:var(--muted);margin:6px 0 0}
 .result-big{font-size:1.15rem;font-weight:700}
@@ -274,10 +276,10 @@ html[data-theme=dark] input[type=number],html[data-theme=dark] input[type=dateti
 @media (max-width:520px){.brand small{display:none}.brand{font-size:1rem;gap:8px}.site-head .wrap{gap:8px}.nav-toggle{padding:8px 10px}}
 
 /* --- sección factura electrónica B2B y morosidad --- */
-.rows-table input[type=text],.rows-table input[type=date]{min-height:40px;padding:6px 8px;font-size:.95rem;min-width:120px}
+.rows-table input[type=text],.rows-table input[type=date]{min-height:44px;padding:6px 8px;font-size:16px;min-width:120px}
 .rows-table input.w-s{min-width:110px}.rows-table input.w-m{min-width:170px}
 .rows-table td{padding:6px 6px;vertical-align:middle}.rows-table td:first-child{color:var(--muted);font-size:.85rem}
-.rows-table .btn.small{min-height:36px;padding:4px 10px}
+.rows-table .btn.small{min-height:44px;min-width:44px;padding:4px 10px}
 .formula{border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:var(--r-s);background:var(--brand-soft);padding:10px 14px;margin:12px 0}
 .formula p{margin:4px 0;max-width:none}
 table caption{caption-side:top;text-align:left;font-weight:700;padding:10px 12px 6px;font-size:.92rem}
@@ -309,3 +311,8 @@ textarea.paste{min-height:64px}
   .rows-table input[type=text],.rows-table input[type=date],.rows-table input.w-s,.rows-table input.w-m{width:100%;min-width:0}
   .rows-table td:last-child{position:absolute;top:6px;right:4px;width:auto}
 }
+
+/* UX móvil (13/11/2026): todos los campos a 16 px (sin zoom en iPhone) y distintivos en una línea */
+input:not([type=file]):not([type=checkbox]):not([type=radio]),select,textarea{font-size:max(16px,1em)}
+.grid2>*,.grid3>*,.field{min-width:0}
+@media (max-width:520px){.trust{gap:6px;margin-bottom:12px}.trust li{font-size:.8125rem;padding:3px 9px}.hero{padding-top:4px}.lead{font-size:1rem;margin-bottom:10px}}

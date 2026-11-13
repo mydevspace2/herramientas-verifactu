@@ -225,7 +225,7 @@ LEGAL_LINKS = '<p>Ver también: <a href="/sobre-nosotros/">Sobre nosotros</a> ·
 
 PRIV = dict(
     title="Política de privacidad – Herramientas Verifactu",
-    desc="Política de privacidad: las herramientas funcionan en tu navegador, no recogemos datos, no usamos cookies ni analítica ni publicidad.",
+    desc="Política de privacidad: las herramientas funcionan en tu navegador, no recogemos datos, no usamos cookies ni analítica.",
     app=False, trust=False, related=False, h1="Política de privacidad",
     intro="En pocas palabras: no recogemos tus datos. Todas las herramientas funcionan dentro de tu navegador.",
     trail=[("Inicio", "/"), ("Privacidad", "/privacidad/")],
@@ -261,7 +261,7 @@ ABOUT = dict(
 <li><strong>Fuentes oficiales:</strong> cada dato normativo lleva su fuente (BOE, AEAT, Ministerio de Hacienda) y la fecha de la última revisión.</li>
 <li><strong>Separamos lo vigente de lo anunciado:</strong> por ejemplo, las fechas de 2027 del BOE frente al aplazamiento a 2028 que aún no se ha publicado.</li>
 <li><strong>Pruebas:</strong> la calculadora de huella reproduce exactamente los tres ejemplos oficiales de la AEAT, y los XML de ejemplo se comprueban contra los esquemas oficiales en nuestras pruebas automáticas.</li>
-<li><strong>Privacidad:</strong> todo se ejecuta en tu navegador. Sin registro, sin cookies y sin publicidad.</li>
+<li><strong>Privacidad:</strong> todo se ejecuta en tu navegador. Sin registro y sin cookies.</li>
 </ul>
 <h2>Qué no somos</h2>
 <p>No somos la Agencia Tributaria ni tenemos relación con ella o con el Ministerio de Hacienda. No somos un programa de facturación ni un asesor fiscal: la información es orientativa y no sustituye el consejo de un profesional. Para tu caso concreto, consulta con tu gestor o con la AEAT.</p>
