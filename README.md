@@ -1,5 +1,7 @@
 # Herramientas Verifactu – handover guide
 
+> Continuing with another AI? Start with [AI-HANDOVER.md](AI-HANDOVER.md).
+
 Free Spanish toolkit for Verifactu, mandatory B2B e-invoicing (RD 238/2026) and late payments (Ley 3/2004). Owner: Yasir Ali. Everything here belongs to you and keeps running without Hark. The website itself is in Spanish; this guide is in English.
 
 **Live address (now):** https://mydevspace2.github.io/herramientas-verifactu/
