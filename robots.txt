@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /herramientas-verifactu/_source/
+
+Sitemap: https://mydevspace2.github.io/herramientas-verifactu/sitemap.xml

@@ -1,0 +1,13 @@
+{
+  "name": "Herramientas Verifactu",
+  "short_name": "Verifactu",
+  "description": "¿Verifactu es obligatorio? Test, QR tributario, huella SHA-256 y XML. Gratis y en tu navegador.",
+  "lang": "es-ES",
+  "start_url": "/herramientas-verifactu/",
+  "scope": "/herramientas-verifactu/",
+  "display": "standalone",
+  "background_color": "#f6f8fb",
+  "theme_color": "#0a6b60",
+  "icons": [{ "src": "/herramientas-verifactu/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+            { "src": "/herramientas-verifactu/assets/logo-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }]
+}

@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+"""Fuentes oficiales citadas en la web (comprobadas el 13/11/2026)."""
+RD = ("Real Decreto 1007/2023 – texto consolidado (BOE)", "https://www.boe.es/buscar/act.php?id=BOE-A-2023-24840", "última actualización publicada el 03/12/2025; consultado el 13/11/2026")
+RDL = ("Real Decreto-ley 15/2025, de 2 de diciembre (BOE-A-2025-24446)", "https://www.boe.es/buscar/doc.php?id=BOE-A-2025-24446", "fija las fechas de 2027")
+NOTA = ("Nota informativa del Ministerio de Hacienda de 05/10/2026 (PDF)", "https://www.hacienda.gob.es/sgt/gabsehacienda/nota-informativa-verifactu.pdf", "previsión de aplazamiento hasta octubre de 2028")
+AEAT = ("Sistemas Informáticos de Facturación y VERI*FACTU – sede de la AEAT", "https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu.html", "página actualizada el 03/11/2026")
+AEAT_NOTA = ("AEAT: nota informativa sobre la ampliación del plazo de adaptación", "https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html", "")
+FAQ_AMB = ("AEAT – Preguntas frecuentes: ámbitos de aplicación", "https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/preguntas-frecuentes/cuestiones-generales-ambitos-aplicacion.html", "incluye el criterio sobre Excel y Word; actualizadas a 21/10/2026")
+QR = ("AEAT: especificaciones técnicas del código QR y de la URL de cotejo (v0.5.0, 10/12/2025, PDF)", "https://www.agenciatributaria.es/static_files/AEAT_Desarrolladores/EEDD/IVA/VERI-FACTU/DetalleEspecificacTecnCodigoQRfactura.pdf", "")
+HASH = ("AEAT: especificaciones de la huella o hash de los registros (v0.1.2, 27/08/2024, PDF)", "https://www.agenciatributaria.es/static_files/AEAT_Desarrolladores/EEDD/IVA/VERI-FACTU/Veri-Factu_especificaciones_huella_hash_registros.pdf", "")
+HASH_FAQ = ("AEAT – Preguntas frecuentes: huella o hash", "https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/preguntas-frecuentes/huella-hash.html", "")
+ORDEN = ("Orden HAC/1177/2024, de 17 de octubre (BOE)", "https://www.boe.es/buscar/act.php?id=BOE-A-2024-22138", "arts. 20 y 21: representación gráfica y código QR")
+ROF = ("Real Decreto 1619/2012 – Reglamento de facturación (BOE)", "https://www.boe.es/buscar/act.php?id=BOE-A-2012-14696", "arts. 6.5 y 7.5")
+XSD = ("AEAT: esquemas de los servicios web (XSD) de VERI*FACTU", "https://www.agenciatributaria.es/AEAT.desarrolladores/Desarrolladores/_menu_/Documentacion/Sistemas_Informaticos_de_Facturacion_y_Sistemas_VERI_FACTU/Esquemas_de_los_servicios_web/Esquemas_de_los_servicios_web.html", "")
+APP = ("Guía de usuario de la aplicación gratuita de facturación de la AEAT (v1.0, PDF)", "https://sede.agenciatributaria.gob.es/static_files/Sede/Biblioteca/Manual/Practicos/Manual_facturacion/Manual_Usuario_Verifactu_Accesible.pdf", "")
+APP_GUIA = ("AEAT: Guía aplicación gratuita VERI*FACTU", "https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/guia-aplicacion-gratuita-verifactu.html", "")
+APP_ACC = ("Acceso a la aplicación de facturación de la AEAT", "https://www1.agenciatributaria.gob.es/wlpl/TIKE-CONT/MenuAplicacionFacturacion", "identificación con Cl@ve Móvil, certificado o DNIe")
