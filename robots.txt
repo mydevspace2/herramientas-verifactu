@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /herramientas-verifactu/_source/
+Disallow: /_source/
 
-Sitemap: https://mydevspace2.github.io/herramientas-verifactu/sitemap.xml
+Sitemap: https://verifactuya.com/sitemap.xml

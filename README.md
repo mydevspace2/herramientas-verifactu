@@ -1,9 +1,11 @@
-# Herramientas Verifactu – handover guide
+# VerifactuYa (Herramientas Verifactu) – handover guide · branch `domain-verifactuya`
 
 Free Spanish toolkit for Verifactu, mandatory B2B e-invoicing (RD 238/2026) and late payments (Ley 3/2004). Owner: Yasir Ali. Everything here belongs to you and keeps running without Hark. The website itself is in Spanish; this guide is in English.
 
-**Live address (now):** https://mydevspace2.github.io/herramientas-verifactu/
-**Planned domain:** `verifactuya.com` – fully prepared on the branch `domain-verifactuya`, **not live**. See "Switching to verifactuya.com" below.
+> **This branch is NOT live.** GitHub Pages publishes `main`, which stays on https://mydevspace2.github.io/herramientas-verifactu/. This branch contains the same site rebuilt for **https://verifactuya.com** (CNAME file, canonical/OG/sitemap/hreflang/robots on the new domain, links from the domain root, brand "VerifactuYa"). It goes live only when you merge it into `main` after the DNS is ready – follow "Switch to verifactuya.com – exact steps" below.
+
+**Live address (now):** https://mydevspace2.github.io/herramientas-verifactu/ (from `main`)
+**Address after the switch:** https://verifactuya.com/
 
 ## What the site has
 | Page | Address (after the live address) | What it does |
@@ -46,7 +48,7 @@ Do not add fine amounts (sanciones) unless you verify them in the BOE first.
 1. Open the file on github.com (for example `index.html`).
 2. Tap the pencil icon, change the text, then "Commit changes".
 3. The site updates in 1–2 minutes.
-Tip: for bigger changes, paste the file into any free AI (ChatGPT, Gemini), ask for the change, and paste the result back. Keep links starting with `/herramientas-verifactu/` while the site lives on github.io.
+Tip: for bigger changes, paste the file into any free AI (ChatGPT, Gemini), ask for the change, and paste the result back. On this branch (domain build) internal links start with `/` (for example `/periodo-medio-pago-proveedores/`).
 
 ## Google Search Console (not set up yet)
 1. Add a URL-prefix property for the live address.
@@ -91,5 +93,37 @@ node test-browser-csp.js   # real Chromium with CSP enforced: every tool, dark m
 - AdSense: apply only after ~3 months and real traffic; add `ads.txt` after approval. Adding ads also means updating `privacidad/` and a cookie consent banner.
 - Third-party code: QR encoder based on Project Nayuki (MIT); QR reader jsQR (Apache 2.0).
 
-## Switching to verifactuya.com
-Everything is ready on the branch **`domain-verifactuya`** (CNAME file, all canonical/OG/sitemap/hreflang URLs on https://verifactuya.com, brand "VerifactuYa"). `main` stays on the github.io address until you merge. The exact steps are in that branch's README ("Switch to verifactuya.com – exact steps").
+## Switch to verifactuya.com – exact steps
+Do them in this order. Nothing here costs money except buying the domain.
+
+**1. Buy the domain (Spaceship).** Register `verifactuya.com` for 1 year; turn auto-renew off if you want (your usual rule). Keep Spaceship's own nameservers (the default), so the DNS records below take effect.
+
+**2. Verify the domain in GitHub (protects it from takeover).** github.com → your profile picture → Settings → Pages → "Add a domain" → type `verifactuya.com`. GitHub shows a TXT record (host like `_github-pages-challenge-mydevspace2`, plus a value). Add that TXT record in Spaceship (step 3 screen), wait a few minutes, then click "Verify".
+
+**3. DNS records in Spaceship.** Spaceship → Domain Manager → `verifactuya.com` → DNS / Advanced DNS. First **delete any default parking/forwarding records** for `@` and `www`. Then add:
+
+| Type | Host | Value | TTL |
+|---|---|---|---|
+| A | `@` | `185.199.108.153` | default |
+| A | `@` | `185.199.109.153` | default |
+| A | `@` | `185.199.110.153` | default |
+| A | `@` | `185.199.111.153` | default |
+| CNAME | `www` | `mydevspace2.github.io` | default |
+| TXT | (from step 2) | (from step 2) | default |
+
+Optional IPv6 (only together with the A records): AAAA `@` → `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`. Do not add a wildcard `*` record. (Values from GitHub Docs, "Managing a custom domain for your GitHub Pages site", checked 13 Nov 2026.)
+
+**4. Wait for DNS (minutes, up to 24 h).** Check on any PC: `nslookup verifactuya.com` must list the four 185.199.x.153 addresses, and `nslookup www.verifactuya.com` must show `mydevspace2.github.io`. Or use https://dnschecker.org.
+
+**5. Merge this branch into `main`.** github.com/mydevspace2/herramientas-verifactu → "Pull requests" → "New pull request" → base `main` ← compare `domain-verifactuya` → "Create pull request" → "Merge pull request". (Command line: `git checkout main && git merge domain-verifactuya && git push`.) The merge brings the `CNAME` file, so GitHub Pages switches the site to `verifactuya.com` within 1–2 minutes and the old github.io addresses redirect to it.
+   - If `main` received other commits after this branch was made (for example a date update), don't merge blindly: rebuild for the domain instead – `cd _source/build && VF_SITE_URL=https://verifactuya.com VF_BASE= VF_CNAME=verifactuya.com VF_BRAND=VerifactuYa python3 build.py`, copy `_source/out/*` over the repo root (keep `README.md`, `.gitignore` and `_source/`), commit and push to `main`.
+
+**6. Check Settings → Pages.** "Custom domain" should show `verifactuya.com` with "DNS check successful". If the box is empty, type `verifactuya.com` and click Save.
+
+**7. Enable HTTPS.** When the certificate is ready (usually under an hour, up to 24 h), tick **"Enforce HTTPS"** on the same page.
+
+**8. Test.** https://verifactuya.com/ opens; http:// and https://www.verifactuya.com redirect to https://verifactuya.com/; https://mydevspace2.github.io/herramientas-verifactu/ redirects to the new domain; https://verifactuya.com/robots.txt and /sitemap.xml show the new domain.
+
+**Undo:** Settings → Pages → Custom domain → Remove, and revert the merge commit on `main` (the github.io build is commit 99b7c2a).
+
+After the switch: add the new domain to Search Console (URL-prefix or Domain property), submit `https://verifactuya.com/sitemap.xml`, and later import into Bing Webmaster – when you decide to do it.
