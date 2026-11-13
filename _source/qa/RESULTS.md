@@ -1,6 +1,6 @@
-# QA – Herramientas Verifactu, 2026-11-13 (v2: sección factura electrónica B2B y morosidad)
+# QA – Herramientas Verifactu, 2026-11-13 (v3: pase SEO completo + 2 guías nuevas + etiqueta de Search Console)
 
-Resumen: unitarias Verifactu 42/42 · unitarias B2B 29/29 · XSD + QR 13/13 · estáticas 166/166 · Chromium con CSP (escritorio, móvil 375 px, modo oscuro) 131/131 = 381/381.
+Resumen: unitarias Verifactu 42/42 · unitarias B2B 29/29 · XSD + QR 13/13 · estáticas 205/205 (incluye Organization/WebSite/Article/FAQPage/BreadcrumbList, lastmod AAAA-MM-DD, description < 160, ≥ 3 guías relacionadas, img con alt, meta google-site-verification solo en portada) · Chromium con CSP (escritorio, móvil 375 px, modo oscuro) 143/143 = 432/432. Compilado con VF_GSV.
 
 ## t-core
 ```
@@ -98,7 +98,7 @@ Factura electrónica B2B – RD 238/2026 DF 4.ª, DT 2.ª y 3.ª; Orden HAC/1028
 Resultado: 29 correctas, 0 fallidas
 ```
 
-## t-xsd
+## xsd-qr
 ```
 XSD oficial AEAT (SuministroLR.xsd + SuministroInformacion.xsd)
   ✓ alta-1.xml válido contra el XSD
@@ -122,12 +122,13 @@ Resultado: 13 correctas, 0 fallidas
 
 ## t-site
 ```
-Sitio: https://mydevspace2.github.io/herramientas-verifactu (BASE «/herramientas-verifactu») – 20 páginas HTML
+Sitio: https://mydevspace2.github.io/herramientas-verifactu (BASE «/herramientas-verifactu») – 22 páginas HTML
   ✓ robots.txt bloquea /_source/ y enlaza el sitemap
-  ✓ sitemap.xml bien formado con 19 URL
+  ✓ sitemap.xml bien formado con 21 URL y <lastmod> solo AAAA-MM-DD
   ✓ /404.html – enlaces internos existen (con BASE)
   ✓ /404.html – anclas #id existen y no hay id duplicados
   ✓ /404.html – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /404.html – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /404.html – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /404.html – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /404.html – accesibilidad: campos con etiqueta, botones con texto
@@ -135,6 +136,7 @@ Sitio: https://mydevspace2.github.io/herramientas-verifactu (BASE «/herramienta
   ✓ /aviso-legal/ – enlaces internos existen (con BASE)
   ✓ /aviso-legal/ – anclas #id existen y no hay id duplicados
   ✓ /aviso-legal/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /aviso-legal/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /aviso-legal/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /aviso-legal/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /aviso-legal/ – accesibilidad: campos con etiqueta, botones con texto
@@ -142,69 +144,96 @@ Sitio: https://mydevspace2.github.io/herramientas-verifactu (BASE «/herramienta
   ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – enlaces internos existen (con BASE)
   ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – anclas #id existen y no hay id duplicados
   ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – accesibilidad: campos con etiqueta, botones con texto
   ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
-  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – guía ≥ 700 palabras (1343)
+  ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ – guía ≥ 700 palabras (1342)
   ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – enlaces internos existen (con BASE)
   ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – anclas #id existen y no hay id duplicados
   ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – accesibilidad: campos con etiqueta, botones con texto
   ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
-  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – guía ≥ 700 palabras (1478)
+  ✓ /blog/diferencias-verifactu-factura-electronica-b2b/ – guía ≥ 700 palabras (1471)
   ✓ /blog/factura-electronica-obligatoria-autonomos/ – enlaces internos existen (con BASE)
   ✓ /blog/factura-electronica-obligatoria-autonomos/ – anclas #id existen y no hay id duplicados
   ✓ /blog/factura-electronica-obligatoria-autonomos/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /blog/factura-electronica-obligatoria-autonomos/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /blog/factura-electronica-obligatoria-autonomos/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /blog/factura-electronica-obligatoria-autonomos/ – accesibilidad: campos con etiqueta, botones con texto
   ✓ /blog/factura-electronica-obligatoria-autonomos/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
-  ✓ /blog/factura-electronica-obligatoria-autonomos/ – guía ≥ 700 palabras (1328)
+  ✓ /blog/factura-electronica-obligatoria-autonomos/ – guía ≥ 700 palabras (1325)
   ✓ /blog/fechas-verifactu-2027-2028/ – enlaces internos existen (con BASE)
   ✓ /blog/fechas-verifactu-2027-2028/ – anclas #id existen y no hay id duplicados
   ✓ /blog/fechas-verifactu-2027-2028/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/fechas-verifactu-2027-2028/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /blog/fechas-verifactu-2027-2028/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /blog/fechas-verifactu-2027-2028/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /blog/fechas-verifactu-2027-2028/ – accesibilidad: campos con etiqueta, botones con texto
   ✓ /blog/fechas-verifactu-2027-2028/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
-  ✓ /blog/fechas-verifactu-2027-2028/ – guía ≥ 700 palabras (1244)
+  ✓ /blog/fechas-verifactu-2027-2028/ – guía ≥ 700 palabras (1242)
   ✓ /blog/ – enlaces internos existen (con BASE)
   ✓ /blog/ – anclas #id existen y no hay id duplicados
   ✓ /blog/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /blog/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /blog/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /blog/ – accesibilidad: campos con etiqueta, botones con texto
   ✓ /blog/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /blog/plazos-pago-ley-morosidad/ – enlaces internos existen (con BASE)
+  ✓ /blog/plazos-pago-ley-morosidad/ – anclas #id existen y no hay id duplicados
+  ✓ /blog/plazos-pago-ley-morosidad/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/plazos-pago-ley-morosidad/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
+  ✓ /blog/plazos-pago-ley-morosidad/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /blog/plazos-pago-ley-morosidad/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /blog/plazos-pago-ley-morosidad/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /blog/plazos-pago-ley-morosidad/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /blog/plazos-pago-ley-morosidad/ – guía ≥ 700 palabras (1560)
   ✓ /blog/tamano-posicion-qr-verifactu/ – enlaces internos existen (con BASE)
   ✓ /blog/tamano-posicion-qr-verifactu/ – anclas #id existen y no hay id duplicados
   ✓ /blog/tamano-posicion-qr-verifactu/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/tamano-posicion-qr-verifactu/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /blog/tamano-posicion-qr-verifactu/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /blog/tamano-posicion-qr-verifactu/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /blog/tamano-posicion-qr-verifactu/ – accesibilidad: campos con etiqueta, botones con texto
   ✓ /blog/tamano-posicion-qr-verifactu/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
-  ✓ /blog/tamano-posicion-qr-verifactu/ – guía ≥ 700 palabras (1165)
+  ✓ /blog/tamano-posicion-qr-verifactu/ – guía ≥ 700 palabras (1164)
+  ✓ /blog/verifactu-autonomos/ – enlaces internos existen (con BASE)
+  ✓ /blog/verifactu-autonomos/ – anclas #id existen y no hay id duplicados
+  ✓ /blog/verifactu-autonomos/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/verifactu-autonomos/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
+  ✓ /blog/verifactu-autonomos/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
+  ✓ /blog/verifactu-autonomos/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
+  ✓ /blog/verifactu-autonomos/ – accesibilidad: campos con etiqueta, botones con texto
+  ✓ /blog/verifactu-autonomos/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
+  ✓ /blog/verifactu-autonomos/ – guía ≥ 700 palabras (1697)
   ✓ /blog/verifactu-gratis-aplicacion-aeat/ – enlaces internos existen (con BASE)
   ✓ /blog/verifactu-gratis-aplicacion-aeat/ – anclas #id existen y no hay id duplicados
   ✓ /blog/verifactu-gratis-aplicacion-aeat/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /blog/verifactu-gratis-aplicacion-aeat/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /blog/verifactu-gratis-aplicacion-aeat/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /blog/verifactu-gratis-aplicacion-aeat/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /blog/verifactu-gratis-aplicacion-aeat/ – accesibilidad: campos con etiqueta, botones con texto
   ✓ /blog/verifactu-gratis-aplicacion-aeat/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
-  ✓ /blog/verifactu-gratis-aplicacion-aeat/ – guía ≥ 700 palabras (1118)
+  ✓ /blog/verifactu-gratis-aplicacion-aeat/ – guía ≥ 700 palabras (1117)
   ✓ /calcular-huella-verifactu/ – enlaces internos existen (con BASE)
   ✓ /calcular-huella-verifactu/ – anclas #id existen y no hay id duplicados
   ✓ /calcular-huella-verifactu/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /calcular-huella-verifactu/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /calcular-huella-verifactu/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /calcular-huella-verifactu/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /calcular-huella-verifactu/ – accesibilidad: campos con etiqueta, botones con texto
   ✓ /calcular-huella-verifactu/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
-  ✓ /calcular-huella-verifactu/ – contenido útil bajo la herramienta ≥ 800 palabras (1318)
+  ✓ /calcular-huella-verifactu/ – contenido útil bajo la herramienta ≥ 800 palabras (1317)
   ✓ /contacto/ – enlaces internos existen (con BASE)
   ✓ /contacto/ – anclas #id existen y no hay id duplicados
   ✓ /contacto/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /contacto/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /contacto/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /contacto/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /contacto/ – accesibilidad: campos con etiqueta, botones con texto
@@ -212,6 +241,7 @@ Sitio: https://mydevspace2.github.io/herramientas-verifactu (BASE «/herramienta
   ✓ /ejemplo-xml-verifactu/ – enlaces internos existen (con BASE)
   ✓ /ejemplo-xml-verifactu/ – anclas #id existen y no hay id duplicados
   ✓ /ejemplo-xml-verifactu/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /ejemplo-xml-verifactu/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /ejemplo-xml-verifactu/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /ejemplo-xml-verifactu/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /ejemplo-xml-verifactu/ – accesibilidad: campos con etiqueta, botones con texto
@@ -220,46 +250,52 @@ Sitio: https://mydevspace2.github.io/herramientas-verifactu (BASE «/herramienta
   ✓ /factura-electronica-obligatoria/ – enlaces internos existen (con BASE)
   ✓ /factura-electronica-obligatoria/ – anclas #id existen y no hay id duplicados
   ✓ /factura-electronica-obligatoria/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /factura-electronica-obligatoria/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /factura-electronica-obligatoria/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /factura-electronica-obligatoria/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /factura-electronica-obligatoria/ – accesibilidad: campos con etiqueta, botones con texto
   ✓ /factura-electronica-obligatoria/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
-  ✓ /factura-electronica-obligatoria/ – contenido útil bajo la herramienta ≥ 800 palabras (1780)
+  ✓ /factura-electronica-obligatoria/ – contenido útil bajo la herramienta ≥ 800 palabras (1779)
   ✓ /generador-qr-verifactu/ – enlaces internos existen (con BASE)
   ✓ /generador-qr-verifactu/ – anclas #id existen y no hay id duplicados
   ✓ /generador-qr-verifactu/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /generador-qr-verifactu/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /generador-qr-verifactu/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /generador-qr-verifactu/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /generador-qr-verifactu/ – accesibilidad: campos con etiqueta, botones con texto
   ✓ /generador-qr-verifactu/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
-  ✓ /generador-qr-verifactu/ – contenido útil bajo la herramienta ≥ 800 palabras (1410)
+  ✓ /generador-qr-verifactu/ – contenido útil bajo la herramienta ≥ 800 palabras (1409)
   ✓ / – enlaces internos existen (con BASE)
   ✓ / – anclas #id existen y no hay id duplicados
   ✓ / – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ / – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ / – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ / – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ / – accesibilidad: campos con etiqueta, botones con texto
   ✓ / – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
-  ✓ / – contenido útil bajo la herramienta ≥ 800 palabras (1741)
+  ✓ / – contenido útil bajo la herramienta ≥ 800 palabras (1739)
   ✓ /intereses-demora-comerciales/ – enlaces internos existen (con BASE)
   ✓ /intereses-demora-comerciales/ – anclas #id existen y no hay id duplicados
   ✓ /intereses-demora-comerciales/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /intereses-demora-comerciales/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /intereses-demora-comerciales/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /intereses-demora-comerciales/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /intereses-demora-comerciales/ – accesibilidad: campos con etiqueta, botones con texto
   ✓ /intereses-demora-comerciales/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
-  ✓ /intereses-demora-comerciales/ – contenido útil bajo la herramienta ≥ 800 palabras (1664)
+  ✓ /intereses-demora-comerciales/ – contenido útil bajo la herramienta ≥ 800 palabras (1669)
   ✓ /periodo-medio-pago-proveedores/ – enlaces internos existen (con BASE)
   ✓ /periodo-medio-pago-proveedores/ – anclas #id existen y no hay id duplicados
   ✓ /periodo-medio-pago-proveedores/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /periodo-medio-pago-proveedores/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /periodo-medio-pago-proveedores/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /periodo-medio-pago-proveedores/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /periodo-medio-pago-proveedores/ – accesibilidad: campos con etiqueta, botones con texto
   ✓ /periodo-medio-pago-proveedores/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
-  ✓ /periodo-medio-pago-proveedores/ – contenido útil bajo la herramienta ≥ 800 palabras (1926)
+  ✓ /periodo-medio-pago-proveedores/ – contenido útil bajo la herramienta ≥ 800 palabras (1935)
   ✓ /privacidad/ – enlaces internos existen (con BASE)
   ✓ /privacidad/ – anclas #id existen y no hay id duplicados
   ✓ /privacidad/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /privacidad/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /privacidad/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /privacidad/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /privacidad/ – accesibilidad: campos con etiqueta, botones con texto
@@ -267,6 +303,7 @@ Sitio: https://mydevspace2.github.io/herramientas-verifactu (BASE «/herramienta
   ✓ /sobre-nosotros/ – enlaces internos existen (con BASE)
   ✓ /sobre-nosotros/ – anclas #id existen y no hay id duplicados
   ✓ /sobre-nosotros/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /sobre-nosotros/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /sobre-nosotros/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /sobre-nosotros/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /sobre-nosotros/ – accesibilidad: campos con etiqueta, botones con texto
@@ -274,11 +311,12 @@ Sitio: https://mydevspace2.github.io/herramientas-verifactu (BASE «/herramienta
   ✓ /validar-qr-verifactu/ – enlaces internos existen (con BASE)
   ✓ /validar-qr-verifactu/ – anclas #id existen y no hay id duplicados
   ✓ /validar-qr-verifactu/ – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)
+  ✓ /validar-qr-verifactu/ – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO
   ✓ /validar-qr-verifactu/ – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es
   ✓ /validar-qr-verifactu/ – seguridad y rendimiento: CSP, CSS inline, sin style=, sin scripts inline salvo tema/JSON-LD, sin CDN
   ✓ /validar-qr-verifactu/ – accesibilidad: campos con etiqueta, botones con texto
   ✓ /validar-qr-verifactu/ – enlaces visibles a privacidad, aviso legal, contacto y sobre nosotros
-  ✓ /validar-qr-verifactu/ – contenido útil bajo la herramienta ≥ 800 palabras (1327)
+  ✓ /validar-qr-verifactu/ – contenido útil bajo la herramienta ≥ 800 palabras (1320)
   ✓ Ninguna página afirma importes de sanciones
   ✓ Portada: muestra 1/1/2027, 1/7/2027, octubre 2028, «Última comprobación: 13 de noviembre de 2026» y enlaza BOE + nota de Hacienda
   ✓ Huella: los tres resultados oficiales aparecen en la página
@@ -289,33 +327,36 @@ Sitio: https://mydevspace2.github.io/herramientas-verifactu (BASE «/herramienta
   ✓ Las tres herramientas B2B cargan b2b.js y su script propio
   ✓ Ningún importe de sanción en la sección B2B (solo se citarían literalmente del BOE)
   ✓ JS de producción minificado y sin eval
+  ✓ Search Console: meta google-site-verification solo en la portada cuando se compila con VF_GSV
 
 Palabras en el cuerpo de cada página:
      268  /404.html
      309  /aviso-legal/
-    1343  /blog/calcular-periodo-medio-pago-proveedores-ejemplo/
-    1478  /blog/diferencias-verifactu-factura-electronica-b2b/
-    1328  /blog/factura-electronica-obligatoria-autonomos/
-    1244  /blog/fechas-verifactu-2027-2028/
-     468  /blog/
-    1165  /blog/tamano-posicion-qr-verifactu/
-    1118  /blog/verifactu-gratis-aplicacion-aeat/
-    1318  /calcular-huella-verifactu/
+    1342  /blog/calcular-periodo-medio-pago-proveedores-ejemplo/
+    1471  /blog/diferencias-verifactu-factura-electronica-b2b/
+    1325  /blog/factura-electronica-obligatoria-autonomos/
+    1242  /blog/fechas-verifactu-2027-2028/
+     536  /blog/
+    1560  /blog/plazos-pago-ley-morosidad/
+    1164  /blog/tamano-posicion-qr-verifactu/
+    1697  /blog/verifactu-autonomos/
+    1117  /blog/verifactu-gratis-aplicacion-aeat/
+    1317  /calcular-huella-verifactu/
      139  /contacto/
     1297  /ejemplo-xml-verifactu/
-    1780  /factura-electronica-obligatoria/
-    1410  /generador-qr-verifactu/
-    1741  /
-    1664  /intereses-demora-comerciales/
-    1926  /periodo-medio-pago-proveedores/
+    1779  /factura-electronica-obligatoria/
+    1409  /generador-qr-verifactu/
+    1739  /
+    1669  /intereses-demora-comerciales/
+    1935  /periodo-medio-pago-proveedores/
      329  /privacidad/
      494  /sobre-nosotros/
-    1327  /validar-qr-verifactu/
+    1320  /validar-qr-verifactu/
 
-Resultado: 166 correctas, 0 fallidas
+Resultado: 205 correctas, 0 fallidas
 ```
 
-## t-br
+## browser-csp
 ```
   ✓ / – CSS inline aplicado (light)
   ✓ / – la herramienta funciona en Chromium
@@ -416,6 +457,18 @@ Resultado: 166 correctas, 0 fallidas
   ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ [móvil 375px] – sin desbordamiento horizontal (scrollWidth 375)
   ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ [móvil 375px] – menú móvil se abre
   ✓ /blog/calcular-periodo-medio-pago-proveedores-ejemplo/ [móvil 375px] – sin errores JS ni violaciones CSP
+  ✓ /blog/verifactu-autonomos/ – CSS inline aplicado (light)
+  ✓ /blog/verifactu-autonomos/ – conmutador de tema (light → dark, fondo rgb(11, 18, 32))
+  ✓ /blog/verifactu-autonomos/ – sin errores JS ni violaciones CSP
+  ✓ /blog/verifactu-autonomos/ [móvil 375px] – sin desbordamiento horizontal (scrollWidth 375)
+  ✓ /blog/verifactu-autonomos/ [móvil 375px] – menú móvil se abre
+  ✓ /blog/verifactu-autonomos/ [móvil 375px] – sin errores JS ni violaciones CSP
+  ✓ /blog/plazos-pago-ley-morosidad/ – CSS inline aplicado (light)
+  ✓ /blog/plazos-pago-ley-morosidad/ – conmutador de tema (light → dark, fondo rgb(11, 18, 32))
+  ✓ /blog/plazos-pago-ley-morosidad/ – sin errores JS ni violaciones CSP
+  ✓ /blog/plazos-pago-ley-morosidad/ [móvil 375px] – sin desbordamiento horizontal (scrollWidth 375)
+  ✓ /blog/plazos-pago-ley-morosidad/ [móvil 375px] – menú móvil se abre
+  ✓ /blog/plazos-pago-ley-morosidad/ [móvil 375px] – sin errores JS ni violaciones CSP
   ✓ /sobre-nosotros/ – CSS inline aplicado (light)
   ✓ /sobre-nosotros/ – conmutador de tema (light → dark, fondo rgb(11, 18, 32))
   ✓ /sobre-nosotros/ – sin errores JS ni violaciones CSP
@@ -449,6 +502,5 @@ Resultado: 166 correctas, 0 fallidas
   ✓ /no-existe/ [móvil 375px] – menú móvil se abre
   ✓ /no-existe/ [móvil 375px] – sin errores JS ni violaciones CSP
 
-Resultado: 131 correctas, 0 fallidas
+Resultado: 143 correctas, 0 fallidas
 ```
-

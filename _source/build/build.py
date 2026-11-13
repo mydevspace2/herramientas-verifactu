@@ -12,8 +12,10 @@ from page_dev import HUE, XMLP
 import page_blog as B
 import page_b2b as PB
 import page_b2b_blog as PBB
+import page_blog_2 as PB2
 
 B.POSTS.extend(PBB.POSTS)
+B.POSTS.extend(PB2.POSTS)
 
 OUT = os.path.abspath(os.path.join(HERE, "..", "out"))
 if os.path.isdir(OUT):
@@ -27,11 +29,19 @@ common.INLINE_CSS = open(_cssf, encoding="utf-8").read().replace("</", "<\\/")
 os.remove(_cssf)
 
 common.ARTICLES[:] = [("/blog/%s/" % p["slug"], p["h1"], p["desc"]) for p in B.POSTS]
-F, G, Q, DIF, AUT, PMPG = ["/blog/%s/" % p["slug"] for p in B.POSTS]
-common.ARTICLE_MAP.update({"/": [F, G, Q], "/generador-qr-verifactu/": [Q, F, G], "/validar-qr-verifactu/": [Q, G, F],
-                           "/calcular-huella-verifactu/": [F, Q, G], "/ejemplo-xml-verifactu/": [F, Q, G],
-                           "/factura-electronica-obligatoria/": [DIF, AUT, F], "/periodo-medio-pago-proveedores/": [PMPG, DIF, AUT],
-                           "/intereses-demora-comerciales/": [PMPG, AUT, DIF], DIF: [AUT, F, PMPG], AUT: [DIF, F, PMPG], PMPG: [DIF, AUT, F]})
+_b = lambda slug: "/blog/%s/" % slug
+F, G, Q = _b("fechas-verifactu-2027-2028"), _b("verifactu-gratis-aplicacion-aeat"), _b("tamano-posicion-qr-verifactu")
+DIF, AUT, PMPG = _b("diferencias-verifactu-factura-electronica-b2b"), _b("factura-electronica-obligatoria-autonomos"), _b("calcular-periodo-medio-pago-proveedores-ejemplo")
+VAU, MOR = _b("verifactu-autonomos"), _b("plazos-pago-ley-morosidad")
+assert all(u in [a[0] for a in common.ARTICLES] for u in (F, G, Q, DIF, AUT, PMPG, VAU, MOR))
+# Enlaces internos «Guías relacionadas» (3 por página): herramienta -> guías del mismo tema, guía -> guías hermanas
+common.ARTICLE_MAP.update({"/": [VAU, F, G], "/generador-qr-verifactu/": [Q, VAU, F], "/validar-qr-verifactu/": [Q, G, VAU],
+                           "/calcular-huella-verifactu/": [F, Q, VAU], "/ejemplo-xml-verifactu/": [F, Q, G],
+                           "/factura-electronica-obligatoria/": [DIF, AUT, MOR], "/periodo-medio-pago-proveedores/": [PMPG, MOR, DIF],
+                           "/intereses-demora-comerciales/": [MOR, PMPG, AUT],
+                           F: [VAU, G, DIF], G: [VAU, F, Q], Q: [G, VAU, F],
+                           DIF: [AUT, VAU, PMPG], AUT: [VAU, DIF, MOR], PMPG: [MOR, DIF, AUT],
+                           VAU: [F, G, AUT], MOR: [PMPG, AUT, DIF]})
 
 PAGES = [("/", HOME), ("/generador-qr-verifactu/", GEN), ("/validar-qr-verifactu/", VAL), ("/calcular-huella-verifactu/", HUE),
          ("/ejemplo-xml-verifactu/", XMLP),
@@ -61,6 +71,7 @@ NF = dict(title="Página no encontrada (404) – Herramientas Verifactu",
           content='<p><a class="btn" href="/">Ir al test «¿estoy obligado a Verifactu?»</a></p>')
 write("/404.html", render(NF, "/404.html"))
 
+assert re.match(r"^\d{4}-\d{2}-\d{2}$", UPDATED_ISO), "lastmod debe ser AAAA-MM-DD"
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for u, _p in PAGES:
     pr = "1.0" if u == "/" else ("0.3" if u in ("/privacidad/", "/sobre-nosotros/", "/contacto/", "/aviso-legal/") else ("0.7" if u.startswith("/blog/") else "0.9"))

@@ -124,11 +124,11 @@ HUE_FAQ = [
 ]
 
 HUE = dict(
-    title="Calcular huella Verifactu (hash SHA-256) – alta, anulación y evento",
+    title="Calcular huella Verifactu (hash SHA-256) gratis y online",
     desc="Calcula la huella SHA-256 de registros Verifactu de alta, anulación y evento con los ejemplos oficiales de la AEAT y comprueba la cadena de un XML.",
     app_name="Calculadora de huella Verifactu",
     h1="Calcular la huella (hash) de Verifactu y comprobar la cadena",
-    intro="Calcula la huella SHA-256 de un registro de alta, anulación o evento, ve la cadena exacta que se resume y comprueba si los registros de un XML están bien encadenados.",
+    intro="Calcula la huella Verifactu (hash SHA-256) de un registro de alta, anulación o evento, ve la cadena exacta que se resume y comprueba si los registros de un XML están bien encadenados.",
     trail=[("Inicio", "/"), ("Calcular huella Verifactu", "/calcular-huella-verifactu/")],
     tool=HUE_TOOL, content=HUE_CONTENT, faq=HUE_FAQ, scripts=["page-huella.js"],
     sources=[S.HASH, S.HASH_FAQ, S.ORDEN, S.XSD],
@@ -273,7 +273,7 @@ XMLP = dict(
     desc="Genera un XML de ejemplo de registro de alta Verifactu (RegFactuSistemaFacturacion) con su huella y revisa estructura, formatos, totales y encadenamiento.",
     app_name="Generador de XML de ejemplo Verifactu",
     h1="Ejemplo XML Verifactu: generador de registro de alta",
-    intro="Rellena los datos de una factura y obtén un RegistroAlta con la estructura de los esquemas oficiales y su huella calculada. Pega también tu propio XML para revisarlo.",
+    intro="Rellena los datos de una factura y obtén un ejemplo XML Verifactu: un RegistroAlta con la estructura de los esquemas oficiales y su huella calculada. Pega también tu propio XML para revisarlo.",
     trail=[("Inicio", "/"), ("Ejemplo XML Verifactu", "/ejemplo-xml-verifactu/")],
     tool=XML_TOOL, content=XML_CONTENT, faq=XML_FAQ, scripts=["page-xml.js"],
     sources=[S.XSD, S.HASH, S.ORDEN, S.AEAT],

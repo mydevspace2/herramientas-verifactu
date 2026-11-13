@@ -18,7 +18,7 @@ Free Spanish toolkit for Verifactu, mandatory B2B e-invoicing (RD 238/2026) and 
 | B2B e-invoicing – "¿cuándo me obliga?" | `/factura-electronica-obligatoria/` | Dates from RD 238/2026 + Orden HAC/1028/2026 (6 Oct 2027 / 6 Oct 2028 / 6 Oct 2029), 4-question checker, 4-day reporting deadline calculator (weekends + BOE national holidays) |
 | Average supplier payment period (PMP) | `/periodo-medio-pago-proveedores/` | ICAC 2016 method (memoria normal: rows or CSV/paste from Excel; memoria abreviada: balances), paid/pending ratios, 60-day check, Ley 18/2022 counts, printable memoria table, CSV export |
 | Late-payment interest | `/intereses-demora-comerciales/` | Multi-invoice, official BOE rate per semester 2013-2 → 2026-2 (each with its BOE id), optional agreed rate, 40 € per invoice (art. 8.1 + CJEU C-585/20), due-date helper, print/CSV |
-| Guides | `/blog/` + 6 posts | Dates BOE vs announced · "Verifactu gratis" · QR size and position · Verifactu vs B2B e-invoice · B2B e-invoice for autónomos · how to calculate the PMP (example + Excel) |
+| Guides | `/blog/` + 8 posts | Dates BOE vs announced · "Verifactu gratis" · QR size and position · Verifactu vs B2B e-invoice · B2B e-invoice for autónomos · how to calculate the PMP (example + Excel) · Verifactu for autónomos · payment terms of the Ley de morosidad (30/60 days) |
 | Legal | `/sobre-nosotros/`, `/contacto/`, `/aviso-legal/`, `/privacidad/`, `404.html` | |
 
 Everything runs in the visitor's browser. No server, no cookies, no analytics, no ads.
@@ -50,7 +50,10 @@ Do not add fine amounts (sanciones) unless you verify them in the BOE first.
 3. The site updates in 1–2 minutes.
 Tip: for bigger changes, paste the file into any free AI (ChatGPT, Gemini), ask for the change, and paste the result back. On this branch (domain build) internal links start with `/` (for example `/periodo-medio-pago-proveedores/`).
 
-## Google Search Console (not set up yet)
+## Google Search Console
+This build carries the same `google-site-verification` tag as `main` (`VF_GSV=PBIzVZ_WTR9JENZ2TnCvFsTs3YWHua2ZJY0Cq2uO-6k`), so the github.io property stays verified after the switch. When you add `https://verifactuya.com/` as a new property, use the HTML-tag method: if Google shows a different `content` value, rebuild with that value (or add a second meta tag) before verifying. Then submit `https://verifactuya.com/sitemap.xml`.
+
+Original setup notes:
 1. Add a URL-prefix property for the live address.
 2. Choose "HTML tag" verification and copy the `content="..."` value.
 3. Either edit `index.html` and add `<meta name="google-site-verification" content="VALUE">` right after `<meta charset="utf-8">`, or rebuild with `VF_GSV=VALUE` (see below).
@@ -116,7 +119,7 @@ Optional IPv6 (only together with the A records): AAAA `@` → `2606:50c0:8000::
 **4. Wait for DNS (minutes, up to 24 h).** Check on any PC: `nslookup verifactuya.com` must list the four 185.199.x.153 addresses, and `nslookup www.verifactuya.com` must show `mydevspace2.github.io`. Or use https://dnschecker.org.
 
 **5. Merge this branch into `main`.** github.com/mydevspace2/herramientas-verifactu → "Pull requests" → "New pull request" → base `main` ← compare `domain-verifactuya` → "Create pull request" → "Merge pull request". (Command line: `git checkout main && git merge domain-verifactuya && git push`.) The merge brings the `CNAME` file, so GitHub Pages switches the site to `verifactuya.com` within 1–2 minutes and the old github.io addresses redirect to it.
-   - If `main` received other commits after this branch was made (for example a date update), don't merge blindly: rebuild for the domain instead – `cd _source/build && VF_SITE_URL=https://verifactuya.com VF_BASE= VF_CNAME=verifactuya.com VF_BRAND=VerifactuYa python3 build.py`, copy `_source/out/*` over the repo root (keep `README.md`, `.gitignore` and `_source/`), commit and push to `main`.
+   - If `main` received other commits after this branch was made (for example a date update), don't merge blindly: rebuild for the domain instead – `cd _source/build && VF_SITE_URL=https://verifactuya.com VF_BASE= VF_CNAME=verifactuya.com VF_BRAND=VerifactuYa VF_GSV=PBIzVZ_WTR9JENZ2TnCvFsTs3YWHua2ZJY0Cq2uO-6k python3 build.py`, copy `_source/out/*` over the repo root (keep `README.md`, `.gitignore` and `_source/`), commit and push to `main`.
 
 **6. Check Settings → Pages.** "Custom domain" should show `verifactuya.com` with "DNS check successful". If the box is empty, type `verifactuya.com` and click Save.
 
@@ -124,6 +127,6 @@ Optional IPv6 (only together with the A records): AAAA `@` → `2606:50c0:8000::
 
 **8. Test.** https://verifactuya.com/ opens; http:// and https://www.verifactuya.com redirect to https://verifactuya.com/; https://mydevspace2.github.io/herramientas-verifactu/ redirects to the new domain; https://verifactuya.com/robots.txt and /sitemap.xml show the new domain.
 
-**Undo:** Settings → Pages → Custom domain → Remove, and revert the merge commit on `main` (the github.io build is commit 99b7c2a).
+**Undo:** Settings → Pages → Custom domain → Remove, and revert the merge commit on `main` (the github.io build is commit a2c0858).
 
 After the switch: add the new domain to Search Console (URL-prefix or Domain property), submit `https://verifactuya.com/sitemap.xml`, and later import into Bing Webmaster – when you decide to do it.

@@ -129,11 +129,11 @@ PMP_FAQ = [
 ]
 
 PMP = dict(
-    title="Calculadora periodo medio de pago a proveedores (ICAC)",
+    title="Periodo medio de pago a proveedores: calculadora y fórmula",
     desc="Calcula gratis el periodo medio de pago a proveedores con el método ICAC: ratios de pagadas y pendientes, límite de 60 días, CSV y cuadro de la memoria.",
     app_name="Calculadora del periodo medio de pago a proveedores (método ICAC)",
     h1="Calculadora del periodo medio de pago a proveedores (PMP)",
-    intro="Introduce tus facturas o carga un CSV y obtén el PMP, la ratio de operaciones pagadas y la de pendientes de pago con la fórmula de la Resolución del ICAC de 2016, comparado con el límite legal de 60 días y listo para la memoria.",
+    intro="Calcula el periodo medio de pago a proveedores (PMP): introduce tus facturas o carga un CSV y obtén el PMP, la ratio de operaciones pagadas y la de pendientes de pago con la fórmula de la Resolución del ICAC de 2016, comparado con el límite legal de 60 días y listo para la memoria.",
     trail=[("Inicio", "/"), ("Periodo medio de pago", "/periodo-medio-pago-proveedores/")],
     tool=PMP_TOOL, content=PMP_CONTENT, faq=PMP_FAQ, scripts=["b2b.js", "page-pmp.js"],
     sources=[S.ICAC, S.LEY15, S.LEY3, S.RD238],
@@ -242,11 +242,11 @@ B2B_FAQ = [
 ]
 
 B2B = dict(
-    title="Factura electrónica obligatoria B2B: fechas y quién está obligado",
+    title="Factura electrónica obligatoria: fechas 2027-2028 y test",
     desc="Factura electrónica obligatoria entre empresas: 6/10/2027 (más de 8 M€) y 6/10/2028 (resto). Test gratis, fechas del BOE y plazo de 4 días para pagos.",
     app_name="¿Cuándo me obliga la factura electrónica B2B? – test y plazo de 4 días",
     h1="Factura electrónica obligatoria B2B: fechas y quién está obligado",
-    intro="Comprueba en un minuto desde cuándo debes emitir y recibir facturas electrónicas e informar de pagos según el RD 238/2026, y calcula el plazo de 4 días para comunicar cada pago o rechazo.",
+    intro="¿Desde cuándo te afecta la factura electrónica obligatoria entre empresas? Comprueba en un minuto cuándo debes emitir y recibir facturas electrónicas e informar de pagos según el RD 238/2026, y calcula el plazo de 4 días para comunicar cada pago o rechazo.",
     trail=[("Inicio", "/"), ("Factura electrónica B2B", "/factura-electronica-obligatoria/")],
     tool=B2B_TOOL, content=B2B_CONTENT, faq=B2B_FAQ, scripts=["b2b.js", "page-b2b.js"],
     sources=[S.RD238, S.ORDEN1028, S.AEAT_CAL, S.LEY18, S.LEY3, S.FIESTAS27],
@@ -315,7 +315,7 @@ DEM = dict(
     desc="Calcula los intereses de demora de tus facturas con los tipos del BOE (10,40 % en el 2.º semestre de 2026), más 40 € por factura. Gratis y en tu navegador.",
     app_name="Calculadora de intereses de demora en operaciones comerciales",
     h1="Calculadora de intereses de demora en operaciones comerciales",
-    intro="Calcula el interés de demora de una o varias facturas impagadas o pagadas tarde con los tipos legales publicados en el BOE para cada semestre (BCE + 8 puntos) y añade la compensación de 40 € del art. 8 de la Ley 3/2004.",
+    intro="Calcula los intereses de demora de una o varias facturas impagadas o pagadas tarde con los tipos legales publicados en el BOE para cada semestre (BCE + 8 puntos) y añade la compensación de 40 € del art. 8 de la Ley 3/2004.",
     trail=[("Inicio", "/"), ("Intereses de demora", "/intereses-demora-comerciales/")],
     tool=DEM_TOOL, content=DEM_CONTENT, faq=DEM_FAQ, scripts=["b2b.js", "page-demora.js"],
     sources=[S.LEY3, S.TESORO26, S.TJUE40, S.BDE_TIPOS, S.RD238],

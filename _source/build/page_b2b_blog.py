@@ -60,7 +60,7 @@ POSTS.append(dict(
 
 POSTS.append(dict(
     slug="factura-electronica-obligatoria-autonomos",
-    title="Factura electrónica obligatoria para autónomos: cuándo empieza",
+    title="Factura electrónica obligatoria para autónomos: fechas",
     desc="Cuándo es obligatoria la factura electrónica para autónomos: 6/10/2028 para emitir y recibir y 6/10/2029 para informar pagos. Excepciones y opción gratuita.",
     h1="Factura electrónica obligatoria para autónomos: cuándo y cómo",
     intro="Qué fechas aplican a los autónomos según el RD 238/2026, quién queda fuera y qué opciones gratuitas habrá. Revisado en el BOE el 13 de noviembre de 2026.",

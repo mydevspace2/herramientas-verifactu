@@ -210,12 +210,12 @@ def post_page(p):
 
 
 def blog_index():
-    cards = "".join('<a href="/blog/%s/"><strong>%s</strong><span>%s</span></a>' % (p["slug"], e(p["h1"]), e(p["desc"])) for p in POSTS)
+    cards = "".join('<a href="/blog/%s/"><strong>%s</strong><span>%s</span></a>' % (p["slug"], e(p["h1"]), e(p["desc"])) for p in reversed(POSTS))
     return dict(
-        title="Guías Verifactu: fechas, aplicación gratuita y QR",
-        desc="Guías claras sobre Verifactu con fuentes oficiales: fechas BOE 2027 y aplazamiento 2028, aplicación gratuita de la AEAT y reglas del QR tributario.",
-        app=False, trust=False, h1="Guías Verifactu",
-        intro="Explicaciones breves, con fuentes del BOE y de la AEAT, para entender qué te exige Verifactu y cuándo.",
+        title="Guías: Verifactu, factura electrónica y morosidad",
+        desc="Guías con fuentes del BOE y la AEAT: fechas de Verifactu, QR, autónomos, factura electrónica obligatoria, periodo medio de pago y Ley de morosidad.",
+        app=False, trust=False, h1="Guías sobre Verifactu, factura electrónica y morosidad",
+        intro="Guías claras sobre Verifactu, la factura electrónica obligatoria B2B y la Ley de morosidad, con las fuentes del BOE y de la AEAT, para saber qué te exige cada norma y cuándo.",
         trail=[("Inicio", "/"), ("Guías", "/blog/")],
         content='<div class="hub">%s</div><p>¿Echas en falta un tema? Escríbenos desde la página de <a href="/contacto/">contacto</a>.</p>' % cards,
     )

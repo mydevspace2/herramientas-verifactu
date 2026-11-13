@@ -38,6 +38,7 @@
  "@graph": [
   {
    "@type": "WebApplication",
+   "@id": "https://verifactuya.com/ejemplo-xml-verifactu/#app",
    "name": "Generador de XML de ejemplo Verifactu",
    "url": "https://verifactuya.com/ejemplo-xml-verifactu/",
    "description": "Genera un XML de ejemplo de registro de alta Verifactu (RegFactuSistemaFacturacion) con su huella y revisa estructura, formatos, totales y encadenamiento.",
@@ -54,20 +55,40 @@
    "dateModified": "2026-11-13",
    "image": "https://verifactuya.com/assets/og-verifactu.png",
    "publisher": {
-    "@type": "Organization",
-    "@id": "https://verifactuya.com/#organization",
-    "name": "VerifactuYa",
-    "url": "https://verifactuya.com/",
-    "logo": {
-     "@type": "ImageObject",
-     "url": "https://verifactuya.com/assets/logo-512.png",
-     "width": 512,
-     "height": 512
-    }
+    "@id": "https://verifactuya.com/#organization"
+   },
+   "isPartOf": {
+    "@id": "https://verifactuya.com/#website"
+   }
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://verifactuya.com/#organization",
+   "name": "VerifactuYa",
+   "url": "https://verifactuya.com/",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://verifactuya.com/assets/logo-512.png",
+    "width": 512,
+    "height": 512
+   },
+   "email": "topelitemindset1@gmail.com",
+   "description": "Web independiente con herramientas gratuitas para Verifactu, la factura electrónica B2B y la morosidad. Sin relación con la AEAT."
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://verifactuya.com/#website",
+   "name": "VerifactuYa",
+   "url": "https://verifactuya.com/",
+   "inLanguage": "es-ES",
+   "description": "Herramientas y guías gratuitas sobre Verifactu, factura electrónica obligatoria y morosidad.",
+   "publisher": {
+    "@id": "https://verifactuya.com/#organization"
    }
   },
   {
    "@type": "FAQPage",
+   "@id": "https://verifactuya.com/ejemplo-xml-verifactu/#faq",
    "mainEntity": [
     {
      "@type": "Question",
@@ -121,6 +142,7 @@
   },
   {
    "@type": "BreadcrumbList",
+   "@id": "https://verifactuya.com/ejemplo-xml-verifactu/#breadcrumb",
    "itemListElement": [
     {
      "@type": "ListItem",
@@ -144,7 +166,7 @@
 <a class="skip" href="#contenido">Saltar al contenido</a><header class="site-head"><div class="wrap"><a class="brand" href="/" aria-label="VerifactuYa – inicio"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8" fill="#0a6b60"/><rect x="7" y="7" width="7" height="7" rx="1.2" fill="#fff"/><rect x="9.2" y="9.2" width="2.6" height="2.6" fill="#0a6b60"/><rect x="18" y="7" width="7" height="7" rx="1.2" fill="#fff"/><rect x="20.2" y="9.2" width="2.6" height="2.6" fill="#0a6b60"/><rect x="7" y="18" width="7" height="7" rx="1.2" fill="#fff"/><rect x="9.2" y="20.2" width="2.6" height="2.6" fill="#0a6b60"/><circle cx="22.5" cy="22.5" r="5.5" fill="#f59e0b" stroke="#fff" stroke-width="1.4"/><path d="M20 22.6l1.7 1.7 3.1-3.3" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>VerifactuYa<small>gratis · sin registro · en tu navegador</small></span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menú</button><nav id="site-nav" class="site-nav" aria-label="Herramientas"><ul><li><a href="/">¿Obligado?</a></li><li><a href="/generador-qr-verifactu/">Generar QR</a></li><li><a href="/validar-qr-verifactu/">Validar QR</a></li><li><a href="/calcular-huella-verifactu/">Huella</a></li><li><a href="/ejemplo-xml-verifactu/" aria-current="page">XML</a></li><li><a href="/factura-electronica-obligatoria/">Factura B2B</a></li><li><a href="/periodo-medio-pago-proveedores/">PMP</a></li><li><a href="/intereses-demora-comerciales/">Demora</a></li><li><a href="/blog/">Guías</a></li></ul></nav><button class="theme-toggle" type="button" aria-pressed="false" aria-label="Modo oscuro" title="Cambiar modo claro / oscuro"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></div></header>
 <main id="contenido" class="wrap" tabindex="-1">
 <nav class="crumbs" aria-label="Ruta de navegación"><ol><li><a href="/">Inicio</a></li><li aria-current="page">Ejemplo XML Verifactu</li></ol></nav>
-<div class="hero"><h1>Ejemplo XML Verifactu: generador de registro de alta</h1><p class="lead">Rellena los datos de una factura y obtén un RegistroAlta con la estructura de los esquemas oficiales y su huella calculada. Pega también tu propio XML para revisarlo.</p>
+<div class="hero"><h1>Ejemplo XML Verifactu: generador de registro de alta</h1><p class="lead">Rellena los datos de una factura y obtén un ejemplo XML Verifactu: un RegistroAlta con la estructura de los esquemas oficiales y su huella calculada. Pega también tu propio XML para revisarlo.</p>
 <ul class="trust"><li>Gratis y sin registro</li><li>Los datos no salen de tu navegador.</li><li>Sin publicidad ni seguimiento</li></ul>
 </div>
 
@@ -244,7 +266,7 @@
 <p>Comprueba la huella de varios registros encadenados con la <a href="/calcular-huella-verifactu/">calculadora de huella y comprobador de cadena</a> y genera el QR de la misma factura con el <a href="/generador-qr-verifactu/">generador de QR tributario</a>. Los esquemas XSD y el documento de validaciones y errores están en el portal de desarrolladores de la AEAT.</p>
 <h2 id="preguntas-frecuentes">Preguntas frecuentes</h2><div class="faq"><details><summary>¿Dónde descargo los XSD oficiales de Verifactu?</summary><p>En el portal de desarrolladores de la AEAT, apartado «Esquemas de los servicios web»: SuministroLR.xsd, SuministroInformacion.xsd, EventosSIF.xsd, ConsultaLR.xsd y las respuestas. Algunos enlaces de la AEAT piden certificado electrónico.</p></details><details><summary>¿Este XML se puede enviar tal cual a la AEAT?</summary><p>No. Es un ejemplo de estructura. El envío real va dentro de un sobre SOAP, se hace con certificado electrónico desde tu sistema de facturación y, en la modalidad no VERI*FACTU, los registros además se firman.</p></details><details><summary>¿Qué elemento raíz tiene el envío de registros?</summary><p>RegFactuSistemaFacturacion, del esquema SuministroLR.xsd, con una Cabecera (ObligadoEmision) y entre 1 y 1.000 RegistroFactura.</p></details><details><summary>¿Es obligatorio el destinatario?</summary><p>En una factura completa (F1) hay que identificar al destinatario. En una factura simplificada (F2) puede omitirse.</p></details><details><summary>¿Cómo se escriben los importes en el XML?</summary><p>Con punto decimal y como máximo 12 cifras enteras y 2 decimales, por ejemplo 1210.00. Pueden llevar signo negativo en rectificativas.</p></details><details><summary>¿Qué formato tiene FechaHoraHusoGenRegistro?</summary><p>Fecha y hora ISO 8601 con huso horario, por ejemplo 2026-11-13T10:15:00+01:00. Interviene en la huella, así que debe coincidir exactamente con la usada en el cálculo.</p></details></div><h2 id="fuentes">Fuentes oficiales</h2><ul class="sources"><li><a href="https://www.agenciatributaria.es/AEAT.desarrolladores/Desarrolladores/_menu_/Documentacion/Sistemas_Informaticos_de_Facturacion_y_Sistemas_VERI_FACTU/Esquemas_de_los_servicios_web/Esquemas_de_los_servicios_web.html" rel="noopener" target="_blank">AEAT: esquemas de los servicios web (XSD) de VERI*FACTU</a></li><li><a href="https://www.agenciatributaria.es/static_files/AEAT_Desarrolladores/EEDD/IVA/VERI-FACTU/Veri-Factu_especificaciones_huella_hash_registros.pdf" rel="noopener" target="_blank">AEAT: especificaciones de la huella o hash de los registros (v0.1.2, 27/08/2024, PDF)</a></li><li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2024-22138" rel="noopener" target="_blank">Orden HAC/1177/2024, de 17 de octubre (BOE)</a> – arts. 20 y 21: representación gráfica y código QR</li><li><a href="https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu.html" rel="noopener" target="_blank">Sistemas Informáticos de Facturación y VERI*FACTU – sede de la AEAT</a> – página actualizada el 03/11/2026</li></ul><h2 id="otras-herramientas">Otras herramientas gratis: Verifactu, factura electrónica y morosidad</h2><div class="hub"><a href="/"><strong>¿Estoy obligado a Verifactu?</strong><span>Responde 4 preguntas: fecha del BOE (2027) y aplazamiento anunciado (2028).</span></a><a href="/generador-qr-verifactu/"><strong>Generador de QR tributario</strong><span>QR con nivel M, 30–40 mm, «QR tributario:» y leyenda VERI*FACTU listo para imprimir.</span></a><a href="/validar-qr-verifactu/"><strong>Validar y leer QR Verifactu</strong><span>Pega la URL, sube una foto o usa la cámara: comprueba dominio, parámetros y formato.</span></a><a href="/calcular-huella-verifactu/"><strong>Calcular huella (hash)</strong><span>SHA-256 de registros de alta, anulación y evento y comprobación de la cadena.</span></a><a href="/factura-electronica-obligatoria/"><strong>Factura electrónica B2B: ¿cuándo me obliga?</strong><span>Fechas del BOE (6/10/2027 y 6/10/2028), test y plazo de 4 días para informar pagos.</span></a><a href="/periodo-medio-pago-proveedores/"><strong>Calculadora del periodo medio de pago</strong><span>Método ICAC: ratios de pagadas y pendientes, límite de 60 días, CSV y cuadro de la memoria.</span></a><a href="/intereses-demora-comerciales/"><strong>Intereses de demora (Ley 3/2004)</strong><span>Tipos del BOE por semestre (BCE + 8) y 40 € por factura, para varias facturas.</span></a></div><h2 id="guias-relacionadas">Guías relacionadas</h2><div class="hub"><a href="/blog/fechas-verifactu-2027-2028/"><strong>Fechas de Verifactu: qué está en el BOE (2027) y qué solo se ha anunciado (2028)</strong><span>¿Cuándo entra en vigor Verifactu? Fechas vigentes en el BOE (1/1/2027 y 1/7/2027), aplazamiento a octubre de 2028 anunciado y qué hacer mientras tanto.</span></a><a href="/blog/tamano-posicion-qr-verifactu/"><strong>Tamaño y posición del QR de Verifactu: todas las reglas oficiales</strong><span>Medidas del QR Verifactu (30–40 mm, nivel M), margen de 2 a 6 mm, dónde colocarlo, texto «QR tributario:» y leyenda VERI*FACTU, con ejemplos.</span></a><a href="/blog/verifactu-gratis-aplicacion-aeat/"><strong>Verifactu gratis: cómo usar la aplicación de facturación de la AEAT</strong><span>Cómo cumplir Verifactu gratis con la aplicación de facturación de la AEAT: quién puede usarla, requisitos, límites (sin tiques) y alternativas sin coste.</span></a></div><p class="updated">Última revisión: <time datetime="2026-11-13">13 de noviembre de 2026</time> · Los datos no salen de tu navegador.</p></article>
 </main>
-<footer class="site-foot"><div class="wrap"><div class="foot-grid"><div><h2>VerifactuYa</h2><p>Herramientas gratuitas para cumplir Verifactu, la factura electrónica B2B y la Ley de morosidad: obligación, QR tributario, huella, XML, periodo medio de pago e intereses de demora. Sin registro, sin publicidad, sin cookies. Todo se calcula en tu navegador: Los datos no salen de tu navegador.</p><p>Web independiente, sin relación con la Agencia Tributaria (AEAT) ni con el Ministerio de Hacienda. Información orientativa: no es asesoramiento fiscal.</p></div><div><h2>Herramientas</h2><ul><li><a href="/">¿Estoy obligado a Verifactu?</a></li><li><a href="/generador-qr-verifactu/">Generador de QR tributario</a></li><li><a href="/validar-qr-verifactu/">Validar y leer QR Verifactu</a></li><li><a href="/calcular-huella-verifactu/">Calcular huella (hash)</a></li><li><a href="/ejemplo-xml-verifactu/">Ejemplo XML de registro de alta</a></li><li><a href="/factura-electronica-obligatoria/">Factura electrónica B2B: ¿cuándo me obliga?</a></li><li><a href="/periodo-medio-pago-proveedores/">Calculadora del periodo medio de pago</a></li><li><a href="/intereses-demora-comerciales/">Intereses de demora (Ley 3/2004)</a></li></ul></div><div><h2>Web y fuentes oficiales</h2><ul><li><a href="/blog/">Guías Verifactu</a></li><li><a href="/sobre-nosotros/">Sobre nosotros</a></li><li><a href="/contacto/">Contacto</a></li><li><a href="/aviso-legal/">Aviso legal y condiciones</a></li><li><a href="/privacidad/">Política de privacidad</a></li><li><a href="https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu.html" rel="noopener" target="_blank">Verifactu en la sede de la AEAT</a></li><li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2023-24840" rel="noopener" target="_blank">RD 1007/2023 (texto consolidado, BOE)</a></li><li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2026-7295" rel="noopener" target="_blank">RD 238/2026, factura electrónica B2B (BOE)</a></li><li><a href="/sitemap.xml">Mapa del sitio</a></li></ul></div></div><p class="foot-note">© 2026 VerifactuYa · Última revisión: 13 de noviembre de 2026 · Sin servidor, sin cookies y sin seguimiento.</p></div></footer><p id="live" class="sr-only" aria-live="polite"></p><div id="print-sheet" aria-hidden="true"></div>
+<footer class="site-foot"><div class="wrap"><div class="foot-grid"><div><h2>VerifactuYa</h2><p>Herramientas gratuitas para cumplir Verifactu, la factura electrónica B2B y la Ley de morosidad: obligación, QR tributario, huella, XML, periodo medio de pago e intereses de demora. Sin registro, sin publicidad, sin cookies. Todo se calcula en tu navegador: Los datos no salen de tu navegador.</p><p>Web independiente, sin relación con la Agencia Tributaria (AEAT) ni con el Ministerio de Hacienda. Información orientativa: no es asesoramiento fiscal.</p></div><div><h2>Herramientas</h2><ul><li><a href="/">¿Estoy obligado a Verifactu?</a></li><li><a href="/generador-qr-verifactu/">Generador de QR tributario</a></li><li><a href="/validar-qr-verifactu/">Validar y leer QR Verifactu</a></li><li><a href="/calcular-huella-verifactu/">Calcular huella (hash)</a></li><li><a href="/ejemplo-xml-verifactu/">Ejemplo XML de registro de alta</a></li><li><a href="/factura-electronica-obligatoria/">Factura electrónica B2B: ¿cuándo me obliga?</a></li><li><a href="/periodo-medio-pago-proveedores/">Calculadora del periodo medio de pago</a></li><li><a href="/intereses-demora-comerciales/">Intereses de demora (Ley 3/2004)</a></li></ul></div><div><h2>Web y fuentes oficiales</h2><ul><li><a href="/blog/">Guías: Verifactu, factura electrónica y morosidad</a></li><li><a href="/sobre-nosotros/">Sobre nosotros</a></li><li><a href="/contacto/">Contacto</a></li><li><a href="/aviso-legal/">Aviso legal y condiciones</a></li><li><a href="/privacidad/">Política de privacidad</a></li><li><a href="https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu.html" rel="noopener" target="_blank">Verifactu en la sede de la AEAT</a></li><li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2023-24840" rel="noopener" target="_blank">RD 1007/2023 (texto consolidado, BOE)</a></li><li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2026-7295" rel="noopener" target="_blank">RD 238/2026, factura electrónica B2B (BOE)</a></li><li><a href="/sitemap.xml">Mapa del sitio</a></li></ul></div></div><p class="foot-note">© 2026 VerifactuYa · Última revisión: 13 de noviembre de 2026 · Sin servidor, sin cookies y sin seguimiento.</p></div></footer><p id="live" class="sr-only" aria-live="polite"></p><div id="print-sheet" aria-hidden="true"></div>
 <script src="/assets/core.js?v=1" defer></script>
 <script src="/assets/ui.js?v=1" defer></script>
 <script src="/assets/page-xml.js?v=1" defer></script>
