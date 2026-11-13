@@ -21,7 +21,7 @@ let pass = 0, fail = 0;
 const ok = (c, m) => { if (c) { pass++; console.log("  ✓ " + m); } else { fail++; console.log("  ✗ " + m); } };
 const txt = (p, s) => p.textContent(s).then(x => x || "");
 const PAGES = ["/", "/generador-qr-verifactu/", "/validar-qr-verifactu/", "/calcular-huella-verifactu/", "/ejemplo-xml-verifactu/", "/factura-electronica-obligatoria/", "/periodo-medio-pago-proveedores/", "/intereses-demora-comerciales/", "/blog/", "/blog/fechas-verifactu-2027-2028/",
-  "/blog/verifactu-gratis-aplicacion-aeat/", "/blog/tamano-posicion-qr-verifactu/", "/blog/diferencias-verifactu-factura-electronica-b2b/", "/blog/factura-electronica-obligatoria-autonomos/", "/blog/calcular-periodo-medio-pago-proveedores-ejemplo/", "/sobre-nosotros/", "/contacto/", "/aviso-legal/", "/privacidad/", "/no-existe/"];
+  "/blog/verifactu-gratis-aplicacion-aeat/", "/blog/tamano-posicion-qr-verifactu/", "/blog/diferencias-verifactu-factura-electronica-b2b/", "/blog/factura-electronica-obligatoria-autonomos/", "/blog/calcular-periodo-medio-pago-proveedores-ejemplo/", "/blog/verifactu-autonomos/", "/blog/plazos-pago-ley-morosidad/", "/sobre-nosotros/", "/contacto/", "/aviso-legal/", "/privacidad/", "/no-existe/"];
 const ACTIONS = {
   "/": async p => {
     const cd = await txt(p, "#cd-is");

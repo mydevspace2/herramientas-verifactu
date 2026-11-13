@@ -10,7 +10,8 @@ DEFAULT_BRAND = "Herramientas Verifactu"
 # Nombre de marca: con dominio propio se puede cambiar con VF_BRAND (p. ej. "VerifactuYa").
 BRAND = os.environ.get("VF_BRAND", DEFAULT_BRAND).strip() or DEFAULT_BRAND
 SITE = BRAND
-UPDATED_ISO = "2026-11-13"
+UPDATED_ISO = "2026-11-13"  # SIEMPRE AAAA-MM-DD (sitemap <lastmod>, <time datetime>, JSON-LD)
+assert re.match(r"^\d{4}-\d{2}-\d{2}$", UPDATED_ISO)
 UPDATED_ES = "13 de noviembre de 2026"
 ASSET_V = "1"
 OG_IMAGE = "/assets/og-verifactu.png"
@@ -33,7 +34,7 @@ TOOLS = [
     ("/intereses-demora-comerciales/", "Intereses de demora (Ley 3/2004)", "Demora", "Tipos del BOE por semestre (BCE + 8) y 40 € por factura, para varias facturas."),
 ]
 OTHER = [
-    ("/blog/", "Guías Verifactu"),
+    ("/blog/", "Guías: Verifactu, factura electrónica y morosidad"),
     ("/sobre-nosotros/", "Sobre nosotros"),
     ("/contacto/", "Contacto"),
     ("/aviso-legal/", "Aviso legal y condiciones"),
@@ -129,29 +130,36 @@ def org_ref():
 
 def jsonld(page, path):
     url = SITE_URL + path
+    site_ref = {"@id": SITE_URL + "/#website"}
     graph = []
     if page.get("app", True):
-        graph.append({"@type": "WebApplication", "name": page["app_name"], "url": url, "description": page["desc"],
+        graph.append({"@type": "WebApplication", "@id": url + "#app", "name": page["app_name"], "url": url, "description": page["desc"],
                       "applicationCategory": "BusinessApplication", "operatingSystem": "Cualquiera (navegador web)",
                       "browserRequirements": "Requiere JavaScript", "inLanguage": "es-ES", "isAccessibleForFree": True,
                       "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "dateModified": UPDATED_ISO,
-                      "image": SITE_URL + OG_IMAGE, "publisher": org_ref()})
+                      "image": SITE_URL + OG_IMAGE, "publisher": {"@id": SITE_URL + "/#organization"}, "isPartOf": site_ref})
     else:
-        graph.append({"@type": "WebPage", "name": page["title"], "url": url, "description": page["desc"], "inLanguage": "es-ES", "dateModified": UPDATED_ISO})
-    if path == "/":
-        graph.append({"@type": "Organization", "@id": SITE_URL + "/#organization", "name": BRAND, "url": SITE_URL + "/",
-                      "logo": {"@type": "ImageObject", "url": SITE_URL + LOGO_PNG, "width": 512, "height": 512},
-                      "description": "Web independiente con herramientas gratuitas para Verifactu, la factura electrónica B2B y la morosidad. Sin relación con la AEAT."})
-        graph.append({"@type": "WebSite", "@id": SITE_URL + "/#website", "name": SITE, "url": SITE_URL + "/", "inLanguage": "es-ES",
-                      "publisher": {"@id": SITE_URL + "/#organization"}})
+        graph.append({"@type": "CollectionPage" if path == "/blog/" else "WebPage", "@id": url + "#webpage", "name": page["title"], "url": url,
+                      "description": page["desc"], "inLanguage": "es-ES", "dateModified": UPDATED_ISO, "isPartOf": site_ref})
+    # Organización y sitio web en todas las páginas (mismo @id): Google las une en un único nodo.
+    graph.append({"@type": "Organization", "@id": SITE_URL + "/#organization", "name": BRAND, "url": SITE_URL + "/",
+                  "logo": {"@type": "ImageObject", "url": SITE_URL + LOGO_PNG, "width": 512, "height": 512},
+                  "email": EMAIL,
+                  "description": "Web independiente con herramientas gratuitas para Verifactu, la factura electrónica B2B y la morosidad. Sin relación con la AEAT."})
+    graph.append({"@type": "WebSite", "@id": SITE_URL + "/#website", "name": SITE, "url": SITE_URL + "/", "inLanguage": "es-ES",
+                  "description": "Herramientas y guías gratuitas sobre Verifactu, factura electrónica obligatoria y morosidad.",
+                  "publisher": {"@id": SITE_URL + "/#organization"}})
     if page.get("article"):
-        org = org_ref()
-        graph.append({"@type": "Article", "headline": page["h1"], "description": page["desc"], "url": url, "mainEntityOfPage": url,
-                      "inLanguage": "es-ES", "datePublished": UPDATED_ISO, "dateModified": UPDATED_ISO, "author": org, "publisher": org,
-                      "isAccessibleForFree": True, "image": SITE_URL + OG_IMAGE})
+        pub = page.get("published", UPDATED_ISO)
+        mod = page.get("modified", UPDATED_ISO)
+        assert re.match(r"^\d{4}-\d{2}-\d{2}$", pub) and re.match(r"^\d{4}-\d{2}-\d{2}$", mod), "fechas ISO"
+        graph.append({"@type": "Article", "@id": url + "#article", "headline": page["h1"][:110], "description": page["desc"], "url": url,
+                      "mainEntityOfPage": url, "inLanguage": "es-ES", "datePublished": pub, "dateModified": max(pub, mod),
+                      "author": {"@id": SITE_URL + "/#organization"}, "publisher": {"@id": SITE_URL + "/#organization"},
+                      "isPartOf": site_ref, "isAccessibleForFree": True, "image": SITE_URL + OG_IMAGE})
     if page.get("faq"):
-        graph.append({"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": strip_tags(a)}} for q, a in page["faq"]]})
-    graph.append({"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": SITE_URL + u} for i, (n, u) in enumerate(page["trail"])]})
+        graph.append({"@type": "FAQPage", "@id": url + "#faq", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": strip_tags(a)}} for q, a in page["faq"]]})
+    graph.append({"@type": "BreadcrumbList", "@id": url + "#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": SITE_URL + u} for i, (n, u) in enumerate(page["trail"])]})
     return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=1)
 
 

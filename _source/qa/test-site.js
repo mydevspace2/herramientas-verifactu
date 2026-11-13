@@ -22,7 +22,7 @@ const TOOLS = ["/", "/generador-qr-verifactu/", "/validar-qr-verifactu/", "/calc
 const titles = {}, descs = {}, words = [];
 console.log("Sitio: " + SITE + " (BASE «" + BASE + "») – " + pages.length + " páginas HTML");
 t("robots.txt bloquea /_source/ y enlaza el sitemap", () => { assert.ok(robots.includes("Disallow: " + BASE + "/_source/")); assert.ok(robots.includes("Sitemap: " + SITE + "/sitemap.xml")); });
-t("sitemap.xml bien formado con 19 URL", () => { assert.strictEqual((sitemap.match(/<loc>/g) || []).length, 19); assert.ok(sitemap.startsWith('<?xml version="1.0"')); });
+t("sitemap.xml bien formado con 21 URL y <lastmod> solo AAAA-MM-DD", () => { assert.strictEqual((sitemap.match(/<loc>/g) || []).length, 21); const lm = sitemap.match(/<lastmod>[^<]*<\/lastmod>/g) || []; assert.strictEqual(lm.length, 21); lm.forEach(x => assert.ok(/^<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>$/.test(x), x)); assert.ok(sitemap.startsWith('<?xml version="1.0"')); });
 for (const file of pages) {
   const rel = "/" + path.relative(ROOT, file).replace(/index\.html$/, "");
   const html = fs.readFileSync(file, "utf8");
@@ -46,16 +46,31 @@ for (const file of pages) {
   t(rel + " – JSON-LD válido (WebApplication/WebPage, BreadcrumbList, FAQPage = FAQ visible)", () => {
     const j = JSON.parse(doc.querySelector('script[type="application/ld+json"]').textContent);
     const types = j["@graph"].map(x => x["@type"]);
-    assert.ok(types.includes("BreadcrumbList")); assert.ok(types.includes("WebApplication") || types.includes("WebPage"));
+    assert.ok(types.includes("BreadcrumbList")); assert.ok(types.includes("WebApplication") || types.includes("WebPage") || types.includes("CollectionPage"));
     const faq = j["@graph"].find(x => x["@type"] === "FAQPage");
     assert.strictEqual(faq ? faq.mainEntity.length : 0, doc.querySelectorAll(".faq details").length);
     if (TOOLS.includes(rel) || rel.startsWith("/blog/") && rel !== "/blog/") assert.ok(faq && faq.mainEntity.length >= 5, "FAQ ≥ 5");
     j["@graph"].forEach(x => { if (x.url) assert.ok(x.url.startsWith(SITE + "/"), x.url); });
   });
+  t(rel + " – SEO: Organization + WebSite en JSON-LD, Article con fechas ISO en guías, <img> con alt, <time> ISO", () => {
+    const j = JSON.parse(doc.querySelector('script[type="application/ld+json"]').textContent);
+    const types = j["@graph"].map(x => x["@type"]);
+    assert.ok(types.includes("Organization") && types.includes("WebSite"), types.join());
+    if (rel.startsWith("/blog/") && rel !== "/blog/") {
+      const a = j["@graph"].find(x => x["@type"] === "Article"); assert.ok(a, "Article");
+      assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(a.datePublished) && /^\d{4}-\d{2}-\d{2}$/.test(a.dateModified), a.datePublished + " " + a.dateModified);
+      const toolLinks = [...doc.querySelectorAll("article.content a[href]")].map(x => x.getAttribute("href")).filter(h => TOOLS.some(u => h === BASE + u));
+      assert.ok(toolLinks.length >= 1, "la guía enlaza al menos una herramienta");
+    }
+    if (TOOLS.includes(rel)) assert.ok(types.includes("WebApplication"), "WebApplication");
+    doc.querySelectorAll("img").forEach(im => assert.ok(im.hasAttribute("alt"), "img sin alt"));
+    doc.querySelectorAll("time[datetime]").forEach(tm => assert.ok(/^\d{4}-\d{2}-\d{2}$/.test(tm.getAttribute("datetime")), tm.getAttribute("datetime")));
+    if (!is404) assert.ok(doc.querySelectorAll("#guias-relacionadas + .hub a").length >= (rel === "/blog/" || ["/sobre-nosotros/", "/contacto/", "/aviso-legal/", "/privacidad/"].includes(rel) ? 0 : 3), "≥ 3 guías relacionadas");
+  });
   t(rel + " – meta: title ≤ 70, description 70–160, canonical, hreflang es/x-default, OG, un H1, lang=es", () => {
     const title = doc.title, desc = doc.querySelector('meta[name="description"]').content;
     assert.ok(title.length > 10 && title.length <= 70, "title " + title.length + ": " + title);
-    assert.ok(desc.length >= 70 && desc.length <= 160, "desc " + desc.length);
+    assert.ok(desc.length >= 70 && desc.length < 160, "desc " + desc.length);
     assert.ok(!titles[title], "title repetido"); titles[title] = 1; assert.ok(!descs[desc], "description repetida"); descs[desc] = 1;
     const can = doc.querySelector('link[rel="canonical"]').getAttribute("href");
     if (!is404) { assert.strictEqual(can, SITE + rel); assert.ok(sitemap.includes("<loc>" + can + "</loc>"), "en sitemap"); }
@@ -127,12 +142,19 @@ t("Las tres herramientas B2B cargan b2b.js y su script propio", () => {
     const h = fs.readFileSync(path.join(ROOT, d, "index.html"), "utf8"); assert.ok(h.includes(BASE + "/assets/b2b.js?") && h.includes(BASE + "/assets/" + js + "?"), d);
   });
 });
-t("Ningún importe de sanción en la sección B2B (solo se citarían literalmente del BOE)", () => ["factura-electronica-obligatoria", "periodo-medio-pago-proveedores", "intereses-demora-comerciales", "blog/diferencias-verifactu-factura-electronica-b2b", "blog/factura-electronica-obligatoria-autonomos", "blog/calcular-periodo-medio-pago-proveedores-ejemplo"].forEach(d => {
+t("Ningún importe de sanción en la sección B2B (solo se citarían literalmente del BOE)", () => ["factura-electronica-obligatoria", "periodo-medio-pago-proveedores", "intereses-demora-comerciales", "blog/diferencias-verifactu-factura-electronica-b2b", "blog/factura-electronica-obligatoria-autonomos", "blog/calcular-periodo-medio-pago-proveedores-ejemplo", "blog/plazos-pago-ley-morosidad", "blog/verifactu-autonomos"].forEach(d => {
   const h = fs.readFileSync(path.join(ROOT, d, "index.html"), "utf8"); assert.ok(!/(multa|sanci[oó]n)[^.<]{0,60}\d[\d.]*\s*(€|euros)/i.test(h), d);
 }));
 t("JS de producción minificado y sin eval", () => fs.readdirSync(path.join(ROOT, "assets")).filter(f => f.endsWith(".js")).forEach(f => {
   const s = fs.readFileSync(path.join(ROOT, "assets", f), "utf8"); assert.ok(!/\beval\(|new Function\(/.test(s), f); assert.ok(s.split("\n").length < 40, f + " no minificado");
 }));
+t("Search Console: meta google-site-verification solo en la portada cuando se compila con VF_GSV", () => {
+  const home = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
+  const gsv = process.env.VF_GSV || "";
+  if (gsv) assert.ok(home.includes('<meta name="google-site-verification" content="' + gsv + '">'), "falta en portada");
+  else assert.ok(!home.includes("google-site-verification"));
+  pages.filter(f => path.resolve(f) !== path.resolve(path.join(ROOT, "index.html"))).forEach(f => assert.ok(!fs.readFileSync(f, "utf8").includes("google-site-verification"), f));
+});
 console.log("\nPalabras en el cuerpo de cada página:"); words.forEach(([r, n]) => console.log("   " + String(n).padStart(5) + "  " + r));
 console.log("\nResultado: " + pass + " correctas, " + fail + " fallidas");
 process.exit(fail ? 1 : 0);

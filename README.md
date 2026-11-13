@@ -16,7 +16,7 @@ Free Spanish toolkit for Verifactu, mandatory B2B e-invoicing (RD 238/2026) and 
 | B2B e-invoicing – "¿cuándo me obliga?" | `/factura-electronica-obligatoria/` | Dates from RD 238/2026 + Orden HAC/1028/2026 (6 Oct 2027 / 6 Oct 2028 / 6 Oct 2029), 4-question checker, 4-day reporting deadline calculator (weekends + BOE national holidays) |
 | Average supplier payment period (PMP) | `/periodo-medio-pago-proveedores/` | ICAC 2016 method (memoria normal: rows or CSV/paste from Excel; memoria abreviada: balances), paid/pending ratios, 60-day check, Ley 18/2022 counts, printable memoria table, CSV export |
 | Late-payment interest | `/intereses-demora-comerciales/` | Multi-invoice, official BOE rate per semester 2013-2 → 2026-2 (each with its BOE id), optional agreed rate, 40 € per invoice (art. 8.1 + CJEU C-585/20), due-date helper, print/CSV |
-| Guides | `/blog/` + 6 posts | Dates BOE vs announced · "Verifactu gratis" · QR size and position · Verifactu vs B2B e-invoice · B2B e-invoice for autónomos · how to calculate the PMP (example + Excel) |
+| Guides | `/blog/` + 8 posts | Dates BOE vs announced · "Verifactu gratis" · QR size and position · Verifactu vs B2B e-invoice · B2B e-invoice for autónomos · how to calculate the PMP (example + Excel) · Verifactu for autónomos · payment terms of the Ley de morosidad (30/60 days) |
 | Legal | `/sobre-nosotros/`, `/contacto/`, `/aviso-legal/`, `/privacidad/`, `404.html` | |
 
 Everything runs in the visitor's browser. No server, no cookies, no analytics, no ads.
@@ -48,7 +48,10 @@ Do not add fine amounts (sanciones) unless you verify them in the BOE first.
 3. The site updates in 1–2 minutes.
 Tip: for bigger changes, paste the file into any free AI (ChatGPT, Gemini), ask for the change, and paste the result back. Keep links starting with `/herramientas-verifactu/` while the site lives on github.io.
 
-## Google Search Console (not set up yet)
+## Google Search Console
+The verification tag is on the home page since 13 Nov 2026 (built with `VF_GSV`). **Always rebuild with the same value** – `VF_GSV=PBIzVZ_WTR9JENZ2TnCvFsTs3YWHua2ZJY0Cq2uO-6k python3 build.py` – or the tag disappears and the property loses verification. Remaining steps: submit `sitemap.xml` and Request Indexing on every page (especially new guides).
+
+Original setup notes:
 1. Add a URL-prefix property for the live address.
 2. Choose "HTML tag" verification and copy the `content="..."` value.
 3. Either edit `index.html` and add `<meta name="google-site-verification" content="VALUE">` right after `<meta charset="utf-8">`, or rebuild with `VF_GSV=VALUE` (see below).
@@ -84,6 +87,11 @@ python3 test-xsd-qr.py     # XML vs official AEAT XSD (lxml) + QR read-back (pip
 node test-site.js          # links, meta, JSON-LD, hreflang, CSP, sitemap, word counts
 node test-browser-csp.js   # real Chromium with CSP enforced: every tool, dark mode, mobile 375 px
 ```
+
+## SEO notes (13 Nov 2026)
+- Keyword research, the 30-post blog calendar and 5 promo drafts (not posted) live in the Hark project workspace (`work/verifactu/seo/`).
+- New guides go in `_source/build/page_blog_2.py` (`POSTS`, with `published="YYYY-MM-DD"`) plus their entry in the related-guides map in `build.py`. Sitemap, blog index and "Guías relacionadas" update automatically.
+- Every page carries Organization + WebSite JSON-LD; tools add WebApplication, guides add Article (ISO dates), FAQ pages add FAQPage, all add BreadcrumbList. `lastmod` is always `YYYY-MM-DD` (the build refuses anything else).
 
 ## Rules worth keeping
 - Always show "in the BOE" vs "only announced" separately for the dates.
