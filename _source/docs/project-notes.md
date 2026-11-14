@@ -2,8 +2,8 @@
 
 ## Status
 - LIVE: https://mydevspace2.github.io/herramientas-verifactu/ (GitHub Pages, repo https://github.com/mydevspace2/herramientas-verifactu, branch main, root). HTTPS enforced automatically (github.io).
-- Commits: 5590b68 (v1), e100cb7 (QA), 99b7c2a (B2B + morosidad), **a2c0858 (2026-11-13: full SEO pass + 2 guides + GSC tag) – main HEAD a2c085815d7c46dc862a8e4b340d1eb314d7f26d**.
-- Branch `domain-verifactuya` = a5295b6 (a5295b676485acfc465034a51e0507ea193c5734; rebuilt from main a2c0858 via merge -s ours + domain build, so merging into main later is a fast-forward; earlier 6a29b2d): same site built for https://verifactuya.com (CNAME, canonical/OG/sitemap/hreflang/robots, brand VerifactuYa) + switch steps in its README. NOT merged, NOT live. Worktree: site/repo-domain. Domain not bought yet.
+- Commits: 5590b68 (v1), e100cb7 (QA), 99b7c2a (B2B + morosidad), a2c0858 (SEO pass + GSC tag), d1e1b26 (AI handover docs), **39c8b7d (2026-11-13: mobile UX fixes) – main HEAD 39c8b7ddac7efea0517f39a29f04b891d58811ae**.
+- Branch `domain-verifactuya` = 673382a (673382af11b70125ccbfd72606566a0e8b73748e; rebuilt from main 39c8b7d via merge -s ours + domain build; before: a5295b6 from a2c0858, so merging into main later is a fast-forward; earlier 6a29b2d): same site built for https://verifactuya.com (CNAME, canonical/OG/sitemap/hreflang/robots, brand VerifactuYa) + switch steps in its README. NOT merged, NOT live. Worktree: site/repo-domain. Domain not bought yet.
 - Custom domain NOT done: DigitalPlat shows herramientasverifactu.dpdns.org as available, but the account has 0 free domain slots (numerksef.dpdns.org uses the only one). The browser starred github.com/DigitalPlatDev/FreeDomain and re-verified GitHub on DigitalPlat to try the "+1 slot for stargazers" bonus – not credited as of 15:30 PKT; there is no claim button. Paid slots/plans were not used.
 - Search Console: HTML-tag token in work/verifactu/gsv.txt (PBIzVZ_WTR9JENZ2TnCvFsTs3YWHua2ZJY0Cq2uO-6k) is live on the homepage since 13/11/2026. ALWAYS build with VF_GSV="$(cat ../../gsv.txt)" or the tag disappears.
 - Nothing posted anywhere. No money spent.
@@ -52,3 +52,13 @@
 - CSS: .status text wraps (overflow-wrap:anywhere) so long hashes never widen the page; all text inputs ≥16 px (rows-table inputs were 15.2 px); .btn.small and row ✕ buttons 44 px; .badge/.tag 13 px; grid children min-width:0.
 - Wording: badge «Sin publicidad ni seguimiento» → «Gratis, sin registro» (+ «Los datos no salen de tu navegador.»); removed «sin publicidad» from footer, About and privacy meta description. Privacy body paragraph kept (it already says the policy will be updated before any ads/analytics). Footer «sin cookies y sin seguimiento» kept (true today) – must change if AdSense/analytics are added.
 - No legal data, dates or rates changed (only moved). New test qa/test-ux-mobile.js (34 checks) + qa/run-all.sh. Total 466/466.
+- Deployed 39c8b7d: live check 37/37 HTML/JS/XML/TXT files byte-identical, unknown path 404. IndexNow is NOT configured on this site (no key file), so no ping was sent.
+
+## Daily run 2026-11-14 (Phase 1, day 1 of the scheduled task)
+- Published 3 posts (build/page_blog_2.py, `published` 2026-11-14): /blog/tipo-interes-demora-2026/ (#5), /blog/reclamar-factura-impagada-intereses/ (#29), /blog/informar-pago-factura-4-dias/ (#23). Figures only from local BOE copies (src/b2b/tipos/tipos.json, ley3.txt, act-BOE-A-2026-7295.txt) and the calculator code (b2b.js interes/plazo4) for worked examples. New sources in sources.py: TESORO26A, TESORO25B, FIESTAS26.
+- Internal links: REL map in build.py (TID/REC/INF), contextual links added in /intereses-demora-comerciales/, /factura-electronica-obligatoria/ (4-day section) and /blog/plazos-pago-ley-morosidad/.
+- Fix: 4-day section on /factura-electronica-obligatoria/ said adding regional holidays was the "safe" option (it gives a LATER date). Reworded: prudent = don't count them.
+- Build: common.UPDATED_ISO now = VF_UPDATED or today's date (sitemap lastmod + «Última revisión» update on every build). qa/test-site.js sitemap test now counts pages instead of a hard-coded 21.
+- BOE checks: RD 1007/2023 consolidated still «última actualización 03/12/2025» → Verifactu 2028 delay NOT in BOE. No new Tesoro rate (next ~end Dec 2026 for 1st half 2027).
+- Tests 493/493 (42+29+13+232+143+34). 24 URLs in sitemap. Calendar: 5/30 done; 25 left (B2B/morosidad left: #6, #20–22, #24–28, #30).
+- Domain branch domain-verifactuya NOT rebuilt (rebuild before merging once the domain is bought).

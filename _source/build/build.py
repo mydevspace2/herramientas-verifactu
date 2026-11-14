@@ -33,15 +33,17 @@ _b = lambda slug: "/blog/%s/" % slug
 F, G, Q = _b("fechas-verifactu-2027-2028"), _b("verifactu-gratis-aplicacion-aeat"), _b("tamano-posicion-qr-verifactu")
 DIF, AUT, PMPG = _b("diferencias-verifactu-factura-electronica-b2b"), _b("factura-electronica-obligatoria-autonomos"), _b("calcular-periodo-medio-pago-proveedores-ejemplo")
 VAU, MOR = _b("verifactu-autonomos"), _b("plazos-pago-ley-morosidad")
-assert all(u in [a[0] for a in common.ARTICLES] for u in (F, G, Q, DIF, AUT, PMPG, VAU, MOR))
+TID, REC, INF = _b("tipo-interes-demora-2026"), _b("reclamar-factura-impagada-intereses"), _b("informar-pago-factura-4-dias")
+assert all(u in [a[0] for a in common.ARTICLES] for u in (F, G, Q, DIF, AUT, PMPG, VAU, MOR, TID, REC, INF))
 # Enlaces internos «Guías relacionadas» (3 por página): herramienta -> guías del mismo tema, guía -> guías hermanas
 common.ARTICLE_MAP.update({"/": [VAU, F, G], "/generador-qr-verifactu/": [Q, VAU, F], "/validar-qr-verifactu/": [Q, G, VAU],
                            "/calcular-huella-verifactu/": [F, Q, VAU], "/ejemplo-xml-verifactu/": [F, Q, G],
-                           "/factura-electronica-obligatoria/": [DIF, AUT, MOR], "/periodo-medio-pago-proveedores/": [PMPG, MOR, DIF],
-                           "/intereses-demora-comerciales/": [MOR, PMPG, AUT],
+                           "/factura-electronica-obligatoria/": [INF, DIF, AUT], "/periodo-medio-pago-proveedores/": [PMPG, MOR, DIF],
+                           "/intereses-demora-comerciales/": [TID, REC, MOR],
                            F: [VAU, G, DIF], G: [VAU, F, Q], Q: [G, VAU, F],
-                           DIF: [AUT, VAU, PMPG], AUT: [VAU, DIF, MOR], PMPG: [MOR, DIF, AUT],
-                           VAU: [F, G, AUT], MOR: [PMPG, AUT, DIF]})
+                           DIF: [AUT, VAU, PMPG], AUT: [INF, VAU, DIF], PMPG: [MOR, DIF, AUT],
+                           VAU: [F, G, AUT], MOR: [TID, REC, PMPG],
+                           TID: [REC, MOR, PMPG], REC: [TID, MOR, INF], INF: [AUT, REC, DIF]})
 
 PAGES = [("/", HOME), ("/generador-qr-verifactu/", GEN), ("/validar-qr-verifactu/", VAL), ("/calcular-huella-verifactu/", HUE),
          ("/ejemplo-xml-verifactu/", XMLP),

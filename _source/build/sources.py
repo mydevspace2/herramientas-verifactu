@@ -27,3 +27,7 @@ LEY3 = ("Ley 3/2004, de 29 de diciembre, de lucha contra la morosidad en las ope
 TESORO26 = ("Resolución de 30 de junio de 2026 del Tesoro: tipo legal de interés de demora del 2.º semestre de 2026 (BOE-A-2026-14327)", "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-14327", "10,40 %")
 TJUE40 = ("Sentencia del TJUE de 20/10/2022, asunto C-585/20 (BFF Finance Iberia)", "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:62020CJ0585", "40 euros por cada factura no pagada a su vencimiento; el IVA forma parte de la cantidad adeudada")
 BDE_TIPOS = ("Banco de España: tabla de tipos de interés de demora para operaciones comerciales", "https://clientebancario.bde.es/pcb/es/menu-horizontal/podemosayudarte/tiposinteres/guia_textual/tiposinteresreferenciaotrostiposfrecuentes/tabla_tipos_interes_demora_operaciones_comerciales.html", "resumen; la fuente oficial es cada resolución del BOE")
+# --- añadidas el 14/11/2026 ---
+TESORO26A = ("Resolución de 23 de diciembre de 2025 del Tesoro: tipo legal de interés de demora del 1.er semestre de 2026 (BOE-A-2025-27201)", "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-27201", "10,15 %; BOE núm. 315, de 31/12/2025")
+TESORO25B = ("Resolución de 25 de junio de 2025 del Tesoro: tipo legal de interés de demora del 2.º semestre de 2025 (BOE-A-2025-13217)", "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-13217", "10,15 %")
+FIESTAS26 = ("Resolución de fiestas laborales para el año 2026 (BOE-A-2025-21667)", "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667", "")

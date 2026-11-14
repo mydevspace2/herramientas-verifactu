@@ -22,7 +22,8 @@ const TOOLS = ["/", "/generador-qr-verifactu/", "/validar-qr-verifactu/", "/calc
 const titles = {}, descs = {}, words = [];
 console.log("Sitio: " + SITE + " (BASE «" + BASE + "») – " + pages.length + " páginas HTML");
 t("robots.txt bloquea /_source/ y enlaza el sitemap", () => { assert.ok(robots.includes("Disallow: " + BASE + "/_source/")); assert.ok(robots.includes("Sitemap: " + SITE + "/sitemap.xml")); });
-t("sitemap.xml bien formado con 21 URL y <lastmod> solo AAAA-MM-DD", () => { assert.strictEqual((sitemap.match(/<loc>/g) || []).length, 21); const lm = sitemap.match(/<lastmod>[^<]*<\/lastmod>/g) || []; assert.strictEqual(lm.length, 21); lm.forEach(x => assert.ok(/^<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>$/.test(x), x)); assert.ok(sitemap.startsWith('<?xml version="1.0"')); });
+const SM_N = pages.filter(p => !p.endsWith("404.html")).length;
+t("sitemap.xml bien formado: una URL por página indexable (" + SM_N + ") y <lastmod> solo AAAA-MM-DD", () => { assert.strictEqual((sitemap.match(/<loc>/g) || []).length, SM_N); const lm = sitemap.match(/<lastmod>[^<]*<\/lastmod>/g) || []; assert.strictEqual(lm.length, SM_N); lm.forEach(x => assert.ok(/^<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>$/.test(x), x)); assert.ok(sitemap.startsWith('<?xml version="1.0"')); });
 for (const file of pages) {
   const rel = "/" + path.relative(ROOT, file).replace(/index\.html$/, "");
   const html = fs.readFileSync(file, "utf8");

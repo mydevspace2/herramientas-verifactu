@@ -10,9 +10,13 @@ DEFAULT_BRAND = "Herramientas Verifactu"
 # Nombre de marca: con dominio propio se puede cambiar con VF_BRAND (p. ej. "VerifactuYa").
 BRAND = os.environ.get("VF_BRAND", DEFAULT_BRAND).strip() or DEFAULT_BRAND
 SITE = BRAND
-UPDATED_ISO = "2026-11-13"  # SIEMPRE AAAA-MM-DD (sitemap <lastmod>, <time datetime>, JSON-LD)
+# Fecha de revisión: VF_UPDATED=AAAA-MM-DD o, si no se da, la fecha de hoy (cada publicación revisa el BOE ese día).
+import datetime as _dt
+UPDATED_ISO = os.environ.get("VF_UPDATED") or _dt.date.today().isoformat()  # SIEMPRE AAAA-MM-DD (sitemap <lastmod>, <time datetime>, JSON-LD)
 assert re.match(r"^\d{4}-\d{2}-\d{2}$", UPDATED_ISO)
-UPDATED_ES = "13 de noviembre de 2026"
+_MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+_y, _m, _d = (int(x) for x in UPDATED_ISO.split("-"))
+UPDATED_ES = "%d de %s de %d" % (_d, _MESES[_m - 1], _y)
 ASSET_V = "1"
 OG_IMAGE = "/assets/og-verifactu.png"
 OG_W, OG_H = 1200, 630
