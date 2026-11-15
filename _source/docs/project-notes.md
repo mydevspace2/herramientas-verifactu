@@ -62,3 +62,8 @@
 - BOE checks: RD 1007/2023 consolidated still «última actualización 03/12/2025» → Verifactu 2028 delay NOT in BOE. No new Tesoro rate (next ~end Dec 2026 for 1st half 2027).
 - Tests 493/493 (42+29+13+232+143+34). 24 URLs in sitemap. Calendar: 5/30 done; 25 left (B2B/morosidad left: #6, #20–22, #24–28, #30).
 - Domain branch domain-verifactuya NOT rebuilt (rebuild before merging once the domain is bought).
+
+## Daily run 2026-11-15 (Phase 1, day 2)
+- Published #20 /blog/factura-electronica-obligatoria-2027-empresas/, #21 /blog/factura-electronica-como-se-hace/, #26 /blog/periodo-medio-pago-memoria-abreviada/ (facts from RD 238/2026 and ICAC 2016 local copies; #28 skipped: "ratio de morosidad" not in local sources). REL map updated (E27/HOW/PMA).
+- Note: test-site fails on "150.000 €"/"50.000 €" anywhere (sanction regex) and meta description must be ≤160 incl. entities.
+- BOE: RD 1007/2023 still last updated 03/12/2025 (no 2028 delay). Tests 520/520. Calendar 8/30 done; B2B left: #6, #22, #24, #25, #27, #28, #30.
