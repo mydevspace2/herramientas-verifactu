@@ -29,12 +29,12 @@ Publicar: añadir el dict a `build/page_blog_2.py` (POSTS) y su entrada en `REL`
 | 19 | pendiente | verifactu-programa-facturacion-requisitos | Requisitos de un programa de facturación Verifactu | software verifactu (>100), verifactu requisitos | `/ejemplo-xml-verifactu/` |
 | 20 | **publicado 15/11/2026** | factura-electronica-obligatoria-2027-empresas | Factura electrónica obligatoria 2027: empresas de +8 M€ | factura electrónica obligatoria 2027 | `/factura-electronica-obligatoria/` |
 | 21 | **publicado 15/11/2026** | factura-electronica-como-se-hace | Factura electrónica obligatoria: cómo se hace paso a paso | factura electronica obligatoria como se hace | `/factura-electronica-obligatoria/` |
-| 22 | pendiente | solucion-publica-factura-electronica-aeat | Solución pública de facturación electrónica de la AEAT | factura electronica obligatoria programa gratuito | `/factura-electronica-obligatoria/` |
+| 22 | **publicado 16/11/2026** | solucion-publica-factura-electronica-aeat | Solución pública de facturación electrónica de la AEAT | factura electronica obligatoria programa gratuito | `/factura-electronica-obligatoria/` |
 | 23 | **publicado 14/11/2026** | informar-pago-factura-4-dias | Informar del pago de una factura en 4 días: cómo contar | factura electronica obligatoria plazos | `/factura-electronica-obligatoria/` |
-| 24 | pendiente | factura-electronica-pais-vasco-navarra | Factura electrónica obligatoria en País Vasco y Navarra | factura electronica obligatoria pais vasco | `/factura-electronica-obligatoria/` |
+| 24 | **publicado 16/11/2026** | factura-electronica-pais-vasco-navarra | Factura electrónica obligatoria en País Vasco y Navarra | factura electronica obligatoria pais vasco | `/factura-electronica-obligatoria/` |
 | 25 | pendiente | periodo-medio-pago-entidades-locales | Periodo medio de pago de entidades locales (RD 635/2014) | pmp entidades locales (9 hits), ayuntamientos (8) | `/periodo-medio-pago-proveedores/` |
 | 26 | **publicado 15/11/2026** | periodo-medio-pago-memoria-abreviada | PMP en la memoria abreviada: fórmula con saldos | pmp memoria abreviada (4 hits) | `/periodo-medio-pago-proveedores/` |
-| 27 | pendiente | periodo-medio-pago-maximo-legal | Periodo medio de pago: máximo legal y qué pasa si lo superas | pmp maximo legal (3 hits) | `/periodo-medio-pago-proveedores/` |
+| 27 | **publicado 16/11/2026** | periodo-medio-pago-maximo-legal | Periodo medio de pago: máximo legal y qué pasa si lo superas | pmp maximo legal (3 hits) | `/periodo-medio-pago-proveedores/` |
 | 28 | pendiente | diferencia-periodo-medio-pago-morosidad | Periodo medio de pago y ratio de morosidad: diferencias | diferencia entre periodo medio de pago y morosidad | `/periodo-medio-pago-proveedores/` |
 | 29 | **publicado 14/11/2026** | reclamar-factura-impagada-intereses | Cómo reclamar una factura impagada con intereses y 40 € | intereses de demora facturas impagadas | `/intereses-demora-comerciales/` |
 | 30 | pendiente | intereses-demora-cuenta-contable | Intereses de demora: cuenta contable y asiento (PGC) | intereses de demora cuenta contable (3 hits) | `/intereses-demora-comerciales/` |

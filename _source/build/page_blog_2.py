@@ -540,3 +540,158 @@ POSTS.append(dict(
     ],
     sources=[S.ICAC, S.LEY15, S.LEY3],
 ))
+
+
+POSTS.append(dict(
+    slug="solucion-publica-factura-electronica-aeat",
+    published="2026-11-16",
+    title="Solución pública de facturación electrónica de la AEAT",
+    desc="Qué es la solución pública de facturación electrónica de la AEAT, quién la usa, si es gratis y qué ocurre si no eliges plataforma privada. Según el BOE.",
+    h1="Solución pública de facturación electrónica de la AEAT: qué es y cómo funciona",
+    intro="La obligación de facturar electrónicamente entre empresarios y profesionales viene con una alternativa pública y gratuita gestionada por la Agencia Tributaria. Qué dice el Real Decreto 238/2026 sobre ella, para qué sirve y qué pasa si no eliges plataforma privada. Revisado el 16 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> la solución pública de facturación electrónica es el sistema de la AEAT para emitir y recibir facturas electrónicas entre empresarios y profesionales. Su acceso y sus usos son <strong>gratuitos</strong> (RD 238/2026) y es el punto de entrada por defecto de quien no designe una plataforma privada. Comprueba tu calendario con el <a href="/factura-electronica-obligatoria/">test de factura electrónica obligatoria</a>.</p>
+
+<h2 id="que-es">Qué es y de dónde sale</h2>
+<p>El sistema español de factura electrónica B2B se compone de dos vías: las <strong>plataformas privadas de intercambio</strong> de facturas electrónicas y la <strong>solución pública de facturación electrónica</strong> (art. 5 del Real Decreto 238/2026). La segunda se apoya en la disposición adicional vigesimoprimera de la Ley 56/2007, que encarga a la AEAT desarrollarla y gestionarla con carácter voluntario para los obligados a emitir y recibir facturas electrónicas. Su desarrollo técnico lo regula la Orden HAC/1028/2026, en vigor desde el 6 de octubre de 2026.</p>
+<p>Según la exposición de motivos del real decreto, se creó porque muchas peticiones de la consulta pública pedían una vía sencilla y asequible para pymes y profesionales.</p>
+
+<h2 id="gratis">¿Es gratis?</h2>
+<p>Sí. La exposición de motivos afirma que el acceso a la solución pública y sus distintos usos tendrán carácter gratuito para los usuarios. Además, la disposición adicional primera encarga a la AEAT una aplicación o formulario gratuito que permita expedir facturas electrónicas, generar la información sobre su estado (incluido el pago efectivo completo) y ponerla a disposición de las contrapartes y de la Administración, utilizando la solución pública. Las facturas expedidas con ese formulario serán verificables conforme al artículo 6.5.b) del Reglamento de facturación.</p>
+<p>No confundas esta herramienta con la <a href="/blog/verifactu-gratis-aplicacion-aeat/">aplicación gratuita de Verifactu</a>: son sistemas distintos con obligaciones distintas.</p>
+
+<h2 id="defecto">Qué pasa si no eliges plataforma privada</h2>
+<p>El artículo 6.1 establece que, si no has acordado expresamente con tus proveedores recibir las facturas por una o varias plataformas privadas, se entiende que <strong>optas por la solución pública</strong> sin manifestación expresa. Y el 6.3 añade que, si no identificas públicamente tu punto de entrada de facturas, se entiende que es la solución pública. En cambio, quien recibe por plataforma privada debe hacer público su punto o puntos de entrada en todas sus comunicaciones con otros empresarios y profesionales y, si tiene, en su web.</p>
+
+<h2 id="copias">Copias de facturas desde plataformas privadas</h2>
+<p>Aunque uses una plataforma privada, esta debe remitir a la solución pública, simultáneamente a la emisión, una <strong>copia electrónica fiel en sintaxis UBL</strong> de cada factura, marcada claramente como copia (art. 6.2). Según la exposición de motivos, el objetivo es que la Administración, junto con los estados de la factura, calcule y monitorice los plazos de pago.</p>
+
+<h2 id="pago">La comunicación del pago</h2>
+<p>Los destinatarios de las facturas deben comunicar el pago efectivo completo a la solución pública (art. 12), con independencia de la vía usada para facturar. El cómputo del plazo se explica en la guía sobre <a href="/blog/informar-pago-factura-4-dias/">informar del pago en 4 días</a>. A efectos estadísticos, la disposición adicional séptima fija como inicio del cómputo la recepción de la factura electrónica y, si no se comunicó, la fecha de expedición.</p>
+
+<h2 id="tabla">Pública o privada: resumen</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Aspecto</th><th>Solución pública (AEAT)</th><th>Plataforma privada</th></tr></thead>
+<tbody>
+<tr><td>Coste</td><td>Gratuita para el usuario</td><td>Lo fija cada operador</td></tr>
+<tr><td>Punto de entrada si no eliges</td><td>Sí, por defecto</td><td>Solo si lo acuerdas y lo publicas</td></tr>
+<tr><td>Copia de facturas en UBL</td><td>Es el destino</td><td>Debe enviarla a la solución pública</td></tr>
+<tr><td>Comunicar el pago</td><td>Obligatorio para el destinatario</td><td>Igualmente a la solución pública</td></tr>
+</tbody></table></div>
+
+<h2 id="fechas">Cuándo te afecta</h2>
+<p>Las fechas de aplicación (6 de octubre de 2027 para las empresas de más de 8 millones de volumen de operaciones y 6 de octubre de 2028 para el resto, según el calendario de la AEAT) están en la <a href="/blog/factura-electronica-obligatoria-2027-empresas/">guía de empresas de más de 8 M€</a>. La disposición adicional quinta exige que la solución pública esté disponible al menos dos meses antes de la primera aplicación efectiva.</p>
+<p>Si quieres preparar el proceso paso a paso, consulta <a href="/blog/factura-electronica-como-se-hace/">cómo se hace una factura electrónica</a>.</p>
+""",
+    faq=[
+        ("¿Qué es la solución pública de facturación electrónica?", "El sistema de la AEAT para emitir, recibir y comunicar el estado de las facturas electrónicas entre empresarios y profesionales (RD 238/2026)."),
+        ("¿Es gratuita?", "Sí. El real decreto indica que su acceso y usos son gratuitos para los usuarios, y la AEAT debe ofrecer además un formulario gratuito."),
+        ("¿Estoy obligado a usarla?", "No necesariamente: puedes usar plataformas privadas o combinar ambas vías. Si no designas ninguna, se entiende que optas por la pública."),
+        ("¿Qué es una copia fiel en UBL?", "La copia electrónica de cada factura que una plataforma privada debe enviar a la solución pública cuando se emite."),
+        ("¿Quién comunica el pago?", "El destinatario de la factura, con el pago efectivo completo, a la solución pública (art. 12)."),
+        ("¿Y en País Vasco y Navarra?", "La disposición adicional tercera remite a lo dispuesto en el Concierto y el Convenio y a los acuerdos entre Haciendas Forales y AEAT."),
+    ],
+    sources=[S.RD238, S.ORDEN1028, S.AEAT_CAL],
+))
+
+POSTS.append(dict(
+    slug="factura-electronica-pais-vasco-navarra",
+    published="2026-11-16",
+    title="Factura electrónica obligatoria en País Vasco y Navarra",
+    desc="Qué dice el BOE sobre la factura electrónica B2B en los territorios forales: disposición adicional tercera del RD 238/2026 y qué falta por concretar.",
+    h1="Factura electrónica obligatoria en País Vasco y Navarra: qué dice el BOE",
+    intro="Si tu empresa tributa en Álava, Bizkaia, Gipuzkoa o Navarra, te preguntarás si el calendario de factura electrónica es el mismo. Lo que dice el Real Decreto 238/2026 sobre los territorios forales, lo que remite a otros acuerdos y lo que debes comprobar. Revisado el 16 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> el RD 238/2026 incluye una disposición adicional (la tercera) para las Haciendas Forales: la solución pública para quienes tributan según el Concierto Económico vasco o el Convenio navarro <strong>se realizará atendiendo a lo dispuesto en esos regímenes</strong>, mediante acuerdos entre las Haciendas Forales y la AEAT. No inventes fechas propias: consulta a tu Hacienda Foral o asesor.</p>
+
+<h2 id="texto">Lo que dice el texto</h2>
+<p>La disposición adicional tercera del real decreto, titulada «Administraciones tributarias forales y solución pública de facturación electrónica», dispone que la solución pública para los empresarios o profesionales sometidos a la normativa tributaria de los territorios forales, conforme al Concierto Económico con la Comunidad Autónoma del País Vasco y al Convenio Económico entre el Estado y la Comunidad Foral de Navarra, se realizará atendiendo a lo dispuesto en los mismos, estableciéndose los oportunos acuerdos entre las Haciendas Forales y la Agencia Estatal de Administración Tributaria conforme al principio de colaboración.</p>
+<p>La disposición adicional cuarta garantiza, además, que las administraciones tributarias, incluidas las forales, accedan a la información de la solución pública conforme al marco legal aplicable. Los datos tienen carácter reservado y podrán cederse, conforme al artículo 95 de la Ley General Tributaria, para la aplicación de los tributos cuya gestión compete a las Administraciones de los Territorios Históricos y de Navarra.</p>
+
+<h2 id="obligacion">¿Hay obligación de facturar electrónicamente?</h2>
+<p>La obligación de la factura electrónica entre empresarios y profesionales procede de la Ley 56/2007, modificada por la Ley 18/2022, que el real decreto desarrolla. El texto del real decreto que he revisado no establece una fecha distinta para los territorios forales, pero tampoco la detalla: remite a los acuerdos entre administraciones. Por eso, la respuesta prudente es verificar en tu Hacienda Foral cómo se aplica a tu caso.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Cuestión</th><th>Qué dice el RD 238/2026</th><th>Qué comprobar</th></tr></thead>
+<tbody>
+<tr><td>Solución pública en territorios forales</td><td>Se realizará según el Concierto o el Convenio (DA 3.ª)</td><td>Acuerdos Haciendas Forales–AEAT</td></tr>
+<tr><td>Acceso de Haciendas Forales a los datos</td><td>Garantizado conforme al marco legal (DA 4.ª)</td><td>—</td></tr>
+<tr><td>Rectificativas con autorización</td><td>Se menciona a empresarios autorizados por la AEAT o las Haciendas Forales</td><td>Tu autorización concreta</td></tr>
+<tr><td>Fechas de aplicación</td><td>No se detallan específicamente para territorios forales</td><td>Calendario de tu Hacienda Foral</td></tr>
+</tbody></table></div>
+
+<h2 id="verifactu">¿Y Verifactu y TicketBAI?</h2>
+<p>No lo mezcles: la factura electrónica B2B es una obligación distinta del sistema de facturación Verifactu. En los territorios forales hay sistemas propios para los sistemas informáticos de facturación (por ejemplo TicketBAI en el País Vasco), que no se tratan en este real decreto. La comparación se explica en las guías de <a href="/blog/diferencias-verifactu-factura-electronica-b2b/">diferencias entre Verifactu y factura electrónica B2B</a> y del <a href="/blog/verifactu-autonomos/">autónomo</a>.</p>
+
+<h2 id="pasos">Qué hacer ahora</h2>
+<ol class="steps">
+<li><strong>Confirma tu régimen</strong>: si tributas en territorio común o foral (domicilio fiscal y volumen de operaciones).</li>
+<li><strong>Haz el test</strong>: nuestro <a href="/factura-electronica-obligatoria/">comprobador</a> orienta con los datos estatales; no sustituye el criterio foral.</li>
+<li><strong>Consulta a tu Hacienda Foral</strong> o asesor sobre el acuerdo con la AEAT y la solución pública.</li>
+<li><strong>Prepara el proceso</strong>: formatos, firma y comunicación de pagos según <a href="/blog/factura-electronica-como-se-hace/">la guía paso a paso</a>.</li>
+</ol>
+<p>Más información sobre la herramienta estatal en <a href="/blog/solucion-publica-factura-electronica-aeat/">la solución pública de la AEAT</a>.</p>
+""",
+    faq=[
+        ("¿Se aplica el RD 238/2026 en País Vasco y Navarra?", "Contiene una disposición adicional específica: la solución pública se aplicará según el Concierto y el Convenio, con acuerdos entre Haciendas Forales y AEAT."),
+        ("¿Hay fechas distintas para los territorios forales?", "El texto revisado no las detalla. Verifica con tu Hacienda Foral."),
+        ("¿Pueden las Haciendas Forales ver las facturas?", "La DA 4.ª garantiza su acceso a la información de la solución pública conforme al marco legal aplicable."),
+        ("¿Es lo mismo que TicketBAI?", "No. TicketBAI es un sistema foral de facturación; la factura electrónica B2B es otra obligación."),
+        ("¿Sirve vuestro test para empresas forales?", "Orienta con los datos estatales, pero no sustituye lo que determine tu Hacienda Foral."),
+    ],
+    sources=[S.RD238, S.LEY18, S.AEAT_CAL],
+))
+
+POSTS.append(dict(
+    slug="periodo-medio-pago-maximo-legal",
+    published="2026-11-16",
+    title="Periodo medio de pago: máximo legal de 60 días y plazos",
+    desc="Máximo legal del periodo medio de pago a proveedores: 30 días por defecto y 60 pactados (Ley 3/2004), qué debes informar y ejemplos de cálculo.",
+    h1="Periodo medio de pago a proveedores: máximo legal y qué debes informar",
+    intro="El «máximo legal» del periodo medio de pago no es una cifra única que aparezca en la ley del periodo medio. Qué plazos fija la Ley 3/2004, qué exige la Ley 15/2010 sobre el deber de información y cómo comparar tu resultado. Revisado el 16 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> la normativa de morosidad fija un plazo de pago de <strong>30 días naturales</strong> por defecto, ampliable por pacto hasta <strong>60 días naturales</strong> como máximo (art. 4 de la Ley 3/2004). Es la referencia para comparar tu periodo medio de pago. Calcúlalo con la <a href="/periodo-medio-pago-proveedores/">calculadora</a>.</p>
+
+<h2 id="plazos">Los plazos de la Ley 3/2004</h2>
+<ul>
+<li><strong>30 días naturales</strong> desde la recepción de las mercancías o la prestación de servicios, si el contrato no fija fecha o plazo (art. 4.1).</li>
+<li><strong>Procedimiento de aceptación</strong>: no puede exceder de 30 días naturales, y el plazo de pago son 30 días desde la aceptación (art. 4.2).</li>
+<li><strong>Pacto entre las partes</strong>: se puede ampliar, pero nunca por encima de 60 días naturales (art. 4.3).</li>
+</ul>
+<p>La Ley 15/2010, que reformó la norma, explica en su preámbulo que el plazo máximo de 60 días no podrá ampliarse por acuerdo entre las partes, para evitar prácticas abusivas de grandes empresas sobre pequeños proveedores. Más detalle en la guía de <a href="/blog/plazos-pago-ley-morosidad/">plazos de la Ley de morosidad</a>.</p>
+
+<h2 id="info">Qué exige el deber de información</h2>
+<p>La disposición adicional tercera de la Ley 15/2010 obliga a todas las sociedades mercantiles a incluir en la memoria de sus cuentas anuales su periodo medio de pago a proveedores. Además:</p>
+<ul>
+<li>Las <strong>cotizadas</strong> publican en su web el periodo medio de pago, el volumen monetario y número de facturas pagadas en un periodo inferior al máximo establecido en la normativa de morosidad, y los porcentajes sobre el total.</li>
+<li>Las <strong>no cotizadas que no presenten cuentas abreviadas</strong> publican esos datos en su web, si la tienen, e incluyen la información en la memoria.</li>
+</ul>
+<p>Observa que la ley habla del «máximo establecido en la normativa de morosidad», y no define una cifra distinta: la referencia es el plazo del art. 4 de la Ley 3/2004.</p>
+
+<h2 id="ejemplo">Ejemplo: comparar con 60 días</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Dato (ejemplo)</th><th>Empresa C</th><th>Empresa D</th></tr></thead>
+<tbody>
+<tr><td>Saldo medio de acreedores comerciales</td><td>45.000 €</td><td>90.000 €</td></tr>
+<tr><td>Compras netas y servicios exteriores</td><td>540.000 €</td><td>480.000 €</td></tr>
+<tr><td>PMP (saldo medio ÷ compras × 365)</td><td>30,42 días</td><td>68,44 días</td></tr>
+<tr><td>Frente a 60 días</td><td>Por debajo</td><td>Por encima</td></tr>
+</tbody></table></div>
+<p>El cálculo usa la fórmula de la <a href="/blog/periodo-medio-pago-memoria-abreviada/">memoria abreviada</a>. La empresa D tendría que revisar sus condiciones de pago y explicar las circunstancias que distorsionen el resultado en la nota de la memoria.</p>
+
+<h2 id="matices">Matices importantes</h2>
+<ol class="steps">
+<li><strong>Un periodo medio no es un plazo por factura</strong>: puedes tener una media baja y facturas individuales en mora.</li>
+<li><strong>Si pagas tarde, hay intereses</strong>: consulta el <a href="/blog/tipo-interes-demora-2026/">tipo de interés de demora vigente</a> y la <a href="/intereses-demora-comerciales/">calculadora</a>.</li>
+<li><strong>Sectores especiales</strong>: la ley incluye plazos específicos, como 30 días para productos de alimentación frescos y perecederos (Ley 15/2010).</li>
+<li><strong>Modelo normal o abreviado</strong>: cada uno usa una fórmula distinta; mira el <a href="/blog/calcular-periodo-medio-pago-proveedores-ejemplo/">ejemplo con facturas</a>.</li>
+</ol>
+""",
+    faq=[
+        ("¿Cuál es el máximo legal del periodo medio de pago?", "La referencia es el plazo máximo de la normativa de morosidad: 60 días naturales pactados (art. 4.3 Ley 3/2004), con 30 días por defecto."),
+        ("¿Qué sociedades deben informar su periodo medio de pago?", "Todas las sociedades mercantiles, en la memoria de sus cuentas anuales (DA 3.ª Ley 15/2010)."),
+        ("¿Hay plazos distintos para alimentación?", "Sí, la Ley 15/2010 fija 30 días para productos de alimentación frescos y perecederos."),
+        ("¿Debo publicarlo en mi web?", "Cotizadas y no cotizadas sin cuentas abreviadas, en los términos de la DA 3.ª, si tienen web."),
+        ("¿Qué hago si supero 60 días de media?", "Revisa tus condiciones de pago y explica las circunstancias en la memoria; consulta a tu asesor sobre otras consecuencias."),
+    ],
+    sources=[S.LEY3, S.LEY15, S.ICAC],
+))

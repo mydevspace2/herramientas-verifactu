@@ -67,3 +67,7 @@
 - Published #20 /blog/factura-electronica-obligatoria-2027-empresas/, #21 /blog/factura-electronica-como-se-hace/, #26 /blog/periodo-medio-pago-memoria-abreviada/ (facts from RD 238/2026 and ICAC 2016 local copies; #28 skipped: "ratio de morosidad" not in local sources). REL map updated (E27/HOW/PMA).
 - Note: test-site fails on "150.000 €"/"50.000 €" anywhere (sanction regex) and meta description must be ≤160 incl. entities.
 - BOE: RD 1007/2023 still last updated 03/12/2025 (no 2028 delay). Tests 520/520. Calendar 8/30 done; B2B left: #6, #22, #24, #25, #27, #28, #30.
+
+## Daily run 2026-11-16 (Phase 1, day 3)
+- Published #22 /blog/solucion-publica-factura-electronica-aeat/, #24 /blog/factura-electronica-pais-vasco-navarra/, #27 /blog/periodo-medio-pago-maximo-legal/ (facts from RD 238/2026, Ley 3/2004, Ley 15/2010 local copies). REL map updated (SPA/FORAL/PMX); B2B and PMP tool pages repointed.
+- Test gotcha: "450.000 €" trips the sanction regex (matches 50.000). Tests 547/547 (run with VF_GSV exported). Calendar 11/30; left B2B: #6, #25, #28, #30 (need BOE/PGC/RD 635 fetch or skip).
