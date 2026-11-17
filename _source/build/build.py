@@ -79,12 +79,37 @@ NF = dict(title="Página no encontrada (404) – Herramientas Verifactu",
 write("/404.html", render(NF, "/404.html"))
 
 assert re.match(r"^\d{4}-\d{2}-\d{2}$", UPDATED_ISO), "lastmod debe ser AAAA-MM-DD"
+# lastmod por página: la fecha solo cambia si la página cambió respecto a la copia publicada (../repo),
+# sin contar la fecha de «Última revisión»/dateModified que cambia en cada build.
+REPO_DIR = os.path.abspath(os.path.join(OUT, "..", "repo"))
+_OLD_LM = {}
+try:
+    for _loc, _lm in re.findall(r"<loc>([^<]+)</loc><lastmod>([^<]+)</lastmod>", open(os.path.join(REPO_DIR, "sitemap.xml"), encoding="utf-8").read()):
+        if _loc.startswith(SITE_URL) and re.match(r"^\d{4}-\d{2}-\d{2}$", _lm):
+            _OLD_LM[_loc[len(SITE_URL):]] = _lm
+except OSError:
+    pass
+_DATE_RX = re.compile(r'"dateModified": ?"\d{4}-\d{2}-\d{2}"|Última revisión: (<time datetime="\d{4}-\d{2}-\d{2}">)?\d{1,2} de [a-z]+ de \d{4}')
+def _norm(t):
+    return _DATE_RX.sub("", t)
+def lastmod(u):
+    try:
+        a = open(os.path.join(OUT, u.lstrip("/"), "index.html"), encoding="utf-8").read()
+        b = open(os.path.join(REPO_DIR, u.lstrip("/"), "index.html"), encoding="utf-8").read()
+        if u in _OLD_LM and _norm(a) == _norm(b):
+            return _OLD_LM[u]
+    except OSError:
+        pass
+    return UPDATED_ISO
+
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for u, _p in PAGES:
     pr = "1.0" if u == "/" else ("0.3" if u in ("/privacidad/", "/sobre-nosotros/", "/contacto/", "/aviso-legal/") else ("0.7" if u.startswith("/blog/") else "0.9"))
-    sm.append("  <url><loc>%s%s</loc><lastmod>%s</lastmod><priority>%s</priority></url>" % (SITE_URL, u, UPDATED_ISO, pr))
+    sm.append("  <url><loc>%s%s</loc><lastmod>%s</lastmod><priority>%s</priority></url>" % (SITE_URL, u, lastmod(u), pr))
 sm.append("</urlset>\n")
 write("/sitemap.xml", "\n".join(sm))
+INDEXNOW_KEY = "c4e8a1f7b3d94e2a8f6c0b5d7e1a9f32"
+write("/%s.txt" % INDEXNOW_KEY, INDEXNOW_KEY)
 write("/robots.txt", "User-agent: *\nAllow: /\nDisallow: %s/_source/\n\nSitemap: %s/sitemap.xml\n" % (BASE, SITE_URL))
 write("/favicon.svg", common.FAVICON)
 write("/site.webmanifest", """{

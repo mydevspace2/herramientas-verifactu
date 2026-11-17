@@ -6,6 +6,7 @@ POSTS = []
 
 POSTS.append(dict(
     slug="fechas-verifactu-2027-2028",
+    published="2026-11-13",  # fecha real de publicación (git); fija para que datePublished no cambie en cada build
     title="Fechas de Verifactu: 2027 en el BOE y 2028 solo anunciado",
     desc="¿Cuándo entra en vigor Verifactu? Fechas vigentes en el BOE (1/1/2027 y 1/7/2027), aplazamiento a octubre de 2028 anunciado y qué hacer mientras tanto.",
     h1="Fechas de Verifactu: qué está en el BOE (2027) y qué solo se ha anunciado (2028)",
@@ -68,6 +69,7 @@ POSTS.append(dict(
 
 POSTS.append(dict(
     slug="verifactu-gratis-aplicacion-aeat",
+    published="2026-11-13",  # fecha real de publicación (git); fija para que datePublished no cambie en cada build
     title="Verifactu gratis: la aplicación de facturación de la AEAT",
     desc="Cómo cumplir Verifactu gratis con la aplicación de facturación de la AEAT: quién puede usarla, requisitos, límites (sin tiques) y alternativas sin coste.",
     h1="Verifactu gratis: cómo usar la aplicación de facturación de la AEAT",
@@ -138,6 +140,7 @@ POSTS.append(dict(
 
 POSTS.append(dict(
     slug="tamano-posicion-qr-verifactu",
+    published="2026-11-13",  # fecha real de publicación (git); fija para que datePublished no cambie en cada build
     title="Tamaño y posición del QR Verifactu: reglas oficiales",
     desc="Medidas del QR Verifactu (30–40 mm, nivel M), margen de 2 a 6 mm, dónde colocarlo, texto «QR tributario:» y leyenda VERI*FACTU, con ejemplos.",
     h1="Tamaño y posición del QR de Verifactu: todas las reglas oficiales",

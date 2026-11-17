@@ -6,6 +6,7 @@ POSTS = []
 
 POSTS.append(dict(
     slug="diferencias-verifactu-factura-electronica-b2b",
+    published="2026-11-13",  # fecha real de publicación (git); fija para que datePublished no cambie en cada build
     title="Verifactu y factura electrónica B2B: diferencias y fechas",
     desc="Diferencias entre Verifactu (Ley Antifraude) y la factura electrónica B2B (Ley Crea y Crece): qué regula cada una, a quién afecta y desde cuándo.",
     h1="Verifactu y factura electrónica B2B (Ley Crea y Crece): diferencias",
@@ -60,6 +61,7 @@ POSTS.append(dict(
 
 POSTS.append(dict(
     slug="factura-electronica-obligatoria-autonomos",
+    published="2026-11-13",  # fecha real de publicación (git); fija para que datePublished no cambie en cada build
     title="Factura electrónica obligatoria para autónomos: fechas",
     desc="Cuándo es obligatoria la factura electrónica para autónomos: 6/10/2028 para emitir y recibir y 6/10/2029 para informar pagos. Excepciones y opción gratuita.",
     h1="Factura electrónica obligatoria para autónomos: cuándo y cómo",
@@ -119,6 +121,7 @@ POSTS.append(dict(
 
 POSTS.append(dict(
     slug="calcular-periodo-medio-pago-proveedores-ejemplo",
+    published="2026-11-13",  # fecha real de publicación (git); fija para que datePublished no cambie en cada build
     title="Cómo calcular el periodo medio de pago a proveedores: ejemplo",
     desc="Cómo calcular el periodo medio de pago a proveedores paso a paso: fórmula ICAC, ejemplo resuelto, Excel, memoria abreviada y diferencia con la morosidad.",
     h1="Cómo calcular el periodo medio de pago a proveedores, con ejemplo",
