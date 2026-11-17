@@ -49,6 +49,7 @@ POSTS.append(dict(
 <li><strong>Pregunta a tu proveedor de software</strong> si el programa ya está adaptado, en qué modalidad (VERI*FACTU o no) y si tiene coste adicional.</li>
 <li><strong>Revisa una factura de prueba:</strong> genera o escanea su QR y pásalo por el <a href="/validar-qr-verifactu/">validador</a>.</li>
 <li><strong>Si facturas poco</strong>, prueba la <a href="/blog/verifactu-gratis-aplicacion-aeat/">aplicación gratuita de la AEAT</a>.</li>
+<li><strong>Si dudas entre enviar o no los registros</strong>, lee <a href="/blog/verifactu-modalidad-no-verifactu/">VERI*FACTU o sin envío</a>; los requisitos del programa están <a href="/blog/verifactu-programa-facturacion-requisitos/">aquí</a>.</li>
 <li><strong>Vuelve a mirar el BOE</strong> en las próximas semanas. Actualizaremos esta guía y la portada el mismo día en que se publique la norma.</li>
 </ol>
 

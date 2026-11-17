@@ -695,3 +695,155 @@ POSTS.append(dict(
     ],
     sources=[S.LEY3, S.LEY15, S.ICAC],
 ))
+
+POSTS.append(dict(
+    slug="verifactu-sii-exentos",
+    published="2026-11-17",
+    title="Verifactu y SII: quién queda fuera del reglamento",
+    desc="Quién no está sometido al reglamento Verifactu: contribuyentes con libros del IVA por el SII, entidades exentas y operaciones excluidas (RD 1007/2023).",
+    h1="Verifactu y SII: quién queda fuera del reglamento de facturación",
+    intro="El reglamento de los sistemas informáticos de facturación no se aplica a todo el mundo ni a todas las operaciones. Quién queda fuera según el propio texto del BOE, con qué matices y cómo comprobar tu caso. Revisado el 17 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> el art. 3.3 del Real Decreto 1007/2023 dice que el reglamento <strong>no se aplica a los contribuyentes que llevan los libros registro en los términos del art. 62.6 del Reglamento del IVA</strong>, que es la vía del Suministro Inmediato de Información (SII). Hay más exclusiones por tipo de entidad y de operación. Haz primero el <a href="/">test «¿estoy obligado?»</a>.</p>
+
+<h2 id="sii">1. Contribuyentes que llevan los libros por el SII</h2>
+<p>El art. 3.3 excluye del ámbito subjetivo a quienes llevan los libros registro del IVA en los términos del art. 62.6 del Reglamento del IVA (RD 1624/1992). El preámbulo del propio real decreto menciona el SII, implantado en 2017, como precedente de la información sobre el contenido de las facturas. Si tu empresa está en el SII, pregunta a tu asesor si esa exclusión te alcanza a todas tus operaciones.</p>
+
+<h2 id="exentas">2. Entidades exentas del Impuesto sobre Sociedades</h2>
+<p>El art. 3.1.a) incluye a los contribuyentes del Impuesto sobre Sociedades, pero <strong>no a las entidades exentas del art. 9.1 de la Ley 27/2014</strong>. Las parcialmente exentas (art. 9, apartados 2, 3 y 4) solo quedan sometidas por las operaciones que generen rentas sujetas y no exentas.</p>
+
+<h2 id="operaciones">3. Operaciones que el reglamento no cubre</h2>
+<p>El art. 4 enumera operaciones excluidas aunque el emisor sí esté obligado:</p>
+<ul>
+<li>Las de las disposiciones adicionales tercera y sexta del Reglamento de facturación (RD 1619/2012).</li>
+<li>Las documentadas en facturas de operaciones realizadas por establecimientos permanentes en el extranjero.</li>
+<li>Las facturas expedidas por el destinatario o por un tercero por disposiciones de obligado cumplimiento (art. 5 del Reglamento de facturación), siempre que se lleven los libros según el art. 62.6 del Reglamento del IVA.</li>
+</ul>
+
+<h2 id="territorio">4. Territorio</h2>
+<p>El reglamento se aplica en todo el territorio español, sin perjuicio de los regímenes forales de País Vasco y Navarra. A los obligados con domicilio fiscal en territorio común sí se les aplica, aunque operen allí. Para los demás, consulta la <a href="/blog/factura-electronica-pais-vasco-navarra/">guía sobre País Vasco y Navarra</a>.</p>
+
+<h2 id="no-aplicacion">5. Solicitar la no aplicación</h2>
+<p>El art. 5 permite que el Departamento de Inspección Financiera y Tributaria de la AEAT resuelva la no aplicación, a petición del interesado, para sectores o contribuyentes concretos cuando lo justifiquen las prácticas del sector, o ante circunstancias técnicas excepcionales. Puede ser temporal y llevar condiciones especiales.</p>
+
+<h2 id="resumen">Cuadro resumen</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Caso</th><th>¿Sometido al reglamento?</th><th>Base</th></tr></thead>
+<tbody>
+<tr><td>Libros del IVA por SII (art. 62.6 RIVA)</td><td>No</td><td>Art. 3.3</td></tr>
+<tr><td>Entidad exenta (art. 9.1 Ley 27/2014)</td><td>No</td><td>Art. 3.1.a)</td></tr>
+<tr><td>Entidad parcialmente exenta</td><td>Solo por rentas sujetas y no exentas</td><td>Art. 3.1.a)</td></tr>
+<tr><td>Autónomo con actividad económica</td><td>Sí</td><td>Art. 3.1.b)</td></tr>
+<tr><td>Sociedad (IS) no exenta</td><td>Sí</td><td>Art. 3.1.a)</td></tr>
+</tbody></table></div>
+<p>Esta guía no sustituye el asesoramiento profesional: la exclusión del SII depende de tu situación concreta. Los plazos generales están en <a href="/blog/fechas-verifactu-2027-2028/">fechas de Verifactu</a>.</p>
+""",
+    faq=[
+        ("¿Estoy excluido de Verifactu si estoy en el SII?", "El art. 3.3 excluye a quienes llevan los libros registro en los términos del art. 62.6 del Reglamento del IVA, que es la vía del SII. Confirma tu caso con tu asesor."),
+        ("¿Las asociaciones sin ánimo de lucro están obligadas?", "Las entidades exentas del art. 9.1 de la Ley 27/2014 no; las parcialmente exentas solo por operaciones con rentas sujetas y no exentas."),
+        ("¿Se puede pedir quedar fuera del reglamento?", "El art. 5 permite solicitar la no aplicación a la AEAT en dos supuestos: prácticas del sector o circunstancias técnicas excepcionales."),
+        ("¿Y si facturo desde el País Vasco o Navarra?", "El reglamento se aplica a obligados con domicilio fiscal en territorio común; los regímenes forales tienen su normativa."),
+        ("¿Quién queda sometido siempre?", "Contribuyentes del IS no exentos, del IRPF con actividad económica, del IRNR con establecimiento permanente y entidades en atribución de rentas con actividad."),
+    ],
+    sources=[S.RD, S.ROF],
+))
+
+POSTS.append(dict(
+    slug="verifactu-programa-facturacion-requisitos",
+    published="2026-11-17",
+    title="Requisitos de un programa de facturación Verifactu",
+    desc="Qué exige el RD 1007/2023 a un software de facturación: integridad, trazabilidad, registro de eventos, huella, firma y declaración responsable del productor.",
+    h1="Requisitos de un programa de facturación según el reglamento Verifactu",
+    intro="Antes de contratar o cambiar de programa, conviene saber qué exige el reglamento a un sistema informático de facturación. Resumen artículo por artículo del Real Decreto 1007/2023. Revisado el 17 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> el programa debe garantizar integridad, conservación, accesibilidad, legibilidad, trazabilidad e inalterabilidad de los registros de facturación (art. 8), generar un registro por cada factura (art. 9), añadir huella y, salvo en VERI*FACTU, firma electrónica (art. 12) y llevar una declaración responsable del productor (art. 13).</p>
+
+<h2 id="registros">Registros de facturación</h2>
+<p>El sistema genera automáticamente un <strong>registro de alta</strong> de forma simultánea o inmediatamente anterior a la expedición de cada factura (art. 9). Su contenido está en el art. 10: NIF y nombre del emisor, número y serie, fechas, tipo de factura, importe total, base, tipos y cuotas de IVA, datos del registro anterior con parte de su huella, código del sistema informático y fecha, hora, minuto y segundo de generación. Los importes se expresan en euros. Si se emite una factura por error, se genera un <strong>registro de anulación</strong> (art. 11). Puedes ver ambos en el <a href="/ejemplo-xml-verifactu/">ejemplo de XML</a>.</p>
+
+<h2 id="garantias">Lo que debe garantizar (art. 8)</h2>
+<ol class="steps">
+<li><strong>Integridad e inalterabilidad</strong>: una vez generados, los registros no pueden alterarse sin que el sistema lo detecte y avise. Las correcciones se hacen con un registro adicional posterior.</li>
+<li><strong>Trazabilidad</strong>: registros encadenados, de modo que se pueda seguir su secuencia desde el primero al último, y correctamente fechados.</li>
+<li><strong>Conservación y exportación</strong>: durante el plazo de la Ley General Tributaria, con un procedimiento de descarga y archivo seguro en formato electrónico legible.</li>
+<li><strong>Registro de eventos</strong>: recoge automáticamente interacciones y sucesos del sistema y se puede consultar desde él.</li>
+<li><strong>Acceso disociado</strong>: la información con trascendencia tributaria se separa de la información confidencial no patrimonial.</li>
+<li><strong>Capacidad de remisión</strong>: debe poder enviar los registros a la Administración por medios electrónicos.</li>
+</ol>
+
+<h2 id="huella">Huella y firma</h2>
+<p>El art. 12 exige añadir una huella o hash a los registros de alta y de anulación y firmarlos electrónicamente. En los sistemas VERI*FACTU basta con calcular la huella (art. 16.3). Pruébalo con la <a href="/calcular-huella-verifactu/">calculadora de huella</a>.</p>
+
+<h2 id="declaracion">Declaración responsable</h2>
+<p>El productor certifica que el sistema cumple la Ley General Tributaria y el reglamento (art. 13). Debe constar por escrito y de modo visible en el programa, en cada versión, y entregarse al cliente al adquirirlo. El cliente o la AEAT pueden solicitarla. Incluye datos que identifican el sistema y al productor, y la fecha y lugar de la firma.</p>
+
+<h2 id="elegir">Cómo usarlo al elegir programa</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Pregunta al proveedor</th><th>Artículo</th></tr></thead>
+<tbody>
+<tr><td>¿Puedo ver la declaración responsable de la versión que uso?</td><td>13</td></tr>
+<tr><td>¿Genera registro de alta antes de emitir la factura?</td><td>9</td></tr>
+<tr><td>¿Corrige con registros nuevos, sin borrar?</td><td>8.2.a)</td></tr>
+<tr><td>¿Tiene registro de eventos y exportación?</td><td>8.2.c) y 8.3</td></tr>
+<tr><td>¿Calcula huella y firma, o remite a la AEAT?</td><td>12 y 16</td></tr>
+</tbody></table></div>
+<p>La alternativa gratuita es la aplicación de la AEAT: ver <a href="/blog/verifactu-gratis-aplicacion-aeat/">Verifactu gratis</a>.</p>
+""",
+    faq=[
+        ("¿Quién emite la declaración responsable?", "La persona o entidad productora del sistema informático (art. 13.1)."),
+        ("¿Se pueden borrar facturas en el programa?", "No sin dejar rastro: las correcciones o anulaciones se hacen con al menos un registro adicional posterior (art. 8.2.a)."),
+        ("¿Es obligatoria la firma electrónica?", "Sí para los sistemas no VERI*FACTU; los VERI*FACTU solo necesitan calcular la huella (art. 16.3)."),
+        ("¿Qué es el registro de eventos?", "Un registro automático de interacciones y sucesos del sistema, consultable desde él (art. 8.3)."),
+        ("¿Puedo usar un solo programa para varios obligados?", "Sí, si los registros de cada obligado están diferenciados y se cumplen los requisitos por separado (art. 7.a)."),
+    ],
+    sources=[S.RD],
+))
+
+POSTS.append(dict(
+    slug="verifactu-modalidad-no-verifactu",
+    published="2026-11-17",
+    title="VERI*FACTU o no VERI*FACTU: qué modalidad elegir",
+    desc="Diferencias entre enviar los registros a la AEAT (VERI*FACTU) y conservarlos en tu sistema: qué cambia en firma, frase y verificación (RD 1007/2023).",
+    h1="VERI*FACTU o sistema sin envío: diferencias y cómo elegir",
+    intro="El reglamento prevé dos caminos: un sistema que solo conserva los registros y otro que los envía a la AEAT («VERI*FACTU»). Qué cambia entre ambos según el texto del BOE. Revisado el 17 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> en la modalidad VERI*FACTU el sistema remite todos los registros a la AEAT de forma continuada (arts. 15 y 16); a cambio no necesita firma electrónica, solo huella, y se presume que cumple por diseño los requisitos del art. 8. Sin envío, el sistema conserva los registros, los firma y debe poder entregarlos si la AEAT los requiere.</p>
+
+<h2 id="dos">Las dos opciones</h2>
+<p>El art. 7 ofrece dos recursos: (a) un sistema informático propio que cumpla la Ley General Tributaria y el reglamento, o (b) la aplicación que desarrolle la Administración. La aplicación de la AEAT tiene siempre la consideración de VERI*FACTU (art. 16.4). Un sistema del tipo (a) puede, además, optar por remitir los registros: la remisión es voluntaria (art. 15).</p>
+
+<h2 id="tabla">Comparativa según el reglamento</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Aspecto</th><th>Sin envío a la AEAT</th><th>VERI*FACTU</th></tr></thead>
+<tbody>
+<tr><td>Envío de registros</td><td>Capacidad de remitir; entrega si se requiere (art. 14)</td><td>Remisión efectiva y continuada (art. 16.1)</td></tr>
+<tr><td>Firma electrónica</td><td>Obligatoria (art. 12)</td><td>No; basta la huella (art. 16.3)</td></tr>
+<tr><td>Frase en la factura</td><td>No</td><td>«Factura verificable en la sede electrónica de la AEAT» o «VERI*FACTU»</td></tr>
+<tr><td>Cumplimiento del art. 8</td><td>Debe acreditarse</td><td>Se presume por diseño (art. 16.2)</td></tr>
+<tr><td>QR en la factura</td><td>Sí</td><td>Sí</td></tr>
+</tbody></table></div>
+<p>La frase y el QR vienen de las modificaciones del Reglamento de facturación (art. 6.5): el QR va en todas las facturas expedidas con estos sistemas y la frase solo cuando el sistema remite todos los registros. Mira el <a href="/generador-qr-verifactu/">generador de QR</a> y la <a href="/blog/tamano-posicion-qr-verifactu/">guía de tamaño y posición</a>.</p>
+
+<h2 id="permanencia">Cuánto dura la opción</h2>
+<p>Se entiende que optas por VERI*FACTU al iniciar sistemáticamente la remisión de registros. La opción se prolonga al menos hasta el final del año natural del primer envío efectivo (art. 16.5).</p>
+
+<h2 id="controlar">Control por parte de la AEAT y del receptor</h2>
+<p>Sin envío, la AEAT puede personarse y exigir acceso a los registros de facturación y de eventos (art. 14). El receptor de cualquier factura puede enviar los datos del QR a la AEAT; con la frase VERI*FACTU puede comprobar que el emisor la remitió (art. 17). Compruébalo con el <a href="/validar-qr-verifactu/">validador de QR</a>.</p>
+
+<h2 id="elegir">Cómo decidir</h2>
+<ol class="steps">
+<li>Consulta qué modalidad soporta tu programa; no todos permiten ambas.</li>
+<li>Si quieres evitar la firma electrónica y la carga de acreditar el art. 8, la remisión lo simplifica.</li>
+<li>Si prefieres no enviar nada de forma automática, necesitas un sistema con firma, registro de eventos y exportación.</li>
+<li>Revisa la <a href="/blog/verifactu-programa-facturacion-requisitos/">lista de requisitos</a> y las <a href="/blog/fechas-verifactu-2027-2028/">fechas</a> antes de decidir.</li>
+</ol>
+""",
+    faq=[
+        ("¿Qué significa VERI*FACTU?", "Es el nombre de los «Sistemas de emisión de facturas verificables»: los que remiten efectivamente todos los registros de facturación a la AEAT (art. 16.1)."),
+        ("¿Es obligatorio enviar los registros a la AEAT?", "No; el envío es voluntario (art. 15), aunque el sistema debe tener capacidad de remitir (art. 8.1)."),
+        ("¿Qué frase debe llevar la factura?", "«Factura verificable en la sede electrónica de la AEAT» o «VERI*FACTU», solo si el sistema remite todos los registros."),
+        ("¿La aplicación gratuita de la AEAT es VERI*FACTU?", "Sí, tiene esa consideración a todos los efectos (art. 16.4)."),
+        ("¿Puedo cambiar de modalidad?", "La opción dura al menos hasta fin del año natural del primer envío (art. 16.5); consulta los plazos de renuncia en la normativa de desarrollo."),
+    ],
+    sources=[S.RD, S.ROF, S.ORDEN],
+))

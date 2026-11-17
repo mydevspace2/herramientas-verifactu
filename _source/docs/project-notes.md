@@ -71,3 +71,7 @@
 ## Daily run 2026-11-16 (Phase 1, day 3)
 - Published #22 /blog/solucion-publica-factura-electronica-aeat/, #24 /blog/factura-electronica-pais-vasco-navarra/, #27 /blog/periodo-medio-pago-maximo-legal/ (facts from RD 238/2026, Ley 3/2004, Ley 15/2010 local copies). REL map updated (SPA/FORAL/PMX); B2B and PMP tool pages repointed.
 - Test gotcha: "450.000 €" trips the sanction regex (matches 50.000). Tests 547/547 (run with VF_GSV exported). Calendar 11/30; left B2B: #6, #25, #28, #30 (need BOE/PGC/RD 635 fetch or skip).
+
+## Daily run 2026-11-17 (Phase 1, day 4)
+- Published #13 /blog/verifactu-sii-exentos/, #19 /blog/verifactu-programa-facturacion-requisitos/, #18 /blog/verifactu-modalidad-no-verifactu/ (facts only from src/rd1007.txt arts. 1-17). REL map SII/REQ/MOD; home, validar-qr, xml, fechas repointed; page_blog.py (autónomos) contextual link.
+- Tests all exit 0 (static 313). Must export VF_GSV for tests too. Descriptions ≤160 incl. entities. BOE RD 1007/2023 still last update 03/12/2025 (no 2028 delay). Calendar 14/30; left B2B #6,#25,#28,#30; Verifactu #3,4,7-12,14-17.
