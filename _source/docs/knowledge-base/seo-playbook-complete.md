@@ -151,14 +151,14 @@ The flagged items were a render-blocking CSS file and slightly unminified JS. We
 | Item | How | Tag |
 |---|---|---|
 | sitemap.xml | Lists every indexable page. KSeF has 15 URLs, Verifactu 13. Submit it in GSC and Bing. | [V+O] |
-| robots.txt | `Allow: /` + `Sitemap:` line. On a github.io sub-folder Google ignores robots.txt (it only reads the host root), but the sitemap still works when submitted. | [V+O] |
+| robots.txt | `Allow: /` + `Sitemap:` line. On a github.io sub-folder Google ignores robots.txt (it only reads the host root), but the sitemap still works when submitted. **GSC on github.io sub-folder properties shows the sitemap as "Couldn't fetch" / Type Unknown for days** even though URL Inspection → Test live URL on sitemap.xml returns 200 OK, application/xml (checked 17 Nov 2026 for Trade Charts and Verifactu). Not a file problem; don't keep resubmitting. A custom domain (root property) avoids it, as KSeF shows. | [V+O] |
 | 404 page | Custom `404.html` with `noindex` and links back to the tools. (He also adds a 500 page; GitHub Pages has no 500 page.) | [V+O] |
 | **IndexNow** | Put a key file at the root (`/<key>.txt`) and POST the URL list to api.indexnow.org. Bing and Yandex get the pages instantly. KSeF: 15 URLs returned HTTP 202 on 13 Nov 2026. Payload: `work/seo/indexnow-payload.json`. | [O] |
 | www → root | GitHub Pages does this automatically when DNS has CNAME `www` → `mydevspace2.github.io`. `http://www.numerksef.dpdns.org/` returns a 301 to `https://numerksef.dpdns.org/` (checked 13 Nov 2026). On Cloudflare he uses the "Redirect www to root" rule + a proxied AAAA `www` → `100::`. | [V] rule, [O] done |
 | HTTPS | GitHub Pages → Enforce HTTPS, once the certificate is issued (minutes) | [O] |
 | Noindex duplicates | Never let a second address serve the same pages. His Cloudflare `pages.dev` duplicate killed one of his sites. For us, `mydevspace2.github.io/numer-ksef/` already 301s to the custom domain (GitHub does this when a CNAME is set). | [V] rule, [O] checked |
 | Keep source files out of the index | Put build source in `_source/` and add `Disallow` in robots.txt. **Done for Verifactu. Not yet live for KSeF:** the KSeF robots.txt is still plain `Allow: /`. | [O] |
-| Sitemap `lastmod` format | Must be W3C date format (`2026-11-13`). **Open bug:** the live KSeF sitemap shows `Fri 2026-11-13 2:00 PM PKT (UTC+05:00)` in some `<lastmod>` fields. Fix in `build.py` (the lastmod function) and redeploy. GSC still reported the sitemap as Success. | [O] |
+| Sitemap `lastmod` format | Must be W3C format (`2026-11-13` or full ISO `2026-11-13T12:34:53+05:00`). KSeF uses full ISO datetimes — valid. (The earlier "open bug" was a misreading: tool output displays these values as "Fri 2026-11-13 2:00 PM PKT"; the raw file is fine, checked 17 Nov 2026.) Lastmod must change only when the page changes: KSeF and Verifactu compare with the deployed copy; Trade Charts sets it from git history in a GitHub Action. | [O] |
 
 ## 9. Google Search Console and Bing
 

@@ -118,3 +118,5 @@ After a sandbox reset Playwright may need `sudo npx playwright install-deps chro
   - create fake personas
   - state unverified legal dates or fine amounts on the sites
   - put passwords or tokens in files
+
+- Verifactu IndexNow key: c4e8a1f7b3d94e2a8f6c0b5d7e1a9f32 (key file written by build.py since 17 Nov 2026). Trade Charts key: 7f3c1e9a2b8d4f60a1c5e7b9d3f2a4c6.

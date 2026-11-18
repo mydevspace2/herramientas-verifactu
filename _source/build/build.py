@@ -8,7 +8,7 @@ import common
 from common import render, SITE_URL, BASE, UPDATED_ISO
 from page_home import HOME
 from page_qr import GEN, VAL
-from page_dev import HUE, XMLP
+from page_dev import HUE as HUEP, XMLP
 import page_blog as B
 import page_b2b as PB
 import page_b2b_blog as PBB
@@ -36,11 +36,12 @@ VAU, MOR = _b("verifactu-autonomos"), _b("plazos-pago-ley-morosidad")
 TID, REC, INF = _b("tipo-interes-demora-2026"), _b("reclamar-factura-impagada-intereses"), _b("informar-pago-factura-4-dias")
 E27, HOW, PMA = _b("factura-electronica-obligatoria-2027-empresas"), _b("factura-electronica-como-se-hace"), _b("periodo-medio-pago-memoria-abreviada")
 SPA, FORAL, PMX = _b("solucion-publica-factura-electronica-aeat"), _b("factura-electronica-pais-vasco-navarra"), _b("periodo-medio-pago-maximo-legal")
+QRO, SIMP, HUEL = _b("verifactu-qr-obligatorio"), _b("verifactu-factura-simplificada-ticket"), _b("huella-verifactu-que-es")
 SII, REQ, MOD = _b("verifactu-sii-exentos"), _b("verifactu-programa-facturacion-requisitos"), _b("verifactu-modalidad-no-verifactu")
-assert all(u in [a[0] for a in common.ARTICLES] for u in (F, G, Q, DIF, AUT, PMPG, VAU, MOR, TID, REC, INF, E27, HOW, PMA, SPA, FORAL, PMX, SII, REQ, MOD))
+assert all(u in [a[0] for a in common.ARTICLES] for u in (F, G, Q, DIF, AUT, PMPG, VAU, MOR, TID, REC, INF, E27, HOW, PMA, SPA, FORAL, PMX, SII, REQ, MOD, QRO, SIMP, HUEL))
 # Enlaces internos «Guías relacionadas» (3 por página): herramienta -> guías del mismo tema, guía -> guías hermanas
-common.ARTICLE_MAP.update({"/": [VAU, SII, MOD], "/generador-qr-verifactu/": [Q, VAU, F], "/validar-qr-verifactu/": [Q, MOD, VAU],
-                           "/calcular-huella-verifactu/": [F, Q, VAU], "/ejemplo-xml-verifactu/": [REQ, Q, G],
+common.ARTICLE_MAP.update({"/": [VAU, SII, MOD], "/generador-qr-verifactu/": [Q, QRO, SIMP], "/validar-qr-verifactu/": [Q, QRO, MOD],
+                           "/calcular-huella-verifactu/": [HUEL, F, Q], "/ejemplo-xml-verifactu/": [REQ, Q, G],
                            "/factura-electronica-obligatoria/": [E27, SPA, FORAL], "/periodo-medio-pago-proveedores/": [PMX, PMA, MOR],
                            "/intereses-demora-comerciales/": [TID, REC, MOR],
                            F: [VAU, G, MOD], G: [VAU, F, Q], Q: [G, VAU, F],
@@ -48,9 +49,10 @@ common.ARTICLE_MAP.update({"/": [VAU, SII, MOD], "/generador-qr-verifactu/": [Q,
                            VAU: [F, G, AUT], MOR: [TID, REC, PMPG],
                            TID: [REC, MOR, PMPG], REC: [TID, MOR, INF], INF: [AUT, REC, DIF], E27: [HOW, SPA, FORAL], HOW: [E27, SPA, DIF], PMA: [PMX, MOR, TID],
                            SPA: [FORAL, HOW, E27], FORAL: [SPA, E27, DIF], PMX: [PMA, PMPG, MOR],
-                           SII: [REQ, MOD, VAU], REQ: [MOD, G, SII], MOD: [REQ, Q, G]})
+                           SII: [REQ, MOD, VAU], REQ: [MOD, G, SII], MOD: [REQ, Q, G],
+                           QRO: [Q, SIMP, HUEL], SIMP: [QRO, REQ, MOD], HUEL: [REQ, MOD, QRO]})
 
-PAGES = [("/", HOME), ("/generador-qr-verifactu/", GEN), ("/validar-qr-verifactu/", VAL), ("/calcular-huella-verifactu/", HUE),
+PAGES = [("/", HOME), ("/generador-qr-verifactu/", GEN), ("/validar-qr-verifactu/", VAL), ("/calcular-huella-verifactu/", HUEP),
          ("/ejemplo-xml-verifactu/", XMLP),
          ("/factura-electronica-obligatoria/", PB.B2B), ("/periodo-medio-pago-proveedores/", PB.PMP), ("/intereses-demora-comerciales/", PB.DEM),
          ("/blog/", B.blog_index())]

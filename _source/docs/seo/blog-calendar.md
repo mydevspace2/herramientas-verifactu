@@ -16,15 +16,15 @@ Publicar: añadir el dict a `build/page_blog_2.py` (POSTS) y su entrada en `REL`
 | 6 | pendiente | intereses-demora-hacienda-vs-comerciales | Intereses de demora de Hacienda vs comerciales: diferencias | intereses de demora hacienda (>100), que intereses de demora cobra hacienda | `/intereses-demora-comerciales/` |
 | 7 | pendiente | verifactu-bares-restaurantes | Verifactu en bares y restaurantes: tiques, TPV y QR | verifactu bares (y restaurantes) | `/generador-qr-verifactu/` |
 | 8 | pendiente | tpv-verifactu | TPV Verifactu: qué debe cumplir tu caja registradora | tpv verifactu (>100), verifactu tickets caja | `/validar-qr-verifactu/` |
-| 9 | pendiente | verifactu-factura-simplificada-ticket | Verifactu y facturas simplificadas (tiques): qué cambia | verifactu factura simplificada, verifactu tickets | `/generador-qr-verifactu/` |
+| 9 | **publicado 18/11/2026** | verifactu-factura-simplificada-ticket | Verifactu y facturas simplificadas (tiques): qué cambia | verifactu factura simplificada, verifactu tickets | `/generador-qr-verifactu/` |
 | 10 | pendiente | factura-rectificativa-verifactu | Factura rectificativa con Verifactu: tipos R1 a R5 | verifactu factura rectificativa, tipo rectificativa verifactu | `/ejemplo-xml-verifactu/` |
 | 11 | pendiente | verifactu-recargo-equivalencia | Verifactu y recargo de equivalencia: comercios minoristas | verifactu recargo de equivalencia | `/` |
 | 12 | pendiente | verifactu-ticketbai-diferencias | Verifactu y TicketBAI: diferencias y quién usa cada uno | verifactu ticketbai (3 hits), verifactu vs ticketbai | `/` |
 | 13 | **publicado 17/11/2026** | verifactu-sii-exentos | Verifactu y SII: por qué quien lleva el SII queda fuera | verifactu sii, verifactu exentos | `/` |
 | 14 | pendiente | qr-verifactu-ejemplo | QR Verifactu: ejemplo real de URL y cómo se lee | qr verifactu ejemplo (3 hits) | `/validar-qr-verifactu/` |
-| 15 | pendiente | verifactu-qr-obligatorio | ¿Es obligatorio el QR en todas las facturas Verifactu? | verifactu qr obligatorio (3 hits) | `/generador-qr-verifactu/` |
+| 15 | **publicado 18/11/2026** | verifactu-qr-obligatorio | ¿Es obligatorio el QR en todas las facturas Verifactu? | verifactu qr obligatorio (3 hits) | `/generador-qr-verifactu/` |
 | 16 | pendiente | errores-qr-verifactu-1001-2006 | Errores del QR Verifactu (1001 a 2006) y cómo corregirlos | qr verifactu aeat, cotejo factura aeat | `/validar-qr-verifactu/` |
-| 17 | pendiente | huella-verifactu-que-es | Qué es la huella (hash) de Verifactu y cómo se calcula | huella verifactu, calculo huella verifactu (3 hits) | `/calcular-huella-verifactu/` |
+| 17 | **publicado 18/11/2026** | huella-verifactu-que-es | Qué es la huella (hash) de Verifactu y cómo se calcula | huella verifactu, calculo huella verifactu (3 hits) | `/calcular-huella-verifactu/` |
 | 18 | **publicado 17/11/2026** | verifactu-modalidad-no-verifactu | VERI*FACTU o no VERI*FACTU: qué modalidad elegir | verifactu como funciona (>100) | `/` |
 | 19 | **publicado 17/11/2026** | verifactu-programa-facturacion-requisitos | Requisitos de un programa de facturación Verifactu | software verifactu (>100), verifactu requisitos | `/ejemplo-xml-verifactu/` |
 | 20 | **publicado 15/11/2026** | factura-electronica-obligatoria-2027-empresas | Factura electrónica obligatoria 2027: empresas de +8 M€ | factura electrónica obligatoria 2027 | `/factura-electronica-obligatoria/` |

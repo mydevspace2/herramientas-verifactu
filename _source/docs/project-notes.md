@@ -75,3 +75,11 @@
 ## Daily run 2026-11-17 (Phase 1, day 4)
 - Published #13 /blog/verifactu-sii-exentos/, #19 /blog/verifactu-programa-facturacion-requisitos/, #18 /blog/verifactu-modalidad-no-verifactu/ (facts only from src/rd1007.txt arts. 1-17). REL map SII/REQ/MOD; home, validar-qr, xml, fechas repointed; page_blog.py (autónomos) contextual link.
 - Tests all exit 0 (static 313). Must export VF_GSV for tests too. Descriptions ≤160 incl. entities. BOE RD 1007/2023 still last update 03/12/2025 (no 2028 delay). Calendar 14/30; left B2B #6,#25,#28,#30; Verifactu #3,4,7-12,14-17.
+
+## SEO settings pass (2026-11-17 evening, commit 1aa58d7 on main; domain branch untouched)
+- build.py: sitemap lastmod is now per page (kept from repo/sitemap.xml unless the page HTML changed, ignoring the «Última revisión»/dateModified date). The 6 launch posts got fixed published="2026-11-13" (datePublished was drifting to the build date every day). IndexNow key c4e8a1f7b3d94e2a8f6c0b5d7e1a9f32 (file written by build.py). Tests 574/574.
+- GSC sitemap still "Couldn't fetch" after resubmit, but live test of sitemap.xml = 200 OK, application/xml, crawl allowed → file fine, GSC lag. Request Indexing: generador-qr + factura-electronica-obligatoria accepted; calcular-huella "Oops! Something went wrong". Bing sitemap resubmitted (Processing). IndexNow 33 URLs HTTP 202.
+
+## Daily run 2026-11-18 (Phase 1, day 5)
+- Published #15 /blog/verifactu-qr-obligatorio/, #9 /blog/verifactu-factura-simplificada-ticket/, #17 /blog/huella-verifactu-que-es/ (facts from RD 1007/2023 text only; huella algorithm deliberately not reproduced, links to AEAT spec). build.py: constants QRO/SIMP/HUE (HUE clashed with page_dev.HUE -> now HUEL / HUEP). Tool pages generador/validar/huella repointed to new posts.
+- Tests all exit 0. Calendar 17/30; B2B left #6,#25,#28,#30; Verifactu left #3,4,7,8,10,11,12,14,16.

@@ -97,3 +97,7 @@ A free Polish toolkit that helps businesses put the correct **KSeF number** (the
 | **Nov 2027** | Annual review: keep, grow or drop. | — | — | **Hard deadline: free domain expires 12 Nov 2027.** |
 
 **Whenever the law changes (any month):** update the legal-status date box, the JDG checker logic, the affected FAQ answers and posts, then rebuild, push and IndexNow the changed URLs. Watch for: the Senate/President on penalties (druk 3245), MF FAQ updates, bank MPP specs, new FA schema versions.
+
+## SEO settings pass (17 Nov 2026)
+- Full audit of 27 live URLs was clean (titles/descriptions unique and <160, canonical, 1 H1, pl + x-default hreflang, OG/Twitter, valid JSON-LD, sitemap = every page with valid ISO lastmod, robots, 404, no orphans or broken links). No code change.
+- GSC sitemap resubmitted: Success, 27 discovered. Request Indexing /przelew-mpp-numer-ksef/ → "Quota Exceeded" again (3rd time); other URLs not tried. Bing sitemap resubmitted (Processing; Bing still showed 9 URLs). IndexNow: 27 URLs HTTP 200, Bing IndexNow shows 27 received.

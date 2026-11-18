@@ -835,7 +835,7 @@ POSTS.append(dict(
 <li>Consulta qué modalidad soporta tu programa; no todos permiten ambas.</li>
 <li>Si quieres evitar la firma electrónica y la carga de acreditar el art. 8, la remisión lo simplifica.</li>
 <li>Si prefieres no enviar nada de forma automática, necesitas un sistema con firma, registro de eventos y exportación.</li>
-<li>Revisa la <a href="/blog/verifactu-programa-facturacion-requisitos/">lista de requisitos</a> y las <a href="/blog/fechas-verifactu-2027-2028/">fechas</a> antes de decidir.</li>
+<li>Revisa la <a href="/blog/verifactu-programa-facturacion-requisitos/">lista de requisitos</a>, la <a href="/blog/huella-verifactu-que-es/">huella</a> y las <a href="/blog/fechas-verifactu-2027-2028/">fechas</a> antes de decidir.</li>
 </ol>
 """,
     faq=[
@@ -846,4 +846,162 @@ POSTS.append(dict(
         ("¿Puedo cambiar de modalidad?", "La opción dura al menos hasta fin del año natural del primer envío (art. 16.5); consulta los plazos de renuncia en la normativa de desarrollo."),
     ],
     sources=[S.RD, S.ROF, S.ORDEN],
+))
+
+POSTS.append(dict(
+    slug="verifactu-qr-obligatorio",
+    published="2026-11-18",
+    title="¿Es obligatorio el QR en todas las facturas Verifactu?",
+    desc="Qué dice el BOE sobre el QR en facturas con sistemas Verifactu: cuándo es obligatorio, qué pasa en la factura electrónica y cuándo se añade la frase.",
+    h1="¿Es obligatorio el código QR en todas las facturas Verifactu?",
+    intro="Una de las dudas más repetidas: si el QR va siempre o solo en algunos casos. La respuesta está en el Reglamento de facturación, tal y como lo modifica el RD 1007/2023. Revisado el 18 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> sí. Las facturas expedidas con los sistemas informáticos de facturación del reglamento deben incluir la representación gráfica de parte de su contenido mediante un código QR (art. 6.5.a del Reglamento de facturación). Si la factura es electrónica, el QR puede sustituirse por el contenido que representa. La frase «VERI*FACTU» es otra cosa: solo va si el sistema remite todos los registros a la AEAT.</p>
+
+<h2 id="norma">Qué dice la norma</h2>
+<p>La disposición final primera del RD 1007/2023 añade un apartado 5 al artículo 6 del Reglamento de facturación (RD 1619/2012). Según ese texto, en las facturas expedidas con los sistemas del artículo 7 del reglamento Verifactu deberá incluirse, de acuerdo con las especificaciones de una orden ministerial, la representación gráfica del contenido parcial de la factura mediante un código QR.</p>
+<p>El mismo cambio se aplica a las facturas simplificadas (nuevo apartado 5 del artículo 7). Es decir, el QR no depende del tipo de factura: afecta a completas y simplificadas.</p>
+
+<h2 id="tabla">QR y frase: qué va en cada caso</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Situación</th><th>Código QR</th><th>Frase «VERI*FACTU»</th></tr></thead>
+<tbody>
+<tr><td>Sistema que remite todos los registros a la AEAT</td><td>Sí</td><td>Sí</td></tr>
+<tr><td>Sistema que conserva los registros sin remitirlos</td><td>Sí</td><td>No</td></tr>
+<tr><td>Factura electrónica</td><td>Puede sustituirse por su contenido</td><td>Solo si hay remisión</td></tr>
+<tr><td>Factura en papel o PDF</td><td>Sí, impreso o visible</td><td>Solo si hay remisión</td></tr>
+</tbody></table></div>
+<p>La frase admitida es «Factura verificable en la sede electrónica de la AEAT» o «VERI*FACTU», y únicamente cuando el sistema realiza la remisión de todos los registros conforme a los artículos 15 y 16.</p>
+
+<h2 id="para-que">Para qué sirve el QR</h2>
+<p>El artículo 17 permite al receptor de la factura, sea empresario o consumidor final, proporcionar de forma voluntaria determinada información a la AEAT con los datos del QR. La sede electrónica muestra esos datos en formato legible. Si la factura lleva la frase VERI*FACTU, el receptor puede comprobar así que el emisor la remitió. Esa remisión no tiene la consideración de denuncia pública.</p>
+
+<h2 id="electronica">Qué ocurre con la factura electrónica</h2>
+<p>El texto dice que, si la factura es electrónica, la representación gráfica puede sustituirse por el contenido que representa el QR. Cómo debe incorporarse ese contenido lo fijan las especificaciones técnicas de la AEAT; consúltalas antes de diseñar tu formato. Para la factura electrónica entre empresas mira también la <a href="/factura-electronica-obligatoria/">comprobación de fechas</a>.</p>
+
+<h2 id="hacer">Qué hacer en la práctica</h2>
+<ol class="steps">
+<li>Comprueba que tu programa genera el QR de forma automática; no deberías montarlo a mano en cada factura.</li>
+<li>Prueba una factura real con el <a href="/validar-qr-verifactu/">validador de QR</a> y revisa que los datos coinciden.</li>
+<li>Si quieres ver cómo se compone, usa el <a href="/generador-qr-verifactu/">generador de QR</a>.</li>
+<li>Revisa <a href="/blog/tamano-posicion-qr-verifactu/">tamaño y posición</a> y qué <a href="/blog/verifactu-modalidad-no-verifactu/">modalidad</a> usas para saber si añades la frase.</li>
+</ol>
+
+<h2 id="aviso">Qué no dice el BOE aquí</h2>
+<p>El reglamento remite a una orden ministerial para las especificaciones del QR (la Orden HAC/1177/2024, arts. 20 y 21, y el documento técnico de la AEAT). En este artículo no damos medidas ni parámetros más allá de lo ya publicado en la guía de tamaño y posición. Las fechas de aplicación están en la <a href="/blog/fechas-verifactu-2027-2028/">guía de fechas</a>.</p>
+""",
+    faq=[
+        ("¿El QR es obligatorio en facturas simplificadas?", "Sí. El apartado 5 que se añade al artículo 7 del Reglamento de facturación remite al contenido del artículo 6.5, QR incluido."),
+        ("¿Y si no envío los registros a la AEAT?", "El QR sigue siendo obligatorio; lo que no se incluye es la frase «VERI*FACTU»."),
+        ("¿Qué significa que el QR se puede sustituir en una factura electrónica?", "Que en lugar de la imagen puede incluirse el contenido que esta representa, según las especificaciones técnicas."),
+        ("¿Quién puede escanear el QR?", "Cualquier receptor, empresario o consumidor final, para enviar voluntariamente los datos a la AEAT (art. 17)."),
+        ("¿Enviar los datos del QR es una denuncia?", "No; el artículo 17.1 indica que no tiene la consideración de denuncia pública."),
+        ("¿Dónde están las medidas del QR?", "En la Orden HAC/1177/2024 y en las especificaciones técnicas de la AEAT; revisa nuestra guía de tamaño y posición."),
+    ],
+    sources=[S.RD, S.ROF, S.ORDEN, S.QR],
+))
+
+POSTS.append(dict(
+    slug="verifactu-factura-simplificada-ticket",
+    published="2026-11-18",
+    title="Verifactu y facturas simplificadas (tiques): qué cambia",
+    desc="Qué exige el BOE a facturas simplificadas y tiques con sistemas Verifactu: registro de alta, QR, frase y qué hacer si sustituyes un tique por una factura.",
+    h1="Verifactu y facturas simplificadas (tiques): qué cambia",
+    intro="Comercios, bares o talleres emiten sobre todo facturas simplificadas. El reglamento Verifactu las incluye expresamente. Esto es lo que sí dice el texto del BOE. Revisado el 18 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> el reglamento considera «factura» tanto la completa como la simplificada (art. 1.2). Por tanto, cada tique o factura simplificada expedida con un sistema informático de facturación genera su registro de alta, y debe llevar el código QR; la frase VERI*FACTU se añade solo si el sistema remite todos los registros.</p>
+
+<h2 id="incluidas">Las simplificadas están dentro</h2>
+<p>El artículo 1.2 aclara que el término factura incluye la factura completa y la simplificada. No hay un régimen aparte para los tiques: si el sistema que los emite entra en el ámbito del artículo 3 y no hay una exclusión del artículo 4, se aplican los mismos requisitos.</p>
+
+<h2 id="registro">Un registro por cada documento</h2>
+<p>El artículo 9 obliga a generar automáticamente un registro de facturación de alta de forma simultánea o inmediatamente anterior a la expedición de cada factura. Con un TPV, eso significa un registro por cada tique emitido. El contenido (art. 10) incluye, entre otros, el tipo de factura expedida, indicando si es completa o simplificada, el importe total, la base, el tipo de IVA y la cuota, la huella del registro anterior y la fecha, hora, minuto y segundo de generación.</p>
+
+<h2 id="qr">QR y frase en el tique</h2>
+<p>El apartado 5 que la disposición final primera añade al artículo 7 del Reglamento de facturación dice que a las facturas simplificadas se les aplica lo previsto en el artículo 6.5: QR y, en su caso, la frase. Detalles en la guía sobre si el <a href="/blog/verifactu-qr-obligatorio/">QR es obligatorio</a> y en el <a href="/generador-qr-verifactu/">generador de QR</a>.</p>
+
+<h2 id="sustitucion">Si sustituyes tiques por una factura completa</h2>
+<p>El artículo 10.1.h exige que el registro de alta de una factura emitida en sustitución de simplificadas anteriores identifique las simplificadas sustituidas. Es decir, el vínculo entre ambos documentos debe quedar en el registro y no solo en el papel.</p>
+
+<h2 id="errores">Si te equivocas al emitir</h2>
+<p>El artículo 8.2.a establece que las correcciones se hacen con registros adicionales posteriores y nunca borrando el original. Si una factura se emitió por error, el artículo 11 prevé un registro de facturación de anulación. Para las rectificaciones, el artículo 10.1.g pide indicar su tipo y las facturas rectificadas cuando sea preceptivo.</p>
+
+<h2 id="tabla">Resumen por documento</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Documento</th><th>Registro de alta</th><th>QR</th><th>Frase</th></tr></thead>
+<tbody>
+<tr><td>Tique o factura simplificada</td><td>Sí (art. 9)</td><td>Sí</td><td>Si hay remisión</td></tr>
+<tr><td>Factura completa</td><td>Sí (art. 9)</td><td>Sí</td><td>Si hay remisión</td></tr>
+<tr><td>Anulación de una factura emitida por error</td><td>Registro de anulación (art. 11)</td><td>—</td><td>—</td></tr>
+</tbody></table></div>
+
+<h2 id="pasos">Pasos para un comercio</h2>
+<ol class="steps">
+<li>Pregunta a tu proveedor de TPV si su software está adaptado y si ofrece la declaración responsable (art. 13).</li>
+<li>Comprueba que el tique impreso o digital incluye el QR.</li>
+<li>Prueba el QR con el <a href="/validar-qr-verifactu/">validador</a>.</li>
+<li>Revisa si tu caso queda fuera del reglamento con el <a href="/">test de obligación</a> y las <a href="/blog/fechas-verifactu-2027-2028/">fechas</a>.</li>
+</ol>
+<p>Más sobre cómo se encadenan los registros en <a href="/blog/verifactu-programa-facturacion-requisitos/">requisitos del programa</a>.</p>
+""",
+    faq=[
+        ("¿Un tique cuenta como factura a efectos de Verifactu?", "Sí: el artículo 1.2 incluye la factura simplificada en el término factura."),
+        ("¿Hay que generar un registro por cada tique?", "Sí, un registro de alta por cada factura, simultáneo o inmediatamente anterior a su expedición (art. 9)."),
+        ("¿El tique lleva QR?", "Sí; el artículo 7.5 del Reglamento de facturación remite al contenido del artículo 6.5."),
+        ("¿Cuándo va la frase VERI*FACTU?", "Solo cuando el sistema remite todos los registros a la AEAT."),
+        ("¿Cómo corrijo un tique emitido por error?", "Con un registro adicional: anulación (art. 11) o rectificación, sin borrar el original (art. 8.2.a)."),
+        ("¿Qué pasa si sustituyo tiques por una factura completa?", "El registro de alta debe identificar las simplificadas sustituidas (art. 10.1.h)."),
+    ],
+    sources=[S.RD, S.ROF],
+))
+
+POSTS.append(dict(
+    slug="huella-verifactu-que-es",
+    published="2026-11-18",
+    title="Qué es la huella (hash) de Verifactu y cómo se calcula",
+    desc="Qué es la huella o hash de los registros de Verifactu, qué dice el BOE, cómo encadena los registros y dónde está la especificación oficial de la AEAT.",
+    h1="Qué es la huella (hash) de Verifactu y cómo se calcula",
+    intro="La huella es el elemento que encadena unos registros con otros e impide alterarlos sin que se note. Explicamos qué exige el BOE y dónde está el cálculo oficial. Revisado el 18 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> la huella o «hash» es una cadena que el sistema añade a cada registro de facturación de alta y de anulación (art. 12). El registro siguiente incluye parte de la huella del anterior (art. 10.1.ñ), de modo que cualquier cambio posterior rompe la cadena. El cálculo exacto no lo fija el Real Decreto sino la especificación técnica de la AEAT.</p>
+
+<h2 id="que">Qué es</h2>
+<p>Una huella (hash) es el resultado de aplicar una función matemática a unos datos: si cambia un solo carácter, cambia la huella. El reglamento obliga a que los sistemas informáticos añadan una huella a los registros de alta y de anulación «según las especificaciones que se determinen» (art. 12).</p>
+
+<h2 id="cadena">Cómo encadena los registros</h2>
+<p>Los registros deben estar encadenados para poder verificar su rastro desde el primero hasta el último (art. 8.2.b). Para ello, cuando no es el primer registro, incluye el número, la serie, la fecha de expedición del registro inmediatamente anterior y parte de su huella (arts. 10.1.ñ y 11.2.e). Si alguien oculta o modifica un registro antiguo, la huella almacenada en el siguiente deja de coincidir.</p>
+
+<h2 id="alteracion">Qué cuenta como alteración</h2>
+<p>El artículo 8.2.a define alteración: ocultar o eliminar un registro, ocultar o modificar sus datos total o parcialmente, o añadir registros simulados. El sistema debe detectarlo y avisar. Cualquier corrección se hace con un registro adicional posterior.</p>
+
+<h2 id="firma">Huella y firma electrónica</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Modalidad</th><th>Huella</th><th>Firma electrónica</th></tr></thead>
+<tbody>
+<tr><td>Sistema que no remite los registros</td><td>Obligatoria</td><td>Obligatoria (art. 12)</td></tr>
+<tr><td>Sistema VERI*FACTU</td><td>Obligatoria</td><td>No; basta calcular la huella (art. 16.3)</td></tr>
+</tbody></table></div>
+<p>Más sobre las dos modalidades en <a href="/blog/verifactu-modalidad-no-verifactu/">VERI*FACTU o no VERI*FACTU</a>.</p>
+
+<h2 id="calculo">Dónde está el cálculo oficial</h2>
+<p>La disposición final tercera permite que una orden ministerial detalle las especificaciones de la huella y de la firma. La AEAT publica el documento técnico «especificaciones de la huella o hash de los registros» (v0.1.2) y preguntas frecuentes sobre el tema. Allí se indican los campos que intervienen y el orden en que se concatenan; no los reproducimos aquí para no inducir a error si el documento cambia.</p>
+<p>Para comprobar un cálculo con datos de ejemplo, usa la <a href="/calcular-huella-verifactu/">calculadora de huella</a> de esta web, que sigue la especificación de la AEAT y funciona en tu navegador. Contrasta siempre el resultado con tu programa de facturación.</p>
+
+<h2 id="pasos">Cómo revisarla en tu programa</h2>
+<ol class="steps">
+<li>Pide a tu proveedor la declaración responsable de cumplimiento (art. 13).</li>
+<li>Emite dos facturas de prueba y comprueba que la segunda referencia a la primera.</li>
+<li>Prueba el XML con el <a href="/ejemplo-xml-verifactu/">ejemplo de XML</a> y los datos del QR con el <a href="/validar-qr-verifactu/">validador</a>.</li>
+<li>Revisa los <a href="/blog/verifactu-programa-facturacion-requisitos/">requisitos del programa</a>.</li>
+</ol>
+""",
+    faq=[
+        ("¿Qué es la huella de Verifactu?", "Una cadena calculada sobre los datos de cada registro de alta o anulación que permite detectar modificaciones (art. 12)."),
+        ("¿Quién calcula la huella?", "El sistema informático de facturación, de forma automática al generar cada registro."),
+        ("¿Es lo mismo que la firma electrónica?", "No. Los sistemas VERI*FACTU solo necesitan calcular la huella; los demás, además, firman (arts. 12 y 16.3)."),
+        ("¿Qué pasa si altero un registro antiguo?", "El sistema debe detectarlo y avisar; el encadenamiento deja de ser coherente (art. 8.2.a)."),
+        ("¿Dónde está la fórmula exacta?", "En la especificación técnica de la AEAT sobre la huella o hash de los registros."),
+        ("¿Puedo comprobar una huella gratis?", "Sí, con la calculadora de huella de esta web; contrasta el resultado con tu programa."),
+    ],
+    sources=[S.RD, S.HASH, S.HASH_FAQ],
 ))
