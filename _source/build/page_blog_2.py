@@ -37,7 +37,7 @@ POSTS.append(dict(
 <tbody>
 <tr><td>Estimación directa, facturas con un programa o app</td><td>Sí</td><td>Art. 3.1.b del reglamento</td></tr>
 <tr><td>Módulos (estimación objetiva) con TPV o caja registradora</td><td>Sí</td><td>El art. 3.1.b no distingue el método de estimación</td></tr>
-<tr><td>Recargo de equivalencia (comercio minorista) con TPV</td><td>Sí</td><td>El reglamento no excluye este régimen de IVA; lo determinante es usar un sistema informático</td></tr>
+<tr><td>Recargo de equivalencia (comercio minorista) con TPV</td><td>Sí, si expides facturas con él</td><td>El reglamento no excluye este régimen de IVA; lo determinante es facturar con un sistema informático (<a href="/blog/verifactu-recargo-equivalencia/">detalle</a>)</td></tr>
 <tr><td>Facturas hechas a mano en un talonario</td><td>No</td><td>No usas un sistema informático de facturación</td></tr>
 <tr><td>Excel o Word solo para escribir, imprimir y guardar facturas</td><td>No, según la AEAT</td><td>Preguntas frecuentes de la AEAT sobre el ámbito de aplicación</td></tr>
 <tr><td>Excel con macros que generan el libro de facturas expedidas</td><td>Sí, según la AEAT</td><td>La hoja de cálculo pasa a ser un sistema de facturación</td></tr>
@@ -721,7 +721,7 @@ POSTS.append(dict(
 </ul>
 
 <h2 id="territorio">4. Territorio</h2>
-<p>El reglamento se aplica en todo el territorio español, sin perjuicio de los regímenes forales de País Vasco y Navarra. A los obligados con domicilio fiscal en territorio común sí se les aplica, aunque operen allí. Para los demás, consulta la <a href="/blog/factura-electronica-pais-vasco-navarra/">guía sobre País Vasco y Navarra</a>.</p>
+<p>El reglamento se aplica en todo el territorio español, sin perjuicio de los regímenes forales de País Vasco y Navarra. A los obligados con domicilio fiscal en territorio común sí se les aplica, aunque operen allí. Para los demás, consulta la <a href="/blog/factura-electronica-pais-vasco-navarra/">guía sobre País Vasco y Navarra</a> y la comparativa <a href="/blog/verifactu-ticketbai-diferencias/">Verifactu y TicketBAI</a>.</p>
 
 <h2 id="no-aplicacion">5. Solicitar la no aplicación</h2>
 <p>El art. 5 permite que el Departamento de Inspección Financiera y Tributaria de la AEAT resuelva la no aplicación, a petición del interesado, para sectores o contribuyentes concretos cuando lo justifiquen las prácticas del sector, o ante circunstancias técnicas excepcionales. Puede ser temporal y llevar condiciones especiales.</p>
@@ -1004,4 +1004,181 @@ POSTS.append(dict(
         ("¿Puedo comprobar una huella gratis?", "Sí, con la calculadora de huella de esta web; contrasta el resultado con tu programa."),
     ],
     sources=[S.RD, S.HASH, S.HASH_FAQ],
+))
+
+# ---------------------------------------------------------------- 2026-11-19 (#4, #11, #12)
+POSTS.append(dict(
+    slug="verifactu-excel-word",
+    published="2026-11-19",
+    title="Verifactu y Excel o Word: cuándo te afecta, según la AEAT",
+    desc="¿Puedo facturar con Excel o Word con Verifactu? Criterio de la AEAT: cuándo no te afecta y cuándo la hoja de cálculo pasa a ser un sistema de facturación.",
+    h1="¿Puedo facturar con Excel o Word con Verifactu?",
+    intro="Muchos autónomos y pymes emiten sus facturas con una plantilla de Excel o de Word. La AEAT ha publicado un criterio sobre ese caso en sus preguntas frecuentes (actualizadas a 21 de octubre de 2026). Revisado el 19 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> según la AEAT, el reglamento <strong>no te afecta</strong> si usas el procesador de textos o la hoja de cálculo solo para introducir los datos de las facturas, expedirlas e imprimirlas y conservar la información. <strong>Sí te afecta</strong> si, además, la utilizas para procesar esa información y generar directamente los libros registro de IVA o de IRPF, la contabilidad u otro resultado que sirva para cumplir voluntariamente obligaciones tributarias.</p>
+
+<h2 id="definicion">Qué es un sistema informático de facturación</h2>
+<p>El artículo 1.2 del reglamento llama sistema informático de facturación al conjunto de hardware y software que se usa para expedir facturas y que hace alguna de estas tres cosas: admitir la entrada de información de facturación por cualquier método, conservarla, o procesarla para producir otros resultados derivados. Por eso la pregunta no es «¿uso Excel?», sino <strong>«¿qué hace mi hoja?»</strong>.</p>
+
+<h2 id="tabla">Casos según el criterio de la AEAT</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Uso de la hoja o del documento</th><th>¿Te afecta el reglamento?</th></tr></thead>
+<tbody>
+<tr><td>Escribir los datos de la factura, imprimirla o exportarla a PDF y guardarla</td><td>No</td></tr>
+<tr><td>Listado simple de facturas emitidas con sumatorios u otras reglas de cálculo</td><td>No (ejemplo de la propia AEAT)</td></tr>
+<tr><td>Macro que genera el libro registro de facturas expedidas</td><td>Sí: pasa a ser un sistema de facturación</td></tr>
+<tr><td>Cálculo que alimenta los libros de IVA o de IRPF, la contabilidad u otro resultado fiscal voluntario</td><td>Sí</td></tr>
+<tr><td>Talonario o factura escrita a mano o a máquina, sin ningún sistema informático</td><td>No</td></tr>
+</tbody></table></div>
+<p>La AEAT añade que podrá comprobar si los procesadores de texto o las hojas de cálculo que se usan para emitir facturas cumplen los criterios de un sistema informático de facturación, en función de las capacidades y herramientas que utilicen. La línea entre un listado con sumas y una macro que genera libros no depende del nombre del programa sino de lo que hace.</p>
+
+<h2 id="todo-o-nada">Todo informático o todo manual</h2>
+<p>Las mismas preguntas frecuentes explican que, con carácter general, no es posible que convivan facturas emitidas con un sistema informático y otras a mano: si utilizas un sistema de facturación para producir facturas, toda la facturación debe ser informática y cumplir el reglamento. La única excepción que cita la AEAT es la de quien emite facturas electrónicas a una Administración con el programa gratuito MiFacturae y no usa ningún otro sistema; no vale para facturas generadas por un programa en formato Facturae e integradas con FACe.</p>
+
+<h2 id="si-te-afecta">Si tu hoja cuenta como sistema de facturación</h2>
+<p>Entonces debe cumplir el artículo 8: integridad, conservación, accesibilidad, legibilidad, trazabilidad e inalterabilidad de los registros. Los registros no pueden alterarse sin que el sistema lo detecte, y cualquier corrección debe hacerse con un registro adicional (art. 8.2.a). Debe además generar un registro de alta por cada factura (art. 9), con huella y, según la modalidad, firma electrónica (art. 12). Una hoja de cálculo corriente, en la que cualquiera puede cambiar una celda sin dejar rastro, difícilmente cumple eso por sí sola; es una valoración nuestra, no un criterio de la AEAT.</p>
+<p>Las salidas habituales son dos: pasar a un <a href="/blog/verifactu-programa-facturacion-requisitos/">programa de facturación adaptado</a> (el productor debe ofrecer su declaración responsable, art. 13) o usar la <a href="/blog/verifactu-gratis-aplicacion-aeat/">aplicación gratuita de la AEAT</a>, que la propia Agencia presenta como alternativa para pequeños empresarios y profesionales siempre que sus funciones se ajusten a lo que necesitan.</p>
+
+<h2 id="errores">Tres errores frecuentes</h2>
+<ul class="checklist">
+<li><strong>Pensar que «Excel» o «Word» es un permiso o una prohibición.</strong> El criterio es funcional: lo que cuenta es lo que hace el archivo, no su nombre.</li>
+<li><strong>Mezclar plantilla y programa.</strong> Si ya usas un programa de facturación para algunos clientes, la plantilla de Word para otros deja de ser una opción segura, porque la facturación no puede ser mitad manual y mitad informática.</li>
+<li><strong>Olvidar al gestor.</strong> Si tu asesor emite facturas por ti con su programa, el sistema relevante es el suyo, pero la responsabilidad de cumplir sigue siendo tuya.</li>
+</ul>
+
+<h2 id="gestor">¿Y si mi gestor hace las facturas?</h2>
+<p>Depende de quién las expide materialmente. Si tú las haces a mano o con Word o Excel que no son un sistema de facturación y se las entregas al gestor para llevar los libros, el reglamento no te afecta por eso. Si es el gestor quien las expide con un sistema de facturación, él debe generar el registro de alta y, en la modalidad VERI*FACTU, remitirlo; y, según la AEAT, la delegación no te libera de la responsabilidad de cumplir.</p>
+
+<h2 id="pasos">Qué hacer</h2>
+<ol class="steps">
+<li>Anota qué hace exactamente tu plantilla: ¿solo escribe e imprime, o también genera libros, contabilidad o declaraciones?</li>
+<li>Si genera algo más que un listado, trátala como sistema de facturación y planifica el cambio de programa con las <a href="/blog/fechas-verifactu-2027-2028/">fechas vigentes</a>.</li>
+<li>Haz el <a href="/">test de obligación</a> para ver si estás dentro del ámbito (SII, territorio foral y otras exclusiones).</li>
+<li>Si cambias de programa, prueba su QR con el <a href="/validar-qr-verifactu/">validador</a>.</li>
+</ol>
+""",
+    faq=[
+        ("¿Puedo seguir usando Excel para mis facturas?", "Según la AEAT, sí si solo lo usas para introducir datos, expedir e imprimir facturas y conservar la información."),
+        ("¿Qué convierte una hoja de cálculo en sistema de facturación?", "Procesar la información para generar directamente los libros registro, la contabilidad u otro resultado fiscal; por ejemplo, con una macro."),
+        ("¿Un listado de facturas con sumas me afecta?", "No: la AEAT cita expresamente los simples listados de facturas con sumatorios o reglas de cálculo."),
+        ("¿Puedo emitir unas facturas a mano y otras con programa?", "Con carácter general no; si usas un sistema de facturación, toda la facturación debe ser informática. Hay una excepción para MiFacturae."),
+        ("¿Puede la AEAT comprobar mi hoja de cálculo?", "Sí: la AEAT indica que puede verificar si encaja en la definición según las capacidades y herramientas que use."),
+        ("¿Hay alternativa gratuita?", "La AEAT ofrece una aplicación básica de facturación, utilizable si sus funciones y condiciones se ajustan a tus necesidades."),
+    ],
+    sources=[S.RD, S.FAQ_AMB, S.APP_GUIA],
+))
+
+POSTS.append(dict(
+    slug="verifactu-recargo-equivalencia",
+    published="2026-11-19",
+    title="Verifactu y recargo de equivalencia: ¿te afecta?",
+    desc="Comercios en recargo de equivalencia: cuándo te afecta Verifactu según la AEAT, en qué casos debes expedir factura y qué pasa con tiques y cajas registradoras.",
+    h1="Verifactu y recargo de equivalencia: comercios minoristas",
+    intro="Si eres comerciante minorista en el régimen especial del recargo de equivalencia, la duda es si tienes que adaptar tu caja o tu programa. La respuesta depende de si expides facturas. Revisado el 19 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> según la AEAT, quien solo realiza operaciones en recargo de equivalencia <strong>no está afectado con carácter general</strong>, porque no está obligado a expedir factura salvo excepciones. Pero si expides facturas (o facturas simplificadas) con un sistema informático, el reglamento sí se aplica, sea cual sea el motivo por el que las emites.</p>
+
+<h2 id="clave">La clave: ¿expides facturas?</h2>
+<p>El reglamento regula los sistemas informáticos que sirven para expedir facturas, completas o simplificadas (art. 1.2). No regula otros documentos justificativos de una venta. La AEAT lo resume así: lo que importa es si, según la normativa de facturación, estás obligado a facturar o si facturas voluntariamente con un sistema informático.</p>
+
+<h2 id="casos">Cuándo tienes que expedir factura en recargo de equivalencia</h2>
+<p>Según las preguntas frecuentes de la AEAT, estos son los supuestos que obligan a facturar a un contribuyente en recargo de equivalencia:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Supuesto</th><th>Consecuencia</th></tr></thead>
+<tbody>
+<tr><td>Entregas de inmuebles sujetas y no exentas de IVA</td><td>Factura obligatoria</td></tr>
+<tr><td>Tributas en IRPF en estimación directa</td><td>Factura obligatoria</td></tr>
+<tr><td>El cliente es empresario, profesional o una Administración Pública</td><td>Factura obligatoria</td></tr>
+<tr><td>El destinatario la exige para ejercer un derecho de naturaleza tributaria</td><td>Factura obligatoria</td></tr>
+<tr><td>Determinadas operaciones de comercio exterior</td><td>Factura obligatoria</td></tr>
+</tbody></table></div>
+<p>En cualquiera de esos casos, si usas un sistema informático para expedir la factura, ese sistema debe cumplir el reglamento. Para esas operaciones excepcionales, la AEAT indica que se puede utilizar el sistema facilitado por la propia Agencia en su sede electrónica (art. 7.b del reglamento).</p>
+
+<h2 id="farmacias">El ejemplo de las farmacias</h2>
+<p>La AEAT pone como ejemplo a las oficinas de farmacia en recargo de equivalencia: les afecta el reglamento porque, a efectos del IRPF, determinan su rendimiento por estimación directa, y el artículo 26 del Reglamento de facturación obliga a expedir factura a quien obtiene rendimientos de actividades económicas por ese método con independencia del régimen de IVA. Lo mismo vale para cualquier otro contribuyente en estimación directa.</p>
+
+<h2 id="cajas">Cajas registradoras y tiques</h2>
+<p>Un comercio en recargo suele emitir justificantes de venta con la caja. Según la AEAT, si esos documentos no son facturas completas ni simplificadas y se emiten en operaciones excluidas de la obligación de facturar, <strong>no están sometidos al reglamento</strong>, aunque se emitan voluntariamente. Pero si la caja imprime lo que es una factura simplificada, esa caja es un sistema de facturación y debe adaptarse. Más detalle en <a href="/blog/verifactu-factura-simplificada-ticket/">Verifactu y facturas simplificadas</a>.</p>
+<p>Y si al cierre del día sacas una «factura recapitulativa» con todas las ventas, la AEAT aclara que eso no sustituye a las facturas simplificadas ya emitidas: estas siguen sometidas al reglamento.</p>
+
+<h2 id="otros">Régimen simplificado y agricultura, ganadería y pesca</h2>
+<p>La AEAT da la misma respuesta general para quien solo opera en el régimen simplificado de IVA o en el régimen especial de agricultura, ganadería y pesca: no hay obligación de facturar salvo excepciones (por ejemplo, vender activos fijos en el simplificado, facturar a empresarios o a Administraciones, o entregar inmuebles en el régimen agrario), y quien utiliza un sistema informático para expedir facturas, incluidas las voluntarias, queda dentro del reglamento. Es siempre la misma pregunta: ¿expido facturas con un sistema informático?</p>
+
+<h2 id="registro">Cómo aparece el recargo en el registro</h2>
+<p>Cuando sí corresponde generar el registro de facturación de alta, el artículo 10.1.m exige incluir el tipo y la cuota del recargo de equivalencia aplicados e informar si la operación la ha realizado un contribuyente en régimen simplificado o en recargo de equivalencia. Esa parte la resuelve el programa; tú solo necesitas que esté adaptado.</p>
+
+<h2 id="pasos">Qué hacer</h2>
+<ol class="steps">
+<li>Revisa si en tu actividad se dan los cinco supuestos de la tabla, sobre todo si vendes a empresas o tributas por estimación directa.</li>
+<li>Si no facturas nunca con sistema informático, no tienes que adaptar nada, pero revisa el punto anterior cada vez que cambie tu forma de vender.</li>
+<li>Si facturas, pregunta a tu proveedor de caja o programa por su declaración responsable (art. 13) y por las <a href="/blog/fechas-verifactu-2027-2028/">fechas</a>.</li>
+<li>Haz el <a href="/">test de obligación</a> para comprobar las exclusiones (SII, territorio foral).</li>
+</ol>
+""",
+    faq=[
+        ("¿Estoy obligado a Verifactu si solo vendo en recargo de equivalencia?", "Con carácter general no, según la AEAT, porque no hay obligación de facturar salvo excepciones; pero sí si facturas con un sistema informático."),
+        ("¿Y si un cliente empresario me pide factura?", "Debes expedirla, y si usas un sistema informático para ello, el reglamento se aplica."),
+        ("¿Las farmacias en recargo están afectadas?", "Sí, según la AEAT, porque tributan en IRPF por estimación directa y deben facturar."),
+        ("¿Un tique de caja que no es factura simplificada está sujeto?", "No, si se emite en operaciones excluidas de la obligación de facturar (criterio de la AEAT)."),
+        ("¿Una factura recapitulativa diaria me exime?", "No: las facturas simplificadas ya emitidas siguen sometidas al reglamento."),
+        ("¿Qué sistema puedo usar si solo facturo de forma excepcional?", "La AEAT señala que puede utilizarse el sistema facilitado por la propia Agencia en su sede electrónica."),
+    ],
+    sources=[S.RD, S.ROF, S.FAQ_AMB],
+))
+
+POSTS.append(dict(
+    slug="verifactu-ticketbai-diferencias",
+    published="2026-11-19",
+    title="Verifactu y TicketBAI: diferencias y quién aplica cada uno",
+    desc="Verifactu o TicketBAI: manda el domicilio fiscal. Qué dice el art. 1.3 del RD 1007/2023, qué aclara la AEAT sobre territorios forales y si operas con ambos.",
+    h1="Verifactu y TicketBAI: diferencias y quién usa cada uno",
+    intro="Verifactu y TicketBAI se parecen, pero no son lo mismo ni se aplican a las mismas empresas. Te explicamos el criterio que fija el BOE y lo que aclara la AEAT. Revisado el 19 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> el reglamento de Verifactu (RD 1007/2023) se aplica en territorio común, y en el País Vasco y Navarra solo a los obligados con domicilio fiscal en territorio común (art. 1.3). Quien tributa a las Haciendas Forales vascas se rige por su normativa foral, que en Gipuzkoa, Bizkaia y Álava es el sistema TicketBAI. La AEAT lo describe como un sistema «de contenido similar» a la modalidad VERI*FACTU.</p>
+
+<h2 id="criterio">El criterio: dónde tienes el domicilio fiscal</h2>
+<p>El artículo 1.3 dice que el reglamento es aplicable en todo el territorio español, sin perjuicio de los regímenes forales de concierto y convenio económico, y que en relación con el País Vasco y Navarra se aplica a los obligados del artículo 3 «cuando tengan su domicilio fiscal en territorio común». La AEAT explica que la clave es si la competencia sobre la imposición directa (IRPF e Impuesto sobre Sociedades) corresponde a las Haciendas Forales según el Concierto Económico (arts. 6 y 14) o el Convenio con Navarra (arts. 9 y 18).</p>
+
+<h2 id="tabla">Comparativa rápida</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Aspecto</th><th>Verifactu (RD 1007/2023)</th><th>Territorios forales</th></tr></thead>
+<tbody>
+<tr><td>A quién se aplica</td><td>Obligados del art. 3 con domicilio fiscal en territorio común (incluidos Canarias, Ceuta y Melilla)</td><td>Quien tributa a la Hacienda Foral por la imposición directa</td></tr>
+<tr><td>Norma</td><td>Real Decreto 1007/2023 y su orden de desarrollo</td><td>Normativa de la Hacienda Foral correspondiente</td></tr>
+<tr><td>Sistema</td><td>Modalidad VERI*FACTU o no VERI*FACTU</td><td>TicketBAI en Gipuzkoa, Bizkaia y Álava, en distintas modalidades</td></tr>
+<tr><td>Navarra</td><td>No, con carácter general, si se sujetan a normativa foral</td><td>Su propia normativa foral</td></tr>
+</tbody></table></div>
+<p>Los detalles técnicos de TicketBAI no están en el Real Decreto 1007/2023 y no los reproducimos aquí: consulta a tu Hacienda Foral.</p>
+
+<h2 id="que-es">Qué tienen en común y qué no</h2>
+<p>Los dos sistemas buscan que el programa de facturación genere registros de cada factura que no puedan alterarse sin dejar rastro y que la Administración pueda consultar. Pero se rigen por normas distintas, aprobadas por administraciones distintas. No des por hecho que un programa adaptado a uno sirve para el otro. Si desarrollas o compras software para ambos territorios, comprueba la compatibilidad por separado.</p>
+
+<h2 id="canarias">Canarias, Ceuta y Melilla no son forales</h2>
+<p>Los contribuyentes con domicilio fiscal en Canarias, Ceuta o Melilla sí están dentro del ámbito del reglamento: las referencias al IVA se entienden hechas también al IGIC y al IPSI (art. 1.3, confirmado por la AEAT).</p>
+
+<h2 id="relaciones">Qué pasa si operas con empresas de los dos territorios</h2>
+<p>La AEAT da un ejemplo: si una empresa con domicilio foral y otra con domicilio en territorio común se relacionan comercialmente, el sistema de facturación de la primera queda sometido a las obligaciones de su Hacienda Foral y el de la segunda al reglamento estatal. Cada una cumple el suyo.</p>
+<p>Hay una excepción práctica en la autofacturación. Si una empresa foral emite materialmente las facturas como destinataria en nombre de proveedores de territorio común: si está adscrita al SII foral, no tiene que cumplir el reglamento estatal por esas operaciones (art. 4.3); si no está adscrita al SII foral, sí debe hacerlo, enviando los registros a VERI*FACTU o conservándolos a disposición de la AEAT.</p>
+
+<h2 id="sii">Y el SII</h2>
+<p>El SII es otra exclusión distinta: quienes llevan los libros registro de IVA en la sede electrónica de la AEAT quedan fuera del reglamento respecto de sus propias facturas (art. 3.3). Lo explicamos en <a href="/blog/verifactu-sii-exentos/">Verifactu y SII</a>.</p>
+
+<h2 id="pasos">Qué hacer</h2>
+<ol class="steps">
+<li>Mira dónde está tu domicilio fiscal y a qué Hacienda tributas por IRPF o Sociedades.</li>
+<li>Si es territorio común, sigue las <a href="/blog/fechas-verifactu-2027-2028/">fechas de Verifactu</a> y haz el <a href="/">test de obligación</a>.</li>
+<li>Si es foral, consulta el calendario y las modalidades de tu Hacienda Foral; este sitio no cubre TicketBAI.</li>
+<li>Si tu proveedor de software trabaja en ambos territorios, pregúntale por qué normativa cumple cada producto.</li>
+</ol>
+<p>La factura electrónica entre empresas tiene también reglas específicas en estos territorios: <a href="/blog/factura-electronica-pais-vasco-navarra/">País Vasco y Navarra</a>.</p>
+""",
+    faq=[
+        ("¿Verifactu y TicketBAI son lo mismo?", "No. Son sistemas distintos con normativa distinta; la AEAT dice que TicketBAI tiene un contenido similar a la modalidad VERI*FACTU."),
+        ("¿Qué manda: mi domicilio o el de mi cliente?", "Tu domicilio fiscal: cada empresa cumple con la normativa de su territorio."),
+        ("¿Se aplica Verifactu en Navarra?", "Con carácter general no, cuando el empresario se sujeta a la normativa foral según el Convenio Económico, según la AEAT."),
+        ("¿Y en Canarias, Ceuta y Melilla?", "Sí, el reglamento se aplica, entendiendo las referencias al IVA hechas también al IGIC y al IPSI."),
+        ("¿Dónde se explica TicketBAI?", "En la normativa de cada Hacienda Foral; no está en el RD 1007/2023."),
+        ("¿Puedo estar excluido por SII y por territorio foral a la vez?", "Son exclusiones independientes; se analiza cada una según tu situación."),
+    ],
+    sources=[S.RD, S.FAQ_AMB],
 ))

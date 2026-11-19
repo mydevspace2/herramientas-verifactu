@@ -120,7 +120,7 @@ POSTS.append(dict(
 <h2 id="alternativas">Otras formas de cumplir sin pagar</h2>
 <ul>
 <li><strong>Facturar a mano:</strong> si expides las facturas solo en papel, sin programa, el reglamento no te afecta (aunque pierdes las ventajas de un programa).</li>
-<li><strong>Excel o Word, con matices:</strong> según la AEAT no te afecta si los usas solo para introducir datos, expedir, imprimir y conservar facturas; sí si, por ejemplo, programas macros que generan el libro registro.</li>
+<li><strong>Excel o Word, con matices:</strong> según la AEAT no te afecta si los usas solo para introducir datos, expedir, imprimir y conservar facturas; sí si, por ejemplo, programas macros que generan el libro registro (<a href="/blog/verifactu-excel-word/">más detalle</a>).</li>
 <li><strong>Programas con plan gratuito:</strong> muchos proveedores ofrecen versiones gratuitas o de prueba adaptadas. Antes de elegir, pide que te confirmen por escrito que el producto cumple el reglamento (deben incluir una declaración responsable) y revisa los límites de facturas del plan.</li>
 </ul>
 <p>Nuestras herramientas son gratuitas, pero <strong>no son un programa de facturación</strong>: sirven para entender Verifactu, comprobar QR y huellas y revisar XML. Para emitir facturas necesitas la aplicación de la AEAT o un programa adaptado.</p>
