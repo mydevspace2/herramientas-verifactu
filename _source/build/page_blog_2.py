@@ -1170,6 +1170,7 @@ POSTS.append(dict(
 <li>Si es foral, consulta el calendario y las modalidades de tu Hacienda Foral; este sitio no cubre TicketBAI.</li>
 <li>Si tu proveedor de software trabaja en ambos territorios, pregúntale por qué normativa cumple cada producto.</li>
 </ol>
+<p>Si tu negocio es un bar o restaurante, mira <a href="/blog/verifactu-bares-restaurantes/">Verifactu en hostelería</a> y <a href="/blog/tpv-verifactu/">qué debe cumplir un TPV</a>; para corregir facturas, <a href="/blog/factura-rectificativa-verifactu/">rectificativas</a>.</p>
 <p>La factura electrónica entre empresas tiene también reglas específicas en estos territorios: <a href="/blog/factura-electronica-pais-vasco-navarra/">País Vasco y Navarra</a>.</p>
 """,
     faq=[
@@ -1181,4 +1182,164 @@ POSTS.append(dict(
         ("¿Puedo estar excluido por SII y por territorio foral a la vez?", "Son exclusiones independientes; se analiza cada una según tu situación."),
     ],
     sources=[S.RD, S.FAQ_AMB],
+))
+
+
+POSTS.append(dict(
+    slug="factura-rectificativa-verifactu",
+    published="2026-11-20",
+    title="Factura rectificativa con Verifactu: tipos R1 a R5",
+    desc="Qué son los tipos R1 a R5 y las claves S e I del esquema XML de la AEAT, cuándo se anula un registro y cómo se corrige una factura sin borrarla en Verifactu.",
+    h1="Factura rectificativa con Verifactu: tipos R1 a R5",
+    intro="Con Verifactu una factura emitida no se borra ni se edita: se corrige con un registro nuevo. Te explicamos los tipos de rectificativa que define el esquema de la AEAT y la diferencia con anular. Revisado el 20 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> el art. 8.2.a del RD 1007/2023 dice que cualquier corrección o anulación debe hacerse «mediante al menos un registro de facturación adicional posterior», conservando inalterados los datos originales. En el esquema XML de la AEAT, una factura rectificativa se marca con un tipo R1 a R5 y con una clave S (sustitutiva) o I (incremental).</p>
+
+<h2 id="principio">El principio: no se altera, se añade</h2>
+<p>El reglamento define alteración como ocultar o eliminar un registro ya generado, o modificar sus datos. Por eso, si te equivocas en una factura, el programa no puede cambiar el registro original. Tiene que generar otro registro que corrija el error, y los dos quedan encadenados en la secuencia (art. 8.2.b).</p>
+
+<h2 id="tipos">Los tipos de factura rectificativa</h2>
+<p>El artículo 10.1.g exige indicar, si la factura es rectificativa, «su tipo, características» y las facturas rectificadas cuando sea preceptivo. El detalle lo fija el esquema XSD publicado por la AEAT, que distingue cinco tipos:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Tipo</th><th>Descripción en el esquema</th></tr></thead>
+<tbody>
+<tr><td>R1</td><td>Factura rectificativa (art. 80.1 y 80.2 y error fundado en derecho)</td></tr>
+<tr><td>R2</td><td>Factura rectificativa (art. 80.3)</td></tr>
+<tr><td>R3</td><td>Factura rectificativa (art. 80.4)</td></tr>
+<tr><td>R4</td><td>Factura rectificativa (resto)</td></tr>
+<tr><td>R5</td><td>Factura rectificativa en facturas simplificadas</td></tr>
+</tbody></table></div>
+<p>Las referencias a «art. 80» son a la Ley del IVA. Qué tipo corresponde a tu caso depende del motivo de la rectificación; si dudas, consúltalo con tu gestor.</p>
+
+<h2 id="clave">Sustitutiva (S) o incremental (I)</h2>
+<p>Además del tipo, el esquema incluye un campo de tipo de rectificación con dos valores: <strong>S</strong>, sustitutiva, e <strong>I</strong>, incremental. El esquema permite indicar las facturas rectificadas (hasta 1.000) y, en las sustitutivas, el desglose de la base y la cuota rectificadas. Te lo mostramos en un <a href="/ejemplo-xml-verifactu/">ejemplo de XML</a>.</p>
+
+<h2 id="anular">Rectificar no es anular</h2>
+<p>El art. 11 regula otro registro distinto: el de anulación. Procede «cuando se haya emitido erróneamente una factura» y hace falta anular su registro de alta. Incluye el número, la serie y la fecha de la factura anulada. Es decir: la rectificativa corrige una factura que existe; la anulación deja sin efecto un registro generado por error.</p>
+
+<h2 id="simplificadas">Facturas simplificadas</h2>
+<p>Para tickets el esquema tiene el tipo R5, y también el F3, «factura emitida en sustitución de facturas simplificadas facturadas y declaradas». El art. 10.1.h exige identificar las simplificadas sustituidas. Más en <a href="/blog/verifactu-factura-simplificada-ticket/">Verifactu y facturas simplificadas</a>.</p>
+
+<h2 id="pasos">Qué hacer cuando te equivocas</h2>
+<ol class="steps">
+<li>No intentes editar ni borrar la factura original en tu programa: debería impedirlo.</li>
+<li>Decide si la factura es errónea de forma que haya que anularla o si basta una rectificativa.</li>
+<li>Emite la rectificativa desde el programa, que elegirá el tipo y la relacionará con la original.</li>
+<li>Comprueba que el registro nuevo queda encadenado: <a href="/calcular-huella-verifactu/">la huella</a> incluye la del registro anterior.</li>
+<li>Si el programa te pide elegir el tipo R1 a R5, pregunta a tu asesor cuál corresponde.</li>
+</ol>
+<p>La huella y el registro de eventos permiten que cualquier hueco o cambio se detecte. Si el programa no lo garantiza, no cumple el art. 8: revisa los <a href="/blog/verifactu-programa-facturacion-requisitos/">requisitos del programa</a>.</p>
+""",
+    faq=[
+        ("¿Puedo borrar una factura emitida con Verifactu?", "No. Cualquier corrección o anulación exige al menos un registro adicional posterior (art. 8.2.a del RD 1007/2023)."),
+        ("¿Qué significan R1, R2, R3, R4 y R5?", "Son los tipos de factura rectificativa del esquema de la AEAT: R1 (art. 80.1, 80.2 y error fundado en derecho), R2 (80.3), R3 (80.4), R4 (resto) y R5 (facturas simplificadas)."),
+        ("¿Qué diferencia hay entre S e I?", "Son los dos valores del campo de tipo de rectificación: S es sustitutiva e I es incremental."),
+        ("¿Es lo mismo anular que rectificar?", "No. La anulación (art. 11) deja sin efecto el registro de una factura emitida por error; la rectificativa corrige una factura."),
+        ("¿Cuántas facturas puede rectificar una sola rectificativa?", "El esquema XSD admite hasta 1.000 identificadores de facturas rectificadas."),
+        ("¿Quién elige el tipo R1 a R5?", "El programa lo pide o lo propone, pero la responsabilidad es tuya: consulta a tu asesor si dudas."),
+    ],
+    sources=[S.RD, S.XSD],
+))
+
+POSTS.append(dict(
+    slug="tpv-verifactu",
+    published="2026-11-20",
+    title="TPV Verifactu: qué debe cumplir tu caja registradora",
+    desc="Requisitos del RD 1007/2023 para un TPV o caja: registros de alta, huella, registro de eventos, declaración responsable y exportación. Qué pedir al fabricante.",
+    h1="TPV Verifactu: qué debe cumplir tu caja registradora",
+    intro="Si tu negocio cobra con TPV o caja, el programa que emite el ticket es un sistema informático de facturación. Repasamos lo que exige el reglamento y qué preguntar al proveedor. Revisado el 20 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> un TPV entra en el reglamento si genera facturas, incluidas las simplificadas (art. 1.2, que define factura como completa o simplificada). Debe generar un registro de alta por cada una, encadenarlo, añadir la huella, llevar un registro de eventos y contar con la declaración responsable del fabricante.</p>
+
+<h2 id="entra">¿Mi TPV es un sistema informático de facturación?</h2>
+<p>El art. 1.2 define el sistema informático de facturación como el hardware y software que admite información de facturación, la conserva y la procesa para expedir facturas. Una caja que imprime tickets con la venta encaja. El reglamento se aplica aunque solo lo uses para una parte de tu actividad (art. 3.1).</p>
+
+<h2 id="requisitos">Lo que debe hacer el programa</h2>
+<ul class="checklist">
+<li><strong>Registro de alta por cada factura</strong>, generado de forma simultánea o inmediatamente anterior a su expedición (art. 9), con los datos del art. 10: emisor, número y serie, fecha, tipo, importe, impuestos, fecha y hora del registro y código del sistema.</li>
+<li><strong>Encadenamiento</strong>: cada registro lleva parte de la huella del anterior (art. 10.1.ñ), de modo que se pueda seguir la secuencia (art. 8.2.b).</li>
+<li><strong>Huella o hash</strong> y, salvo en VERI*FACTU, <strong>firma electrónica</strong> (arts. 12 y 16.3). Lo explicamos en <a href="/blog/huella-verifactu-que-es/">qué es la huella</a>.</li>
+<li><strong>Inalterabilidad</strong>: no se puede borrar ni modificar un registro sin que el sistema lo detecte (art. 8.2.a). Una corrección es otro registro: <a href="/blog/factura-rectificativa-verifactu/">facturas rectificativas</a>.</li>
+<li><strong>Registro de eventos</strong> automático, consultable desde el propio programa (art. 8.3).</li>
+<li><strong>Conservación y exportación</strong> de los registros a un almacenamiento externo en formato legible (art. 8.2.c).</li>
+<li><strong>Acceso de la Administración</strong>: separar la información fiscal de la confidencial (art. 8.4) y permitir el acceso y la descarga (art. 14).</li>
+</ul>
+
+<h2 id="qr">El QR en el ticket</h2>
+<p>Las facturas emitidas con estos sistemas deben incluir un código QR (art. 6.5 del Reglamento de facturación, introducido por la disposición final primera). La frase «Factura verificable en la sede electrónica de la AEAT» o «VERI*FACTU» solo se añade cuando el sistema envía todos los registros a la AEAT. Puedes comprobar el tuyo con el <a href="/validar-qr-verifactu/">validador de QR</a> y leer más en <a href="/blog/verifactu-qr-obligatorio/">QR obligatorio</a>.</p>
+
+<h2 id="declaracion">Declaración responsable del fabricante</h2>
+<p>El productor del programa debe certificar por escrito, mediante una declaración responsable, que cumple la Ley General Tributaria y el reglamento (art. 13.1). Debe constar de forma visible en el propio sistema, en cada versión, y entregarse al cliente al comprarlo (art. 13.2). Tú puedes pedirla (art. 13.3).</p>
+
+<h2 id="modalidad">VERI*FACTU o no VERI*FACTU</h2>
+<p>Un TPV puede enviar los registros a la AEAT al emitir cada ticket (modalidad VERI*FACTU) o conservarlos. La opción dura al menos hasta el fin del año natural del primer envío (art. 16.5). Compáralas en <a href="/blog/verifactu-modalidad-no-verifactu/">modalidades</a>.</p>
+
+<h2 id="preguntas">Qué preguntar a tu proveedor</h2>
+<ol class="steps">
+<li>¿Tiene declaración responsable de la versión que tengo instalada?</li>
+<li>¿Genera el QR y la huella en cada ticket, y funciona sin conexión?</li>
+<li>¿Qué modalidad soporta y cómo se cambia?</li>
+<li>¿Cómo se corrige o anula un ticket sin borrarlo?</li>
+<li>¿Cómo se exportan los registros y el registro de eventos?</li>
+<li>¿Se actualizará antes de tu fecha de obligación? Consulta las <a href="/blog/fechas-verifactu-2027-2028/">fechas</a>.</li>
+</ol>
+<p>Los productores deben ofrecer sus productos adaptados en el plazo fijado por la disposición final cuarta. Para el detalle de requisitos de un programa, mira <a href="/blog/verifactu-programa-facturacion-requisitos/">requisitos del programa de facturación</a>.</p>
+""",
+    faq=[
+        ("¿Mi caja registradora tiene que cumplir Verifactu?", "Si genera facturas, completas o simplificadas, es un sistema informático de facturación y el reglamento se aplica a su titular si es un obligado del art. 3.1."),
+        ("¿Qué es el registro de eventos?", "Un registro automático de interacciones, operaciones y sucesos del sistema, consultable desde el propio programa (art. 8.3)."),
+        ("¿Puede mi TPV borrar un ticket?", "No debe poder alterar un registro sin que el sistema lo detecte; las correcciones se hacen con registros adicionales."),
+        ("¿Quién emite la declaración responsable?", "La persona o entidad que produce el sistema informático (art. 13)."),
+        ("¿Es obligatorio enviar los tickets a la AEAT?", "No. La remisión es voluntaria: es la modalidad VERI*FACTU (arts. 15 y 16)."),
+        ("¿Cómo compruebo el QR de un ticket?", "Con el validador de QR de este sitio o escaneándolo; abre la URL de cotejo de la AEAT."),
+    ],
+    sources=[S.RD, S.ORDEN],
+))
+
+POSTS.append(dict(
+    slug="verifactu-bares-restaurantes",
+    published="2026-11-20",
+    title="Verifactu en bares y restaurantes: tiques, TPV y QR",
+    desc="Qué cambia para bares y restaurantes con Verifactu: TPV, tiques como facturas simplificadas, QR y cómo prepararte según el RD 1007/2023.",
+    h1="Verifactu en bares y restaurantes: tiques, TPV y QR",
+    intro="Un bar o restaurante que cobra con TPV y da tique usa un sistema informático de facturación. Te contamos qué exige el reglamento y qué hacer antes de tu fecha. Revisado el 20 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> el reglamento no tiene normas específicas para hostelería. Si tu negocio es un obligado del art. 3.1 (sociedad, o autónomo con actividad económica) y usa un TPV o programa que emite tiques o facturas, ese programa debe cumplir el RD 1007/2023. El tique es, en general, una factura simplificada.</p>
+
+<h2 id="aplica">Por qué te afecta</h2>
+<p>El art. 3.1 incluye a los contribuyentes del Impuesto sobre Sociedades y a los del IRPF que desarrollan actividades económicas, aunque solo usen el sistema para parte de su actividad. Si tienes un bar como autónomo o como sociedad, estás dentro, salvo exclusiones como el SII (<a href="/blog/verifactu-sii-exentos/">quiénes quedan fuera</a>). Haz el <a href="/">test de obligación</a> para tu fecha.</p>
+
+<h2 id="tique">El tique de la mesa</h2>
+<p>El reglamento entiende por factura tanto la completa como la simplificada (art. 1.2). Cada tique que expide tu TPV genera un registro de alta, simultáneo o inmediatamente anterior a la emisión (art. 9). Y si un cliente pide factura con sus datos fiscales, esa factura también se registra. Más detalle: <a href="/blog/verifactu-factura-simplificada-ticket/">facturas simplificadas</a>.</p>
+
+<h2 id="tpv">Tu TPV o programa de hostelería</h2>
+<p>Lo que debe cumplir es lo mismo que cualquier caja: registros encadenados con huella, inalterabilidad, registro de eventos y conservación exportable. Está resumido en <a href="/blog/tpv-verifactu/">TPV Verifactu</a>. Lo importante en un bar es que lo cumpla el software, no que tú cambies de hábitos: el productor debe darte una declaración responsable (art. 13).</p>
+
+<h2 id="qr">El QR en el tique</h2>
+<p>El tique emitido con estos sistemas debe incluir el QR (art. 7.5 del Reglamento de facturación, añadido por el RD 1007/2023). La frase «VERI*FACTU» solo si el sistema envía los registros a la AEAT. Si el cliente escanea el QR, puede remitir los datos a la AEAT, y si el tique lleva la frase, comprobar que se envió (art. 17).</p>
+
+<h2 id="correcciones">Errores en la cuenta</h2>
+<p>Si cobras mal o cancelas un tique, el sistema no debe permitir borrarlo sin dejar rastro: el art. 11 regula el registro de anulación para facturas emitidas erróneamente y el art. 8.2.a las correcciones. Explicado en <a href="/blog/factura-rectificativa-verifactu/">facturas rectificativas</a>.</p>
+
+<h2 id="comandas">¿Y las comandas y los pedidos?</h2>
+<p>El reglamento regula los sistemas que soportan la facturación. No incluimos aquí cómo tratar comandas o pre-cuentas porque no lo desarrolla el texto del RD 1007/2023: pregunta a tu proveedor cómo las gestiona su producto.</p>
+
+<h2 id="pasos">Cómo prepararte</h2>
+<ol class="steps">
+<li>Averigua tu fecha en las <a href="/blog/fechas-verifactu-2027-2028/">fechas de Verifactu</a>.</li>
+<li>Pregunta a tu proveedor de TPV si ya tiene versión con declaración responsable.</li>
+<li>Decide si enviarás los registros a la AEAT (VERI*FACTU) o no: <a href="/blog/verifactu-modalidad-no-verifactu/">modalidades</a>.</li>
+<li>Prueba que un tique sale con QR y valídalo en el <a href="/validar-qr-verifactu/">validador</a>.</li>
+<li>Forma al personal de sala en cómo se anula o corrige un cobro.</li>
+</ol>
+""",
+    faq=[
+        ("¿Un bar pequeño tiene que cumplir Verifactu?", "Si es obligado del art. 3.1 y su programa emite tiques o facturas, sí; las fechas dependen del tipo de obligado."),
+        ("¿El tique de un restaurante es una factura?", "Para el reglamento, el término factura incluye la completa y la simplificada (art. 1.2); el tique suele ser simplificada."),
+        ("¿Qué pasa si el cliente pide factura?", "Esa factura también genera un registro de alta en el sistema."),
+        ("¿Debe llevar QR el tique?", "Sí, en las facturas emitidas con estos sistemas, incluidas las simplificadas, según el Reglamento de facturación modificado por el RD 1007/2023."),
+        ("¿Puedo anular un tique cobrado por error?", "Sí, pero con un registro de anulación o de corrección, no borrándolo."),
+        ("¿Dónde veo mi fecha límite?", "En el test de obligación de este sitio y en la guía de fechas de Verifactu."),
+    ],
+    sources=[S.RD, S.RDL],
 ))

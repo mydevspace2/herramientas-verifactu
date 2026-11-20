@@ -83,3 +83,12 @@
 ## Daily run 2026-11-18 (Phase 1, day 5)
 - Published #15 /blog/verifactu-qr-obligatorio/, #9 /blog/verifactu-factura-simplificada-ticket/, #17 /blog/huella-verifactu-que-es/ (facts from RD 1007/2023 text only; huella algorithm deliberately not reproduced, links to AEAT spec). build.py: constants QRO/SIMP/HUE (HUE clashed with page_dev.HUE -> now HUEL / HUEP). Tool pages generador/validar/huella repointed to new posts.
 - Tests all exit 0. Calendar 17/30; B2B left #6,#25,#28,#30; Verifactu left #3,4,7,8,10,11,12,14,16.
+
+## Daily run 2026-11-19 (Phase 1, day 6)
+- Published #4 /blog/verifactu-excel-word/, #11 /blog/verifactu-recargo-equivalencia/, #12 /blog/verifactu-ticketbai-diferencias/ (facts from RD 1007/2023 text + the AEAT FAQ «ámbitos de aplicación» updated 21/10/2026, fetched today; no new sources.py entries). build.py: XLS/RCE/TBAI constants + REL map; home Excel section, page_blog.py Excel bullet, autónomos recargo row and SII post linked to the new posts. Titles on the original calendar changed (#4 no "Criterio AEAT" claim in the slug title; #12 as calendar).
+- Tests all exit 0 (42+29+13+367+143+34). Pushed a2f03d5. Calendar 20/30; left B2B #6,#25,#28,#30 (BOE fetch needed); Verifactu #3,7,8,10,14,16. #3 (módulos) has no AEAT-FAQ source yet: look in the AEAT FAQ pages (other sections) before writing.
+- BOE RD 1007/2023 still last update 03/12/2025 (no 2028 delay). No new Tesoro rate.
+
+## Daily run 2026-11-20 (Phase 1, day 7)
+- Published #10 /blog/factura-rectificativa-verifactu/ (R1-R5, S/I from local XSD + RD arts. 8, 10, 11), #8 /blog/tpv-verifactu/, #7 /blog/verifactu-bares-restaurantes/ (RD 1007/2023 text only; no hostelería-specific rules claimed). REL map RECT/TPVB/BARES; contextual link added in TicketBAI post.
+- Tests all exit 0 (394 static). Playwright deps: run `sudo npx playwright install-deps chromium` inside work/verifactu/.tools. Calendar 23/30; left B2B #6,#25,#28,#30; Verifactu #3,14,16.
