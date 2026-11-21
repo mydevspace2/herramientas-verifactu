@@ -40,21 +40,23 @@ QRO, SIMP, HUEL = _b("verifactu-qr-obligatorio"), _b("verifactu-factura-simplifi
 SII, REQ, MOD = _b("verifactu-sii-exentos"), _b("verifactu-programa-facturacion-requisitos"), _b("verifactu-modalidad-no-verifactu")
 XLS, RCE, TBAI = _b("verifactu-excel-word"), _b("verifactu-recargo-equivalencia"), _b("verifactu-ticketbai-diferencias")
 RECT, TPVB, BARES = _b("factura-rectificativa-verifactu"), _b("tpv-verifactu"), _b("verifactu-bares-restaurantes")
-assert all(u in [a[0] for a in common.ARTICLES] for u in (F, G, Q, DIF, AUT, PMPG, VAU, MOR, TID, REC, INF, E27, HOW, PMA, SPA, FORAL, PMX, SII, REQ, MOD, QRO, SIMP, HUEL, XLS, RCE, TBAI, RECT, TPVB, BARES))
+MODU, QREJ, QRERR = _b("verifactu-modulos-estimacion-objetiva"), _b("qr-verifactu-ejemplo"), _b("errores-qr-verifactu-1001-2006")
+assert all(u in [a[0] for a in common.ARTICLES] for u in (F, G, Q, DIF, AUT, PMPG, VAU, MOR, TID, REC, INF, E27, HOW, PMA, SPA, FORAL, PMX, SII, REQ, MOD, QRO, SIMP, HUEL, XLS, RCE, TBAI, RECT, TPVB, BARES, MODU, QREJ, QRERR))
 # Enlaces internos «Guías relacionadas» (3 por página): herramienta -> guías del mismo tema, guía -> guías hermanas
-common.ARTICLE_MAP.update({"/": [VAU, XLS, SII], "/generador-qr-verifactu/": [Q, QRO, SIMP], "/validar-qr-verifactu/": [Q, QRO, MOD],
+common.ARTICLE_MAP.update({"/": [VAU, XLS, SII], "/generador-qr-verifactu/": [QREJ, QRO, SIMP], "/validar-qr-verifactu/": [QRERR, QREJ, QRO],
                            "/calcular-huella-verifactu/": [HUEL, F, Q], "/ejemplo-xml-verifactu/": [REQ, Q, G],
                            "/factura-electronica-obligatoria/": [E27, SPA, FORAL], "/periodo-medio-pago-proveedores/": [PMX, PMA, MOR],
                            "/intereses-demora-comerciales/": [TID, REC, MOR],
                            F: [VAU, G, MOD], G: [VAU, F, Q], Q: [G, VAU, F],
-                           DIF: [AUT, VAU, PMPG], AUT: [XLS, E27, DIF], PMPG: [PMA, MOR, DIF],
+                           DIF: [AUT, VAU, PMPG], AUT: [MODU, XLS, E27], PMPG: [PMA, MOR, DIF],
                            VAU: [F, G, AUT], MOR: [TID, REC, PMPG],
                            TID: [REC, MOR, PMPG], REC: [TID, MOR, INF], INF: [AUT, REC, DIF], E27: [HOW, SPA, FORAL], HOW: [E27, SPA, DIF], PMA: [PMX, MOR, TID],
                            SPA: [FORAL, HOW, E27], FORAL: [SPA, TBAI, E27], PMX: [PMA, PMPG, MOR],
                            SII: [REQ, TBAI, VAU], REQ: [MOD, G, SII], MOD: [REQ, Q, G],
                            QRO: [Q, SIMP, HUEL], SIMP: [QRO, RCE, MOD], HUEL: [REQ, MOD, QRO],
-                           XLS: [REQ, G, AUT], RCE: [SIMP, SII, AUT], TBAI: [SII, FORAL, VAU],
-                           RECT: [SIMP, HUEL, TPVB], TPVB: [BARES, REQ, QRO], BARES: [TPVB, SIMP, QRO]})
+                           XLS: [REQ, G, AUT], RCE: [SIMP, MODU, AUT], TBAI: [SII, FORAL, VAU],
+                           RECT: [SIMP, HUEL, TPVB], TPVB: [BARES, REQ, QRO], BARES: [TPVB, SIMP, QRO],
+                           MODU: [AUT, RCE, SII], QREJ: [QRERR, QRO, Q], QRERR: [QREJ, QRO, MOD]})
 
 PAGES = [("/", HOME), ("/generador-qr-verifactu/", GEN), ("/validar-qr-verifactu/", VAL), ("/calcular-huella-verifactu/", HUEP),
          ("/ejemplo-xml-verifactu/", XMLP),

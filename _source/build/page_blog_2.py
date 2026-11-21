@@ -1343,3 +1343,189 @@ POSTS.append(dict(
     ],
     sources=[S.RD, S.RDL],
 ))
+
+POSTS.append(dict(
+    slug="verifactu-modulos-estimacion-objetiva",
+    published="2026-11-21",
+    title="Verifactu y autónomos en módulos: ¿estoy obligado?",
+    desc="Estar en módulos no te excluye de Verifactu por sí solo: lo que decide es si expides facturas con un programa. Criterio de la AEAT y pasos a seguir.",
+    h1="Verifactu y autónomos en módulos: ¿estoy obligado?",
+    intro="«Estoy en módulos, así que no me afecta»: es una de las frases más repetidas, y no es del todo exacta. Aquí tienes lo que dice la AEAT en sus preguntas frecuentes (actualizadas el 21 de octubre de 2026). Revisado el 21 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> el reglamento no menciona la estimación objetiva. Lo que decide es si expides facturas (completas o simplificadas) y si lo haces con algún sistema informático de facturación. Si no expides factura, o la haces toda a mano, no te afecta; si expides alguna con un programa, sí.</p>
+
+<h2 id="clave">La clave es la factura, no el régimen</h2>
+<p>La AEAT explica que el reglamento solo se aplica a los sistemas informáticos de facturación, es decir, a los que sirven para expedir <em>facturas</em>, incluidas las simplificadas. Quien por su régimen no está obligado a expedir factura y no la expide, queda fuera, siempre que no use un programa para ello.</p>
+<p>Pero la propia AEAT añade que, si en algún momento expides una factura por el motivo que sea y para ello usas un sistema informático, el reglamento sí se te aplica (con el resto de condiciones de la «regla de los 4 NO»).</p>
+
+<h2 id="cuatro-no">La regla de los 4 «NO»</h2>
+<p>Según la AEAT, quedan sometidos los empresarios y profesionales establecidos en España que expidan facturas y cumplan estas cuatro condiciones:</p>
+<ol class="steps">
+<li>No facturan exclusivamente a mano, sin ayuda de un sistema informático.</li>
+<li>No están adscritos, de forma obligatoria o voluntaria, al Suministro Inmediato de Información (SII).</li>
+<li>No tienen domicilio fiscal en los territorios históricos del País Vasco ni en Navarra.</li>
+<li>No tienen una resolución en vigor de no aplicación (art. 5 del reglamento).</li>
+</ol>
+<p>Más sobre los excluidos en <a href="/blog/verifactu-sii-exentos/">quién queda fuera de Verifactu</a>.</p>
+
+<h2 id="simplificado">Régimen simplificado de IVA</h2>
+<p>Muchos autónomos «en módulos» lo están también en el régimen simplificado del IVA. La AEAT indica que, con carácter general, no están obligados a expedir factura, salvo excepciones. Entre ellas, la AEAT enumera: cuando las cuotas devengadas se determinan en función del volumen de ingresos, la venta de activos fijos, cuando el cliente es empresario, profesional o Administración Pública, cuando el destinatario la exige para ejercer un derecho tributario y determinadas operaciones de comercio exterior.</p>
+<p>Si expides alguna de esas facturas con un programa, debes usar uno adaptado. Para estas operaciones excepcionales puedes usar la aplicación que la AEAT ofrece en su sede electrónica (art. 7.b del reglamento).</p>
+
+<h2 id="recargo">Recargo de equivalencia y agricultura</h2>
+<p>Lo mismo ocurre con el recargo de equivalencia y el régimen especial agrario: en general no hay obligación de expedir factura, pero sí cuando se da alguna de las excepciones. Las vemos en <a href="/blog/verifactu-recargo-equivalencia/">Verifactu y recargo de equivalencia</a>.</p>
+
+<h2 id="tiques">¿Y si doy tiques con caja registradora?</h2>
+<p>Depende de qué documento sea. La AEAT aclara que los justificantes de venta que no sean facturas completas ni simplificadas, emitidos en operaciones excluidas de la obligación de facturar, no están sometidos al reglamento. Si tu caja emite lo que en realidad es una factura simplificada, sí. Cualquiera que sea la razón por la que emitas facturas con un sistema informático, debes adaptarlo. Detalle en <a href="/blog/tpv-verifactu/">TPV Verifactu</a>.</p>
+
+<h2 id="excel">¿Y si hago las facturas con Excel o Word?</h2>
+<p>La AEAT dice que no te afecta si la hoja o el documento solo sirven para introducir datos, expedir e imprimir facturas y conservar la información. Sí te afecta si además procesas esos datos para generar libros registro u otros resultados fiscales. Está explicado en <a href="/blog/verifactu-excel-word/">Verifactu con Excel y Word</a>.</p>
+
+<h2 id="fechas">Fechas si te afecta</h2>
+<p>Los autónomos (contribuyentes del IRPF con actividad económica) deben tener los sistemas operativos antes del 1 de julio de 2027 (disposición final cuarta del RD 1007/2023, tras el Real Decreto-ley 15/2025). Comprueba tu caso en el <a href="/">test de obligación</a> y en la <a href="/blog/fechas-verifactu-2027-2028/">guía de fechas</a>.</p>
+
+<h2 id="pasos">Qué hacer</h2>
+<ol class="steps">
+<li>Anota si expides facturas y de qué tipo (completa, simplificada).</li>
+<li>Mira con qué las haces: a mano, hoja de cálculo, caja, programa.</li>
+<li>Si usas un programa, pregunta a tu proveedor desde qué versión cumple.</li>
+<li>Si facturas poco, valora la <a href="/blog/verifactu-gratis-aplicacion-aeat/">aplicación gratuita de la AEAT</a>.</li>
+<li>Ante dudas concretas, consulta con tu gestor: aquí damos criterio general, no asesoramiento personal.</li>
+</ol>
+""",
+    faq=[
+        ("¿Los autónomos en módulos están obligados a Verifactu?", "No por estar en módulos: la AEAT lo vincula a si expides facturas con un sistema informático."),
+        ("¿Y si no emito facturas?", "Si no expides factura, o todas las haces a mano, el reglamento no te afecta."),
+        ("¿Qué pasa si un cliente me pide factura?", "Si la expides con un programa, ese programa debe estar adaptado al reglamento."),
+        ("¿Puedo usar la aplicación gratuita de la AEAT?", "Sí para las facturas excepcionales, según el art. 7.b del reglamento; no emite facturas simplificadas."),
+        ("¿Cuál es mi fecha límite?", "Los autónomos con actividad económica, antes del 1 de julio de 2027, salvo que quedes fuera por la regla de los 4 NO."),
+        ("¿Esto es asesoramiento fiscal?", "No: es una explicación general basada en las preguntas frecuentes de la AEAT."),
+    ],
+    sources=[S.RD, S.FAQ_AMB, S.RDL],
+))
+
+POSTS.append(dict(
+    slug="qr-verifactu-ejemplo",
+    published="2026-11-21",
+    title="QR Verifactu: ejemplo real de URL y cómo se lee",
+    desc="Ejemplo oficial de la URL del QR de Verifactu, qué significa cada parámetro (nif, numserie, fecha, importe) y cómo comprobarla paso a paso.",
+    h1="QR Verifactu: ejemplo real de URL y cómo se lee",
+    intro="El QR de una factura Verifactu es solo una URL con cuatro datos. Aquí tienes el ejemplo oficial, qué significa cada parte y cómo comprobarlo. Basado en las especificaciones técnicas de la AEAT v0.5.0 (10/12/2025). Revisado el 21 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> el QR contiene la dirección de cotejo de la AEAT con cuatro parámetros: <code>nif</code>, <code>numserie</code>, <code>fecha</code> e <code>importe</code>. Quien lo escanea llega a la sede de la AEAT para comprobar que la factura consta.</p>
+
+<h2 id="ejemplo">El ejemplo oficial</h2>
+<p>La documentación técnica de la AEAT incluye este ejemplo de URL de producción:</p>
+<p><code>https://www2.agenciatributaria.gob.es/wlpl/TIKE-CONT/ValidarQR?nif=89890001K&amp;numserie=12345678-G33&amp;fecha=01-09-2024&amp;importe=241.4</code></p>
+
+<h2 id="partes">Qué significa cada parte</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Parte</th><th>Qué es</th><th>En el ejemplo</th></tr></thead>
+<tbody>
+<tr><td>Dominio y ruta</td><td>Servicio de cotejo de la AEAT (producción)</td><td>www2.agenciatributaria.gob.es/wlpl/TIKE-CONT/ValidarQR</td></tr>
+<tr><td>nif</td><td>NIF del emisor, 9 caracteres</td><td>89890001K</td></tr>
+<tr><td>numserie</td><td>Serie y número de la factura, hasta 60 caracteres</td><td>12345678-G33</td></tr>
+<tr><td>fecha</td><td>Fecha de expedición, DD-MM-AAAA con guiones</td><td>01-09-2024</td></tr>
+<tr><td>importe</td><td>Total de la factura, con punto decimal</td><td>241.4</td></tr>
+</tbody></table></div>
+
+<h2 id="reglas">Reglas de cada dato</h2>
+<ul class="checklist">
+<li>Son exactamente cuatro parámetros obligatorios.</li>
+<li>El número de serie admite caracteres ASCII imprimibles (32 a 126) y se codifica en la URL: por ejemplo, el símbolo &amp; pasa a %26.</li>
+<li>El importe usa punto como separador decimal, con un máximo de 12 cifras enteras y 2 decimales.</li>
+<li>La fecha va en formato DD-MM-AAAA.</li>
+<li>Hay un parámetro opcional de idioma (gl, ca, eu, es, va, en), que por defecto es es.</li>
+</ul>
+
+<h2 id="pruebas">Entorno de pruebas y sistemas sin VERI*FACTU</h2>
+<p>La AEAT tiene un entorno de pruebas (prewww2.aeat.es). Los sistemas que no envían los registros (modalidad NO VERI*FACTU) usan la ruta <code>ValidarQRNoVerifactu</code> en los mismos dominios. Ver <a href="/blog/verifactu-modalidad-no-verifactu/">las dos modalidades</a>.</p>
+
+<h2 id="resultado">Qué ves al abrirla</h2>
+<p>El cotejo devuelve «Encontrada» si el registro consta, «No encontrada» si no consta (o está anulada) y «No contrastable» si el sistema no envía registros. Una factura de un sistema NO VERI*FACTU no se puede cotejar en línea.</p>
+
+<h2 id="leer">Cómo leerlo y comprobarlo</h2>
+<ol class="steps">
+<li>Escanea el QR con el móvil sin abrirlo y mira la URL completa.</li>
+<li>Comprueba que el dominio es el de la AEAT.</li>
+<li>Compara nif, fecha e importe con los de la factura impresa.</li>
+<li>Pégala en el <a href="/validar-qr-verifactu/">validador de QR Verifactu</a>, que revisa el formato.</li>
+<li>Si falla, mira <a href="/blog/errores-qr-verifactu-1001-2006/">los códigos de error del QR</a>.</li>
+</ol>
+<p>Para crear uno de prueba usa el <a href="/generador-qr-verifactu/">generador de QR</a>. Dónde colocarlo y qué tamaño: <a href="/blog/verifactu-qr-obligatorio/">QR obligatorio</a>.</p>
+""",
+    faq=[
+        ("¿Qué contiene el QR de Verifactu?", "Una URL de la AEAT con cuatro parámetros: nif, numserie, fecha e importe."),
+        ("¿Cómo se escribe la fecha?", "En formato DD-MM-AAAA, con guiones."),
+        ("¿Cómo se escribe el importe?", "Con punto decimal, hasta 12 cifras enteras y 2 decimales."),
+        ("¿Se puede probar con datos de ejemplo?", "Sí, existe un entorno de pruebas de la AEAT; los datos de ejemplo no son facturas reales."),
+        ("¿Qué pasa si mi sistema no envía los registros?", "Usa la ruta ValidarQRNoVerifactu y el cotejo devuelve «No contrastable»."),
+        ("¿Dónde compruebo mi QR?", "En el validador de QR de este sitio y, para el cotejo real, en el enlace oficial de la AEAT."),
+    ],
+    sources=[S.QR, S.ORDEN, S.RD],
+))
+
+POSTS.append(dict(
+    slug="errores-qr-verifactu-1001-2006",
+    published="2026-11-21",
+    title="Errores del QR Verifactu (1001 a 2006) y cómo corregirlos",
+    desc="Lista de códigos de error del cotejo del QR de Verifactu (1001 a 2006, 3001 y 3002), qué significan y cómo corregir cada uno.",
+    h1="Errores del QR Verifactu (1001 a 2006) y cómo corregirlos",
+    intro="Si al abrir el QR de una factura la AEAT devuelve un código, el problema suele estar en uno de los cuatro datos de la URL. Esta es la lista según las especificaciones técnicas de la AEAT v0.5.0. Revisado el 21 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> los errores 1001 a 1004 indican que falta un parámetro; los 2001 a 2006 que un valor tiene mal el formato o es demasiado largo; y los 3001 y 3002 son errores técnicos o límite de intentos.</p>
+
+<h2 id="tabla">Tabla de códigos</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Código</th><th>Significado</th><th>Cómo corregirlo</th></tr></thead>
+<tbody>
+<tr><td>1001</td><td>No se ha remitido el parámetro nif</td><td>Añade el NIF del emisor a la URL</td></tr>
+<tr><td>1002</td><td>No se ha remitido el parámetro numserie</td><td>Añade serie y número de factura</td></tr>
+<tr><td>1003</td><td>No se ha remitido el parámetro fecha</td><td>Añade la fecha de expedición</td></tr>
+<tr><td>1004</td><td>No se ha remitido el parámetro importe</td><td>Añade el importe total</td></tr>
+<tr><td>2001</td><td>NIF con formato erróneo o no válido</td><td>Revisa los 9 caracteres y la letra</td></tr>
+<tr><td>2002</td><td>Número de serie demasiado largo</td><td>Máximo 60 caracteres</td></tr>
+<tr><td>2003</td><td>Número de serie con caracteres no permitidos</td><td>Usa solo ASCII imprimible y codifica la URL</td></tr>
+<tr><td>2004</td><td>Fecha con formato inválido</td><td>Usa DD-MM-AAAA</td></tr>
+<tr><td>2005</td><td>Importe con formato incorrecto</td><td>Usa punto decimal, no coma</td></tr>
+<tr><td>2006</td><td>Importe demasiado largo</td><td>Máximo 12 enteros y 2 decimales</td></tr>
+<tr><td>3001</td><td>Error técnico en los sistemas de la AEAT</td><td>Reintenta más tarde</td></tr>
+<tr><td>3002</td><td>Máximo de intentos diarios superado</td><td>Espera al día siguiente</td></tr>
+</tbody></table></div>
+
+<h2 id="faltan">Errores 1001 a 1004: falta un dato</h2>
+<p>Suelen aparecer cuando el programa genera la URL sin uno de los cuatro campos, o cuando un carácter especial corta la cadena. Comprueba la URL escaneada completa, no solo el dibujo del QR. Cómo es una URL correcta: <a href="/blog/qr-verifactu-ejemplo/">ejemplo de QR Verifactu</a>.</p>
+
+<h2 id="formato">Errores 2001 a 2006: formato</h2>
+<ul class="checklist">
+<li><strong>2001:</strong> el NIF debe tener 9 caracteres y ser válido.</li>
+<li><strong>2002 y 2003:</strong> el número de serie no puede pasar de 60 caracteres ni llevar caracteres fuera del ASCII imprimible. Si lleva un símbolo como &amp;, debe ir codificado (%26).</li>
+<li><strong>2004:</strong> la fecha va con guiones y el día primero: 01-09-2024.</li>
+<li><strong>2005 y 2006:</strong> el importe se escribe 241.4 y no 241,4; con 12 enteros y 2 decimales como máximo.</li>
+</ul>
+
+<h2 id="tecnicos">Errores 3001 y 3002</h2>
+<p>El 3001 es un fallo de los sistemas de la AEAT, no de tu factura. El 3002 indica que se ha superado el número máximo de intentos por día, así que conviene no repetir pruebas en bucle.</p>
+
+<h2 id="noencontrada">Y si dice «No encontrada»</h2>
+<p>No es un código de error: significa que el cotejo no halla el registro (o consta anulado). Puede ser que el sistema aún no lo haya enviado, que los datos no coincidan exactamente o que la factura venga de un sistema NO VERI*FACTU. El resultado «No contrastable» indica precisamente eso último.</p>
+
+<h2 id="pasos">Cómo diagnosticarlo</h2>
+<ol class="steps">
+<li>Escanea el QR y copia la URL completa.</li>
+<li>Pégala en el <a href="/validar-qr-verifactu/">validador de QR Verifactu</a>: revisa los cuatro parámetros y muestra el código que corresponde.</li>
+<li>Corrige el dato en tu programa de facturación y vuelve a emitir.</li>
+<li>Genera una prueba con el <a href="/generador-qr-verifactu/">generador de QR</a> y compárala.</li>
+</ol>
+<p>Si el problema es de tamaño o posición del QR, no del contenido, mira <a href="/blog/verifactu-qr-obligatorio/">qué exige el QR obligatorio</a>.</p>
+""",
+    faq=[
+        ("¿Qué significa el error 1001 del QR Verifactu?", "Que la URL no incluye el parámetro nif."),
+        ("¿Qué significa el error 2005?", "Que el importe tiene un formato incorrecto, por ejemplo con coma en vez de punto."),
+        ("¿Y el 2004?", "Que la fecha no tiene el formato DD-MM-AAAA."),
+        ("¿Qué es el error 3002?", "Que se ha superado el número máximo de intentos permitidos por día."),
+        ("¿«No encontrada» es un error?", "No: el cotejo no halla el registro, o consta anulado."),
+        ("¿Cómo corrijo el error en mi factura?", "Corrige el dato en tu programa y emite el QR correcto; el validador de este sitio te indica cuál falla."),
+    ],
+    sources=[S.QR, S.ORDEN],
+))

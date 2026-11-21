@@ -10,7 +10,7 @@ Publicar: añadir el dict a `build/page_blog_2.py` (POSTS) y su entrada en `REL`
 |---|---|---|---|---|---|
 | 1 | **publicado 13/11/2026** | verifactu-autonomos | Verifactu para autónomos: cuándo es obligatorio y qué hacer | verifactu autónomos (>100), verifactu es obligatorio para autónomos (>100) | `/` |
 | 2 | **publicado 13/11/2026** | plazos-pago-ley-morosidad | Plazos de pago de la Ley de morosidad: 30 y 60 días | ley morosidad 60 dias, ley de morosidad plazos de pago | `/intereses-demora-comerciales/`, `/periodo-medio-pago-proveedores/` |
-| 3 | pendiente | verifactu-modulos-estimacion-objetiva | Verifactu y autónomos en módulos: ¿estoy obligado? | verifactu autónomos módulos | `/` |
+| 3 | publicado 2026-11-21 | verifactu-modulos-estimacion-objetiva | Verifactu y autónomos en módulos: ¿estoy obligado? | verifactu autónomos módulos | `/` |
 | 4 | **publicado 19/11/2026** | verifactu-excel-word | ¿Puedo facturar con Excel con Verifactu? Criterio AEAT | verifactu excel (<100), verifactu excel autonomos | `/` |
 | 5 | **publicado 14/11/2026** | tipo-interes-demora-2026 | Tipo de interés de demora 2026 en operaciones comerciales | tipo interes demora 2026, intereses de demora 2026 (<100) | `/intereses-demora-comerciales/` |
 | 6 | pendiente | intereses-demora-hacienda-vs-comerciales | Intereses de demora de Hacienda vs comerciales: diferencias | intereses de demora hacienda (>100), que intereses de demora cobra hacienda | `/intereses-demora-comerciales/` |
@@ -21,9 +21,9 @@ Publicar: añadir el dict a `build/page_blog_2.py` (POSTS) y su entrada en `REL`
 | 11 | **publicado 19/11/2026** | verifactu-recargo-equivalencia | Verifactu y recargo de equivalencia: comercios minoristas | verifactu recargo de equivalencia | `/` |
 | 12 | **publicado 19/11/2026** | verifactu-ticketbai-diferencias | Verifactu y TicketBAI: diferencias y quién usa cada uno | verifactu ticketbai (3 hits), verifactu vs ticketbai | `/` |
 | 13 | **publicado 17/11/2026** | verifactu-sii-exentos | Verifactu y SII: por qué quien lleva el SII queda fuera | verifactu sii, verifactu exentos | `/` |
-| 14 | pendiente | qr-verifactu-ejemplo | QR Verifactu: ejemplo real de URL y cómo se lee | qr verifactu ejemplo (3 hits) | `/validar-qr-verifactu/` |
+| 14 | publicado 2026-11-21 | qr-verifactu-ejemplo | QR Verifactu: ejemplo real de URL y cómo se lee | qr verifactu ejemplo (3 hits) | `/validar-qr-verifactu/` |
 | 15 | **publicado 18/11/2026** | verifactu-qr-obligatorio | ¿Es obligatorio el QR en todas las facturas Verifactu? | verifactu qr obligatorio (3 hits) | `/generador-qr-verifactu/` |
-| 16 | pendiente | errores-qr-verifactu-1001-2006 | Errores del QR Verifactu (1001 a 2006) y cómo corregirlos | qr verifactu aeat, cotejo factura aeat | `/validar-qr-verifactu/` |
+| 16 | publicado 2026-11-21 | errores-qr-verifactu-1001-2006 | Errores del QR Verifactu (1001 a 2006) y cómo corregirlos | qr verifactu aeat, cotejo factura aeat | `/validar-qr-verifactu/` |
 | 17 | **publicado 18/11/2026** | huella-verifactu-que-es | Qué es la huella (hash) de Verifactu y cómo se calcula | huella verifactu, calculo huella verifactu (3 hits) | `/calcular-huella-verifactu/` |
 | 18 | **publicado 17/11/2026** | verifactu-modalidad-no-verifactu | VERI*FACTU o no VERI*FACTU: qué modalidad elegir | verifactu como funciona (>100) | `/` |
 | 19 | **publicado 17/11/2026** | verifactu-programa-facturacion-requisitos | Requisitos de un programa de facturación Verifactu | software verifactu (>100), verifactu requisitos | `/ejemplo-xml-verifactu/` |

@@ -92,3 +92,6 @@
 ## Daily run 2026-11-20 (Phase 1, day 7)
 - Published #10 /blog/factura-rectificativa-verifactu/ (R1-R5, S/I from local XSD + RD arts. 8, 10, 11), #8 /blog/tpv-verifactu/, #7 /blog/verifactu-bares-restaurantes/ (RD 1007/2023 text only; no hostelería-specific rules claimed). REL map RECT/TPVB/BARES; contextual link added in TicketBAI post.
 - Tests all exit 0 (394 static). Playwright deps: run `sudo npx playwright install-deps chromium` inside work/verifactu/.tools. Calendar 23/30; left B2B #6,#25,#28,#30; Verifactu #3,14,16.
+
+## Daily run 2026-11-21 (Phase 1, day 8)
+- Published #3 /blog/verifactu-modulos-estimacion-objetiva/ (AEAT FAQ ámbitos 21/10/2026, regla de los 4 NO), #14 /blog/qr-verifactu-ejemplo/, #16 /blog/errores-qr-verifactu-1001-2006/ (AEAT QR spec v0.5.0 via research.md). REL map MODU/QREJ/QRERR; validar-qr, generador, autónomos, recargo repointed. Tests all exit 0. Calendar 26/30; left B2B #6,#25,#28,#30 (BOE fetch needed).
