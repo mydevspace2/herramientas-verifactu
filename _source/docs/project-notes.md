@@ -95,3 +95,8 @@
 
 ## Daily run 2026-11-21 (Phase 1, day 8)
 - Published #3 /blog/verifactu-modulos-estimacion-objetiva/ (AEAT FAQ ámbitos 21/10/2026, regla de los 4 NO), #14 /blog/qr-verifactu-ejemplo/, #16 /blog/errores-qr-verifactu-1001-2006/ (AEAT QR spec v0.5.0 via research.md). REL map MODU/QREJ/QRERR; validar-qr, generador, autónomos, recargo repointed. Tests all exit 0. Calendar 26/30; left B2B #6,#25,#28,#30 (BOE fetch needed).
+
+## Daily run 2026-11-22 (Phase 1, day 9)
+- Published #6 /blog/intereses-demora-hacienda-vs-comerciales/ (LGT art. 26 from local src/b2b/BOE-A-2003-23186.txt; no tributary rate quoted, depends on LPGE; commercial 10,40 % H2 2026) and #25 /blog/periodo-medio-pago-entidades-locales/ (RD 635/2014 consolidated, src/b2b/rd635con.txt). Sources LGT, RD635 added. REL map DHC/PMEL.
+- Gotcha: "100.000 €"/"50.000 €" in text trips the sanction regex. Tests all exit 0. Calendar 28/30; left #28 (ratio de morosidad: no official source yet) and #30 (PGC cuenta contable: fetch PGC first).
+- BOE RD 1007/2023 still last update 03/12/2025. No new rate.

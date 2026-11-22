@@ -31,3 +31,6 @@ BDE_TIPOS = ("Banco de España: tabla de tipos de interés de demora para operac
 TESORO26A = ("Resolución de 23 de diciembre de 2025 del Tesoro: tipo legal de interés de demora del 1.er semestre de 2026 (BOE-A-2025-27201)", "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-27201", "10,15 %; BOE núm. 315, de 31/12/2025")
 TESORO25B = ("Resolución de 25 de junio de 2025 del Tesoro: tipo legal de interés de demora del 2.º semestre de 2025 (BOE-A-2025-13217)", "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-13217", "10,15 %")
 FIESTAS26 = ("Resolución de fiestas laborales para el año 2026 (BOE-A-2025-21667)", "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667", "")
+# --- añadidas el 22/11/2026 ---
+LGT = ("Ley 58/2003, de 17 de diciembre, General Tributaria – art. 26 «Interés de demora» (BOE-A-2003-23186)", "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23186", "art. 26.6: interés legal del dinero + 25 %, salvo otra cosa en la LPGE")
+RD635 = ("Real Decreto 635/2014, de 25 de julio, metodología de cálculo del periodo medio de pago (BOE-A-2014-8132)", "https://www.boe.es/buscar/act.php?id=BOE-A-2014-8132", "arts. 3 a 6; texto consolidado, última actualización 23/12/2017")

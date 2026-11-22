@@ -1529,3 +1529,130 @@ POSTS.append(dict(
     ],
     sources=[S.QR, S.ORDEN],
 ))
+
+# ---------------------------------------------------------------- #6 demora Hacienda vs comerciales (22/11/2026)
+POSTS.append(dict(
+    slug="intereses-demora-hacienda-vs-comerciales",
+    published="2026-11-22",
+    title="Intereses de demora: Hacienda frente a los comerciales",
+    desc="Diferencia entre el interés de demora tributario (art. 26 LGT) y el de facturas entre empresas (Ley 3/2004): fórmula, tipo y ejemplo.",
+    h1="Intereses de demora de Hacienda frente a los comerciales: diferencias",
+    intro="Se llaman igual, pero no se calculan igual. Comparamos el interés de demora tributario de la Ley General Tributaria con el de las operaciones comerciales de la Ley 3/2004, con el tipo comercial vigente y un ejemplo. Revisado en el BOE el 22 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> el interés de demora <strong>tributario</strong> es el interés legal del dinero incrementado en un 25 %, salvo que la Ley de Presupuestos fije otro (art. 26.6 de la Ley General Tributaria). El <strong>comercial</strong> es el pactado en el contrato o, si no hay pacto, el tipo del Banco Central Europeo más ocho puntos, que el Tesoro publica cada semestre (art. 7 de la Ley 3/2004). Son dos regímenes distintos.</p>
+
+<h2 id="cuadro">Cuadro comparativo</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Aspecto</th><th>Tributario (Hacienda)</th><th>Comercial (entre empresas)</th></tr></thead>
+<tbody>
+<tr><td>Norma</td><td>Ley 58/2003 General Tributaria, art. 26</td><td>Ley 3/2004 contra la morosidad, art. 7</td></tr>
+<tr><td>Quién lo cobra</td><td>La Administración tributaria al obligado</td><td>El proveedor al cliente que paga tarde</td></tr>
+<tr><td>Cálculo del tipo</td><td>Interés legal del dinero vigente + 25 %, salvo otra previsión de la Ley de Presupuestos</td><td>Pacto contractual o, por defecto, BCE + 8 puntos</td></tr>
+<tr><td>Revisión</td><td>Según el interés legal vigente en el periodo en que es exigible</td><td>Cada semestre natural, por resolución del Tesoro en el BOE</td></tr>
+<tr><td>¿Requiere reclamar?</td><td>No requiere intimación previa ni retraso culpable</td><td>Se devenga desde el día siguiente al vencimiento; conviene reclamarlo</td></tr>
+</tbody></table></div>
+
+<h2 id="tributario">El interés de demora tributario</h2>
+<p>El artículo 26 de la Ley General Tributaria lo define como una prestación accesoria que se exige por pagar fuera de plazo, presentar tarde una autoliquidación con cantidad a ingresar, cobrar una devolución improcedente y otros casos previstos en la normativa. Dos rasgos importantes:</p>
+<ul>
+<li>No requiere que la Administración te intime antes ni que haya un retraso culpable por tu parte (art. 26.1).</li>
+<li>Se calcula sobre el importe no ingresado a tiempo y es exigible mientras dura el retraso (art. 26.3).</li>
+</ul>
+<p>El apartado 6 fija el tipo: el interés legal del dinero vigente a lo largo del periodo en que es exigible, más un 25 %, salvo que la Ley de Presupuestos Generales del Estado establezca otro. Si hay aplazamiento, fraccionamiento o suspensión con aval solidario de entidad de crédito, sociedad de garantía recíproca o seguro de caución por toda la deuda, el interés exigible es el interés legal sin incremento. <strong>Aquí no damos un porcentaje</strong>: depende de la Ley de Presupuestos de cada año, así que consulta el vigente en la AEAT antes de calcular una deuda concreta.</p>
+<p>Además, el apartado 4 prevé que no se exijan intereses desde que la Administración incumple por causa imputable a ella algún plazo legal para resolver, hasta que dicte resolución, con excepciones como las solicitudes de aplazamiento o fraccionamiento.</p>
+
+<h2 id="comercial">El interés de demora comercial</h2>
+<p>En las facturas entre empresas, el artículo 7 de la Ley 3/2004 dice que el deudor pagará el interés del contrato y, a falta de pacto, el tipo legal: el tipo aplicado por el BCE a su operación principal de financiación más reciente antes del primer día del semestre, más ocho puntos. Ese tipo rige seis meses y el Ministerio publica el resultado en el BOE cada semestre.</p>
+<p>Para el segundo semestre de 2026, la resolución del Tesoro de 30 de junio de 2026 publica un <strong>10,40 %</strong> (BCE 2,40 % + 8 puntos). Para el primer semestre de 2026 fue el 10,15 %. Puedes comprobar cualquier fecha con la <a href="/intereses-demora-comerciales/">calculadora de intereses de demora comerciales</a>.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Dato</th><th>Valor</th></tr></thead>
+<tbody>
+<tr><td>Factura impagada</td><td>10.000 €</td></tr>
+<tr><td>Retraso</td><td>30 días naturales dentro del segundo semestre de 2026</td></tr>
+<tr><td>Tipo aplicable (sin pacto)</td><td>10,40 % anual</td></tr>
+<tr><td>Cálculo</td><td>10.000 × 10,40 % × 30 / 365</td></tr>
+<tr><td>Interés de demora</td><td>85,48 €</td></tr>
+</tbody></table></div>
+<p>A ese interés se suma, en su caso, la indemnización por costes de cobro que prevé la Ley 3/2004, de 40 euros por factura. Te lo explicamos en <a href="/blog/reclamar-factura-impagada-intereses/">cómo reclamar una factura impagada con intereses</a>.</p>
+
+<h2 id="confusion">Errores frecuentes</h2>
+<ol class="steps">
+<li><strong>Aplicar el tipo de Hacienda a una factura entre empresas.</strong> No corresponde: a un impago comercial se le aplica el pacto o el tipo de la Ley 3/2004.</li>
+<li><strong>Usar el tipo comercial para una deuda tributaria.</strong> Tampoco: la deuda con Hacienda sigue el artículo 26 de la LGT.</li>
+<li><strong>Olvidar que el tipo comercial cambia cada semestre.</strong> Si el retraso cruza el 1 de julio o el 1 de enero, hay que aplicar cada tipo a su tramo.</li>
+<li><strong>Dar por hecho un tipo sin mirar la fuente.</strong> Confirma siempre la resolución del Tesoro del semestre en el <a href="/blog/tipo-interes-demora-2026/">resumen de tipos vigentes</a>.</li>
+</ol>
+
+<h2 id="ap">Cuándo importa cada uno</h2>
+<p>Si eres autónomo o empresa y un cliente te paga tarde, importa el comercial; usa también la guía de <a href="/blog/plazos-pago-ley-morosidad/">plazos de pago de la ley de morosidad</a>. Si tú pagas tarde un impuesto o una sanción, importa el tributario y su tipo anual lo marca la normativa presupuestaria.</p>
+""",
+    faq=[
+        ("¿Es el mismo interés el de Hacienda y el de una factura?", "No: el tributario se rige por el art. 26 de la LGT y el comercial por el art. 7 de la Ley 3/2004."),
+        ("¿Cómo se calcula el interés tributario?", "Es el interés legal del dinero vigente en el periodo, incrementado en un 25 %, salvo que la Ley de Presupuestos fije otro (art. 26.6 LGT)."),
+        ("¿Cuál es el tipo comercial del segundo semestre de 2026?", "10,40 %, según la resolución del Tesoro de 30 de junio de 2026 (BCE 2,40 % más 8 puntos)."),
+        ("¿Hay que reclamar el interés comercial?", "Se devenga por el retraso, pero en la práctica conviene reclamarlo por escrito al deudor."),
+        ("¿Se pueden pactar otros intereses entre empresas?", "El art. 7 da preferencia al pacto contractual; el tipo legal se aplica a falta de pacto."),
+        ("¿Dónde veo el tipo vigente?", "En la resolución semestral del Tesoro publicada en el BOE y en la calculadora de este sitio."),
+    ],
+    sources=[S.LGT, S.LEY3, S.TESORO26, S.TESORO26A],
+))
+
+# ---------------------------------------------------------------- #25 PMP entidades locales (22/11/2026)
+POSTS.append(dict(
+    slug="periodo-medio-pago-entidades-locales",
+    published="2026-11-22",
+    title="Periodo medio de pago de entidades locales (RD 635/2014)",
+    desc="Cómo calcula una entidad local su periodo medio de pago según el RD 635/2014: operaciones, días de pago, ratios pagadas y pendientes, y publicación.",
+    h1="Periodo medio de pago de las entidades locales: cálculo según el RD 635/2014",
+    intro="El Real Decreto 635/2014 fija cómo calculan el periodo medio de pago las Administraciones Públicas, entre ellas las corporaciones locales. Resumimos qué operaciones cuentan, desde qué fecha se cuentan los días y qué se publica. Revisado en el BOE el 22 de noviembre de 2026.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> el periodo medio de pago de una entidad combina la ratio de operaciones pagadas y la de operaciones pendientes, ponderadas por sus importes (art. 5 del RD 635/2014). Cuenta los días naturales desde la aprobación de la certificación o de la conformidad, o desde la entrada de la factura en el registro, hasta el pago o hasta el último día del periodo. No es lo mismo que el cálculo del periodo medio de pago de las empresas, que regula el ICAC.</p>
+
+<h2 id="ambito">A quién se aplica</h2>
+<p>El artículo 2 del real decreto lo aplica a todos los sujetos del artículo 2.1 de la Ley Orgánica 2/2012 de estabilidad presupuestaria, es decir, las Administraciones Públicas. El artículo 4 menciona expresamente a la Administración Central, las comunidades autónomas, las corporaciones locales y las Administraciones de la Seguridad Social. Si eres una empresa privada, tu obligación es otra: mira el <a href="/periodo-medio-pago-proveedores/">calculador de periodo medio de pago a proveedores</a> y la guía <a href="/blog/periodo-medio-pago-maximo-legal/">sobre el máximo legal</a>.</p>
+
+<h2 id="operaciones">Qué operaciones entran</h2>
+<ul>
+<li>Las facturas expedidas desde el 1 de enero de 2014 que consten en el registro contable de facturas o sistema equivalente, y las certificaciones mensuales de obra aprobadas desde esa fecha (art. 3.1).</li>
+<li>Quedan excluidas las obligaciones entre entidades que sean Administraciones Públicas en contabilidad nacional y las pagadas con cargo al Fondo para la Financiación de los Pagos a Proveedores.</li>
+<li>También quedan excluidas las propuestas de pago retenidas por embargos, mandamientos de ejecución, procedimientos administrativos de compensación o actos análogos de órganos judiciales o administrativos (art. 3.2).</li>
+</ul>
+
+<h2 id="dias">Desde cuándo se cuentan los días</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Caso</th><th>Los días naturales se cuentan desde…</th></tr></thead>
+<tbody>
+<tr><td>Certificaciones de obra</td><td>La fecha de aprobación de la certificación</td></tr>
+<tr><td>Hay aceptación o comprobación de bienes o servicios</td><td>La fecha de aprobación del documento de conformidad</td></tr>
+<tr><td>No hay aceptación, o la factura llega después de la conformidad</td><td>La fecha de entrada de la factura en el registro administrativo</td></tr>
+<tr><td>No hay obligación de registro contable</td><td>La fecha de recepción de la factura en el registro administrativo</td></tr>
+</tbody></table></div>
+<p>El final del cómputo es distinto según la operación esté pagada o pendiente: para las pagadas, la fecha de pago material; para las pendientes, el último día del periodo al que se refieren los datos publicados (art. 5.2 y 5.3).</p>
+
+<h2 id="formula">Las dos ratios y el resultado</h2>
+<ol class="steps">
+<li><strong>Ratio de operaciones pagadas:</strong> media de los días de pago de cada operación pagada en el periodo, ponderada por su importe.</li>
+<li><strong>Ratio de operaciones pendientes:</strong> lo mismo con los días pendientes de las operaciones aún sin pagar al final del periodo.</li>
+<li><strong>Periodo medio de pago de la entidad:</strong> (ratio pagadas × importe pagado + ratio pendientes × importe pendiente) / (importe pagado + importe pendiente).</li>
+</ol>
+<p>Ejemplo ilustrativo con cifras inventadas para entender la mecánica: una entidad pagó 120.000 € con ratio de 20 días y tiene 60.000 € pendientes con ratio de 40 días. El cálculo es (20 × 120.000 + 40 × 60.000) / 180.000 = 26,67 días.</p>
+
+<h2 id="trimestre">Mensual o trimestral</h2>
+<p>La referencia al mes se entiende hecha al <strong>trimestre</strong> en las corporaciones locales no incluidas en el ámbito de los artículos 111 y 135 del texto refundido de la Ley Reguladora de las Haciendas Locales (art. 5.4, redacción vigente desde el 1 de abril de 2018).</p>
+
+<h2 id="publicidad">Qué se publica</h2>
+<p>Las corporaciones locales remiten al Ministerio y publican en sus portales web, con criterios homogéneos, el periodo medio de pago global, el de cada entidad, y la ratio de operaciones pagadas y pendientes de cada una, con su serie histórica, referidos al mes o trimestre anterior (art. 6.2). Es una información sobre las Administraciones, que sirve a los proveedores para saber cuánto tarda en pagar su ayuntamiento.</p>
+
+<h2 id="empresa">Y si facturo a un ayuntamiento</h2>
+<p>El periodo medio de pago de la entidad es un indicador agregado, no un plazo que puedas reclamar. Tu derecho a cobrar y a intereses nace de la factura concreta y de la Ley 3/2004; consulta <a href="/intereses-demora-comerciales/">la calculadora de intereses</a> y la guía de <a href="/blog/informar-pago-factura-4-dias/">plazos de pago</a>.</p>
+""",
+    faq=[
+        ("¿Qué norma regula el PMP de las entidades locales?", "El Real Decreto 635/2014, de 25 de julio, en su texto consolidado."),
+        ("¿Cuenta desde la fecha de la factura?", "No siempre: puede contar desde la conformidad o la aprobación de la certificación; solo en algunos casos desde la entrada de la factura en el registro."),
+        ("¿El PMP local es mensual?", "Depende: en las corporaciones locales fuera del ámbito de los arts. 111 y 135 del TRLRHL, la referencia es trimestral."),
+        ("¿Qué se excluye del cálculo?", "Obligaciones entre Administraciones, pagos del Fondo de proveedores y propuestas retenidas por embargos o compensaciones."),
+        ("¿Es lo mismo que el PMP de las empresas?", "No: las empresas lo calculan según la resolución del ICAC de 2016."),
+        ("¿Dónde se publica el PMP de un ayuntamiento?", "En el portal web de la propia entidad y en el Ministerio de Hacienda, según el art. 6.2."),
+    ],
+    sources=[S.RD635, S.ICAC],
+))

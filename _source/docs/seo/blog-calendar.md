@@ -13,7 +13,7 @@ Publicar: añadir el dict a `build/page_blog_2.py` (POSTS) y su entrada en `REL`
 | 3 | publicado 2026-11-21 | verifactu-modulos-estimacion-objetiva | Verifactu y autónomos en módulos: ¿estoy obligado? | verifactu autónomos módulos | `/` |
 | 4 | **publicado 19/11/2026** | verifactu-excel-word | ¿Puedo facturar con Excel con Verifactu? Criterio AEAT | verifactu excel (<100), verifactu excel autonomos | `/` |
 | 5 | **publicado 14/11/2026** | tipo-interes-demora-2026 | Tipo de interés de demora 2026 en operaciones comerciales | tipo interes demora 2026, intereses de demora 2026 (<100) | `/intereses-demora-comerciales/` |
-| 6 | pendiente | intereses-demora-hacienda-vs-comerciales | Intereses de demora de Hacienda vs comerciales: diferencias | intereses de demora hacienda (>100), que intereses de demora cobra hacienda | `/intereses-demora-comerciales/` |
+| 6 | publicado | intereses-demora-hacienda-vs-comerciales | Intereses de demora de Hacienda vs comerciales: diferencias | intereses de demora hacienda (>100), que intereses de demora cobra hacienda | `/intereses-demora-comerciales/` |
 | 7 | publicado | verifactu-bares-restaurantes | Verifactu en bares y restaurantes: tiques, TPV y QR | verifactu bares (y restaurantes) | `/generador-qr-verifactu/` |
 | 8 | publicado | tpv-verifactu | TPV Verifactu: qué debe cumplir tu caja registradora | tpv verifactu (>100), verifactu tickets caja | `/validar-qr-verifactu/` |
 | 9 | **publicado 18/11/2026** | verifactu-factura-simplificada-ticket | Verifactu y facturas simplificadas (tiques): qué cambia | verifactu factura simplificada, verifactu tickets | `/generador-qr-verifactu/` |
@@ -32,7 +32,7 @@ Publicar: añadir el dict a `build/page_blog_2.py` (POSTS) y su entrada en `REL`
 | 22 | **publicado 16/11/2026** | solucion-publica-factura-electronica-aeat | Solución pública de facturación electrónica de la AEAT | factura electronica obligatoria programa gratuito | `/factura-electronica-obligatoria/` |
 | 23 | **publicado 14/11/2026** | informar-pago-factura-4-dias | Informar del pago de una factura en 4 días: cómo contar | factura electronica obligatoria plazos | `/factura-electronica-obligatoria/` |
 | 24 | **publicado 16/11/2026** | factura-electronica-pais-vasco-navarra | Factura electrónica obligatoria en País Vasco y Navarra | factura electronica obligatoria pais vasco | `/factura-electronica-obligatoria/` |
-| 25 | pendiente | periodo-medio-pago-entidades-locales | Periodo medio de pago de entidades locales (RD 635/2014) | pmp entidades locales (9 hits), ayuntamientos (8) | `/periodo-medio-pago-proveedores/` |
+| 25 | publicado | periodo-medio-pago-entidades-locales | Periodo medio de pago de entidades locales (RD 635/2014) | pmp entidades locales (9 hits), ayuntamientos (8) | `/periodo-medio-pago-proveedores/` |
 | 26 | **publicado 15/11/2026** | periodo-medio-pago-memoria-abreviada | PMP en la memoria abreviada: fórmula con saldos | pmp memoria abreviada (4 hits) | `/periodo-medio-pago-proveedores/` |
 | 27 | **publicado 16/11/2026** | periodo-medio-pago-maximo-legal | Periodo medio de pago: máximo legal y qué pasa si lo superas | pmp maximo legal (3 hits) | `/periodo-medio-pago-proveedores/` |
 | 28 | pendiente | diferencia-periodo-medio-pago-morosidad | Periodo medio de pago y ratio de morosidad: diferencias | diferencia entre periodo medio de pago y morosidad | `/periodo-medio-pago-proveedores/` |
