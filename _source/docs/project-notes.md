@@ -100,3 +100,8 @@
 - Published #6 /blog/intereses-demora-hacienda-vs-comerciales/ (LGT art. 26 from local src/b2b/BOE-A-2003-23186.txt; no tributary rate quoted, depends on LPGE; commercial 10,40 % H2 2026) and #25 /blog/periodo-medio-pago-entidades-locales/ (RD 635/2014 consolidated, src/b2b/rd635con.txt). Sources LGT, RD635 added. REL map DHC/PMEL.
 - Gotcha: "100.000 €"/"50.000 €" in text trips the sanction regex. Tests all exit 0. Calendar 28/30; left #28 (ratio de morosidad: no official source yet) and #30 (PGC cuenta contable: fetch PGC first).
 - BOE RD 1007/2023 still last update 03/12/2025. No new rate.
+
+## Daily run 2026-11-23 (Phase 1 final) + completion report
+- BOE RD 1007/2023 still last update 03/12/2025 (no 2028 delay). No new Tesoro rate (next ~end Dec 2026). Live checks 200.
+- Not published: #28 (ratio de morosidad: no official source) and #30 (cuenta contable: BOE PGC consolidated page lacks the account chart; unverified, so skipped per no-invention rule). 28/30 calendar posts live.
+- Completion: site has tools (PMP, intereses demora, factura electrónica checker, QR, huella, XML) + 28 blog posts. Phase 2 from 2026-11-24: 1 post/day (add new topics from keywords.md/autocomplete first, or #28/#30 once sourced), health checks, Monday GSC/Bing.

@@ -1656,3 +1656,70 @@ POSTS.append(dict(
     ],
     sources=[S.RD635, S.ICAC],
 ))
+
+# ---------------------------------------------------------------- Phase 2: cláusulas abusivas de plazo de pago
+POSTS.append(dict(
+    slug="clausulas-abusivas-plazo-pago-morosidad",
+    published="2026-11-24",
+    title="Cláusulas abusivas de pago: cuándo un pacto es nulo",
+    desc="Pago a 90 días, intereses rebajados o sin 40 euros: qué dice el art. 9 de la Ley 3/2004, el límite de 60 días y la regla del 70 % sobre el interés legal.",
+    h1="Cláusulas abusivas de plazo de pago: cuándo un pacto con tu cliente es nulo",
+    intro="Muchos contratos entre empresas fijan pagos a 90 o 120 días o excluyen los intereses de demora. La Ley 3/2004 limita lo que se puede pactar. Esto es lo que dice el texto consolidado del BOE, con un ejemplo numérico.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> entre empresas y autónomos, el plazo de pago pactado no puede superar los <strong>60 días naturales</strong> (art. 4.3), y es nula toda cláusula que excluya los intereses de demora o los 40 euros de costes de cobro (art. 9.1). Un interés pactado un 70 % por debajo del legal se considera abusivo, salvo prueba en contrario.</p>
+<p>Esta guía resume la Ley 3/2004, de 29 de diciembre, en su texto consolidado. No es asesoramiento jurídico: si hay una cantidad importante en juego, consulta a un abogado o a tu asociación empresarial.</p>
+
+<h2 id="limite">El límite de 60 días</h2>
+<p>El artículo 4 fija el plazo general en 30 días naturales desde la entrega de los bienes o la prestación del servicio. Las partes pueden ampliarlo por pacto, pero «en ningún caso» más de <strong>60 días naturales</strong> (art. 4.3). Un contrato que diga «pago a 90 días fecha factura» choca, por tanto, con la ley.</p>
+<p>Si hay un procedimiento de aceptación o comprobación de la conformidad, este no puede durar más de 30 días naturales desde la recepción, y el plazo de pago es de 30 días tras la aceptación, aunque la factura hubiera llegado antes (art. 4.2).</p>
+
+<h2 id="abusiva">Qué considera abusivo el artículo 9</h2>
+<p>El artículo 9.1 declara nula una cláusula o práctica sobre la fecha o plazo de pago, el tipo de interés de demora o la compensación por costes de cobro cuando sea «manifiestamente abusiva» en perjuicio del acreedor. El juez valora todas las circunstancias, entre ellas:</p>
+<ul>
+<li>una desviación grave de las buenas prácticas comerciales, contraria a la buena fe;</li>
+<li>la naturaleza del bien o del servicio;</li>
+<li>si el deudor tiene una razón objetiva para apartarse del interés legal de demora o de los 40 euros;</li>
+<li>si la cláusula sirve sobre todo para darle al deudor liquidez adicional a costa del acreedor;</li>
+<li>si un contratista principal impone a sus subcontratistas condiciones de pago que no están justificadas por las condiciones de las que él mismo se beneficia.</li>
+</ul>
+
+<h2 id="siempre-nulas">Siempre nulas, sin matices</h2>
+<p>El mismo artículo 9.1 añade que son nulas en todo caso las cláusulas o prácticas contrarias a los requisitos para exigir intereses (art. 6) y las que excluyan el cobro del interés de demora o de la indemnización por costes de cobro del artículo 8. Un contrato que diga «no se devengarán intereses por demora» o «el proveedor renuncia a los 40 euros» no tiene efecto sobre esos derechos.</p>
+
+<h2 id="setenta">La regla del 70 %</h2>
+<p>Un interés pactado distinto del legal es válido si no es abusivo. La ley presume abusivo el interés pactado que sea <strong>un 70 por ciento inferior al interés legal de demora</strong>, salvo que, atendiendo a las circunstancias del artículo 9, se pruebe que no es abusivo.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Dato</th><th>Valor</th></tr></thead>
+<tbody>
+<tr><td>Tipo legal de demora, segundo semestre de 2026</td><td>10,40 %</td></tr>
+<tr><td>Un 70 % inferior</td><td>10,40 × (1 − 0,70) = 3,12 %</td></tr>
+<tr><td>Interés pactado de 2 %</td><td>Por debajo de 3,12 %: se presume abusivo</td></tr>
+<tr><td>Interés pactado de 6 %</td><td>No alcanza esa presunción; se valora en el caso concreto</td></tr>
+</tbody></table></div>
+<p>La cuenta es aritmética sobre el tipo publicado; comprueba siempre el tipo del semestre en el que venció tu factura con la <a href="/intereses-demora-comerciales/">calculadora de intereses de demora</a>, y lee cómo se fija en <a href="/blog/tipo-interes-demora-2026/">el tipo de interés de demora de 2026</a>.</p>
+
+<h2 id="juez">Qué hace el juez si una cláusula es nula</h2>
+<p>Según el artículo 9.2, el juez que declare la nulidad integra el contrato conforme al artículo 1.258 del Código Civil y puede moderar los derechos y obligaciones de las partes. Las condiciones generales de contratación abusivas también son nulas (art. 9.3), y asociaciones de empresarios, de autónomos y las cámaras de comercio pueden ejercer acciones de cesación (art. 9.4).</p>
+
+<h2 id="pasos">Qué hacer si tu contrato tiene una cláusula así</h2>
+<ol class="steps">
+<li><strong>Localiza la cláusula</strong> y anota el plazo, el interés y si menciona costes de cobro.</li>
+<li><strong>Compara con la ley:</strong> plazo máximo de 60 días, interés pactado frente al legal, exclusiones.</li>
+<li><strong>Calcula lo que te corresponde</strong> con el tipo legal desde el día siguiente al vencimiento legal o pactado válido.</li>
+<li><strong>Reclama por escrito</strong> siguiendo los pasos de <a href="/blog/reclamar-factura-impagada-intereses/">cómo reclamar una factura impagada</a>.</li>
+</ol>
+
+<h2 id="comerciante">Una excepción a tener presente</h2>
+<p>La disposición adicional primera de la Ley 3/2004 indica que, en los pagos a proveedores del comercio minorista regulado por la Ley 7/1996, se aplica primero su artículo 17 y, de forma supletoria, la Ley 3/2004. Si vendes a un comercio minorista, revisa también esa norma.</p>
+<p>Para entender el plazo que realmente se aplica a tus facturas, consulta los <a href="/blog/plazos-pago-ley-morosidad/">plazos de pago de la Ley de morosidad</a>, y para medirlo en tu empresa, el <a href="/periodo-medio-pago-proveedores/">periodo medio de pago</a>.</p>
+""",
+    faq=[
+        ("¿Se puede pactar pago a 90 días entre empresas?", "No: el art. 4.3 de la Ley 3/2004 prohíbe acordar un plazo superior a 60 días naturales."),
+        ("¿Puedo renunciar a los intereses de demora en el contrato?", "La cláusula que excluya el cobro de intereses es nula en todo caso (art. 9.1)."),
+        ("¿Y a los 40 euros de costes de cobro?", "También es nula la cláusula que excluya la indemnización del art. 8."),
+        ("¿Qué interés pactado se presume abusivo?", "El que sea un 70 % inferior al interés legal, salvo que se pruebe que no es abusivo."),
+        ("¿Qué pasa si el juez anula la cláusula?", "Integra el contrato según el art. 1.258 del Código Civil y puede moderar las consecuencias (art. 9.2)."),
+        ("¿Quién puede denunciar estas cláusulas en grupo?", "Asociaciones de empresarios, profesionales y autónomos, cámaras de comercio y colegios profesionales (art. 9.4)."),
+    ],
+    sources=[S.LEY3],
+))

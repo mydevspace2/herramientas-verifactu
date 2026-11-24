@@ -101,3 +101,9 @@ A free Polish toolkit that helps businesses put the correct **KSeF number** (the
 ## SEO settings pass (17 Nov 2026)
 - Full audit of 27 live URLs was clean (titles/descriptions unique and <160, canonical, 1 H1, pl + x-default hreflang, OG/Twitter, valid JSON-LD, sitemap = every page with valid ISO lastmod, robots, 404, no orphans or broken links). No code change.
 - GSC sitemap resubmitted: Success, 27 discovered. Request Indexing /przelew-mpp-numer-ksef/ → "Quota Exceeded" again (3rd time); other URLs not tried. Bing sitemap resubmitted (Processing; Bing still showed 9 URLs). IndexNow: 27 URLs HTTP 200, Bing IndexNow shows 27 received.
+
+## Completion report (2026-11-23)
+- All 30 calendar posts are live (#1–3 on 2026-11-14, 3 per day to #28–30 on 2026-11-23). 7 tools, blog, legal pages, sitemap, IndexNow, schema, dark mode.
+- Tests: qa/test-core.js 52/52, qa/test-site.js 539/539 at completion.
+- Phase 2 (from 2026-11-24): 1 new post per run (add topics from seo/keywords.md + autocomplete; note /blog/przelew-za-kilka-faktur-ksef/ already exists, avoid duplicates), live checks, Monday GSC/Bing review. Renew DigitalPlat domain mid-July 2027 (expires 12 Nov 2027).
+- Before AdSense: reword privacy/about text "Nie wyświetlamy reklam".
