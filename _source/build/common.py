@@ -23,7 +23,7 @@ OG_W, OG_H = 1200, 630
 LOGO_PNG = "/assets/logo-512.png"
 EMAIL = "topelitemindset1@gmail.com"
 # Etiqueta de verificación de Google Search Console: pega aquí el valor de content="..." cuando lo tengas.
-GSV_CONTENT = os.environ.get("VF_GSV", "")
+GSV_CONTENT = os.environ.get("VF_GSV", "PBIzVZ_WTR9JENZ2TnCvFsTs3YWHua2ZJY0Cq2uO-6k")  # token público (ya está en el HTML); por defecto para que un build sin la variable no lo pierda
 ARTICLES = []      # (url, título, descripción) – se rellena en build.py
 ARTICLE_MAP = {}
 
@@ -194,6 +194,20 @@ def prefix_links(doc):
     return re.sub(r'(\s(?:href|src|action))="/(?!/)', r'\1="' + BASE + '/', doc)
 
 
+def editorial_html():
+    """Caja «Equipo editorial: cómo hacemos estas herramientas». Sin personas inventadas: el autor es el propio sitio.
+    La fecha «Última revisión» la ajusta build.py a la del último cambio real de la página (igual que <lastmod>)."""
+    return ('<aside class="editorial" aria-labelledby="equipo-editorial"><h2 id="equipo-editorial">Equipo editorial: cómo hacemos estas herramientas</h2>'
+            '<p>Redacta y mantiene esta web el equipo editorial de %s, responsable del sitio. No somos la AEAT ni asesores fiscales, '
+            'así que cada dato tiene que salir de una fuente oficial y no de una opinión.</p><ul>'
+            '<li><strong>Fuentes:</strong> BOE (RD 1007/2023, RD 238/2026, Orden HAC/1028/2026, Ley 3/2004), sede electrónica de la AEAT, '
+            'Ministerio de Hacienda e ICAC. Cada página enlaza las fuentes que usa.</li>'
+            '<li><strong>Método:</strong> separamos lo publicado en el BOE de lo solo anunciado, y las herramientas pasan pruebas automáticas antes de publicarse: '
+            'la huella reproduce los tres ejemplos oficiales de la AEAT y los XML de ejemplo se validan contra los esquemas oficiales.</li>'
+            '<li>Última revisión: <time datetime="%s">%s</time>. Más detalles en <a href="/sobre-nosotros/">Sobre nosotros</a>. '
+            '¿Has visto un error? <a href="/contacto/">Escríbenos</a>.</li></ul></aside>') % (e(BRAND), UPDATED_ISO, UPDATED_ES)
+
+
 def render(page, path):
     title, desc, url = page["title"], page["desc"], SITE_URL + path
     scripts = "".join('<script src="/assets/%s?v=%s" defer></script>' % (s, ASSET_V) for s in page.get("scripts", []))
@@ -211,7 +225,7 @@ def render(page, path):
         content += sources_html(page["sources"])
     if page.get("related", True):
         content += related(path) + related_articles(path)
-    content += '<p class="updated">Última revisión: <time datetime="%s">%s</time> · %s</p>' % (UPDATED_ISO, UPDATED_ES, PRIVACY_NOTE)
+    content += editorial_html() if not page.get("noindex") else '<p class="updated">Última revisión: <time datetime="%s">%s</time> · %s</p>' % (UPDATED_ISO, UPDATED_ES, PRIVACY_NOTE)
     parts.append('<article class="content">%s</article>' % content)
     gsv = ('\n<meta name="google-site-verification" content="%s">' % e(GSV_CONTENT)) if (GSV_CONTENT and path == "/") else ""
     doc = """<!doctype html>

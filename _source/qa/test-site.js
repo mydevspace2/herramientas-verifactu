@@ -153,7 +153,7 @@ t("Search Console: meta google-site-verification solo en la portada cuando se co
   const home = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
   const gsv = process.env.VF_GSV || "";
   if (gsv) assert.ok(home.includes('<meta name="google-site-verification" content="' + gsv + '">'), "falta en portada");
-  else assert.ok(!home.includes("google-site-verification"));
+  else assert.ok(home.includes('<meta name="google-site-verification" content="PBIzVZ_WTR9JENZ2TnCvFsTs3YWHua2ZJY0Cq2uO-6k">'), "falta el token por defecto en portada");
   pages.filter(f => path.resolve(f) !== path.resolve(path.join(ROOT, "index.html"))).forEach(f => assert.ok(!fs.readFileSync(f, "utf8").includes("google-site-verification"), f));
 });
 console.log("\nPalabras en el cuerpo de cada página:"); words.forEach(([r, n]) => console.log("   " + String(n).padStart(5) + "  " + r));

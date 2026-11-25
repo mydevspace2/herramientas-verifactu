@@ -122,7 +122,7 @@ POSTS.append(dict(
 POSTS.append(dict(
     slug="calcular-periodo-medio-pago-proveedores-ejemplo",
     published="2026-11-13",  # fecha real de publicación (git); fija para que datePublished no cambie en cada build
-    title="Cómo calcular el periodo medio de pago a proveedores: ejemplo",
+    title="Calcular el periodo medio de pago a proveedores: ejemplo",
     desc="Cómo calcular el periodo medio de pago a proveedores paso a paso: fórmula ICAC, ejemplo resuelto, Excel, memoria abreviada y diferencia con la morosidad.",
     h1="Cómo calcular el periodo medio de pago a proveedores, con ejemplo",
     intro="La fórmula del ICAC explicada con números, cómo hacerlo en Excel y cómo se calcula en la memoria abreviada. Con enlace a la calculadora gratuita.",

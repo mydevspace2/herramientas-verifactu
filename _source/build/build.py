@@ -112,6 +112,25 @@ def lastmod(u):
         pass
     return UPDATED_ISO
 
+# Fechas honestas: dateModified, «Última revisión» y el pie llevan la fecha del último cambio real de cada página
+# (la misma que <lastmod>), no la fecha de cada build.
+_MES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+def _es(iso):
+    y, m, d = (int(x) for x in iso.split("-"))
+    return "%d de %s de %d" % (d, _MES[m - 1], y)
+for _u, _p in PAGES:
+    _lm = lastmod(_u)
+    if _lm == UPDATED_ISO:
+        continue
+    _f = os.path.join(OUT, _u.lstrip("/"), "index.html")
+    _t = open(_f, encoding="utf-8").read()
+    _pub = _p.get("published")
+    _mod = max(_pub, _lm) if _pub else _lm
+    _t = _t.replace('"dateModified": "%s"' % UPDATED_ISO, '"dateModified": "%s"' % _mod)
+    _t = _t.replace('Última revisión: <time datetime="%s">%s</time>' % (UPDATED_ISO, common.UPDATED_ES), 'Última revisión: <time datetime="%s">%s</time>' % (_lm, _es(_lm)))
+    _t = _t.replace('Última revisión: %s' % common.UPDATED_ES, 'Última revisión: %s' % _es(_lm))
+    open(_f, "w", encoding="utf-8").write(_t)
+
 sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for u, _p in PAGES:
     pr = "1.0" if u == "/" else ("0.3" if u in ("/privacidad/", "/sobre-nosotros/", "/contacto/", "/aviso-legal/") else ("0.7" if u.startswith("/blog/") else "0.9"))
@@ -120,7 +139,27 @@ sm.append("</urlset>\n")
 write("/sitemap.xml", "\n".join(sm))
 INDEXNOW_KEY = "c4e8a1f7b3d94e2a8f6c0b5d7e1a9f32"
 write("/%s.txt" % INDEXNOW_KEY, INDEXNOW_KEY)
-write("/robots.txt", "User-agent: *\nAllow: /\nDisallow: %s/_source/\n\nSitemap: %s/sitemap.xml\n" % (BASE, SITE_URL))
+# Buscadores y rastreadores de IA nombrados (un solo grupo, mismas reglas). Ojo: los rastreadores solo leen robots.txt en la raíz del host;
+# en mydevspace2.github.io/herramientas-verifactu/ este archivo es informativo hasta que exista un robots.txt raíz (ver README).
+_BOTS = ["*", "Googlebot", "Bingbot", "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "PerplexityBot", "Google-Extended", "CCBot"]
+write("/robots.txt", "".join("User-agent: %s\n" % b for b in _BOTS) + "Allow: /\nDisallow: %s/_source/\n\nSitemap: %s/sitemap.xml\n" % (BASE, SITE_URL))
+# /llms.txt (formato llmstxt.org): qué es la web y sus páginas principales, para asistentes de IA
+_ll = ["# %s" % common.SITE, "", "> Herramientas y guías gratuitas en español sobre Verifactu (RD 1007/2023), la factura electrónica obligatoria B2B (RD 238/2026) "
+       "y la Ley de morosidad (Ley 3/2004): test de obligación, generador y validador del QR tributario, huella SHA-256, XML de ejemplo, "
+       "periodo medio de pago a proveedores e intereses de demora. Todo se calcula en el navegador, sin registro. Web independiente, sin relación con la AEAT; "
+       "información orientativa, no asesoramiento fiscal.", "", "## Herramientas", ""]
+for _u, _p in PAGES:
+    if _p.get("app", True) and not _p.get("article"):
+        _ll.append("- [%s](%s%s): %s" % (_p["title"], SITE_URL, _u, _p["desc"]))
+_ll += ["", "## Guías", ""]
+for _u, _p in PAGES:
+    if _p.get("article"):
+        _ll.append("- [%s](%s%s): %s" % (_p["title"], SITE_URL, _u, _p["desc"]))
+_ll += ["", "## Web", ""]
+for _u, _p in PAGES:
+    if not _p.get("article") and not _p.get("app", True):
+        _ll.append("- [%s](%s%s): %s" % (_p["title"], SITE_URL, _u, _p["desc"]))
+write("/llms.txt", "\n".join(_ll) + "\n")
 write("/favicon.svg", common.FAVICON)
 write("/site.webmanifest", """{
   "name": "%s",

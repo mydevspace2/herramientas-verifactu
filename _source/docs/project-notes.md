@@ -105,3 +105,15 @@
 - BOE RD 1007/2023 still last update 03/12/2025 (no 2028 delay). No new Tesoro rate (next ~end Dec 2026). Live checks 200.
 - Not published: #28 (ratio de morosidad: no official source) and #30 (cuenta contable: BOE PGC consolidated page lacks the account chart; unverified, so skipped per no-invention rule). 28/30 calendar posts live.
 - Completion: site has tools (PMP, intereses demora, factura electrónica checker, QR, huella, XML) + 28 blog posts. Phase 2 from 2026-11-24: 1 post/day (add new topics from keywords.md/autocomplete first, or #28/#30 once sourced), health checks, Monday GSC/Bing.
+
+## Daily run 2026-11-24 (Phase 2, day 1)
+- Published (new topic, not in calendar) /blog/clausulas-abusivas-plazo-pago-morosidad/ (Ley 3/2004 arts. 4, 9; 70 % rule: 10,40 % x 0,30 = 3,12 %). ABU constant + REL map (MOR, REC point to it). Tests all exit 0. BOE RD 1007/2023 still last update 03/12/2025. Pushed e2bc732.
+
+## Technical SEO audit (2026-11-25) — rules now in the build
+- Every indexable page ends with the "Equipo editorial: cómo hacemos estas herramientas" box (`common.editorial_html()`), replacing the old "Última revisión" line. Author/publisher in JSON-LD stay the site Organization (@id /#organization). Never add an invented person.
+- Honest dates: build.py now stamps `dateModified`, "Última revisión" and the footer date with the page's real last-change date (same logic as sitemap `<lastmod>`: unchanged vs ../repo ignoring dates keeps the old date). Before, every build set dateModified = today on all pages.
+- `GSV_CONTENT` defaults to the public token so a build without VF_GSV no longer drops the Search Console tag (test-site.js updated).
+- robots.txt names Googlebot, Bingbot and AI crawlers; `/llms.txt` generated from PAGES. Crawlers only read robots.txt at the host root (mydevspace2.github.io/robots.txt = 404), so it takes effect after the domain switch or a root user-site repo.
+- Titles <= 60 chars (test: seo-audit/techaudit.py).
+- qa/test-xsd-qr.py needs `pip install zxing-cpp`.
+- Branch `domain-verifactuya` was NOT rebuilt: rebuild it from main before merging (it lacks these changes).
