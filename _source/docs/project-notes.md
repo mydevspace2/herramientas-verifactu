@@ -117,3 +117,6 @@
 - Titles <= 60 chars (test: seo-audit/techaudit.py).
 - qa/test-xsd-qr.py needs `pip install zxing-cpp`.
 - Branch `domain-verifactuya` was NOT rebuilt: rebuild it from main before merging (it lacks these changes).
+
+## Daily run 2026-11-25 (Phase 2, day 2)
+- Published (new topic) /blog/40-euros-costes-de-cobro-morosidad/ (Ley 3/2004 arts. 6, 8, 9; example 1.000 € x 10,40 % x 30/365 = 8,55 €). C40 constant + REL map (MOR, REC point to it). Tests all exit 0. BOE RD 1007/2023 still 03/12/2025.

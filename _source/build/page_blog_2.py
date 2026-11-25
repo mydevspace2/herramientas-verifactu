@@ -1723,3 +1723,63 @@ POSTS.append(dict(
     ],
     sources=[S.LEY3],
 ))
+
+# ---------------------------------------------------------------- Phase 2: 40 euros costes de cobro
+POSTS.append(dict(
+    slug="40-euros-costes-de-cobro-morosidad",
+    published="2026-11-25",
+    title="Los 40 euros de costes de cobro por factura impagada",
+    desc="Cuándo puedes cobrar los 40 euros de la Ley 3/2004 por una factura impagada, si se suman a los intereses, qué pasa en pagos a plazos y cuándo no se deben.",
+    h1="Los 40 euros de costes de cobro: cuándo se suman a una factura impagada",
+    intro="Además de los intereses de demora, la Ley 3/2004 te da derecho a una cantidad fija de 40 euros cuando un cliente empresa te paga tarde. Esto dice el texto consolidado del BOE, con un ejemplo.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> si el deudor incurre en mora, el acreedor tiene derecho a cobrar <strong>40 euros</strong> que se añaden «en todo caso y sin necesidad de petición expresa» a la deuda principal (art. 8.1). Además puedes reclamar los costes de cobro acreditados que superen esa cantidad.</p>
+<p>Esta guía resume la Ley 3/2004, de 29 de diciembre, en su texto consolidado. No es asesoramiento jurídico.</p>
+
+<h2 id="que-es">Qué son los 40 euros</h2>
+<p>El artículo 8 se titula «Indemnización por costes de cobro». Es una cantidad fija, no un porcentaje: no depende del importe de la factura. Se suma a la deuda principal y es independiente de los intereses de demora del artículo 7.</p>
+<p>Además, el acreedor puede reclamar una indemnización por todos los costes de cobro debidamente acreditados que haya sufrido por la mora y que superen esos 40 euros (art. 8.1, segundo párrafo). Piensa en gastos de gestión de reclamación que puedas justificar con documentos.</p>
+
+<h2 id="requisitos">Requisitos para poder exigirlo</h2>
+<p>El artículo 6 exige que concurran a la vez dos requisitos para reclamar intereses de demora, y la ley de costes de cobro se apoya en la misma situación de mora:</p>
+<ul>
+<li>que hayas cumplido tus obligaciones contractuales y legales;</li>
+<li>que no hayas recibido a tiempo la cantidad debida, salvo que el deudor pruebe que no es responsable del retraso.</li>
+</ul>
+
+<h2 id="no-debe">Cuándo no se deben</h2>
+<p>El artículo 8.2 dice que el deudor no está obligado a pagar esta indemnización cuando no sea responsable del retraso en el pago. Y, al revés, es nula toda cláusula que excluya los 40 euros (art. 9.1), como explicamos en <a href="/blog/clausulas-abusivas-plazo-pago-morosidad/">cláusulas abusivas de plazo de pago</a>.</p>
+
+<h2 id="plazos">Pagos a plazos</h2>
+<p>Si pactáis un calendario de pagos y una cuota no se abona en su fecha, los intereses y la compensación de la ley se calculan únicamente sobre las cantidades vencidas (art. 6, último párrafo).</p>
+
+<h2 id="ejemplo">Ejemplo con cifras</h2>
+<p>Una factura de 1.000 € venció y se pagó con retraso. Con un tipo de demora del 10,40 % (segundo semestre de 2026) y 30 días de retraso:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Concepto</th><th>Importe</th></tr></thead>
+<tbody>
+<tr><td>Deuda principal</td><td>1.000,00 €</td></tr>
+<tr><td>Intereses: 1.000 × 10,40 % × 30 / 365</td><td>8,55 €</td></tr>
+<tr><td>Costes de cobro (art. 8.1)</td><td>40,00 €</td></tr>
+<tr><td>Total reclamable</td><td>1.048,55 €</td></tr>
+</tbody></table></div>
+<p>Observa que los 40 euros pesan mucho más que los intereses en deudas pequeñas. Calcula tu caso con la <a href="/intereses-demora-comerciales/">calculadora de intereses de demora</a> (usa el tipo del semestre en que venció la factura).</p>
+
+<h2 id="pasos">Cómo reclamarlos</h2>
+<ol class="steps">
+<li><strong>Comprueba el vencimiento</strong> con los <a href="/blog/plazos-pago-ley-morosidad/">plazos de la Ley de morosidad</a>.</li>
+<li><strong>Calcula intereses y 40 euros</strong> y deja constancia de ambos conceptos por separado.</li>
+<li><strong>Reclama por escrito</strong> siguiendo <a href="/blog/reclamar-factura-impagada-intereses/">cómo reclamar una factura impagada</a>.</li>
+<li><strong>Guarda los justificantes</strong> de cualquier otro coste de cobro para pedir la diferencia.</li>
+</ol>
+""",
+    faq=[
+        ("¿Cuánto es la indemnización por costes de cobro?", "Una cantidad fija de 40 euros (art. 8.1 de la Ley 3/2004)."),
+        ("¿Hay que pedirla expresamente?", "No: se añade en todo caso y sin necesidad de petición expresa a la deuda principal."),
+        ("¿Se suma a los intereses de demora?", "Sí, son conceptos distintos: intereses del art. 7 e indemnización del art. 8."),
+        ("¿Puedo reclamar más de 40 euros?", "Sí, los costes de cobro debidamente acreditados que superen esa cantidad."),
+        ("¿Cuándo no se debe?", "Cuando el deudor no es responsable del retraso (art. 8.2)."),
+        ("¿Se cobran 40 euros por cada cuota de un pago a plazos?", "La ley no lo precisa; solo establece que se calculan sobre las cantidades vencidas. Consulta a un profesional."),
+    ],
+    sources=[S.LEY3],
+))

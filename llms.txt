@@ -50,6 +50,7 @@
 - [Intereses de demora: Hacienda frente a los comerciales](https://mydevspace2.github.io/herramientas-verifactu/blog/intereses-demora-hacienda-vs-comerciales/): Diferencia entre el interés de demora tributario (art. 26 LGT) y el de facturas entre empresas (Ley 3/2004): fórmula, tipo y ejemplo.
 - [Periodo medio de pago de entidades locales (RD 635/2014)](https://mydevspace2.github.io/herramientas-verifactu/blog/periodo-medio-pago-entidades-locales/): Cómo calcula una entidad local su periodo medio de pago según el RD 635/2014: operaciones, días de pago, ratios pagadas y pendientes, y publicación.
 - [Cláusulas abusivas de pago: cuándo un pacto es nulo](https://mydevspace2.github.io/herramientas-verifactu/blog/clausulas-abusivas-plazo-pago-morosidad/): Pago a 90 días, intereses rebajados o sin 40 euros: qué dice el art. 9 de la Ley 3/2004, el límite de 60 días y la regla del 70 % sobre el interés legal.
+- [Los 40 euros de costes de cobro por factura impagada](https://mydevspace2.github.io/herramientas-verifactu/blog/40-euros-costes-de-cobro-morosidad/): Cuándo puedes cobrar los 40 euros de la Ley 3/2004 por una factura impagada, si se suman a los intereses, qué pasa en pagos a plazos y cuándo no se deben.
 
 ## Web
 
