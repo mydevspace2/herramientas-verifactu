@@ -2,7 +2,7 @@
 (function () {
   "use strict";
   var U = window.UI, $ = U.$;
-  var FECHA_IS = new Date(2027, 0, 1), FECHA_RESTO = new Date(2027, 6, 1);
+  var FECHA_IS = new Date(2028, 9, 6), FECHA_RESTO = new Date(2028, 9, 6);
   function dias(hasta) {
     var hoy = new Date(); hoy.setHours(0, 0, 0, 0);
     return Math.round((hasta - hoy) / 86400000);
@@ -14,12 +14,11 @@
   var form = $("ob-form"), out = $("ob-out");
   if (!form) return;
   function val(name) { var r = form.querySelector('input[name="' + name + '"]:checked'); return r ? r.value : ""; }
-  var NOTA_2028 = "Atención: el 5 de octubre de 2026 el Ministerio de Hacienda anunció su intención de aplazar estas obligaciones hasta octubre de 2028. A 13 de noviembre de 2026 ese aplazamiento NO está publicado en el BOE, así que legalmente siguen vigentes las fechas de 2027.";
+  var NOTA_2028 = "Novedad: el Real Decreto-ley 43/2026, de 24 de noviembre (BOE del 25/11/2026), aplazó la fecha de adaptación de los sistemas de facturación: ahora coincide con el último plazo de la factura electrónica obligatoria (RD 238/2026).";
   function fechaHtml(soc) {
-    var f = soc ? "antes del 1 de enero de 2027" : "antes del 1 de julio de 2027";
+    var f = "antes del 6 de octubre de 2028";
     var d = txtDias(dias(soc ? FECHA_IS : FECHA_RESTO));
-    return '<div class="dates"><div class="date-card"><span class="tag">En el BOE (vigente)</span><span class="big">' + f + "</span><small>" + d + " · RD 1007/2023, DF 4.ª (redacción del RDL 15/2025)</small></div>" +
-      '<div class="date-card pending"><span class="tag pending">Anunciado, sin BOE</span><span class="big">octubre de 2028</span><small>Nota de Hacienda del 05/10/2026 · sin día concreto</small></div></div>';
+    return '<div class="dates"><div class="date-card"><span class="tag">En el BOE (vigente)</span><span class="big">' + f + "</span><small>" + d + " · RD 1007/2023, DF 4.ª (redacción del RDL 43/2026, BOE 25/11/2026)</small></div></div>";
   }
   function complete() { var t = val("tipo"); return !!(val("dom") && t && (t === "productor" || (val("sii") && val("emi")))); }
   form.addEventListener("submit", function (e) { e.preventDefault(); evaluate(true); });
@@ -65,7 +64,7 @@
         lvl = "warn"; head = "Sigues estando obligado, aunque las facturas las emita tu cliente o un tercero.";
         notes.push("El art. 6 permite que el destinatario o un tercero cumplan materialmente las obligaciones, pero la responsabilidad sigue siendo tuya. Comprueba que su sistema esté adaptado.");
       } else {
-        lvl = "warn"; head = soc ? "Sí: estás obligado. Fecha vigente en el BOE: antes del 1 de enero de 2027." : "Sí: estás obligado. Fecha vigente en el BOE: antes del 1 de julio de 2027.";
+        lvl = "warn"; head = "Sí: estás obligado. Fecha vigente en el BOE: antes del 6 de octubre de 2028.";
         notes.push(soc ? "Eres contribuyente del Impuesto sobre Sociedades (art. 3.1.a)." : "Estás en el art. 3.1 (" + (tipo === "autonomo" ? "IRPF con actividad económica" : tipo === "atribucion" ? "entidad en atribución de rentas" : "IRNR con establecimiento permanente") + ").");
         if (tipo === "parcial") notes.push("Como entidad parcialmente exenta, solo por las operaciones que generen rentas sujetas y no exentas del impuesto.");
         notes.push("Tu programa de facturación debe cumplir el reglamento: modalidad VERI*FACTU (envía cada registro a la AEAT) o no VERI*FACTU (guarda los registros firmados y encadenados). Si facturas poco, la AEAT ofrece una aplicación gratuita.");

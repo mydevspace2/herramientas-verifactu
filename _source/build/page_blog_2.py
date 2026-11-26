@@ -10,11 +10,11 @@ POSTS.append(dict(
     slug="verifactu-autonomos",
     published="2026-11-13",
     title="Verifactu para autónomos: cuándo es obligatorio y qué hacer",
-    desc="¿Verifactu es obligatorio para autónomos? Fecha del BOE (antes del 1/7/2027), aplazamiento a 2028 solo anunciado, módulos, Excel, SII y opción gratuita.",
+    desc="¿Verifactu es obligatorio para autónomos? Fecha del BOE (6/10/2028 tras el RDL 43/2026), módulos, Excel, SII y opción gratuita.",
     h1="Verifactu para autónomos: cuándo es obligatorio y qué tienes que hacer",
-    intro="Qué dice el Real Decreto 1007/2023 sobre los autónomos, qué fecha está en el BOE, qué se ha anunciado para 2028 y cómo prepararte sin gastar de más. Revisado en el BOE el 13 de noviembre de 2026.",
+    intro="Qué dice el Real Decreto 1007/2023 sobre los autónomos, qué fecha está en el BOE (aplazada a 2028), y cómo prepararte sin gastar de más. Revisado en el BOE el 26 de noviembre de 2026.",
     content="""
-<p class="note"><strong>Respuesta corta:</strong> sí, Verifactu es obligatorio para los autónomos que emiten sus facturas o tiques con un programa, una app, un TPV o una caja registradora, tributen en estimación directa o en módulos. Según el BOE, deben tener el sistema operativo <strong>antes del 1 de julio de 2027</strong>. Hacienda anunció el 5 de octubre de 2026 su intención de aplazarlo a <strong>octubre de 2028</strong>, pero a 13 de noviembre de 2026 ese aplazamiento no está publicado en el BOE. Quien factura solo a mano, quien lleva el SII o tiene su domicilio fiscal en el País Vasco o Navarra queda fuera del reglamento estatal.</p>
+<p class="note"><strong>Respuesta corta:</strong> sí, Verifactu es obligatorio para los autónomos que emiten sus facturas o tiques con un programa, una app, un TPV o una caja registradora, tributen en estimación directa o en módulos. Según el BOE, tras el Real Decreto-ley 43/2026 (25/11/2026), deben tener el sistema adaptado <strong>antes del 6 de octubre de 2028</strong> (antes era el 1 de julio de 2027). Quien factura solo a mano, quien lleva el SII o tiene su domicilio fiscal en el País Vasco o Navarra queda fuera del reglamento estatal.</p>
 <p>¿Quieres saberlo en tu caso concreto? Responde las cuatro preguntas del <a href="/">test «¿Verifactu es obligatorio para mí?»</a>; tarda un minuto y no guarda ningún dato.</p>
 
 <h2 id="por-que">Por qué Verifactu afecta a los autónomos</h2>
@@ -25,11 +25,11 @@ POSTS.append(dict(
 <div class="table-wrap"><table>
 <thead><tr><th>Situación</th><th>Fecha</th><th>¿Es norma?</th></tr></thead>
 <tbody>
-<tr><td>Autónomos, comunidades de bienes y no residentes con establecimiento permanente</td><td>Sistema operativo <strong>antes del 1 de julio de 2027</strong></td><td>Sí: disposición final 4.ª del RD 1007/2023, redacción del Real Decreto-ley 15/2025 (BOE)</td></tr>
-<tr><td>Sociedades (Impuesto sobre Sociedades), como referencia</td><td>Antes del 1 de enero de 2027</td><td>Sí: misma disposición</td></tr>
+<tr><td>Autónomos, comunidades de bienes y no residentes con establecimiento permanente</td><td>Sistema operativo <strong>antes del 6 de octubre de 2028</strong></td><td>Sí: disposición final 4.ª del RD 1007/2023, redacción del Real Decreto-ley 43/2026 (BOE)</td></tr>
+<tr><td>Sociedades (Impuesto sobre Sociedades), como referencia</td><td>Antes del 6 de octubre de 2028</td><td>Sí: misma disposición</td></tr>
 <tr><td>Aplazamiento general</td><td>Octubre de 2028, sin día concreto</td><td><strong>No</strong>: solo una nota informativa de Hacienda del 5/10/2026</td></tr>
 </tbody></table></div>
-<p>Una nota de prensa no modifica un real decreto. Mientras no se publique en el BOE la norma que lo cambie, la fecha legal para un autónomo sigue siendo el 1 de julio de 2027. Lo contamos con todos los detalles en <a href="/blog/fechas-verifactu-2027-2028/">fechas de Verifactu: 2027 en el BOE y 2028 solo anunciado</a>, y revisamos el BOE cada vez que hay novedades.</p>
+<p>El aplazamiento anunciado por Hacienda se hizo efectivo con el Real Decreto-ley 43/2026, que sustituye el 1 de julio de 2027 por el 6 de octubre de 2028. Lo contamos con detalle en <a href="/blog/fechas-verifactu-2027-2028/">fechas de Verifactu: el aplazamiento a 2028 ya está en el BOE</a>.</p>
 
 <h2 id="casos">Casos habituales de autónomos</h2>
 <div class="table-wrap"><table>
@@ -64,7 +64,7 @@ POSTS.append(dict(
 <li class="must"><span class="when">Este trimestre</span>Haz inventario de lo que usas para facturar: programa, app del banco, TPV, Excel con macros, plataforma de tu tienda online.</li>
 <li class="must"><span class="when">Antes de 2027</span>Pide a cada proveedor un compromiso escrito de adaptación (fecha y modalidad). Si no lo hay, compara alternativas o valora la aplicación gratuita de la AEAT.</li>
 <li class="must"><span class="when">Al adaptar</span>Emite una factura de prueba y comprueba su QR con el <a href="/validar-qr-verifactu/">validador de QR Verifactu</a>: dominio de la AEAT, NIF, fecha e importe.</li>
-<li class="pending"><span class="when">Pendiente</span>Vigila si el aplazamiento a octubre de 2028 llega al BOE. Hasta entonces, la fecha legal es el 1 de julio de 2027.</li>
+<li class="pending"><span class="when">Pendiente</span>Pregunta a tu proveedor cuándo adaptará el programa; la fecha legal es el 6 de octubre de 2028.</li>
 </ul>
 
 <h2 id="b2b">No lo confundas con la factura electrónica obligatoria</h2>
@@ -72,7 +72,7 @@ POSTS.append(dict(
 """,
     faq=[
         ("¿Verifactu es obligatorio para todos los autónomos?", "Para todos los que expiden facturas o tiques con un sistema informático (programa, app, TPV, caja registradora), según el art. 3.1.b del RD 1007/2023. No para quien factura solo a mano, quien lleva el SII o quien tiene el domicilio fiscal en el País Vasco o Navarra."),
-        ("¿Cuándo entra en vigor Verifactu para autónomos?", "Según el BOE, los autónomos deben tener su sistema operativo antes del 1 de julio de 2027 (disposición final 4.ª del RD 1007/2023, redacción del RDL 15/2025). Hacienda anunció el 5/10/2026 un aplazamiento a octubre de 2028, pero a 13/11/2026 no está publicado en el BOE."),
+        ("¿Cuándo entra en vigor Verifactu para autónomos?", "Según el BOE, los autónomos deben tener su sistema adaptado antes del 6 de octubre de 2028 (disposición final 4.ª del RD 1007/2023, redacción del RDL 43/2026; antes era el 1 de julio de 2027)."),
         ("¿Los autónomos en módulos tienen que cumplir Verifactu?", "Sí, si emiten facturas o tiques con un sistema informático. El reglamento incluye a todos los contribuyentes del IRPF con actividades económicas, sin distinguir entre estimación directa y objetiva."),
         ("Si facturo con Excel, ¿me afecta Verifactu?", "Según las preguntas frecuentes de la AEAT, no si solo usas Excel o Word para escribir, imprimir y guardar las facturas. Sí si la hoja tiene macros u otras funciones que la convierten en un sistema de facturación, por ejemplo para generar el libro de facturas expedidas."),
         ("¿Tengo que comprar un programa nuevo?", "No necesariamente. Si tu programa actual se adapta, basta con actualizarlo. Si emites pocas facturas completas, la aplicación gratuita de la AEAT cumple Verifactu, aunque no emite tiques."),
@@ -1382,7 +1382,7 @@ POSTS.append(dict(
 <p>La AEAT dice que no te afecta si la hoja o el documento solo sirven para introducir datos, expedir e imprimir facturas y conservar la información. Sí te afecta si además procesas esos datos para generar libros registro u otros resultados fiscales. Está explicado en <a href="/blog/verifactu-excel-word/">Verifactu con Excel y Word</a>.</p>
 
 <h2 id="fechas">Fechas si te afecta</h2>
-<p>Los autónomos (contribuyentes del IRPF con actividad económica) deben tener los sistemas operativos antes del 1 de julio de 2027 (disposición final cuarta del RD 1007/2023, tras el Real Decreto-ley 15/2025). Comprueba tu caso en el <a href="/">test de obligación</a> y en la <a href="/blog/fechas-verifactu-2027-2028/">guía de fechas</a>.</p>
+<p>Los autónomos (contribuyentes del IRPF con actividad económica) deben tener los sistemas adaptados antes del 6 de octubre de 2028 (disposición final cuarta del RD 1007/2023, tras el Real Decreto-ley 43/2026). Comprueba tu caso en el <a href="/">test de obligación</a> y en la <a href="/blog/fechas-verifactu-2027-2028/">guía de fechas</a>.</p>
 
 <h2 id="pasos">Qué hacer</h2>
 <ol class="steps">
@@ -1398,7 +1398,7 @@ POSTS.append(dict(
         ("¿Y si no emito facturas?", "Si no expides factura, o todas las haces a mano, el reglamento no te afecta."),
         ("¿Qué pasa si un cliente me pide factura?", "Si la expides con un programa, ese programa debe estar adaptado al reglamento."),
         ("¿Puedo usar la aplicación gratuita de la AEAT?", "Sí para las facturas excepcionales, según el art. 7.b del reglamento; no emite facturas simplificadas."),
-        ("¿Cuál es mi fecha límite?", "Los autónomos con actividad económica, antes del 1 de julio de 2027, salvo que quedes fuera por la regla de los 4 NO."),
+        ("¿Cuál es mi fecha límite?", "Los autónomos con actividad económica, antes del 6 de octubre de 2028, salvo que quedes fuera por la regla de los 4 NO."),
         ("¿Esto es asesoramiento fiscal?", "No: es una explicación general basada en las preguntas frecuentes de la AEAT."),
     ],
     sources=[S.RD, S.FAQ_AMB, S.RDL],
@@ -1782,4 +1782,53 @@ POSTS.append(dict(
         ("¿Se cobran 40 euros por cada cuota de un pago a plazos?", "La ley no lo precisa; solo establece que se calculan sobre las cantidades vencidas. Consulta a un profesional."),
     ],
     sources=[S.LEY3],
+))
+
+
+# ---------------------------------------------------------------- Phase 2: calendario conjunto 2027-2029
+POSTS.append(dict(
+    slug="calendario-verifactu-factura-electronica-2027-2029",
+    published="2026-11-26",
+    title="Calendario 2027-2029: Verifactu y factura electrónica",
+    desc="Calendario conjunto tras el RDL 43/2026: factura electrónica B2B desde el 6/10/2027, Verifactu y resto de empresas el 6/10/2028, y estados de factura en 2029.",
+    h1="Calendario 2027-2029: Verifactu y factura electrónica entre empresas",
+    intro="Con el aplazamiento de Verifactu publicado en el BOE el 25 de noviembre de 2026, las dos obligaciones convergen. Este calendario las junta, con la norma de cada fecha.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> la factura electrónica entre empresas empieza el 6 de octubre de 2027 para quien superó 8 millones de euros de volumen de operaciones y el 6 de octubre de 2028 para el resto. Verifactu, tras el Real Decreto-ley 43/2026, debe estar adaptado para el último de esos plazos: el 6 de octubre de 2028.</p>
+<p>Resumen de normas publicadas en el BOE. No sustituye el asesoramiento profesional.</p>
+
+<h2 id="tabla">Calendario conjunto</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Fecha</th><th>Qué ocurre</th><th>Norma</th></tr></thead>
+<tbody>
+<tr><td>6 de octubre de 2027</td><td>Factura electrónica B2B obligatoria para empresarios y profesionales que superaron 8 M€ de volumen de operaciones el año anterior</td><td>RD 238/2026, DF 4.ª.1.a</td></tr>
+<tr><td>6 de octubre de 2028</td><td>Factura electrónica B2B para el resto, y fecha límite de adaptación de los sistemas de facturación a Verifactu</td><td>RD 238/2026, DF 4.ª.1.b; RD 1007/2023, DF 4.ª (RDL 43/2026)</td></tr>
+<tr><td>6 de octubre de 2029</td><td>Obligación de informar de los estados de la factura para personas físicas y entidades en atribución de rentas de hasta 8 M€ (hasta entonces, voluntaria)</td><td>RD 238/2026, DT 3.ª</td></tr>
+</tbody></table></div>
+
+<h2 id="verifactu">Qué ha cambiado en Verifactu</h2>
+<p>Antes, el RD 1007/2023 fijaba el 1 de enero de 2027 para sociedades y el 1 de julio de 2027 para el resto. El Real Decreto-ley 43/2026, de 24 de noviembre, lo sustituye por una remisión: los obligados del artículo 3.1 deben tener adaptados sus sistemas cuando transcurra el plazo de la letra b) del apartado 1 de la disposición final cuarta del RD 238/2026. Detalle en <a href="/blog/fechas-verifactu-2027-2028/">fechas de Verifactu</a>.</p>
+
+<h2 id="b2b">Qué no cambia en la factura electrónica</h2>
+<p>El RDL 43/2026 no modifica los plazos del RD 238/2026. Si tu empresa superó los 8 millones de euros, tu primera fecha sigue siendo el 6 de octubre de 2027, aunque Verifactu llegue después. Compruébalo con el <a href="/factura-electronica-obligatoria/">comprobador de factura electrónica B2B</a>.</p>
+
+<h2 id="diferencia">Dos obligaciones distintas</h2>
+<p>Verifactu trata de cómo tu programa registra las facturas (registros, huella y QR). La factura electrónica B2B trata del formato estructurado y del envío al cliente. Una misma factura puede estar afectada por las dos; la explicamos en <a href="/blog/diferencias-verifactu-factura-electronica-b2b/">diferencias entre Verifactu y la factura electrónica B2B</a>.</p>
+
+<h2 id="plan">Plan práctico</h2>
+<ol class="steps">
+<li><strong>Averigua tu tramo:</strong> más o menos de 8 M€ de volumen de operaciones del año natural anterior.</li>
+<li><strong>Anota las dos fechas</strong> que te afectan y la más cercana.</li>
+<li><strong>Pide a tu proveedor</strong> su plan de adaptación a ambas obligaciones.</li>
+<li><strong>Vigila los pagos:</strong> la factura electrónica B2B trae también <a href="/blog/plazos-pago-ley-morosidad/">plazos de pago de la Ley de morosidad</a> que conviene dominar.</li>
+</ol>
+""",
+    faq=[
+        ("¿Cuándo es obligatoria la factura electrónica entre empresas?", "El 6 de octubre de 2027 para quien superó 8 M€ de volumen de operaciones el año anterior y el 6 de octubre de 2028 para el resto (RD 238/2026)."),
+        ("¿Cuándo es obligatorio Verifactu?", "Los sistemas deben estar adaptados antes del 6 de octubre de 2028 tras el RDL 43/2026."),
+        ("¿El aplazamiento afecta a la factura electrónica B2B?", "No: el RDL 43/2026 modifica el RD 1007/2023 (Verifactu), no los plazos del RD 238/2026."),
+        ("¿Qué pasa en 2029?", "Para autónomos y entidades en atribución de rentas de hasta 8 M€ pasa a ser obligatorio informar de los estados de la factura (DT 3.ª del RD 238/2026)."),
+        ("¿Y los fabricantes de software?", "Deben ofrecer sistemas adaptados en el plazo máximo de nueve meses desde la entrada en vigor de la orden ministerial de la DF 3.ª del RD 1007/2023."),
+    ],
+    sources=[S.RD, S.RDL43, S.AEAT_CAL],
 ))

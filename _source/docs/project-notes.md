@@ -120,3 +120,8 @@
 
 ## Daily run 2026-11-25 (Phase 2, day 2)
 - Published (new topic) /blog/40-euros-costes-de-cobro-morosidad/ (Ley 3/2004 arts. 6, 8, 9; example 1.000 € x 10,40 % x 30/365 = 8,55 €). C40 constant + REL map (MOR, REC point to it). Tests all exit 0. BOE RD 1007/2023 still 03/12/2025.
+
+## Daily run 2026-11-26 (Phase 2, day 3) — VERIFACTU DELAY IS IN THE BOE
+- RDL 43/2026 (24 Nov, BOE-A-2026-24701, BOE 25/11/2026) rewrote DF 4.ª of RD 1007/2023: art. 3.1 obligados adapt when the DF 4.ª.1.b term of RD 238/2026 lapses (24 months after the ministerial order = 6/10/2028 per site calendar). Producers: still 9 months after the order. Consolidated RD 1007/2023 updated 25/11/2026.
+- Updated: home (cards, table, FAQ, JS result, title/desc), fechas post (rewritten, title "aplazado a octubre de 2028"), autónomos post, b2b posts, og image text, sources RDL43, tests (test-site, csp, ux-mobile). New post /blog/calendario-verifactu-factura-electronica-2027-2029/. All tests exit 0.
+- TODO: older posts may still mention 2027 Verifactu dates in passing (grep "1 de julio de 2027"); page_b2b.py mentions; branch domain-verifactuya stale.

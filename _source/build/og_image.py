@@ -37,7 +37,7 @@ def og(path, brand="Herramientas Verifactu"):
     d.text((80, 225), "¿Verifactu es obligatorio?", font=font("DejaVuSans-Bold.ttf", 70), fill=WHITE)
     d.text((80, 315), "QR · huella · XML · factura B2B · morosidad", font=font("DejaVuSans.ttf", 36), fill=(225, 245, 241))
     d.rounded_rectangle([80, 398, 1060, 480], radius=16, fill=WHITE)
-    d.text((108, 418), "BOE: 1/1/2027 y 1/7/2027  ·  anunciado: oct. 2028", font=font("DejaVuSans-Bold.ttf", 32), fill=(15, 23, 42))
+    d.text((108, 418), "BOE (RDL 43/2026): 6 de octubre de 2028", font=font("DejaVuSans-Bold.ttf", 32), fill=(15, 23, 42))
     d.text((80, 540), "Fuentes oficiales: BOE y AEAT  ·  sin relación con la Agencia Tributaria", font=font("DejaVuSans.ttf", 25), fill=(206, 238, 233))
     im.save(path, "PNG", optimize=True)
 

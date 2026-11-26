@@ -31,7 +31,7 @@ const ACTIONS = {
     const b = await txt(p, "#ob-out");
     await p.check('input[name="sii"][value="no"]'); await p.check('input[name="dom"][value="pv"]'); await p.click('#ob-form button[type="submit"]');
     const c = await txt(p, "#ob-out");
-    return /quedan \d+ días/.test(cd) && /1 de enero de 2027/.test(a) && /octubre de 2028/.test(a) && /NO está publicado en el BOE/.test(a) && /SII/.test(b) && /TicketBAI/.test(c);
+    return /quedan \d+ días/.test(cd) && /6 de octubre de 2028/.test(a) && /Real Decreto-ley 43\/2026/.test(a) && /SII/.test(b) && /TicketBAI/.test(c);
   },
   "/generador-qr-verifactu/": async (p, ctx) => {
     await p.click("#q-ex"); await p.waitForSelector("#q-preview svg");

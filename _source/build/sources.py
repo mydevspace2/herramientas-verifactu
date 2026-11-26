@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Fuentes oficiales citadas en la web (comprobadas el 13/11/2026)."""
 RD = ("Real Decreto 1007/2023 – texto consolidado (BOE)", "https://www.boe.es/buscar/act.php?id=BOE-A-2023-24840", "última actualización publicada el 03/12/2025; consultado el 13/11/2026")
+RDL43 = ("Real Decreto-ley 43/2026, de 24 de noviembre (BOE-A-2026-24701)", "https://www.boe.es/buscar/doc.php?id=BOE-A-2026-24701", "aplaza la adaptación de los sistemas al 6/10/2028")
 RDL = ("Real Decreto-ley 15/2025, de 2 de diciembre (BOE-A-2025-24446)", "https://www.boe.es/buscar/doc.php?id=BOE-A-2025-24446", "fija las fechas de 2027")
 NOTA = ("Nota informativa del Ministerio de Hacienda de 05/10/2026 (PDF)", "https://www.hacienda.gob.es/sgt/gabsehacienda/nota-informativa-verifactu.pdf", "previsión de aplazamiento hasta octubre de 2028")
 AEAT = ("Sistemas Informáticos de Facturación y VERI*FACTU – sede de la AEAT", "https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu.html", "página actualizada el 03/11/2026")

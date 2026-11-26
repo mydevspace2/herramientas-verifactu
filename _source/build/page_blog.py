@@ -7,64 +7,45 @@ POSTS = []
 POSTS.append(dict(
     slug="fechas-verifactu-2027-2028",
     published="2026-11-13",  # fecha real de publicación (git); fija para que datePublished no cambie en cada build
-    title="Fechas de Verifactu: 2027 en el BOE y 2028 solo anunciado",
-    desc="¿Cuándo entra en vigor Verifactu? Fechas vigentes en el BOE (1/1/2027 y 1/7/2027), aplazamiento a octubre de 2028 anunciado y qué hacer mientras tanto.",
-    h1="Fechas de Verifactu: qué está en el BOE (2027) y qué solo se ha anunciado (2028)",
-    intro="Resumen claro y con fuentes de cuándo es obligatorio Verifactu, por qué se habla de 2028 y por qué legalmente siguen valiendo las fechas de 2027. Revisado el 13 de noviembre de 2026.",
+    title="Fechas de Verifactu: aplazado a octubre de 2028 (BOE)",
+    desc="Verifactu se aplaza: el RDL 43/2026 (BOE 25/11/2026) fija la adaptación de los sistemas al 6 de octubre de 2028. Qué cambia y qué hacer ahora.",
+    h1="Fechas de Verifactu: el aplazamiento a 2028 ya está en el BOE",
+    intro="Resumen con fuentes de cuándo es obligatorio Verifactu tras el Real Decreto-ley 43/2026, publicado el 25 de noviembre de 2026. Actualizado el 26 de noviembre de 2026.",
     content="""
-<p class="note"><strong>Respuesta corta (13/11/2026):</strong> según el BOE, las sociedades deben tener su programa de facturación adaptado <strong>antes del 1 de enero de 2027</strong> y los autónomos y demás obligados <strong>antes del 1 de julio de 2027</strong>. Hacienda anunció el 5 de octubre de 2026 que quiere aplazarlo <strong>hasta octubre de 2028</strong>, pero ese aplazamiento todavía no se ha publicado en el BOE.</p>
+<p class="note"><strong>Respuesta corta (26/11/2026):</strong> el Real Decreto-ley 43/2026, de 24 de noviembre, modificó la disposición final cuarta del RD 1007/2023. Los obligados del artículo 3.1 deben tener adaptados sus sistemas informáticos de facturación cuando transcurra el plazo de la letra b) del apartado 1 de la disposición final cuarta del RD 238/2026: <strong>antes del 6 de octubre de 2028</strong> según el calendario de la factura electrónica.</p>
 
-<h2 id="tabla">Las fechas, con su fuente</h2>
+<h2 id="cambio">Qué ha cambiado</h2>
 <div class="table-wrap"><table>
-<thead><tr><th>Quién</th><th>Fecha vigente</th><th>Norma</th><th>Anunciado (pendiente de BOE)</th></tr></thead>
+<thead><tr><th>Norma</th><th>Sociedades</th><th>Autónomos y resto</th></tr></thead>
 <tbody>
-<tr><td>Contribuyentes del Impuesto sobre Sociedades</td><td>Antes del 1 de enero de 2027</td><td>RD 1007/2023, DF 4.ª (redacción del RDL 15/2025)</td><td>Octubre de 2028</td></tr>
-<tr><td>Autónomos (IRPF), entidades en atribución de rentas y no residentes con EP</td><td>Antes del 1 de julio de 2027</td><td>RD 1007/2023, DF 4.ª (redacción del RDL 15/2025)</td><td>Octubre de 2028</td></tr>
-<tr><td>Productores y comercializadores de software</td><td>Desde el 29 de julio de 2025 (9 meses desde la Orden HAC/1177/2024)</td><td>RD 1007/2023, DF 4.ª</td><td>—</td></tr>
+<tr><td>RDL 15/2025 (BOE 03/12/2025), sustituido</td><td>Antes del 1/1/2027</td><td>Antes del 1/7/2027</td></tr>
+<tr><td>RDL 43/2026 (BOE 25/11/2026), vigente</td><td colspan="2">Cuando transcurra el plazo de la letra b) de la DF 4.ª.1 del RD 238/2026: 6 de octubre de 2028</td></tr>
 </tbody></table></div>
-<p>La palabra clave es «antes»: el 31 de diciembre de 2026 es el último día para que una sociedad tenga su sistema adaptado, y el 30 de junio de 2027 el último para un autónomo, según la norma vigente.</p>
+<p>La exposición de motivos del real decreto-ley explica el objetivo: hacer coincidir la fecha límite de adaptación de los sistemas de facturación con la implantación efectiva de la factura electrónica obligatoria para el resto de empresarios y profesionales.</p>
 
-<h2 id="historia">Cómo se ha llegado hasta aquí: tres calendarios</h2>
-<div class="table-wrap"><table>
-<thead><tr><th>Norma (BOE)</th><th>Sociedades</th><th>Resto de obligados</th></tr></thead>
-<tbody>
-<tr><td>RD 1007/2023 original (BOE 06/12/2023)</td><td colspan="2">Antes del 1 de julio de 2025 (todos)</td></tr>
-<tr><td>RD 254/2025 (BOE 02/04/2025)</td><td>Antes del 1 de enero de 2026</td><td>Antes del 1 de julio de 2026</td></tr>
-<tr><td>RDL 15/2025 (BOE 03/12/2025) – <strong>vigente</strong></td><td>Antes del 1 de enero de 2027</td><td>Antes del 1 de julio de 2027</td></tr>
-<tr><td>Nota de Hacienda 05/10/2026 – <strong>no publicada como norma</strong></td><td colspan="2">«Hasta octubre de 2028» (sin día concreto)</td></tr>
-</tbody></table></div>
-<p>Es decir, Verifactu ya se ha retrasado dos veces por norma publicada en el BOE. El tercer retraso, a 2028, de momento es solo una intención comunicada.</p>
+<h2 id="fecha">Por qué el 6 de octubre de 2028</h2>
+<p>El RD 238/2026 aplaza la aplicación efectiva de la factura electrónica en dos plazos contados desde la entrada en vigor de la orden ministerial de la solución pública: doce meses para quien superó 8 millones de euros de volumen de operaciones y veinticuatro meses para el resto. La letra b) es la de veinticuatro meses, que con el calendario publicado por la AEAT corresponde al 6 de octubre de 2028. Puedes ver todas las fechas en el <a href="/factura-electronica-obligatoria/">comprobador de factura electrónica B2B</a>.</p>
 
-<h2 id="nota">Qué dice exactamente la nota de Hacienda del 5 de octubre de 2026</h2>
-<p>La nota del Gabinete de Prensa del Ministerio de Hacienda se titula «Previsión de modificación de los plazos de aplicación de las obligaciones pendientes» del reglamento. Explica que, para favorecer la convergencia entre Verifactu y la factura electrónica, se ha considerado conveniente alinear los calendarios y, por tanto, <em>proceder al aplazamiento de las obligaciones pendientes del Real Decreto 1007/2023 hasta octubre de 2028</em>, para que coincidan con la obligatoriedad de la factura electrónica para empresarios y profesionales que facturan hasta 8 millones de euros al año.</p>
-<p>La nota añade que, una vez aprobada esa alineación, se abordará otra modificación para hacer converger los ámbitos de aplicación y ciertos aspectos técnicos teniendo en cuenta los futuros requisitos de ViDA (la normativa europea «IVA en la era digital»), y que las exigencias de integridad, conservación, accesibilidad, legibilidad, trazabilidad e inalterabilidad se mantendrán en términos sustancialmente equivalentes.</p>
-<p>Lo que la nota <strong>no</strong> dice: ni el día exacto de octubre de 2028, ni qué tipo de norma lo aprobará, ni cuándo. La propia sede de la AEAT la enlaza como «Previsión de ampliación del plazo».</p>
+<h2 id="productores">Fabricantes de software</h2>
+<p>La disposición no cambia lo que se exige a los productores de sistemas informáticos (art. 3.2): deben ofrecer sus productos plenamente adaptados en el plazo máximo de nueve meses desde la entrada en vigor de la orden ministerial prevista en la disposición final tercera del RD 1007/2023. Es decir, el software puede estar disponible antes de que tú estés obligado a usarlo.</p>
 
-<h2 id="por-que">Por qué siguen valiendo las fechas de 2027</h2>
-<p>Las fechas de 2027 están en una norma con rango de ley, el Real Decreto-ley 15/2025, que modificó la disposición final cuarta del RD 1007/2023. Una nota de prensa no modifica un real decreto: hace falta una nueva norma publicada en el BOE. A 13 de noviembre de 2026, el texto consolidado del RD 1007/2023 en el BOE sigue mostrando las fechas de 2027 y su última actualización es la publicada el 3 de diciembre de 2025.</p>
-<p>Muchos medios han titulado «Verifactu se retrasa a 2028» como si fuera definitivo. Es probable que acabe así, pero hasta que aparezca en el BOE lo responsable es planificar con 2027 y estar atento.</p>
-
-<h2 id="que-hacer">Qué hacer mientras tanto</h2>
+<h2 id="hacer">Qué hacer ahora</h2>
 <ol class="steps">
-<li><strong>Comprueba si te afecta</strong> con nuestro <a href="/">test «¿estoy obligado a Verifactu?»</a>: SII, País Vasco, Navarra o facturar a mano cambian la respuesta.</li>
-<li><strong>Pregunta a tu proveedor de software</strong> si el programa ya está adaptado, en qué modalidad (VERI*FACTU o no) y si tiene coste adicional.</li>
-<li><strong>Revisa una factura de prueba:</strong> genera o escanea su QR y pásalo por el <a href="/validar-qr-verifactu/">validador</a>.</li>
-<li><strong>Si facturas poco</strong>, prueba la <a href="/blog/verifactu-gratis-aplicacion-aeat/">aplicación gratuita de la AEAT</a>.</li>
-<li><strong>Si dudas entre enviar o no los registros</strong>, lee <a href="/blog/verifactu-modalidad-no-verifactu/">VERI*FACTU o sin envío</a>; los requisitos del programa están <a href="/blog/verifactu-programa-facturacion-requisitos/">aquí</a>.</li>
-<li><strong>Vuelve a mirar el BOE</strong> en las próximas semanas. Actualizaremos esta guía y la portada el mismo día en que se publique la norma.</li>
+<li><strong>Confirma si estás obligado</strong> con el <a href="/">test de obligación de Verifactu</a>.</li>
+<li><strong>Pregunta a tu proveedor</strong> cuándo tendrá el programa adaptado y en qué modalidad.</li>
+<li><strong>Planifica junto a la factura electrónica:</strong> ambas obligaciones convergen, como explicamos en <a href="/blog/factura-electronica-obligatoria-2027-empresas/">factura electrónica obligatoria entre empresas</a>.</li>
+<li><strong>No esperes a la última semana:</strong> prueba el QR con el <a href="/validar-qr-verifactu/">validador</a> y valora la <a href="/blog/verifactu-gratis-aplicacion-aeat/">aplicación gratuita de la AEAT</a>.</li>
 </ol>
-
-<h2 id="como-comprobar">Cómo comprobarlo tú mismo en el BOE</h2>
-<p>Abre el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2023-24840" rel="noopener" target="_blank">texto consolidado del RD 1007/2023</a> y busca la «Disposición final cuarta. Entrada en vigor y efectos». Bajo el texto verás la lista de redacciones: si aparece una nueva modificación posterior al 03/12/2025 que cambie las fechas, el aplazamiento ya será oficial.</p>
+<p>Esta página resume normas publicadas y no sustituye el asesoramiento profesional.</p>
 """,
     faq=[
-        ("¿Cuándo entra en vigor Verifactu?", "Según el BOE, las sociedades deben estar adaptadas antes del 1 de enero de 2027 y el resto de obligados antes del 1 de julio de 2027. Hacienda ha anunciado un aplazamiento a octubre de 2028 que aún no está publicado."),
-        ("¿Está aprobado el aplazamiento de Verifactu a 2028?", "No a 13 de noviembre de 2026. Es una previsión comunicada por el Ministerio de Hacienda el 5 de octubre de 2026. Para que tenga efecto debe publicarse una norma en el BOE."),
-        ("¿Qué día de octubre de 2028?", "La nota de Hacienda no concreta el día. Habrá que esperar a la norma que lo apruebe."),
-        ("¿Cuántas veces se ha retrasado Verifactu?", "Dos veces por norma publicada: el RD 254/2025 lo llevó a 2026 y el RDL 15/2025 a 2027. El retraso a 2028 sería el tercero, pero aún no está publicado."),
-        ("¿Los autónomos tienen la misma fecha que las empresas?", "No. Con la norma vigente, las sociedades tienen hasta el 31 de diciembre de 2026 y los autónomos hasta el 30 de junio de 2027. El aplazamiento anunciado para octubre de 2028 sería para ambos."),
+        ("¿Cuándo entra en vigor Verifactu?", "Según el BOE tras el RDL 43/2026, los sistemas deben estar adaptados cuando transcurra el plazo de la letra b) de la DF 4.ª.1 del RD 238/2026, que con el calendario de la AEAT es el 6 de octubre de 2028."),
+        ("¿Está aprobado el aplazamiento de Verifactu a 2028?", "Sí. Se publicó en el BOE el 25 de noviembre de 2026 mediante el Real Decreto-ley 43/2026, de 24 de noviembre."),
+        ("¿Qué fechas había antes?", "El 1 de enero de 2027 para sociedades y el 1 de julio de 2027 para el resto, según el RDL 15/2025."),
+        ("¿Los autónomos tienen la misma fecha que las empresas?", "Con la nueva redacción, los obligados del artículo 3.1 comparten el mismo plazo de adaptación."),
+        ("¿Y los fabricantes de software?", "Deben ofrecer productos adaptados en el plazo máximo de nueve meses desde la entrada en vigor de la orden ministerial de la disposición final tercera."),
     ],
-    sources=[S.RD, S.RDL, S.NOTA, S.AEAT, S.AEAT_NOTA],
+    sources=[S.RD, S.RDL43, S.RDL, S.AEAT, S.AEAT_CAL],
 ))
 
 POSTS.append(dict(
@@ -126,7 +107,7 @@ POSTS.append(dict(
 <p>Nuestras herramientas son gratuitas, pero <strong>no son un programa de facturación</strong>: sirven para entender Verifactu, comprobar QR y huellas y revisar XML. Para emitir facturas necesitas la aplicación de la AEAT o un programa adaptado.</p>
 
 <h2 id="fechas">¿Desde cuándo tengo que usarla?</h2>
-<p>Si estás obligado, la fecha vigente en el BOE es antes del 1 de enero de 2027 para sociedades y antes del 1 de julio de 2027 para autónomos; Hacienda ha anunciado un aplazamiento a octubre de 2028 que aún no se ha publicado. Más detalle en <a href="/blog/fechas-verifactu-2027-2028/">Fechas de Verifactu</a>.</p>
+<p>Si estás obligado, la fecha vigente en el BOE es antes del 6 de octubre de 2028 para todos los obligados, tras el Real Decreto-ley 43/2026. Más detalle en <a href="/blog/fechas-verifactu-2027-2028/">Fechas de Verifactu</a>.</p>
 """,
     faq=[
         ("¿Hay un programa gratuito de la AEAT para Verifactu?", "Sí. La AEAT ofrece una aplicación de facturación gratuita en su sede electrónica que emite facturas completas con QR y envía los registros VERI*FACTU."),
@@ -263,7 +244,7 @@ ABOUT = dict(
 <h2>Cómo trabajamos</h2>
 <ul>
 <li><strong>Fuentes oficiales:</strong> cada dato normativo lleva su fuente (BOE, AEAT, Ministerio de Hacienda) y la fecha de la última revisión.</li>
-<li><strong>Separamos lo vigente de lo anunciado:</strong> por ejemplo, las fechas de 2027 del BOE frente al aplazamiento a 2028 que aún no se ha publicado.</li>
+<li><strong>Separamos lo vigente de lo anunciado:</strong> por ejemplo, actualizamos las fechas de Verifactu el día que el BOE publicó el aplazamiento a 2028.</li>
 <li><strong>Pruebas:</strong> la calculadora de huella reproduce exactamente los tres ejemplos oficiales de la AEAT, y los XML de ejemplo se comprueban contra los esquemas oficiales en nuestras pruebas automáticas.</li>
 <li><strong>Privacidad:</strong> todo se ejecuta en tu navegador. Sin registro y sin cookies.</li>
 </ul>

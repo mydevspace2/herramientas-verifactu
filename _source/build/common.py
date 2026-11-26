@@ -28,7 +28,7 @@ ARTICLES = []      # (url, título, descripción) – se rellena en build.py
 ARTICLE_MAP = {}
 
 TOOLS = [
-    ("/", "¿Estoy obligado a Verifactu?", "¿Obligado?", "Responde 4 preguntas: fecha del BOE (2027) y aplazamiento anunciado (2028)."),
+    ("/", "¿Estoy obligado a Verifactu?", "¿Obligado?", "Responde 4 preguntas: fecha del BOE: 6 de octubre de 2028 tras el RDL 43/2026."),
     ("/generador-qr-verifactu/", "Generador de QR tributario", "Generar QR", "QR con nivel M, 30–40 mm, «QR tributario:» y leyenda VERI*FACTU listo para imprimir."),
     ("/validar-qr-verifactu/", "Validar y leer QR Verifactu", "Validar QR", "Pega la URL, sube una foto o usa la cámara: comprueba dominio, parámetros y formato."),
     ("/calcular-huella-verifactu/", "Calcular huella (hash)", "Huella", "SHA-256 de registros de alta, anulación y evento y comprobación de la cadena."),

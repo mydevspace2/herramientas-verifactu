@@ -3,13 +3,11 @@ import sources as S
 
 ESTADO = """
 <section class="tool" aria-labelledby="estado-h">
-<h2 id="estado-h">¿Desde cuándo es obligatorio Verifactu? Estado a 13 de noviembre de 2026</h2>
+<h2 id="estado-h">¿Desde cuándo es obligatorio Verifactu? Estado a 26 de noviembre de 2026</h2>
 <div class="dates">
- <div class="date-card"><span class="tag">En el BOE · vigente</span><span class="big">1 de enero de 2027</span><small>Sociedades (Impuesto sobre Sociedades): sistemas adaptados <strong>antes</strong> de esta fecha · <span id="cd-is">fecha vigente</span></small></div>
- <div class="date-card"><span class="tag">En el BOE · vigente</span><span class="big">1 de julio de 2027</span><small>Autónomos y resto de obligados: <strong>antes</strong> de esta fecha · <span id="cd-resto">fecha vigente</span></small></div>
- <div class="date-card pending"><span class="tag pending">Solo anunciado · sin BOE</span><span class="big">Octubre de 2028</span><small>Hacienda anunció el 05/10/2026 su intención de aplazar todas las obligaciones pendientes. Sin día concreto y sin norma publicada.</small></div>
+ <div class="date-card"><span class="tag">En el BOE · vigente</span><span class="big">6 de octubre de 2028</span><small>Sociedades, autónomos y resto de obligados: sistemas adaptados <strong>antes</strong> de esta fecha · <span id="cd-is">fecha vigente</span><span id="cd-resto" hidden></span></small></div>
 </div>
-<p class="checked"><strong>Última comprobación: 13 de noviembre de 2026.</strong> El texto consolidado del <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2023-24840" rel="noopener" target="_blank">RD 1007/2023 en el BOE</a> sigue con las fechas de 2027 (última actualización publicada el 03/12/2025). El aplazamiento a 2028 consta en la <a href="https://www.hacienda.gob.es/sgt/gabsehacienda/nota-informativa-verifactu.pdf" rel="noopener" target="_blank">nota de Hacienda del 05/10/2026</a> y la <a href="https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu.html" rel="noopener" target="_blank">AEAT</a> lo presenta como «previsión». Actualizaremos esta página el día que se publique la norma.</p>
+<p class="checked"><strong>Última comprobación: 26 de noviembre de 2026.</strong> El texto consolidado del <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2023-24840" rel="noopener" target="_blank">RD 1007/2023 en el BOE</a> ya recoge el aplazamiento (última actualización publicada el 25/11/2026, por el Real Decreto-ley 43/2026). Antes del cambio, las fechas eran el 1/1/2027 (sociedades) y el 1/7/2027 (resto).</p>
 </section>
 """
 
@@ -60,11 +58,11 @@ CONTENT = """
 <div class="table-wrap"><table>
 <thead><tr><th>Quién</th><th>¿Obligado?</th><th>Fecha vigente (BOE)</th></tr></thead>
 <tbody>
-<tr><td>Sociedades y demás contribuyentes del Impuesto sobre Sociedades</td><td>Sí</td><td>Antes del 1/1/2027</td></tr>
-<tr><td>Autónomos y profesionales en IRPF (también en módulos)</td><td>Sí, si facturan con programa</td><td>Antes del 1/7/2027</td></tr>
-<tr><td>Comunidades de bienes y entidades en atribución de rentas con actividad</td><td>Sí</td><td>Antes del 1/7/2027</td></tr>
-<tr><td>No residentes con establecimiento permanente</td><td>Sí</td><td>Antes del 1/7/2027</td></tr>
-<tr><td>Entidades parcialmente exentas del IS</td><td>Solo por las rentas sujetas y no exentas</td><td>Antes del 1/1/2027</td></tr>
+<tr><td>Sociedades y demás contribuyentes del Impuesto sobre Sociedades</td><td>Sí</td><td>Antes del 6/10/2028</td></tr>
+<tr><td>Autónomos y profesionales en IRPF (también en módulos)</td><td>Sí, si facturan con programa</td><td>Antes del 6/10/2028</td></tr>
+<tr><td>Comunidades de bienes y entidades en atribución de rentas con actividad</td><td>Sí</td><td>Antes del 6/10/2028</td></tr>
+<tr><td>No residentes con establecimiento permanente</td><td>Sí</td><td>Antes del 6/10/2028</td></tr>
+<tr><td>Entidades parcialmente exentas del IS</td><td>Solo por las rentas sujetas y no exentas</td><td>Antes del 6/10/2028</td></tr>
 <tr><td>Entidades totalmente exentas del IS (art. 9.1 LIS)</td><td>No</td><td>—</td></tr>
 <tr><td>Quien lleva los libros de IVA por el SII</td><td>No (art. 3.3)</td><td>—</td></tr>
 <tr><td>Domicilio fiscal en País Vasco o Navarra</td><td>No por el reglamento estatal (normativa foral, TicketBAI en el País Vasco)</td><td>—</td></tr>
@@ -72,9 +70,9 @@ CONTENT = """
 </tbody></table></div>
 <p>El art. 4 excluye además algunas operaciones, como las facturas de establecimientos permanentes situados en el extranjero, y el art. 5 permite pedir a la AEAT que no se aplique el reglamento a sectores o contribuyentes concretos por razones justificadas. Son casos poco frecuentes: si crees que encajas, consúltalo con tu asesor.</p>
 
-<h2 id="fechas">Fechas: lo que dice el BOE y lo que se ha anunciado</h2>
-<p>La disposición final cuarta del RD 1007/2023, en la redacción que le dio el <strong>Real Decreto-ley 15/2025, de 2 de diciembre</strong>, establece que los contribuyentes del Impuesto sobre Sociedades deben tener sus sistemas adaptados <strong>antes del 1 de enero de 2027</strong> y el resto de obligados <strong>antes del 1 de julio de 2027</strong>. Es la norma vigente y es la que aparece en el texto consolidado del BOE.</p>
-<p>El <strong>5 de octubre de 2026</strong> el Ministerio de Hacienda publicó una nota informativa en la que anuncia la «previsión» de aplazar las obligaciones pendientes <strong>hasta octubre de 2028</strong>, para hacerlas coincidir con la factura electrónica obligatoria de las empresas que facturan hasta 8 millones de euros. La nota no da un día concreto ni dice con qué norma se hará. Hasta que esa norma se publique en el BOE, una nota de prensa no cambia las fechas legales. Lo explicamos con detalle en <a href="/blog/fechas-verifactu-2027-2028/">Fechas de Verifactu: 2027 en el BOE y octubre de 2028 anunciado</a>.</p>
+<h2 id="fechas">Fechas: lo que dice ahora el BOE</h2>
+<p>El <strong>Real Decreto-ley 43/2026, de 24 de noviembre</strong> (BOE del 25 de noviembre de 2026, en vigor al día siguiente), modificó la disposición final cuarta del RD 1007/2023. Ahora los obligados del artículo 3.1 (sociedades, autónomos, entidades en atribución de rentas y no residentes con establecimiento permanente) deben tener adaptados sus sistemas cuando transcurra el plazo de la letra b) del apartado 1 de la disposición final cuarta del RD 238/2026, es decir, <strong>antes del 6 de octubre de 2028</strong> según el calendario de la factura electrónica. Antes, la norma fijaba el 1 de enero de 2027 para sociedades y el 1 de julio de 2027 para el resto.</p>
+<p>La exposición de motivos explica que se busca hacer coincidir la fecha de adaptación con la implantación efectiva de la factura electrónica obligatoria. Lo explicamos con detalle en <a href="/blog/fechas-verifactu-2027-2028/">Fechas de Verifactu: el aplazamiento a 2028 ya está en el BOE</a>.</p>
 <p>¿Qué hacer mientras tanto? Lo prudente es no esperar a la última semana: pregunta a tu proveedor de software si su programa ya está adaptado y en qué modalidad, prueba el QR de tus facturas con nuestro <a href="/validar-qr-verifactu/">validador de QR</a> y, si emites pocas facturas, valora la <a href="/blog/verifactu-gratis-aplicacion-aeat/">aplicación gratuita de la AEAT</a>.</p>
 
 <h2 id="modalidad">VERI*FACTU o no VERI*FACTU: ¿qué modalidad elegir?</h2>
@@ -101,8 +99,8 @@ CONTENT = """
 """
 
 FAQ = [
-    ("¿Verifactu es obligatorio?", "Sí, para quien expide facturas con un programa informático y es sociedad, autónomo, entidad en atribución de rentas o no residente con establecimiento permanente, salvo excepciones como el SII o el domicilio fiscal en País Vasco o Navarra. Según el BOE, las sociedades deben estar adaptadas antes del 1 de enero de 2027 y el resto antes del 1 de julio de 2027."),
-    ("¿Se ha aplazado Verifactu a 2028?", "Se ha anunciado, pero no está aprobado. El 5 de octubre de 2026 Hacienda comunicó su intención de aplazarlo hasta octubre de 2028. A 13 de noviembre de 2026 no hay ninguna norma publicada en el BOE que lo haga efectivo, así que siguen vigentes las fechas de 2027."),
+    ("¿Verifactu es obligatorio?", "Sí, para quien expide facturas con un programa informático y es sociedad, autónomo, entidad en atribución de rentas o no residente con establecimiento permanente, salvo excepciones como el SII o el domicilio fiscal en País Vasco o Navarra. Según el BOE, todos los obligados deben tener adaptados sus sistemas antes del 6 de octubre de 2028 (Real Decreto-ley 43/2026)."),
+    ("¿Se ha aplazado Verifactu a 2028?", "Sí. El Real Decreto-ley 43/2026, de 24 de noviembre (BOE del 25/11/2026), modificó la disposición final cuarta del RD 1007/2023 y la fecha de adaptación pasa a coincidir con el último plazo de la factura electrónica obligatoria: 6 de octubre de 2028."),
     ("¿Los autónomos en módulos están obligados a Verifactu?", "Sí, si expiden facturas con un programa. El art. 3.1.b incluye a todos los contribuyentes del IRPF que desarrollan actividades económicas, sin distinguir el método de estimación."),
     ("Si estoy en el SII, ¿tengo que cumplir Verifactu?", "No. El art. 3.3 del RD 1007/2023 excluye a quienes llevan los libros registro de IVA a través de la sede electrónica de la AEAT (SII)."),
     ("¿Puedo seguir haciendo facturas a mano?", "Sí. Verifactu regula los sistemas informáticos de facturación. Si expides tus facturas solo a mano, en un talonario, no usas un sistema informático y el reglamento no te obliga. En cuanto uses un programa, aunque sea para una parte de tu actividad, sí."),
@@ -112,11 +110,11 @@ FAQ = [
 ]
 
 HOME = dict(
-    title="¿Verifactu es obligatorio? Test gratis y fechas 2027/2028",
-    desc="Comprueba si Verifactu te obliga y desde cuándo: fechas del BOE (1/1/2027 y 1/7/2027) y aplazamiento a 2028 anunciado pero aún no publicado.",
+    title="¿Verifactu es obligatorio? Test gratis y fecha 2028",
+    desc="Comprueba si Verifactu te obliga y desde cuándo: el BOE del 25/11/2026 aplaza la adaptación de los sistemas de facturación al 6 de octubre de 2028.",
     app_name="¿Estoy obligado a Verifactu? – test gratuito",
     h1="¿Verifactu es obligatorio para ti? Compruébalo en 1 minuto",
-    intro="¿Verifactu es obligatorio en tu caso? Responde 4 preguntas y verás tu fecha: la del BOE (2027) y la anunciada (2028).",
+    intro="¿Verifactu es obligatorio en tu caso? Responde 4 preguntas y verás tu fecha: 6 de octubre de 2028 según el BOE.",
     trail=[("Inicio", "/")],
     tool=TOOL, content=CONTENT, faq=FAQ, scripts=["page-home.js"],
     sources=[S.RD, S.RDL, S.NOTA, S.AEAT, S.FAQ_AMB],

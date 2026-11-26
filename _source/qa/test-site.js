@@ -111,9 +111,9 @@ for (const file of pages) {
   if (rel.startsWith("/blog/") && rel !== "/blog/") t(rel + " – guía ≥ 700 palabras (" + n + ")", () => assert.ok(n >= 700, n));
 }
 t("Ninguna página afirma importes de sanciones", () => pages.forEach(f => assert.ok(!/(50\.000|150\.000)\s*(€|euros)/i.test(fs.readFileSync(f, "utf8")), f)));
-t("Portada: muestra 1/1/2027, 1/7/2027, octubre 2028, «Última comprobación: 13 de noviembre de 2026» y enlaza BOE + nota de Hacienda", () => {
+t("Portada: muestra 6 de octubre de 2028, «Última comprobación: 26 de noviembre de 2026», RDL 43/2026 y enlaza BOE", () => {
   const h = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
-  ["1 de enero de 2027", "1 de julio de 2027", "Octubre de 2028", "Última comprobación: 13 de noviembre de 2026", "BOE-A-2023-24840", "nota-informativa-verifactu.pdf"].forEach(s => assert.ok(h.includes(s), s));
+  ["6 de octubre de 2028", "Real Decreto-ley 43/2026", "Última comprobación: 26 de noviembre de 2026", "BOE-A-2023-24840"].forEach(s => assert.ok(h.includes(s), s));
 });
 t("Huella: los tres resultados oficiales aparecen en la página", () => {
   const h = fs.readFileSync(path.join(ROOT, "calcular-huella-verifactu/index.html"), "utf8");

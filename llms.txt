@@ -4,7 +4,7 @@
 
 ## Herramientas
 
-- [¿Verifactu es obligatorio? Test gratis y fechas 2027/2028](https://mydevspace2.github.io/herramientas-verifactu/): Comprueba si Verifactu te obliga y desde cuándo: fechas del BOE (1/1/2027 y 1/7/2027) y aplazamiento a 2028 anunciado pero aún no publicado.
+- [¿Verifactu es obligatorio? Test gratis y fecha 2028](https://mydevspace2.github.io/herramientas-verifactu/): Comprueba si Verifactu te obliga y desde cuándo: el BOE del 25/11/2026 aplaza la adaptación de los sistemas de facturación al 6 de octubre de 2028.
 - [Generador QR Verifactu gratis – QR tributario para imprimir](https://mydevspace2.github.io/herramientas-verifactu/generador-qr-verifactu/): Crea el QR tributario de tu factura (nivel M, 30–40 mm) con «QR tributario:» y leyenda VERI*FACTU. Vista previa en mm y descarga SVG o PNG.
 - [Validar QR Verifactu – lector y comprobador gratis](https://mydevspace2.github.io/herramientas-verifactu/validar-qr-verifactu/): Comprueba el QR tributario de una factura: pega la URL, sube una foto o usa la cámara. Revisa dominio AEAT, NIF, fecha, importe y errores 1001–2006.
 - [Calcular huella Verifactu (hash SHA-256) gratis y online](https://mydevspace2.github.io/herramientas-verifactu/calcular-huella-verifactu/): Calcula la huella SHA-256 de registros Verifactu de alta, anulación y evento con los ejemplos oficiales de la AEAT y comprueba la cadena de un XML.
@@ -15,13 +15,13 @@
 
 ## Guías
 
-- [Fechas de Verifactu: 2027 en el BOE y 2028 solo anunciado](https://mydevspace2.github.io/herramientas-verifactu/blog/fechas-verifactu-2027-2028/): ¿Cuándo entra en vigor Verifactu? Fechas vigentes en el BOE (1/1/2027 y 1/7/2027), aplazamiento a octubre de 2028 anunciado y qué hacer mientras tanto.
+- [Fechas de Verifactu: aplazado a octubre de 2028 (BOE)](https://mydevspace2.github.io/herramientas-verifactu/blog/fechas-verifactu-2027-2028/): Verifactu se aplaza: el RDL 43/2026 (BOE 25/11/2026) fija la adaptación de los sistemas al 6 de octubre de 2028. Qué cambia y qué hacer ahora.
 - [Verifactu gratis: la aplicación de facturación de la AEAT](https://mydevspace2.github.io/herramientas-verifactu/blog/verifactu-gratis-aplicacion-aeat/): Cómo cumplir Verifactu gratis con la aplicación de facturación de la AEAT: quién puede usarla, requisitos, límites (sin tiques) y alternativas sin coste.
 - [Tamaño y posición del QR Verifactu: reglas oficiales](https://mydevspace2.github.io/herramientas-verifactu/blog/tamano-posicion-qr-verifactu/): Medidas del QR Verifactu (30–40 mm, nivel M), margen de 2 a 6 mm, dónde colocarlo, texto «QR tributario:» y leyenda VERI*FACTU, con ejemplos.
 - [Verifactu y factura electrónica B2B: diferencias y fechas](https://mydevspace2.github.io/herramientas-verifactu/blog/diferencias-verifactu-factura-electronica-b2b/): Diferencias entre Verifactu (Ley Antifraude) y la factura electrónica B2B (Ley Crea y Crece): qué regula cada una, a quién afecta y desde cuándo.
 - [Factura electrónica obligatoria para autónomos: fechas](https://mydevspace2.github.io/herramientas-verifactu/blog/factura-electronica-obligatoria-autonomos/): Cuándo es obligatoria la factura electrónica para autónomos: 6/10/2028 para emitir y recibir y 6/10/2029 para informar pagos. Excepciones y opción gratuita.
 - [Calcular el periodo medio de pago a proveedores: ejemplo](https://mydevspace2.github.io/herramientas-verifactu/blog/calcular-periodo-medio-pago-proveedores-ejemplo/): Cómo calcular el periodo medio de pago a proveedores paso a paso: fórmula ICAC, ejemplo resuelto, Excel, memoria abreviada y diferencia con la morosidad.
-- [Verifactu para autónomos: cuándo es obligatorio y qué hacer](https://mydevspace2.github.io/herramientas-verifactu/blog/verifactu-autonomos/): ¿Verifactu es obligatorio para autónomos? Fecha del BOE (antes del 1/7/2027), aplazamiento a 2028 solo anunciado, módulos, Excel, SII y opción gratuita.
+- [Verifactu para autónomos: cuándo es obligatorio y qué hacer](https://mydevspace2.github.io/herramientas-verifactu/blog/verifactu-autonomos/): ¿Verifactu es obligatorio para autónomos? Fecha del BOE (6/10/2028 tras el RDL 43/2026), módulos, Excel, SII y opción gratuita.
 - [Plazos de pago de la Ley de morosidad: 30 y 60 días](https://mydevspace2.github.io/herramientas-verifactu/blog/plazos-pago-ley-morosidad/): Plazo máximo de pago a proveedores según la Ley 3/2004: 30 días sin pacto, 60 como máximo, cómo se cuentan, facturas agrupadas, intereses y 40 euros.
 - [Tipo de interés de demora 2026 en operaciones comerciales](https://mydevspace2.github.io/herramientas-verifactu/blog/tipo-interes-demora-2026/): Interés de demora comercial 2026: 10,15 % en el 1.er semestre y 10,40 % en el 2.º, según el BOE. Cómo se fija, tabla 2023-2026 y ejemplo de cálculo.
 - [Cómo reclamar una factura impagada con intereses y 40 €](https://mydevspace2.github.io/herramientas-verifactu/blog/reclamar-factura-impagada-intereses/): Reclama una factura impagada a otra empresa según la Ley 3/2004: intereses automáticos, 40 € por factura, cálculo con ejemplo y modelo de carta gratis.
@@ -51,6 +51,7 @@
 - [Periodo medio de pago de entidades locales (RD 635/2014)](https://mydevspace2.github.io/herramientas-verifactu/blog/periodo-medio-pago-entidades-locales/): Cómo calcula una entidad local su periodo medio de pago según el RD 635/2014: operaciones, días de pago, ratios pagadas y pendientes, y publicación.
 - [Cláusulas abusivas de pago: cuándo un pacto es nulo](https://mydevspace2.github.io/herramientas-verifactu/blog/clausulas-abusivas-plazo-pago-morosidad/): Pago a 90 días, intereses rebajados o sin 40 euros: qué dice el art. 9 de la Ley 3/2004, el límite de 60 días y la regla del 70 % sobre el interés legal.
 - [Los 40 euros de costes de cobro por factura impagada](https://mydevspace2.github.io/herramientas-verifactu/blog/40-euros-costes-de-cobro-morosidad/): Cuándo puedes cobrar los 40 euros de la Ley 3/2004 por una factura impagada, si se suman a los intereses, qué pasa en pagos a plazos y cuándo no se deben.
+- [Calendario 2027-2029: Verifactu y factura electrónica](https://mydevspace2.github.io/herramientas-verifactu/blog/calendario-verifactu-factura-electronica-2027-2029/): Calendario conjunto tras el RDL 43/2026: factura electrónica B2B desde el 6/10/2027, Verifactu y resto de empresas el 6/10/2028, y estados de factura en 2029.
 
 ## Web
 

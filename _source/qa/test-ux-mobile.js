@@ -46,19 +46,19 @@ const sizes = p => p.evaluate(() => {
   ok((await p.textContent("#ob-out")).trim() === "", "sin resultado mientras falta una respuesta");
   await p.check('input[name="emi"][value="programa"]'); await p.waitForTimeout(900);
   const a = await p.textContent("#ob-out");
-  ok(/estás obligado/.test(a) && /1 de julio de 2027/.test(a), "resultado automático al responder todo (sin pulsar el botón)");
+  ok(/estás obligado/.test(a) && /6 de octubre de 2028/.test(a), "resultado automático al responder todo (sin pulsar el botón)");
   ok(await inView(p, "#ob-out .status-head"), "el resultado se desplaza a la vista");
   ok(await p.isVisible('#ob-form button[type="submit"]'), "el botón «Ver mi resultado» sigue ahí");
   ok((await sw(p)) <= 375, "sin desplazamiento lateral tras el resultado (" + (await sw(p)) + ")");
   await p.click("#ob-out [data-copy-text]"); await p.waitForTimeout(200);
   const clip = await p.evaluate(() => navigator.clipboard.readText().catch(() => ""));
-  ok(/estás obligado/.test(clip) && /1 de julio de 2027/.test(clip) && /Fuente: http/.test(clip), "«Copiar resultado» copia el texto del resultado");
+  ok(/estás obligado/.test(clip) && /6 de octubre de 2028/.test(clip) && /Fuente: http/.test(clip), "«Copiar resultado» copia el texto del resultado");
   await p.click('#ob-form button[type="reset"]');
   ok((await p.textContent("#ob-out")).trim() === "", "«Empezar de nuevo» borra el resultado");
   await p.check('input[name="tipo"][value="sociedad"]'); await p.focus('input[name="tipo"][value="sociedad"]'); await p.keyboard.press("Enter"); await p.waitForTimeout(300);
   ok(/Falta responder: cómo emites/.test(await p.textContent("#ob-out")), "Enter en una opción envía el test");
   await p.check('input[name="emi"][value="programa"]'); await p.focus('input[name="emi"][value="programa"]'); await p.keyboard.press("Enter"); await p.waitForTimeout(300);
-  ok(/1 de enero de 2027/.test(await p.textContent("#ob-out")), "Enter con todo respondido muestra el resultado (sociedad → 1/1/2027)");
+  ok(/6 de octubre de 2028/.test(await p.textContent("#ob-out")), "Enter con todo respondido muestra el resultado (sociedad → 6/10/2028)");
   const s0 = await sizes(p); ok(!s0.inp.length && !s0.btn.length && !s0.bad.length, "portada: campos ≥16 px, botones ≥44 px, distintivos ≥13 px " + JSON.stringify(s0));
   const trust = await p.textContent(".trust"); ok(/Gratis, sin registro/.test(trust) && !/publicidad/i.test(trust), "distintivo sin «publicidad» (" + trust.trim() + ")");
 
