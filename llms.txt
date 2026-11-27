@@ -52,6 +52,7 @@
 - [Cláusulas abusivas de pago: cuándo un pacto es nulo](https://mydevspace2.github.io/herramientas-verifactu/blog/clausulas-abusivas-plazo-pago-morosidad/): Pago a 90 días, intereses rebajados o sin 40 euros: qué dice el art. 9 de la Ley 3/2004, el límite de 60 días y la regla del 70 % sobre el interés legal.
 - [Los 40 euros de costes de cobro por factura impagada](https://mydevspace2.github.io/herramientas-verifactu/blog/40-euros-costes-de-cobro-morosidad/): Cuándo puedes cobrar los 40 euros de la Ley 3/2004 por una factura impagada, si se suman a los intereses, qué pasa en pagos a plazos y cuándo no se deben.
 - [Calendario 2027-2029: Verifactu y factura electrónica](https://mydevspace2.github.io/herramientas-verifactu/blog/calendario-verifactu-factura-electronica-2027-2029/): Calendario conjunto tras el RDL 43/2026: factura electrónica B2B desde el 6/10/2027, Verifactu y resto de empresas el 6/10/2028, y estados de factura en 2029.
+- [Plazo de pago: aceptación de la mercancía y factura resumen](https://mydevspace2.github.io/herramientas-verifactu/blog/plazo-pago-aceptacion-factura-resumen/): Cómo cuenta el plazo de pago de 30 o 60 días cuando hay aceptación de la mercancía o facturas agrupadas, según el art. 4 de la Ley 3/2004, con ejemplos.
 
 ## Web
 

@@ -1832,3 +1832,70 @@ POSTS.append(dict(
     ],
     sources=[S.RD, S.RDL43, S.AEAT_CAL],
 ))
+
+
+# ---------------------------------------------------------------- Phase 2: aceptacion y factura resumen
+POSTS.append(dict(
+    slug="plazo-pago-aceptacion-factura-resumen",
+    published="2026-11-27",
+    title="Plazo de pago: aceptación de la mercancía y factura resumen",
+    desc="Cómo cuenta el plazo de pago de 30 o 60 días cuando hay aceptación de la mercancía o facturas agrupadas, según el art. 4 de la Ley 3/2004, con ejemplos.",
+    h1="Plazo de pago con aceptación de la mercancía y factura resumen",
+    intro="El plazo de pago de la Ley 3/2004 no siempre empieza el día de la factura. Cuando hay un procedimiento de aceptación o agrupas facturas, la fecha de inicio cambia. Esto dice el texto consolidado del BOE.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> sin fecha pactada, el plazo es de 30 días naturales desde la recepción de la mercancía o la prestación del servicio, aunque la factura llegara antes. Si hay aceptación o verificación, esos 30 días cuentan desde que esta se produce. El máximo pactado es de 60 días naturales.</p>
+<p>Esta guía resume el artículo 4 de la Ley 3/2004, de 29 de diciembre, en su texto consolidado. No es asesoramiento jurídico.</p>
+
+<h2 id="regla">La regla general del artículo 4.1</h2>
+<p>Si el contrato no fija fecha o plazo de pago, el plazo será de <strong>treinta días naturales después de la fecha de recepción de las mercancías o prestación de los servicios</strong>, incluso cuando se hubiera recibido la factura con anterioridad. Es decir: mandar la factura pronto no adelanta el vencimiento.</p>
+<p>La ley añade una obligación para el proveedor: debe hacer llegar la factura o solicitud de pago equivalente antes de que se cumplan quince días naturales desde la recepción efectiva de las mercancías o de la prestación.</p>
+<p>Cuando el contrato sí fija un plazo, la recepción de la factura por medios electrónicos produce el inicio del cómputo, siempre que esté garantizada la identidad y autenticidad del firmante, la integridad de la factura y su recepción por el interesado. Por eso conviene conservar el justificante de entrega de la factura electrónica.</p>
+
+<h2 id="aceptacion">Cuando hay aceptación o verificación (art. 4.2)</h2>
+<p>Algunos contratos prevén un procedimiento mediante el cual se verifica que los bienes o servicios son conformes con lo pactado. La ley pone dos límites:</p>
+<ul>
+<li>ese procedimiento <strong>no puede durar más de treinta días naturales</strong> desde la recepción de los bienes o la prestación del servicio;</li>
+<li>el plazo de pago es de <strong>treinta días después de la fecha en que tiene lugar la aceptación o verificación</strong>, aunque la factura se hubiera recibido antes.</li>
+</ul>
+<p>La consecuencia es que un cliente no puede alargar el pago con un proceso de revisión indefinido: la verificación tiene tope de 30 días, y el pago llega 30 días después de ella.</p>
+
+<h2 id="ampliacion">Ampliar el plazo por pacto (art. 4.3)</h2>
+<p>Las partes pueden ampliar los plazos anteriores, pero <strong>nunca por encima de 60 días naturales</strong>. Una cláusula que fije un plazo superior puede ser abusiva; lo vemos en <a href="/blog/clausulas-abusivas-plazo-pago-morosidad/">cláusulas abusivas de plazo de pago</a>.</p>
+
+<h2 id="resumen">Factura resumen y agrupación periódica (art. 4.4)</h2>
+<p>La ley permite agrupar facturas a lo largo de un período determinado <strong>no superior a quince días</strong>, mediante una factura resumen periódica o agrupándolas en un único documento para facilitar la gestión del pago. Con estas condiciones:</p>
+<ul>
+<li>la fecha de inicio del cómputo es la correspondiente <strong>a la mitad del período</strong> de la factura resumen o de la agrupación;</li>
+<li>el plazo de pago no puede superar los sesenta días naturales desde esa fecha.</li>
+</ul>
+
+<h2 id="ejemplos">Ejemplos de cómputo</h2>
+<p>Las fechas son ilustrativas; el cálculo se basa solo en las reglas anteriores y en días naturales.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Situación</th><th>Fecha de inicio</th><th>Plazo</th></tr></thead>
+<tbody>
+<tr><td>Sin plazo pactado. Entrega el 4 de mayo, factura el 2 de mayo</td><td>4 de mayo (recepción)</td><td>30 días: vence el 3 de junio</td></tr>
+<tr><td>Con aceptación. Entrega el 4 de mayo, aceptación el 20 de mayo</td><td>20 de mayo</td><td>30 días: vence el 19 de junio</td></tr>
+<tr><td>Factura resumen de las entregas del 1 al 15 de mayo, pago a 60 días</td><td>mitad del período</td><td>hasta 60 días desde esa fecha</td></tr>
+</tbody></table></div>
+<p>Si el pago llega después del vencimiento, la mora se devenga automáticamente (art. 5): sin aviso de vencimiento ni intimación del acreedor. Calcula el importe con la <a href="/intereses-demora-comerciales/">calculadora de intereses de demora</a>.</p>
+
+<h2 id="pasos">Cómo aplicarlo a tu negocio</h2>
+<ol class="steps">
+<li><strong>Anota la fecha de recepción</strong> de la mercancía o del servicio, no solo la de la factura.</li>
+<li><strong>Si hay aceptación,</strong> registra por escrito cuándo se produjo y comprueba que no excedió 30 días.</li>
+<li><strong>Envía la factura</strong> dentro de los quince días siguientes a la recepción.</li>
+<li><strong>Revisa el plazo</strong> con la guía de <a href="/blog/plazos-pago-ley-morosidad/">plazos de la Ley de morosidad</a> y, si vence sin pago, sigue <a href="/blog/reclamar-factura-impagada-intereses/">cómo reclamar una factura impagada</a>.</li>
+</ol>
+<p>Para vigilar tu comportamiento global de pago, usa también la <a href="/periodo-medio-pago-proveedores/">calculadora del periodo medio de pago</a>.</p>
+""",
+    faq=[
+        ("¿Desde cuándo cuenta el plazo si no hay nada pactado?", "Treinta días naturales desde la recepción de las mercancías o la prestación del servicio, aunque la factura llegara antes (art. 4.1)."),
+        ("¿Cuánto puede durar el procedimiento de aceptación?", "No más de treinta días naturales desde la recepción de los bienes o servicios (art. 4.2)."),
+        ("¿Cuál es el plazo máximo que se puede pactar?", "60 días naturales (art. 4.3)."),
+        ("¿Cuándo debe el proveedor enviar la factura?", "Antes de que se cumplan quince días naturales desde la recepción efectiva de las mercancías o del servicio."),
+        ("¿Cómo cuenta una factura resumen?", "Desde la mitad del período agrupado, que no puede superar quince días, y con un plazo máximo de sesenta días desde esa fecha (art. 4.4)."),
+        ("¿Hace falta avisar al deudor para que haya mora?", "No: la mora se produce automáticamente por el mero incumplimiento del plazo (art. 5)."),
+    ],
+    sources=[S.LEY3],
+))
