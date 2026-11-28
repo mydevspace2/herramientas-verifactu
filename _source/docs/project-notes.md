@@ -125,3 +125,9 @@
 - RDL 43/2026 (24 Nov, BOE-A-2026-24701, BOE 25/11/2026) rewrote DF 4.ª of RD 1007/2023: art. 3.1 obligados adapt when the DF 4.ª.1.b term of RD 238/2026 lapses (24 months after the ministerial order = 6/10/2028 per site calendar). Producers: still 9 months after the order. Consolidated RD 1007/2023 updated 25/11/2026.
 - Updated: home (cards, table, FAQ, JS result, title/desc), fechas post (rewritten, title "aplazado a octubre de 2028"), autónomos post, b2b posts, og image text, sources RDL43, tests (test-site, csp, ux-mobile). New post /blog/calendario-verifactu-factura-electronica-2027-2029/. All tests exit 0.
 - TODO: older posts may still mention 2027 Verifactu dates in passing (grep "1 de julio de 2027"); page_b2b.py mentions; branch domain-verifactuya stale.
+
+## Daily run 2026-11-27 (Phase 2, day 4)
+- Published /blog/plazo-pago-aceptacion-factura-resumen/ (Ley 3/2004 art. 4.1-4.4, 5). ACE constant + REL map. Tests all exit 0. Pushed db499a0. BOE RD 1007/2023 last update 25/11/2026 (RDL 43/2026 already applied).
+
+## Daily run 2026-11-28 (Phase 2, day 5)
+- Published /blog/reserva-de-dominio-ley-morosidad/ (Ley 3/2004 art. 10). RDM constant + REL map. Tests all exit 0.

@@ -1899,3 +1899,52 @@ POSTS.append(dict(
     ],
     sources=[S.LEY3],
 ))
+
+POSTS.append(dict(
+    slug="reserva-de-dominio-ley-morosidad",
+    published="2026-11-28",
+    title="Reserva de dominio: proteger el cobro (Ley 3/2004)",
+    desc="Qué es la cláusula de reserva de dominio del art. 10 de la Ley 3/2004, cuándo se pacta, qué puede hacer el vendedor y cómo se subroga un financiador.",
+    h1="Cláusula de reserva de dominio en la Ley de morosidad",
+    intro="Si vendes bienes y temes no cobrar, la reserva de dominio te deja conservar la propiedad hasta el pago total. El artículo 10 de la Ley 3/2004 la regula con condiciones claras.",
+    content="""
+<p class="note"><strong>Respuesta corta:</strong> en las relaciones entre vendedor y comprador, el vendedor conserva la propiedad de los bienes hasta el pago total del precio, siempre que la cláusula se haya convenido expresamente antes de la entrega.</p>
+<p>Esta guía resume el artículo 10 de la Ley 3/2004, de 29 de diciembre, en su texto consolidado. No es asesoramiento jurídico.</p>
+
+<h2 id="que-es">Qué dice el artículo 10</h2>
+<p>El vendedor <strong>conservará la propiedad de los bienes vendidos hasta el pago total del precio</strong>, siempre que se haya convenido expresamente una cláusula de reserva de dominio entre comprador y vendedor <strong>antes de la entrega</strong> de los bienes. La ley limita esta regla a las relaciones internas entre vendedor y comprador.</p>
+
+<h2 id="requisitos">Requisitos prácticos</h2>
+<ul>
+<li><strong>Pacto expreso:</strong> debe constar de forma explícita, no se presume.</li>
+<li><strong>Antes de la entrega:</strong> una cláusula añadida después de entregar la mercancía no cumple lo que exige la ley.</li>
+<li><strong>Hasta el pago total:</strong> un pago parcial no transfiere la propiedad.</li>
+</ul>
+<p>Por eso conviene incluirla en el presupuesto, el pedido o las condiciones generales aceptadas antes del envío, y conservar la prueba de esa aceptación.</p>
+
+<h2 id="financiador">Subrogación de quien financia</h2>
+<p>Sin perjuicio del artículo 1.112 del Código Civil, el vendedor puede subrogar en su derecho a la persona que, mediante anticipos, financiación o asunción de la obligación, realiza la contraprestación por cuenta del deudor, o permite al deudor adquirir derecho sobre el objeto de la reserva o utilizarlo, cuando esa contraprestación se destina efectivamente a ese fin.</p>
+
+<h2 id="documentacion">Retener la documentación</h2>
+<p>Entre las medidas para conservar su derecho, el vendedor o el tercero que haya financiado la operación puede <strong>retener la documentación acreditativa de la titularidad</strong> de los bienes sobre los que se pactó la reserva.</p>
+
+<h2 id="mora">Reserva de dominio y mora</h2>
+<p>La reserva de dominio no sustituye a los intereses: si el pago llega tarde, la mora se devenga igualmente. Con el tipo vigente del segundo semestre de 2026 (10,40 %), calcula el importe en la <a href="/intereses-demora-comerciales/">calculadora de intereses de demora</a>. Los costes de cobro acreditados también cuentan; lo vemos en <a href="/blog/40-euros-costes-de-cobro-morosidad/">los 40 euros de costes de cobro</a>.</p>
+
+<h2 id="pasos">Cómo aplicarlo</h2>
+<ol class="steps">
+<li><strong>Incluye la cláusula</strong> por escrito en el pedido o contrato antes de entregar.</li>
+<li><strong>Guarda la aceptación</strong> del comprador (correo, firma, orden de compra).</li>
+<li><strong>Controla el vencimiento</strong> con la guía de <a href="/blog/plazos-pago-ley-morosidad/">plazos de la Ley de morosidad</a>.</li>
+<li><strong>Si no paga,</strong> sigue <a href="/blog/reclamar-factura-impagada-intereses/">cómo reclamar una factura impagada</a> y consulta a un abogado sobre cómo ejercer la reserva.</li>
+</ol>
+""",
+    faq=[
+        ("¿Qué es la reserva de dominio?", "Una cláusula por la que el vendedor conserva la propiedad de los bienes hasta el pago total del precio (art. 10 Ley 3/2004)."),
+        ("¿Cuándo debe pactarse?", "De forma expresa y antes de la entrega de los bienes."),
+        ("¿Basta un pago parcial para ser propietario?", "No: la propiedad se conserva hasta el pago total del precio."),
+        ("¿Puede subrogarse un financiador?", "Sí, quien anticipa, financia o asume la obligación por cuenta del deudor en los términos del artículo 10.2."),
+        ("¿Puede el vendedor retener documentación?", "Sí, la que acredite la titularidad de los bienes sobre los que se pactó la reserva."),
+    ],
+    sources=[S.LEY3],
+))
